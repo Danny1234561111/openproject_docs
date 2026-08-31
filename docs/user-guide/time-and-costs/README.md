@@ -2,32 +2,27 @@
 sidebar_navigation:
   title: Time and costs
   priority: 790
-description: Time tracking and cost reporting in OpenProject.
-keywords: Time tracking, cost tracking, cost reporting
+description: Учет времени и отчетность по затратам в OpenProject.
+keywords: Учет времени, отслеживание затрат, отчетность по затратам
 ---
+# Учет времени и отчетность по затратам
+Функциональность Time and costs в OpenProject позволяет отслеживать ресурсы как в плане труда, так и бюджетов. С OpenProject вы всегда можете контролировать время и затраты, запланированные и потраченные на проекты.
 
-# Time tracking and cost reporting
+Создавайте бюджеты, регистрируйте время и затраты по конкретным рабочим пакетам и создавайте отчеты по времени и затратам в соответствии с вашими потребностями.
 
-Time and costs functionality in OpenProject allows keeping track of the resources,  both in terms of labor and budgets. With OpenProject you can always keep control of the time and costs planned for and spent on the projects.
+| Тема                                     | Содержание                                      |
+|------------------------------------------|:------------------------------------------------|
+| [Отслеживание прогресса](progress-tracking)| Как отслеживать прогресс для рабочих пакетов    |
+| [Учет времени](time-tracking)            | Как регистрировать время для рабочих пакетов.   |
+| [Мой модуль учета времени](my-time-tracking) | Как регистрировать время в моем модуле учета |
+| [Отслеживание затрат](cost-tracking)     | Как отслеживать удельные затраты в проекте.     |
+| [Отчетность по времени и затратам](reporting) | Как создавать отчеты по времени и затратам.   |
 
-Create budgets, log time and costs on specific work packages and create time and cost reports based on your needs.
-
-| Topic                                | Content                                     |
-|--------------------------------------|:--------------------------------------------|
-| [Progress tracking](progress-tracking)| How to track progress for work packages     |
-| [Time tracking](time-tracking)       | How to log time to work packages.           |
-| [My time tracking module](my-time-tracking) | How to log time in my tracking module |
-| [Cost tracking](cost-tracking)       | How to track unit costs spent in a project. |
-| [Time and cost reporting](reporting) | How to create time and cost reports.        |
-
-## Time tracking, cost tracking and reporting video tutorial
-
-Watch this short video to get a first overview about time and cost reporting in OpenProject.
+## Видео-урок по учету времени, отслеживанию затрат и отчетности
+Посмотрите это короткое видео, чтобы получить первое представление об учете времени и отчетности по затратам в OpenProject.
 
 <video src="https://openproject-docs.s3.eu-central-1.amazonaws.com/videos/OpenProject-Track-Time-and-Costs.mp4"></video>
 
-## Frequently asked questions (FAQ)
-
-### Does OpenProject provide resource management?
-
-Yes. The Resource management module enables project managers to plan capacity, allocate work and staff projects based on team members' availability and skills. For details, see the [Resource management user guide](../resource-management/).
+## Часто задаваемые вопросы (FAQ)
+### Предоставляет ли OpenProject управление ресурсами?
+Да. Модуль Resource management позволяет руководителям проектов планировать мощность, распределять работу и укомплектовывать проекты персоналом на основе доступности и навыков членов команды. Подробнее см. [Руководство пользователя по управлению ресурсами](../resource-management/).

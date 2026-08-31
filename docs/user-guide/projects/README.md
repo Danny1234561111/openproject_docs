@@ -1,86 +1,83 @@
 ---
 sidebar_navigation:
-  title: Projects
+  title: Управление проектами
   priority: 945
-description: Manage projects in OpenProject
-keywords: manage projects
+description: Управляйте проектами в OpenProject
+keywords: управление проектами
 ---
-# Manage projects
+# Управление проектами
 
-In OpenProject you can create projects to collaborate with your team members, track issues, document and share information with stakeholders, organize things. A project is a way to structure and organize your work in OpenProject.
+В OpenProject вы можете создавать проекты для сотрудничества с членами вашей команды, отслеживания задач, документирования и обмена информацией с заинтересованными сторонами, организации работы. Проект — это способ структурировать и организовывать вашу работу в OpenProject.
 
-Your projects can be available publicly or internally. OpenProject does not limit the number of projects, neither in the Community edition nor in the Enterprise cloud or in Enterprise on-premises edition.
+Ваши проекты могут быть доступны публично или внутри компании. OpenProject не ограничивает количество проектов, ни в Community edition, ни в Enterprise cloud, ни в Enterprise on-premises edition.
 
-| Topic                                                        | Content                                                      |
+| Тема                                                        | Содержание                                                      |
 | ------------------------------------------------------------ | ------------------------------------------------------------ |
-| [Select a project](../../getting-started/projects/#open-an-existing-project) | Open a project which you want to work on.                    |
-| [Create a new project](../../getting-started/projects/#create-a-new-project) | Find out how to create a new project in OpenProject.         |
-| [Create a subproject](./project-settings/project-information/#create-a-subproject) | Create a subproject of an existing project.                  |
-| [Project structure](#project-structure)                      | Find out how to set up a project structure.                  |
-| [Project settings](./project-settings/)                      | Configure further settings for your projects, such as description, project hierarchy structure, or setting it to public. |
-| [Project lists](./project-lists/)                            | Get an overview of all your projects and configure project views. |
-| [Change the project hierarchy](./project-settings/project-information/#change-the-project-hierarchy) | You can change the hierarchy by selecting the parent project ("subproject of"). |
-| [Set a project to public](./project-settings/project-information/#make-a-project-public) | Make a project accessible to (at least) all users within your instance. |
-| [Create a project template](./project-templates/#create-a-project-template) | Configure a project and set it as a template to copy it for future projects. |
-| [Use a project template](./project-templates/#use-a-project-template) | Create a new project based on an existing template project.  |
-| [Duplicate a project](./project-settings/project-information/#duplicate-a-project) | Duplicate an existing project.                       |
-| [Archive a project](./project-settings/project-information/#archive-a-project) | Find out how to archive completed projects.                  |
-| [Delete a project](./project-settings/project-information/#delete-a-project) | How to delete a project.                                     |
+| [Выбрать проект](../../getting-started/projects/#открыть-существующий-проект) | Откройте проект, над которым вы хотите работать.                    |
+| [Создать новый проект](../../getting-started/projects/#создать-новый-проект) | Узнайте, как создать новый проект в OpenProject.         |
+| [Создать подпроект](./project-settings/project-information/#создать-подпроект) | Создайте подпроект существующего проекта.                  |
+| [Структура проекта](#структура-проекта)                      | Узнайте, как настроить структуру проекта.                  |
+| [Настройки проекта](./project-settings/)                      | Настройте дополнительные параметры для ваших проектов, такие как описание, структура иерархии проекта или установка его как публичного. |
+| [Списки проектов](./project-lists/)                            | Получите обзор всех ваших проектов и настройте представления проектов. |
+| [Изменить иерархию проекта](./project-settings/project-information/#изменить-иерархию-проекта) | Вы можете изменить иерархию, выбрав родительский проект («подпроект»). |
+| [Установить проект как публичный](./project-settings/project-information/#сделать-проект-публичным) | Сделайте проект доступным (по крайней мере) для всех пользователей в вашем экземпляре. |
+| [Создать шаблон проекта](./project-templates/#создать-шаблон-проекта) | Настройте проект и установите его как шаблон для копирования для будущих проектов. |
+| [Использовать шаблон проекта](./project-templates/#использовать-шаблон-проекта) | Создайте новый проект на основе существующего шаблонного проекта.  |
+| [Дублировать проект](./project-settings/project-information/#дублировать-проект) | Дублировать существующий проект.                       |
+| [Архивировать проект](./project-settings/project-information/#архивировать-проект) | Узнайте, как архивировать завершенные проекты.                  |
+| [Удалить проект](./project-settings/project-information/#удалить-проект) | Как удалить проект.                                     |
 
-![Video](https://openproject-docs.s3.eu-central-1.amazonaws.com/videos/OpenProject-Projects-Introduction.mp4)
+![Видео](https://openproject-docs.s3.eu-central-1.amazonaws.com/videos/OpenProject-Projects-Introduction.mp4)
 
-## Project structure
+## Структура проекта
 
-Projects form a structure in OpenProject. You can have parent projects and sub-projects. A project can represent an organizational unit of a company, e.g. to have issues separated:
+Проекты образуют структуру в OpenProject. У вас могут быть родительские проекты и подпроекты. Проект может представлять организационную единицу компании, например, для разделения задач:
 
-- Company (Parent project)
-  - Marketing (Sub-project)
-  - Sales
+- Компания (Родительский проект)
+  - Маркетинг (Подпроект)
+  - Продажи
   - HR
   - IT
   - ...
 
-Projects can also be for overarching teams working on one topic:
+Проекты также могут быть для объединяющих команд, работающих над одной темой:
 
-- Launch a new product
-  - Design
-  - Development
+- Запуск нового продукта
+  - Дизайн
+  - Разработка
   - ...
 
-Or, a project can be used to separate products or customers.
+Или проект может использоваться для разделения продуктов или клиентов.
 
-- Product A
-  - Customer A
-  - Customer B
-  - Customer C
+- Продукт A
+  - Клиент A
+  - Клиент B
+  - Клиент C
 
-![Example of a project hierarchy shown in "Projects" dropdown menu in OpenProject](openproject_user_guide_projects_project_structure_example.png)
+![Пример иерархии проекта, показанный в выпадающем меню «Проекты» в OpenProject](openproject_user_guide_projects_project_structure_example.png)
 
 > [!NOTE]
-> You must be a [member](../members/#add-members) of a project  to view and work in it.
+> Вы должны быть [участником](../members/#добавить-участников) проекта, чтобы просматривать и работать в нем.
 
-## Select a project
+## Выбрать проект
 
-Find out  [how to open an existing project](../../getting-started/projects/#open-an-existing-project) in OpenProject in our _Getting started_ guide.
+Узнайте [как открыть существующий проект](../../getting-started/projects/#открыть-существующий-проект) в OpenProject в нашем руководстве _Начало работы_.
 
-## Create a new project
+## Создать новый проект
 
-Find out how to [create a new project](../../getting-started/projects/#create-a-new-project) in OpenProject in our _Getting started_ guide.
+Узнайте, как [создать новый проект](../../getting-started/projects/#создать-новый-проект) в OpenProject в нашем руководстве _Начало работы_.
 
-## Create a subproject
+## Создать подпроект
 
-Find out how to [create a subproject](./project-settings/) in OpenProject in our _Project settings_ guide.
+Узнайте, как [создать подпроект](./project-settings/) в OpenProject в нашем руководстве _Настройки проекта_.
 
-## Project Settings
+## Настройки проекта
 
-You can specify further advanced settings for your project. Navigate to your project settings by [selecting a project](../../getting-started/projects/#open-an-existing-project), and click -> _Project settings_ -> _Information_. Here you can: 
+Вы можете указать дополнительные расширенные настройки для вашего проекта. Перейдите к настройкам вашего проекта, [выбрав проект](../../getting-started/projects/#открыть-существующий-проект), и нажмите -> _Настройки проекта_ -> _Информация_. Здесь вы можете:
 
-- Define whether the project should have a parent by selecting **Subproject of**. This way, you can [change the project hierarchy](./project-settings/project-information/#change-the-project-hierarchy).
+- Определить, должен ли проект иметь родителя, выбрав **Подпроект**. Таким образом, вы можете [изменить иерархию проекта](./project-settings/project-information/#изменить-иерархию-проекта).
+- Ввести подробное описание для вашего проекта.
+- Установить **Идентификатор** проекта по умолчанию.
+- Установить проект как **Публичный**. Это означает, что к нему можно получить доступ без входа в OpenProject.
 
-- Enter a detailed description for your project.
-
-- Set the default project **Identifier**. 
-
-- Set a project to **Public**. This means it can be accessed without signing in to OpenProject.
-
-Read the full guide on [project settings in OpenProject](./project-settings/).
+Прочитайте полное руководство по [настройкам проекта в OpenProject](./project-settings/).

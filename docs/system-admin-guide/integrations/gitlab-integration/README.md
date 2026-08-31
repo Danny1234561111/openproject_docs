@@ -1,216 +1,119 @@
 ---
 sidebar_navigation:
-  title: GitLab integration - Documentation
+  title: GitLab integration - Документация
   priority: 800
-description: Integrate the GitLab merge request and issues into OpenProject.
-keywords: GitLab, GitLab integration, merge request
+description: Интегрируйте merge requests и issues GitLab в OpenProject.
+keywords: GitLab, интеграция с GitLab, merge request
 ---
-# GitLab integration
-
-OpenProject offers an integration with GitLab merge requests to link software development closely to planning and specification. You can create merge requests in GitLab and link them to work packages in OpenProject.
-
-## Overview
-
-OpenProject work packages will directly display information from GitLab in a separate tab.
-
-![Gitlab tab in an OpenProject work package](gitlab-tab.png)
-
-The tab shows all merge requests (MR) linked to a work package with the corresponding status (e.g. 'Ready' or 'Merged') as well as the state (e.g. 'success' or 'queued') of the GitLab actions configured to run for a MR. MRs and work packages are in an n:m relationship, so a work package can be linked to multiple merge requests and a merge request can be linked to multiple work packages.
-
-Additionally, in your OpenProject work package, the GitLab integration supports you in creating a branch specific to the work package and consequently the matching merge request.
-
-![Git snippets for GitLab integration in OpenProject](openproject-system-guide-gitlab-integration-git-snippets.png)
-
-Merge request activities will also show up in the Activity tab when the merge request is
-
-- first referenced (usually when opened)
-- merged
-- closed
-
-![GitLab comments on work package activity tab](openproject-system-guide-gitlab-integration-activity-tab.png)
-
-## Configuration
-
-You will first have to configure both OpenProject and GitLab for the integration to work.
-
+# Интеграция с GitLab
+OpenProject предлагает интеграцию с merge requests GitLab, чтобы тесно связать разработку программного обеспечения с планированием и спецификацией. Вы можете создавать merge requests в GitLab и связывать их с рабочими пакетами в OpenProject.
+## Обзор
+Рабочие пакеты OpenProject будут напрямую отображать информацию из GitLab в отдельной вкладке.
+![Вкладка Gitlab в рабочем пакете OpenProject](gitlab-tab.png)
+Вкладка показывает все merge requests (MR), связанные с рабочим пакетом, с соответствующим статусом (например, 'Ready' или 'Merged'), а также состояние (например, 'success' или 'queued') действий GitLab, настроенных для запуска для MR. MR и рабочие пакеты находятся в отношении n:m, поэтому рабочий пакет может быть связан с несколькими merge requests, а merge request может быть связан с несколькими рабочими пакетами.
+Кроме того, в вашем рабочем пакете OpenProject интеграция с GitLab поддерживает создание ветки, специфичной для рабочего пакета, и, следовательно, соответствующего merge request.
+![Git сниппеты для интеграции с GitLab в OpenProject](openproject-system-guide-gitlab-integration-git-snippets.png)
+Действия merge request также будут появляться во вкладке «Активность», когда merge request:
+- впервые упоминается (обычно при открытии)
+- слит
+- закрыт
+![Комментарии GitLab на вкладке активности рабочего пакета](openproject-system-guide-gitlab-integration-activity-tab.png)
+## Конфигурация
+Сначала вам нужно настроить как OpenProject, так и GitLab для работы интеграции.
 ### OpenProject
-
-First you will need to create a user in OpenProject that has the permission to make comments. This role only requires three permissions, _View work packages_,  _Add comments_ and _Edit own comments_, which you will find in the **Work packages and Gantt charts** section under  [**Roles and Permissions**](../../users-permissions/roles-permissions/).
-
-![GitLab role with required permissions in OpenProject](openproject-system-guide-gitlab-integration-role.png)
-
-This user will then have to be **added to each project** with a role that allows them to see work packages and comment on them.
-
-![GitLab user added as member to project with respective role](openproject-system-guide-gitlab-integration-project-member.png)
-
-Once the user is created you need to generate an OpenProject API token for this user (you will need it on the GitLab side). For this you have to:
-
-1. Login as the newly created user
-2. Go to [Account settings](../../../user-guide/account-settings/) (click on the Avatar in the top right corner and select _Account settings_)
-3. Go to [_Access Tokens_](../../../user-guide/account-settings/access-tokens)
-4. Click on **+ API token**
-
+Сначала вам нужно создать пользователя в OpenProject, у которого есть разрешение оставлять комментарии. Эта роль требует только трех разрешений: _Просмотр рабочих пакетов_, _Добавление комментариев_ и _Редактирование собственных комментариев_, которые вы найдете в разделе **Рабочие пакеты и диаграммы Ганта** в [**Роли и разрешения**](../../users-permissions/roles-permissions/).
+![Роль GitLab с необходимыми разрешениями в OpenProject](openproject-system-guide-gitlab-integration-role.png)
+Затем этого пользователя нужно **добавить в каждый проект** с ролью, которая позволяет ему видеть рабочие пакеты и комментировать их.
+![Пользователь GitLab добавлен как участник проекта с соответствующей ролью](openproject-system-guide-gitlab-integration-project-member.png)
+После создания пользователя вам нужно сгенерировать API токен OpenProject для этого пользователя (он понадобится на стороне GitLab). Для этого вам нужно:
+1. Войти как вновь созданный пользователь
+2. Перейти в [Настройки аккаунта](../../../user-guide/account-settings/) (нажмите на аватар в правом верхнем углу и выберите _Настройки аккаунта_)
+3. Перейти в [_Токены доступа_](../../../user-guide/account-settings/access-tokens)
+4. Нажать на **+ API токен**
 > [!IMPORTANT]
-> Make sure you copy the generated key and securely save it, as you will not be able to retrieve it later.
-
-You can then configure the necessary webhook in [GitLab](#gitlab).
-
-### Configure GitLab integration settings
-
-Go to **Administration → Integrations → GitLab** and configure the GitLab integration settings.
-
-You can optionally define which OpenProject user is used to authenticate incoming webhook requests. When configured, only requests authenticated with that user’s API token are accepted. This user is also used for automated deploy-status comments on work packages. If no user is selected, OpenProject falls back to the system user.
-
-You can also define a webhook secret shared between GitLab and OpenProject. When a secret is configured, OpenProject validates the `X-Gitlab-Token` header for every incoming webhook request and rejects requests with invalid tokens.
-
+> Убедитесь, что вы скопировали сгенерированный ключ и безопасно сохранили его, так как позже вы не сможете его получить.
+Затем вы можете настроить необходимый вебхук в [GitLab](#gitlab).
+### Настройка параметров интеграции с GitLab
+Перейдите в **Администрирование → Интеграции → GitLab** и настройте параметры интеграции с GitLab.
+Вы можете опционально определить, какой пользователь OpenProject используется для аутентификации входящих запросов вебхука. При настройке принимаются только запросы, аутентифицированные с помощью API токена этого пользователя. Этот пользователь также используется для автоматических комментариев о статусе развертывания в рабочих пакетах. Если пользователь не выбран, OpenProject возвращается к системному пользователю.
+Вы также можете определить секрет вебхука, общий между GitLab и OpenProject. При настройке секрета OpenProject проверяет заголовок `X-Gitlab-Token` для каждого входящего запроса вебхука и отклоняет запросы с недействительными токенами.
 > [!IMPORTANT]
-> If no webhook secret is configured, webhook requests are accepted without verification. This may allow unauthorized actors to forge events. We strongly recommend configuring a webhook secret.
-
-Click **Save**.
-
-![Form to define GitLab actor and webhook secrets in OpenProject administration](openproject-system-guide-gitlab-webhook-secret.png)
-
-Finally you will need to activate the GitLab module for each project under its [Project settings](../../../user-guide/projects/project-settings/modules/) so that all information pulling through from GitLab will be shown in the work packages.
-
-![Activate a GitLab module in OpenProject](openproject-system-guide-gitlab-integration-project-modules.png)
-
-Seeing the **GitLab** tab requires **Show GitLab content** permission, so this permission needs to be granted to all roles in a project allowed to see the tab. This can be added in the [**Roles and Permissions**](../../users-permissions/roles-permissions/) settings. 
-
-![Grant permission to show GitLab content to user roles in OpenProject](openproject-system-guide-gitlab-integration-gitlab-content-role-permission.png)
-
+> Если секрет вебхука не настроен, запросы вебхука принимаются без проверки. Это может позволить несанкционированным акторам подделывать события. Мы настоятельно рекомендуем настроить секрет вебхука.
+Нажмите **Сохранить**.
+![Форма для определения актера GitLab и секретов вебхука в администрировании OpenProject](openproject-system-guide-gitlab-webhook-secret.png)
+Наконец, вам нужно активировать модуль GitLab для каждого проекта в его [Настройках проекта](../../../user-guide/projects/project-settings/modules/), чтобы вся информация, поступающая из GitLab, отображалась в рабочих пакетах.
+![Активировать модуль GitLab в OpenProject](openproject-system-guide-gitlab-integration-project-modules.png)
+Для просмотра вкладки **GitLab** требуется разрешение **Показать содержимое GitLab**, поэтому это разрешение нужно предоставить всем ролям в проекте, которым разрешено видеть вкладку. Это можно добавить в настройках [**Роли и разрешения**](../../users-permissions/roles-permissions/).
+![Предоставить разрешение на показ содержимого GitLab ролям пользователей в OpenProject](openproject-system-guide-gitlab-integration-gitlab-content-role-permission.png)
 ### GitLab
-
-In GitLab you have to set up a webhook in each repository to be integrated with OpenProject. For that navigate to **Settings** -> **Webhooks** and click on **Add new webhook**.
-
-![Create the webhook in GitLab](openproject-system-guide-gitlab-integration-gitlab-webhook.png)
-
-You need to configure the **URL** . It must point to your OpenProject server's GitLab webhook endpoint (`/webhooks/gitlab`).
-
-You will need the API key you copied earlier in OpenProject. Append it to the _URL_ as a simple GET parameter named `key`. In the end the URL should look something like this:
-
+В GitLab вам нужно настроить вебхук в каждом репозитории для интеграции с OpenProject. Для этого перейдите в **Настройки** -> **Вебхуки** и нажмите **Добавить новый вебхук**.
+![Создать вебхук в GitLab](openproject-system-guide-gitlab-integration-gitlab-webhook.png)
+Вам нужно настроить **URL**. Он должен указывать на конечную точку вебхука GitLab вашего сервера OpenProject `/webhooks/gitlab`).
+Вам понадобится API ключ, который вы скопировали ранее в OpenProject. Добавьте его к _URL_ как простой GET параметр с именем `key`. В итоге URL должен выглядеть примерно так:
 `https://myopenproject.com/webhooks/gitlab?key=4221687468163843`
-
-For the events that should be triggered by the webhook, please select the following
-
-- Push events (all branches)
-- Comments
-- Issues events
-- Merge request events
-- Pipeline events 
-
-> [!NOTE] 
-> Please note that the _Pipeline events_ part of the integration is still in the early stages. If you have any feedback on the _Pipeline events_, please let us know [here](https://community.openproject.org/wp/54574).
-
+Для событий, которые должны запускаться вебхуком, пожалуйста, выберите следующее:
+- События push (все ветки)
+- Комментарии
+- События issues
+- События merge request
+- События pipeline
+> [!NOTE]
+> Обратите внимание, что часть _События pipeline_ интеграции все еще находится на ранней стадии. Если у вас есть какие-либо отзывы о _Событиях pipeline_, пожалуйста, сообщите нам [здесь](https://community.openproject.org/wp/54574).
 > [!IMPORTANT]
-> OpenProject only supports the events listed above. If the GitLab webhook sends an event that OpenProject does not support, a 404 error is returned by OpenProject.
-
-> [!TIP] 
-> If you are in a local network you might need to allow requests to the local network in your GitLab instance. You can find this settings in the **Outbound requests** section when you navigate to **Admin area -> Settings -> Network**.
-
-We recommend that you enable the **SSL verification** before you **Add webhook**.
-
-Now the integration is set up on both sides and you can use it.
-
-### Updating from the user-generated GitLab Plugin
-
-With [OpenProject 13.4](../../../release-notes/13/13-4-0/), the user-generated plugin was replaced by this GitLab integration. If you were already using the user-generated GitLab plugin, we recommend removing the plugin module folder and bundler references before upgrading to OpenProject. Your historical dataset will remain unaffected within OpenProject as there were no changes to the data model.
-
-Before upgrading, please do the following:
-
-1. Remove traces of the GitLab integration in your **Gemfile.lock** and **Gemfile.modules**. See [btey/openproject-gitlab-integration#configuration](https://github.com/btey/openproject-gitlab-integration?tab=readme-ov-file#configuration). Failure to do so may result in a `Bundler::GemfileError` matching the following error message: _Your Gemfile lists the gem openproject-gitlab_integration (>= 0) more than once._
-2. Remove the module code traces of the GitLab integration by running this command: `rm -rf /path/to/openproject/modules/gitlab_integration` 
-
-## Using GitLab integration
-
-### Using a Git Desktop Client
-
-#### Create merge requests
-
-As merge requests are based on branches, a new branch needs to be created first. For that, open the GitLab tab in your OpenProject work package detailed view. Click on **Git snippets** to extend the menu. First, copy the branch name by clicking the corresponding button.
-
-![Copy the branch name for GitLab in OpenProject](openproject-system-guide-gitlab-integration-branch-name.png)
-
-Then, open your Git desktop client. There, you can create your branch by entering the branch name you copied from your OpenProject work package. That way, all the branches will follow a common pattern and as the OpenProject ID is included in the branch name, it will be easy to see the connection between a MR and a work package when taking a look at a list of MRs on GitLab.
-
-![Create a new branch in a Git desktop client](openproject-system-guide-gitlab-integration-create-branch.png)
-
-You can now publish your branch (you can also do this later, after making the changes and before opening a merge request).
-
-![Publish branch](openproject-system-guide-gitlab-integration-publish-branch.png)
-
-With the branch opened, you can start the actual development work using your preferred tool to alter your codebase.
-
-![Gitlab changes in a merge request changes](gitlab-changes.png)
-
-Once you are satisfied with the changes you can create a commit. Within the 'Git snippets' menu, OpenProject suggests a commit message for you based on the title and the URL of the work package.
-
-![Copy a Git commit message in OpenProject](openproject-system-guide-gitlab-integration-git-snippets-commit-message.png)
-
-A URL pointing to a work package in the merge request description or a comment will link the two. The link needs to be in the MR and not in a commit, but GitLab will use the first commit message as the proposed branch description (as long as there is only one commit). Alternatively you can also use 'OP#' as a work package reference in an issue or a MR title, in this case "OP#388", where 388 is the ID of the work package. Please note that "OP#" is case sensitive.
-
-![Commit message in a Git client](openproject-system-guide-gitlab-integration-commit-message-in-client.png)
-
-Once the changes are made, you can create your merge request. Title and comment with the link to the respective OpenProject work package will be prefilled, at least if there is only one commit to the branch. Because of this one commit limitation and if the policy is to create a branch as early as possible, there is a third option in the 'Git snippets' menu ('Create branch with empty commit') that will open a branch and add an empty commit to it in one command. Using this option, one can first create the branch quickly and have it linked to the work package right from the beginning. Commits can of course be added to the branch (and PR) after that.
-
-![Create a merge request](openproject-system-guide-gitlab-integration-create-mr.png)
-
-The branch description can be amended before a MR is created giving the opportunity to further describe the changes. To help with that, it is also possible to copy parts of the work package description since the description can be displayed in the markdown format. Links to additional work packages can also be included in the MR description.
-
-If you use OP# as a reference in an Issue or MR title, all comments will be replicated in OpenProject. However, sometimes you may only want to keep information about the status of an Issue/MR in OpenProject without your comments being published. In this case, you can use "PP#" as a reference. For example "PR#388".  This way the comments will not be published in OpenProject. If you only want to publish one of the comments from a private Issue/MR, you can use "OP#" directly in that comment. This way only that specific comment will be published in OpenProject, but the rest of the comments will remain private. [Read more](https://github.com/btey/openproject-gitlab-integration?tab=readme-ov-file#difference-between-op-and-pp).
-
-![Open a GitLab merge request](openproject-system-guide-gitlab-integration-create-mr-detail.png)
-
-Click on **Create merge request** and your merge request will be opened.
-
-![GitLab merge request opened](openproject-system-guide-gitlab-integration-mr-opened.png)
-
-When you click on the link in the comment, it will take you to the OpenProject work package, where you will see in the Activity tab of the work package that the merge request was created.
-
-![GitLab actions in activity tab](openproject-system-guide-gitlab-integration-push-activity.png)
-
-In the GitLab tab of that work package, the status of the merge request as well as status of all the configured GitLab Actions will also be displayed.
-
-![GitLab actions under GitLab tab in OpenProject work package](openproject-system-guide-gitlab-integration-gitlab-actions.png)
-
-If the status of a merge request changes, it will be reflected in the OpenProject work package accordingly. Please see the example below.
-
-![GitLab merge request status change](openproject-system-guide-gitlab-integration-mr-status.png)
-
-### Using the Command Line Interface
-
-If you prefer to work with Git via the Command Line Interface (CLI), you can follow a similar process to create and manage merge requests, by following same steps as you would if using a Git Desktop Client. 
-
-You can copy the branch name from the OpenProject work package as described in the Git snippets section above. Then, create and switch to a new branch in your local repository. Modify the necessary files in your repository. Once you are satisfied with the changes, stage and commit them, using the suggested commit message from OpenProject.
-
-![Git snippet to create a new branch in GitLab entered into command line interface](openproject-system-guide-gitlab-integration-branch-git-snippet-cli.png)
-
-When using a CLI you can also use the **Create branch with empty commit** Git snippet. 
-![Git snippet to create a branch with empty commit under GitLab tab in a work package in OpenProject](openproject-system-guide-gitlab-integration-git_snippet_empty_commit.png)
-
-The advantage of using this snippet is that there is no need to first create a branch and then copy a separate Git snippet for the commit. A new branch will be created from your current branch along with an empty commit, which when pushed to GitLab will link back to the work package.
-
-![Git snippet to create a new branch with empty commit in GitLab entered into command line interface](openproject-system-guide-gitlab-integration-branch-and-commit-git-snippet-cli.png)
-
-Continue your work as you normally would, push the branch to GitLab and create a merge request.
-
-![New GitLab merge request created by git snippet entered into CLI](openproject-system-guide-gitlab-new_merge_request_in_gitlab.png)
-
-Changes to the merge request will be tracked under GitLab tab of OpenProject work package, from which git snippets were copied. 
-
-![Work package in OpenProject showing GitLab tab and related merge request updates](openproject-system-guide-gitlab-cli-snippet-work-package.png)
-
-### Link issues
-
-OpenProject GitLab integration allows linking GitLab issues directly with OpenProject work packages.
-
-Initially when no issues were linked yet you will see the following message under **GitLab** tab.
-
-![Gitlab no link issues](openproject-system-guide-gitlab-integration-no-issues.png)
-
-You can either create a new issue in GitLab, or edit an already existing one. Enter the code **OP#388** into the issue title or description to create the link between the GitLab issue and the OpenProject work package. In this case 388 is the work package ID.
-
-![Link a GitLab issue to OpenProject work package](openproject-system-guide-gitlab-integration-gitlab-issue.png)
-
-Once you save your changes or create a GitLab issue, it will become visible under the **GitLab** tab in OpenProject.
-
-![New GitLab issues shown in OpenProject work packages](openproject-system-guide-gitlab-integration-new-issues.png)
+> OpenProject поддерживает только события, перечисленные выше. Если вебхук GitLab отправляет событие, которое OpenProject не поддерживает, возвращается ошибка 404 от OpenProject.
+> [!TIP]
+> Если вы находитесь в локальной сети, вам может потребоваться разрешить запросы в локальную сеть в вашем экземпляре GitLab. Вы можете найти эти настройки в разделе **Исходящие запросы**, когда перейдете в **Область администрирования -> Настройки -> Сеть**.
+Мы рекомендуем включить **Проверку SSL**, прежде чем **Добавить вебхук**.
+Теперь интеграция настроена с обеих сторон, и вы можете ее использовать.
+### Обновление с пользовательского плагина GitLab
+Начиная с [OpenProject 13.4](../../../release-notes/13/13-4-0/), пользовательский плагин был заменен этой интеграцией GitLab. Если вы уже использовали пользовательский плагин GitLab, мы рекомендуем удалить папку модуля плагина и ссылки на bundler перед обновлением OpenProject. Ваш исторический набор данных останется незатронутым в OpenProject, так как в модели данных не было изменений.
+Перед обновлением сделайте следующее:
+1. Удалите следы интеграции GitLab в ваших **Gemfile.lock** и **Gemfile.modules**. См. [btey/openproject-gitlab-integration#configuration](https://github.com/btey/openproject-gitlab-integration?tab=readme-ov-file#configuration). Невыполнение этого может привести к ошибке `Bundler::GemfileError`, соответствующей следующему сообщению: _Ваш Gemfile перечисляет гем openproject-gitlab_integration (>= 0) более одного раза._
+2. Удалите следы кода модуля интеграции GitLab, выполнив эту команду: `rm -rf /path/to/openproject/modules/gitlab_integration`
+## Использование интеграции с GitLab
+### Использование Git Desktop Client
+#### Создание merge requests
+Поскольку merge requests основаны на ветках, сначала нужно создать новую ветку. Для этого откройте вкладку GitLab в детальном виде вашего рабочего пакета OpenProject. Нажмите на **Git сниппеты**, чтобы расширить меню. Сначала скопируйте название ветки, нажав соответствующую кнопку.
+![Скопировать название ветки для GitLab в OpenProject](openproject-system-guide-gitlab-integration-branch-name.png)
+Затем откройте ваш Git desktop client. Там вы можете создать вашу ветку, введя название ветки, которое вы скопировали из вашего рабочего пакета OpenProject. Таким образом, все ветки будут следовать общему шаблону, и поскольку ID OpenProject включен в название ветки, будет легко увидеть связь между MR и рабочим пакетом, просматривая список MR в GitLab.
+![Создать новую ветку в Git desktop client](openproject-system-guide-gitlab-integration-create-branch.png)
+Теперь вы можете опубликовать вашу ветку (вы также можете сделать это позже, после внесения изменений и перед открытием merge request).
+![Опубликовать ветку](openproject-system-guide-gitlab-integration-publish-branch.png)
+С открытой веткой вы можете начать фактическую разработку, используя предпочитаемый инструмент для изменения вашей кодовой базы.
+![Изменения Gitlab в изменениях merge request](gitlab-changes.png)
+Как только вы удовлетворены изменениями, вы можете создать коммит. В меню 'Git сниппеты' OpenProject предлагает вам сообщение коммита на основе названия и URL рабочего пакета.
+![Скопировать сообщение коммита Git в OpenProject](openproject-system-guide-gitlab-integration-git-snippets-commit-message.png)
+URL, указывающий на рабочий пакет в описании merge request или комментарии, свяжет их. Ссылка должна быть в MR, а не в коммите, но GitLab будет использовать первое сообщение коммита в качестве предлагаемого описания ветки (при условии, что есть только один коммит). В качестве альтернативы вы также можете использовать 'OP#' в качестве ссылки на рабочий пакет в названии issue или MR, в этом случае "OP#388", где 388 - ID рабочего пакета. Обратите внимание, что "OP#" чувствителен к регистру.
+![Сообщение коммита в Git client](openproject-system-guide-gitlab-integration-commit-message-in-client.png)
+После внесения изменений вы можете создать ваш merge request. Название и комментарий со ссылкой на соответствующий рабочий пакет OpenProject будут предзаполнены, по крайней мере, если в ветке только один коммит. Из-за этого ограничения одного коммита и если политика заключается в создании ветки как можно раньше, есть третья опция в меню 'Git сниппеты' ('Создать ветку с пустым коммитом'), которая откроет ветку и добавит в нее пустой коммит одной командой. Используя эту опцию, можно сначала быстро создать ветку и связать ее с рабочим пакетом с самого начала. Конечно, коммиты можно добавлять в ветку (и PR) после этого.
+Описание ветки можно изменить перед созданием MR, чтобы получить возможность дополнительно описать изменения. Чтобы помочь в этом, также можно скопировать части описания рабочего пакета, поскольку описание может отображаться в формате markdown. Ссылки на дополнительные рабочие пакеты также могут быть включены в описание MR.
+Если вы используете OP# в качестве ссылки в названии Issue или MR, все комментарии будут реплицированы в OpenProject. Однако иногда вы можете захотеть сохранить информацию только о статусе Issue/MR в OpenProject без публикации ваших комментариев. В этом случае вы можете использовать "PP#" в качестве ссылки. Например "PR#388". Таким образом комментарии не будут опубликованы в OpenProject. Если вы хотите опубликовать только один из комментариев из приватного Issue/MR, вы можете использовать "OP#" непосредственно в этом комментарии. Таким образом только этот конкретный комментарий будет опубликован в OpenProject, а остальные комментарии останутся приватными. [Подробнее](https://github.com/btey/openproject-gitlab-integration?tab=readme-ov-file#difference-between-op-and-pp).
+![Открыть merge request GitLab](openproject-system-guide-gitlab-integration-create-mr-detail.png)
+Нажмите **Создать merge request**, и ваш merge request будет открыт.
+![Merge request GitLab открыт](openproject-system-guide-gitlab-integration-mr-opened.png)
+Когда вы нажмете на ссылку в комментарии, она перенесет вас в рабочий пакет OpenProject, где вы увидите во вкладке «Активность» рабочего пакета, что merge request был создан.
+![Действия GitLab во вкладке активности](openproject-system-guide-gitlab-integration-push-activity.png)
+Во вкладке GitLab этого рабочего пакета также будет отображаться статус merge request, а также статус всех настроенных действий GitLab.
+![Действия GitLab под вкладкой GitLab в рабочем пакете OpenProject](openproject-system-guide-gitlab-integration-gitlab-actions.png)
+Если статус merge request изменится, это будет соответствующим образом отражено в рабочем пакете OpenProject. Пожалуйста, см. пример ниже.
+![Изменение статуса merge request GitLab](openproject-system-guide-gitlab-integration-mr-status.png)
+### Использование Command Line Interface (CLI)
+Если вы предпочитаете работать с Git через интерфейс командной строки (CLI), вы можете следовать аналогичному процессу для создания и управления merge requests, следуя тем же шагам, что и при использовании Git Desktop Client.
+Вы можете скопировать название ветки из рабочего пакета OpenProject, как описано в разделе Git сниппеты выше. Затем создайте и переключитесь на новую ветку в вашем локальном репозитории. Измените необходимые файлы в вашем репозитории. Как только вы удовлетворены изменениями, проиндексируйте и закоммитьте их, используя предложенное сообщение коммита из OpenProject.
+![Git сниппет для создания новой ветки в GitLab, введенный в интерфейс командной строки](openproject-system-guide-gitlab-integration-branch-git-snippet-cli.png)
+При использовании CLI вы также можете использовать Git сниппет **Создать ветку с пустым коммитом**.
+![Git сниппет для создания ветки с пустым коммитом под вкладкой GitLab в рабочем пакете в OpenProject](openproject-system-guide-gitlab-integration-git_snippet_empty_commit.png)
+Преимущество использования этого сниппета заключается в том, что не нужно сначала создавать ветку, а затем копировать отдельный Git сниппет для коммита. Новая ветка будет создана из вашей текущей ветки вместе с пустым коммитом, который при отправке в GitLab свяжется обратно с рабочим пакетом.
+![Git сниппет для создания новой ветки с пустым коммитом в GitLab, введенный в интерфейс командной строки](openproject-system-guide-gitlab-integration-branch-and-commit-git-snippet-cli.png)
+Продолжайте вашу работу, как обычно, отправьте ветку в GitLab и создайте merge request.
+![Новый merge request GitLab, созданный Git сниппетом, введенным в CLI](openproject-system-guide-gitlab-new_merge_request_in_gitlab.png)
+Изменения в merge request будут отслеживаться под вкладкой GitLab рабочего пакета OpenProject, из которого были скопированы Git сниппеты.
+![Рабочий пакет в OpenProject, показывающий вкладку GitLab и обновления связанного merge request](openproject-system-guide-gitlab-cli-snippet-work-package.png)
+### Связывание issues
+Интеграция OpenProject с GitLab позволяет напрямую связывать issues GitLab с рабочими пакетами OpenProject.
+Изначально, когда еще не было связанных issues, вы увидите следующее сообщение под вкладкой **GitLab**.
+![Gitlab нет связанных issues](openproject-system-guide-gitlab-integration-no-issues.png)
+Вы можете либо создать новый issue в GitLab, либо отредактировать уже существующий. Введите код **OP#388** в название или описание issue, чтобы создать связь между issue GitLab и рабочим пакетом OpenProject. В этом случае 388 - это ID рабочего пакета.
+![Связать issue GitLab с рабочим пакетом OpenProject](openproject-system-guide-gitlab-integration-gitlab-issue.png)
+Как только вы сохраните ваши изменения или создадите issue GitLab, он станет видимым под вкладкой **GitLab** в OpenProject.
+![Новые issues GitLab, показанные в рабочих пакетах OpenProject](openproject-system-guide-gitlab-integration-new-issues.png)

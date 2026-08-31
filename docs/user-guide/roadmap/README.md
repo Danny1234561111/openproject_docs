@@ -2,34 +2,29 @@
 sidebar_navigation:
   title: Roadmap
   priority: 880
-description: Find out about the Product Roadmap and Release planning in OpenProject
-keywords: roadmap, release planning
+description: Узнайте о Product Roadmap и планировании релизов в OpenProject
+keywords: roadmap, планирование релизов
 ---
-
-# Product roadmap release planning
-
+# Product roadmap и планирование релизов
 <div class="glossary">
-
-**Roadmap** is defined as an overview page displaying the versions sorted alphabetically and the work packages assigned to them. The roadmap is displayed in the project navigation when the work package module is activated and a version has been created (project settings).
-
+**Roadmap** определяется как страница обзора, отображающая версии, отсортированные в алфавитном порядке, и рабочие пакеты, назначенные на них. Roadmap отображается в навигации проекта, когда модуль рабочих пакетов активирован и создана версия (настройки проекта).
 </div>
+Планируйте и управляйте вашим продукт-роадмапом в OpenProject. Визуализируйте и делитесь вашим продукт-роадмапом. Делитесь вашим продукт-роадмапом с заинтересованными сторонами, получайте обратную связь о ваших идеях и разбивайте их на детальный план релиза.
 
-Plan and manage your product roadmap in OpenProject. Visualize, and communicate your product roadmap. Share your product roadmap with your stakeholders, get feedback about your ideas and break it down into a detailed release plan.
+В роадмапе вы можете с первого взгляда увидеть все рабочие пакеты и их статус, перечисленные по версиям.
 
-In the roadmap, you can see all work packages and their status listed by versions at a glance.
-
-For each version, the related work package can be assessed from the list displayed in the roadmap view. Subjects which are crossed out represent closed work packages.
+Для каждой версии связанные рабочие пакеты могут быть оценены из списка, отображаемого в представлении роадмапа. Темы, которые перечеркнуты, представляют закрытые рабочие пакеты.
 
 ![Roadmap](1567422228740.png)
 
-This view also provides information on the **project’s progress** for each version by displaying the percentage of closed vs. open work packages and the **total progress**.
+Это представление также предоставляет информацию о **прогрессе проекта** для каждой версии, отображая процент закрытых и открытых рабочих пакетов, а также **общий прогресс**.
 
-Clicking the title of a version allows you to evaluate further information of this version.
+Нажатие на название версии позволяет вам оценить дополнительную информацию об этой версии.
 
 ![version](1567423006674.png)
 
-The chart displays all work packages listed by a certain attribute. Select the drop-down list to change the attribute:
+Диаграмма отображает все рабочие пакеты, перечисленные по определенному атрибуту. Выберите выпадающий список, чтобы изменить атрибут:
 
 ![roadmap work package details](1567423371954.png)
 
-> **Note**: A roadmap is only displayed in the project menu when at least one [version](../projects/) exists in a project.
+> **Примечание**: Roadmap отображается в меню проекта только тогда, когда в проекте существует хотя бы одна [версия](../projects/).

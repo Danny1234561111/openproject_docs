@@ -1,336 +1,292 @@
 ---
 sidebar_navigation:
-  title: Resource management
+  title: Управление ресурсами
   priority: 869
-description: Manage project resources and plan team capacity with Resource management in OpenProject.
-keywords: resource management, capacity planning, resource planner, staffing, allocations
+description: Управляйте ресурсами проекта и планируйте загрузку команды с помощью модуля Управление ресурсами в OpenProject.
+keywords: управление ресурсами, планирование мощностей, планировщик ресурсов, укомплектование персоналом, распределение
 ---
-
-# Resource management
-
+# Управление ресурсами
 [feature: resource_management]
+Модуль **Управление ресурсами** в OpenProject позволяет руководителям проектов планировать работу с учетом доступности людей, их навыков и мощностей. Вместо того чтобы планировать только _что_ нужно сделать, вы также можете планировать _кто_ должен выполнить работу и _когда_.
 
+В рамках проекта вы можете создать один или несколько **планировщиков ресурсов** для организации рабочих пакетов, распределения работы между пользователями и мониторинга загрузки команды с использованием различных представлений планировщика.
 
-The **Resource management** module in OpenProject enables project managers to plan work based on people's availability, skills and capacity. Instead of only planning *what* needs to be done, you can also plan *who* should do the work and *when*.
+## Модуль управления ресурсами
+### Предварительные требования
+Прежде чем начать работу с Управлением ресурсами:
+- Активируйте модуль **Управление ресурсами** в разделе [**Настройки проекта → Модули**](../projects/project-settings/modules).
+- Убедитесь, что пользователи настроили рабочие графики для реалистичного планирования мощностей. Для получения дополнительной информации см. руководство [**График и доступность**](../account-settings/schedule-and-availability).
 
-Within a project, you can create one or more **resource planners** to organise work packages, allocate work to users and monitor team capacity using different planner views.
+Чтобы открыть модуль Управление ресурсами, выберите проект, а затем выберите **Управление ресурсами** в меню проекта.
 
-## Resource management module
+Обзор модуля Управление ресурсами состоит из боковой панели навигации и списка существующих планировщиков ресурсов.
 
-### Prerequisites
+Боковая панель навигации содержит:
+- строку поиска для удобной навигации
+- представление **Укомплектование персоналом**
+- все публичные планировщики ресурсов
+- ваши приватные планировщики ресурсов
 
-Before starting with Resource management:
+Избранные планировщики ресурсов помечаются значком звезды.
 
-- Activate the **Resource management** module under [**Project settings → Modules**](../projects/project-settings/modules).
-- Ensure users have configured working schedules for realistic capacity planning. For more information, see the [**Schedule and availability** guide](../account-settings/schedule-and-availability).
+Основная область отображает все существующие планировщики ресурсов в проекте, включая их названия, количество рабочих пакетов и участников, а также даты начала и окончания. Выберите название планировщика, чтобы открыть его.
 
-To open the Resource management module, select a project and then select **Resource management** from the project menu.
+Выберите меню **Еще** (...) в конце строки планировщика, чтобы:
+- редактировать планировщик
+- добавить или удалить его из избранного
+- сделать его публичным или приватным
+- удалить
 
-The Resource management overview consists of a navigation sidebar and a list of existing resource planners.
+![Обзор модуля Управление ресурсами, показывающий боковую панель навигации и планировщики ресурсов](resource-management-module-overview.png)
 
-The navigation sidebar contains:
+## Планировщики ресурсов
+**Планировщик ресурсов** определяет, как ресурсы отображаются в рамках проекта. Каждый планировщик может содержать одно или несколько **представлений планировщика**, позволяя вам анализировать одни и те же данные проекта с разных точек зрения.
 
-- a search bar for easier navigation
-- the **Staffing** view
-- all public resource planners
-- your private resource planners
+Вы можете создать несколько планировщиков ресурсов для разных команд, отделов, периодов планирования или сценариев.
 
-Favourite resource planners are marked with a star icon.
+### Создание планировщика ресурсов
+Чтобы создать новый планировщик ресурсов, выберите кнопку **+ Управление ресурсами**.
 
-The main content area lists all existing resource planners in the project, including their names, number of work packages and members, and start and finish dates. Select a planner name to open it.
+В открывшейся форме укажите следующие детали:
+- **Название** планировщика ресурсов
+- **Диапазон дат**
+- **Тип представления по умолчанию**. Доступные варианты:
+  - Временная шкала рабочих пакетов
+  - Временная шкала пользователей
+  - Список рабочих пакетов
+  - Карточный список пользователей
+  В зависимости от выбранного [представления планировщика](#представления-планировщика) вы укажете дополнительные настройки на следующем шаге.
+- Флажок **Публичный**
+- Флажок **Избранное**
 
-Select the **More** menu (...) at the end of a planner row to:
+Выберите **Далее**.
 
-- edit the planner
-- add or remove it from your favourites
-- make it public or private
-- delete it
+![Форма для создания нового планировщика ресурсов](add-new-resource-planner.png)
 
-![Overview of the Resource management module showing the navigation sidebar and resource planners](resource-management-module-overview.png)
+Затем настройте первое представление планировщика. Это можно изменить позже.
 
+Укажите:
+- **Название** представления планировщика
+- Как представление должно заполняться:
+  - **Автоматически отфильтровано** – отображает все рабочие пакеты, соответствующие выбранным фильтрам.
+  - **Вручную выбранные** – позволяет добавлять и удалять рабочие пакеты индивидуально.
 
-## Resource planners
+Если вы выбираете **Автоматически отфильтровано** для одного из двух представлений рабочих пакетов, определите, какие рабочие пакеты должны быть включены, указав:
+- статус
+- дополнительные фильтры рабочих пакетов, включая атрибуты рабочих пакетов и пользовательские поля
 
-A **resource planner** defines how resources are displayed within a project. Each planner can contain one or more **planner views**, allowing you to analyse the same project data from different perspectives.
+Выберите **Создать**.
 
-You can create multiple resource planners for different teams, departments, planning periods or scenarios.
+![Форма для настройки первого представления планировщика](resource-management-create-planner-specify-view.png)
 
-### Create a resource planner
+Новый планировщик ресурсов открывается с его первым представлением планировщика.
 
-To create a new resource planner, select the **+ Resource management** button.
+![Новый созданный планировщик ресурсов, отображающий его первое представление планировщика](resource-management-planner-opened-after-creation.png)
 
-In the form that opens, specify the following details:
+### Редактирование планировщика ресурсов
+Вы можете редактировать планировщик ресурсов либо из обзора Управление ресурсами, либо из открытого планировщика ресурсов.
 
-- **Name** of the resource planner
-- **Date range**
-- **Default view** type. Available options are:
-  - Work packages timeline
-  - Users timeline
-  - Work packages list
-  - Users card list
+Чтобы редактировать планировщик:
+1. Выберите меню **Еще** (...).
+2. Выберите **Редактировать**.
 
-  Depending on the selected [planner view](#planner-views), you will specify additional settings in the next step.
-- **Public** checkbox
-- **Favourite** checkbox
+Вы можете обновить:
+- название планировщика
+- диапазон дат
+- представление по умолчанию
+- публичную видимость
+- статус избранного
 
-Select **Next**.
+Вы также можете:
+- добавлять представления планировщика
+- переименовывать представления планировщика
+- редактировать фильтры представления планировщика
+- удалять представления планировщика
 
-![Form for creating a new resource planner](add-new-resource-planner.png)
+![Диалоговое окно для редактирования планировщика ресурсов](resource-management-edit-planner.png)
 
-Next, configure the first planner view. This can be changed later.
+### Удаление планировщика ресурсов
+Вы можете удалить планировщик ресурсов либо из обзора Управление ресурсами, либо из открытого планировщика ресурсов.
 
-Specify:
-
-- **Name** of the planner view
-- How the view should be populated:
-  - **Automatically filtered** – displays all work packages matching the selected filters.
-  - **Manually hand-picked** – allows you to add and remove work packages individually.
-
-If you choose **Automatically filtered** for one of the two work package views, define which work packages should be included by specifying:
-
-- status
-- additional work package filters, including work package attributes and custom fields
-
-Select **Create**.
-
-![Form for configuring the first planner view](resource-management-create-planner-specify-view.png)
-
-The new resource planner opens with its first planner view.
-
-![Newly created resource planner displaying its first planner view](resource-management-planner-opened-after-creation.png)
-
-### Edit a resource planner
-
-You can edit a resource planner either from the Resource management overview or from within an open resource planner.
-
-To edit a planner:
-
-1. Select the **More** menu (...).
-2. Select **Edit**.
-
-You can update:
-
-- planner name
-- date range
-- default view
-- public visibility
-- favourite status
-
-You can also:
-
-- add planner views
-- rename planner views
-- edit planner view filters
-- delete planner views
-
-![Dialog for editing a resource planner](resource-management-edit-planner.png)
-
-### Delete a resource planner
-
-You can delete a resource planner either from the Resource management overview or from within an open resource planner.
-
-To delete a resource planner:
-
-1. Select the **More** menu (...).
-2. Select **Delete**.
-3. Confirm the deletion.
+Чтобы удалить планировщик ресурсов:
+1. Выберите меню **Еще** (...).
+2. Выберите **Удалить**.
+3. Подтвердите удаление.
 
 > [!NOTE]
-> Deleting a resource planner removes the planner and all of its planner views. It does not delete any work packages, allocated times or project data.
+> Удаление планировщика ресурсов удаляет планировщик и все его представления. Это не удаляет рабочие пакеты, распределенное время или данные проекта.
 
-![Confirmation dialog for deleting a resource planner](resource-management-delete-planner.png)
+![Диалоговое окно подтверждения удаления планировщика ресурсов](resource-management-delete-planner.png)
 
+## Представления планировщика
+Каждый планировщик ресурсов может содержать несколько представлений планировщика. Представления планировщика отображают одни и те же данные планирования разными способами, позволяя вам сосредоточиться на рабочих пакетах, пользователях или мероприятиях по укомплектованию персоналом.
 
-## Planner views
+Вы можете добавлять дополнительные представления планировщика в любое время. Для этого выберите значок **+** рядом с существующими вкладками представлений планировщика и выберите желаемый тип представления планировщика.
 
-Each resource planner can contain multiple planner views. Planner views display the same planning data in different ways, allowing you to focus on work packages, users or staffing activities.
+![Кнопка для добавления дополнительного представления планировщика](resource-management-planner-add-view-icon.png)
 
-You can add additional planner views at any time. To do so, select the **+** icon next to the existing planner view tabs and choose the desired planner view type.
+Представления временной шкалы используют одну и ту же панель инструментов, которая позволяет:
+- выбрать **Сегодня**, чтобы вернуться к текущей дате
+- перемещаться вперед или назад с помощью кнопок со стрелками
+- изменять уровень масштабирования (**День**, **Календарная неделя** или **Месяц**)
+- настраивать текущее представление
+- создавать новое распределение
 
-![Button for adding an additional planner view](resource-management-planner-add-view-icon.png)
+![Панель инструментов планировщика с навигацией, элементами управления масштабированием и кнопкой распределения](resource-management-planner-navigation.png)
 
-Timeline views share the same toolbar, which lets you:
+### Временная шкала рабочих пакетов
+**Временная шкала рабочих пакетов** отображает рабочие пакеты вместе с их запланированными распределениями во времени.
 
-- select **Today** to return to the current date
-- navigate forwards or backwards using the arrow buttons
-- change the zoom level (**Day**, **Calendar week** or **Month**)
-- configure the current view
-- create a new allocation
+Левая сторона перечисляет все рабочие пакеты, включенные в планировщик.
 
-![Planner toolbar with navigation, zoom controls and the allocation button](resource-management-planner-navigation.png)
-
-### Work packages timeline
-
-The **Work packages timeline** displays work packages together with their planned allocations over time.
-
-The left side lists all work packages included in the planner.
-
-Each work package displays:
-
-- work package type
+Каждый рабочий пакет отображает:
+- тип рабочего пакета
 - ID
-- status
-- subject
-- allocated hours
-- completion progress
+- статус
+- тему
+- распределенные часы
+- прогресс выполнения
 
-Select the **More** menu (...) for additional actions, including:
+Выберите меню **Еще** (...) для дополнительных действий, включая:
+- **Просмотр распределения**
+- **Редактировать общую работу**
 
-- **See allocation**
-- **Edit total work**
+Временная шкала отображает распределения на выбранной временной шкале.
 
-The timeline displays allocations across the selected time scale.
+![Временная шкала рабочих пакетов, показывающая запланированные распределения во времени](resource-management-work-packages-timeline.png)
 
-![Work packages timeline showing planned allocations over time](resource-management-work-packages-timeline.png)
-
-### Users timeline
-
-The **Users timeline** groups planned work by user instead of by work package.
+### Временная шкала пользователей
+**Временная шкала пользователей** группирует запланированную работу по пользователям, а не по рабочим пакетам.
 
 > [!TIP]
->
-> Resource planners do not include placeholder users. 
+> Планировщики ресурсов не включают пользователей-заполнителей.
 
-This view helps identify:
+Это представление помогает выявить:
+- доступную мощность
+- перегруженных пользователей
+- пользователей без настроенного рабочего графика
 
-- available capacity
-- overallocated users
-- users without configured working schedules
+Значки предупреждения указывают на пользователей, которые:
+- не имеют настроенного рабочего графика
+- распределены сверх их доступной мощности
 
-Warning icons indicate users who:
+Временная шкала отображает запланированные распределения каждого пользователя в течение выбранного периода.
 
-- have no configured working schedule
-- are allocated beyond their available capacity
+![Временная шкала пользователей, показывающая запланированные распределения и мощность пользователей](resource-management-users-timeline.png)
 
-The timeline displays each user's planned allocations across the selected period.
+### Список рабочих пакетов
+**Список рабочих пакетов** отображает информацию о планировании в таблице.
 
-![Users timeline showing planned allocations and user capacity](resource-management-users-timeline.png)
+Используйте это представление, когда вы предпочитаете работать с данными планирования в таблице, а не на временной шкале.
 
-### Work packages list
+Помимо стандартной информации о рабочих пакетах, оно включает специфичные для планирования столбцы, такие как:
+- Распределение
+- Распределенные участники
 
-The **Work packages list** displays planning information in a table.
+Каждая строка предоставляет специфичные для рабочего пакета действия в меню **Еще** (...), включая:
+- **Просмотр распределения**
+- **Редактировать общую работу**
+- **Добавить группу пользователей**
+- **Добавить критерии фильтрации**
 
-Use this view when you prefer working with planning data in a table instead of a timeline.
+Используйте значок **Настроить представление** для настройки отображаемых столбцов.
 
-Besides the standard work package information, it includes planning-specific columns such as:
+![Список рабочих пакетов, отображающий распределения в таблице](resource-management-work-packages-list.png)
 
-- Allocation
-- Allocated members
+### Карточный список пользователей
+**Карточный список пользователей** предоставляет обзор доступных участников проекта.
 
-Each row provides work package-specific actions in the **More** menu (...), including:
+Каждая карточка отображает информацию, которая помогает принимать решения по укомплектованию персоналом, включая:
+- имя пользователя
+- отдел (если настроен)
+- статус
+- настроенные рабочие часы
+- атрибуты пользователя, такие как разговорные языки или ключевые навыки, как настроено для представления
+- текущая загрузка
 
-- **See allocation**
-- **Edit total work**
-- **Add user group**
-- **Add filter criteria**
-
-Use the **Configure view** icon to customise the displayed columns.
-
-![Work packages list displaying allocations in a table](resource-management-work-packages-list.png)
-
-### Users card list
-
-The **Users card list** provides an overview of available project members.
-
-Each card displays information that helps with staffing decisions, including:
-
-- user name
-- department (if configured)
-- status
-- configured working hours
-- user attributes, such as spoken languages or key skills, as configured for the view
-- current utilization
 > [!TIP]
-> The utilization bar is relative to the date range of the resource planner. It will show the user's utilization within that given range. If no range is set up, no utilization is displayed.
+> Полоса загрузки относится к диапазону дат планировщика ресурсов. Она покажет загрузку пользователя в пределах этого заданного диапазона. Если диапазон не настроен, загрузка не отображается.
 
-Use the **Configure view** icon to choose which user attributes are displayed on the cards.
+Используйте значок **Настроить представление**, чтобы выбрать, какие атрибуты пользователя отображаются на карточках.
 
-Use this view to quickly identify users with the required skills and available capacity.
+Используйте это представление, чтобы быстро идентифицировать пользователей с требуемыми навыками и доступной мощностью.
 
-![Users card list displaying user information, utilisation and skills](resource-management-users-card-list.png)
+![Карточный список пользователей, отображающий информацию о пользователях, загрузку и навыки](resource-management-users-card-list.png)
 
-## Allocate work
+## Распределение работы
+Вы можете создавать распределения из всех представлений планировщика.
 
-You can create allocations from all planner views.
+В зависимости от текущего представления планировщика вы можете:
+- выбрать кнопку **+ Распределить** над планировщиком
+- выбрать **Просмотр распределения** из меню **Еще** (...) рабочего пакета
+- выбрать карточку пользователя
+- выбрать рабочий пакет непосредственно на временной шкале
 
-Depending on the current planner view, you can:
+![Варианты создания нового распределения из представления планировщика](resource-management-planner-allocation-button.png)
 
-- select the **+ Allocate** button above the planner
-- select **See allocation** from the **More** menu (...) of a work package
-- select a user card
-- select a work package directly in the timeline
+Диалоговое окно **Распределение** отображает все существующие распределения для выбранного рабочего пакета.
 
-![Options for creating a new allocation from a planner view](resource-management-planner-allocation-button.png)
+Выберите **Распределить ресурс**, чтобы создать новое распределение.
 
-The **Allocation** dialog displays all existing allocations for the selected work package.
+![Диалоговое окно распределения, отображающее существующие распределения для рабочего пакета](resource-management-planner-allocation-dialogue.png)
 
-Select **Allocate resource** to create a new allocation.
+Вы можете распределить работу по **Пользователю** или **Критериям фильтрации**.
 
-![Allocation dialog displaying existing allocations for a work package](resource-management-planner-allocation-dialogue.png)
+Выберите желаемый вариант, а затем выберите **Далее**.
 
-You can allocate work by **User** or **Filter criteria**.
+![Диалоговое окно для выбора распределения по пользователю или критериям фильтрации](resource-management-planner-allocation-form-options.png)
 
-Select the desired option and then select **Next**.
+### Распределение по пользователю
+Распределение работы по **Пользователю** назначает запланированные часы конкретному участнику проекта.
 
-![Dialog for choosing whether to allocate by user or filter criteria](resource-management-planner-allocation-form-options.png)
+Укажите:
+- **Исполнитель** – выберите участника проекта.
+- **Рабочий пакет** – это поле предварительно заполняется при создании распределения из рабочего пакета.
+- **Даты распределения** – если выбранные даты выходят за пределы дат рабочего пакета, OpenProject отображает предупреждение.
+- **Часы** – введите запланированное количество часов.
 
-### Allocate by user
+![Форма распределения для назначения запланированных часов пользователю](resource-management-planner-allocation-form-user-option.png)
 
-Allocating work by **User** assigns planned hours to a specific project member.
+Выберите **Распределить**.
 
-Specify:
+Новое распределение немедленно отображается в планировщике. Распределенные часы и загрузка обновляются автоматически.
 
-- **Assignee** – select a project member.
-- **Work package** – this field is pre-filled when creating an allocation from a work package.
-- **Allocation dates** – if the selected dates fall outside the work package dates, OpenProject displays a warning.
-- **Hours** – enter the planned number of hours.
-
-![Allocation form for assigning planned hours to a user](resource-management-planner-allocation-form-user-option.png)
-
-Select **Allocate**.
-
-The new allocation is immediately displayed in the planner. Allocated hours and utilisation are updated automatically. 
 > [!TIP]
-> If the selected user is over-allocated, a warning message is displayed.
+> Если выбранный пользователь перегружен, отображается предупреждающее сообщение.
 
-### Allocate by filter criteria
+### Распределение по критериям фильтрации
+Распределение работы по **Критериям фильтрации** создает запрос на ресурс-заполнитель на основе атрибутов пользователя вместо назначения работы конкретному пользователю.
 
-Allocating work by **Filter criteria** creates a placeholder resource request based on user attributes instead of assigning work to a specific user.
+Укажите один или несколько атрибутов пользователя в качестве критериев фильтрации. Например, вы можете запросить ресурс с определенным языком, сертификацией или другим атрибутом пользователя. Для получения дополнительной информации см. руководство [Атрибуты пользователя](../../system-admin-guide/users-permissions/user-attributes/).
 
-Specify one or more user attributes as filter criteria. For example, you can request a resource with a specific language, certification or other user attribute. For more information, see the [User attributes](../../system-admin-guide/users-permissions/user-attributes/) guide.
+Введите **Название фильтра ресурсов** и выберите **Распределить**.
 
-Enter a **Resource filter name** and select **Allocate**.
+![Форма распределения для создания запроса на ресурс с использованием критериев фильтрации](resource-management-planner-allocation-form-filter-option.png)
 
-![Allocation form for creating a resource request using filter criteria](resource-management-planner-allocation-form-filter-option.png)
+Распределение создается как открытый запрос на ресурс в представлении [Укомплектование персоналом](#укомплектование-персоналом), где его позже можно назначить участнику проекта.
 
-The allocation is created as an open resource request in the [Staffing](#staffing) view, where it can later be assigned to a project member.
+## Укомплектование персоналом
+Представление **Укомплектование персоналом** помогает назначать открытые запросы на ресурсы подходящим участникам проекта.
 
+Вместо того чтобы назначать работу непосредственно конкретному пользователю, вы можете сначала создать запрос на ресурс на основе атрибутов пользователя или критериев фильтрации. Затем представление Укомплектование персоналом помогает вам сопоставить эти запросы с подходящими участниками проекта на основе их доступности, навыков или других атрибутов пользователя.
 
-## Staffing
+Это полезно, когда вы знаете, какие навыки или роль требуются, но еще не решили, кто будет выполнять работу.
 
-The **Staffing** view helps assign open resource requests to suitable project members.
+Представление Укомплектование персоналом перечисляет открытые запросы на ресурсы, которые еще не назначены конкретному пользователю. Оно отображает:
+- запрос на ресурс
+- рабочий пакет
+- запрошенные часы
+- диапазон дат
 
-Instead of assigning work directly to a specific user, you can first create a resource request based on user attributes or filter criteria. The Staffing view then helps you match these requests with suitable project members based on their availability, skills or other user attributes.
+![Представление Укомплектование персоналом, перечисляющее открытые запросы на ресурсы](resource-management-staffing-view.png)
 
-This is useful when you know which skills or role are required, but have not yet decided who will perform the work.
+Выберите меню **Еще** (...), чтобы:
+- назначить пользователя
+- редактировать запрос на ресурс
+- удалить запрос на ресурс
 
-The Staffing view lists open resource requests that have not yet been assigned to a specific user. It displays:
+![Диалоговое окно назначения, показывающее соответствующих пользователей для запроса на ресурс](resource-management-staffing-assign-form.png)
 
-- resource request
-- work package
-- requested hours
-- date range
+Диалоговое окно **Назначить** перечисляет всех доступных пользователей, соответствующих выбранным критериям фильтрации, вместе с их оставшейся доступной мощностью.
 
-![Staffing view listing open resource requests](resource-management-staffing-view.png)
-
-Select the **More** menu (...) to:
-
-- assign a user
-- edit the resource request
-- delete the resource request
-
-![Assign dialog showing matching users for a resource request](resource-management-staffing-assign-form.png)
-
-The **Assign** dialog lists all available users matching the selected filter criteria together with their remaining available capacity.
-
-Select a user and then select **Assign** to assign the resource request.
+Выберите пользователя, а затем выберите **Назначить**, чтобы назначить запрос на ресурс.

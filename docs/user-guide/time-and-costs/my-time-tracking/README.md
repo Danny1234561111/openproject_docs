@@ -1,126 +1,80 @@
 ---
 sidebar_navigation:
-  title: My time tracking
+  title: Мой учет времени
   priority: 950
-description: Get an overview of time logs in a calendar or list view. Easily log time directly from My time tracking page.
-keywords: time tracking, log time, time spent, calendar, time spent calendar, time logs
+description: Получите обзор записей времени в виде календаря или списка. Легко регистрируйте время напрямую со страницы Мой учет времени.
+keywords: учет времени, регистрация времени, затраченное время, календарь, календарь затраченного времени, записи времени
 ---
-
-# My time tracking
-
-## Overview
-
-The _My time tracking_ module offers a clear overview of your personal time entries. You can quickly log time directly from this page. To access it, select **My time tracking** from the left-hand menu.
-
-Alternatively, click the grid icon in the top left corner and select _My time tracking_ from the overlay menu that will open.
-
-![My tracking page overview in OpenProject](openproject_user_guide_my_time_tracking_module_overview.png)
-
-### My time tracking page filters
-
-1. On the _My time tracking_ page, you’ll find the following interface elements:
-   1. **Zen mode** button — toggles a distraction-free view.
-   2. **Tab selector** — switch between _Calendar_ and _List_ views.
-   3. **Zoom level dropdown menu** — choose the time scale for the view. Following options are available:
-      - Day
-      - Work week
-      - Week
-      - Month
-   4. **Displayed date range** — shows the currently visible timeframe.
-   5. **Navigation arrows** — move to the previous or next time period.
-   6. **Today** button — jump directly to the current day.
-   7. **+ Log time** button — add a new time entry.
-
-![My time tracking module filters explained](openproject_user_guide_my_time_tracking_module_filters_explained.png)
-
-### Calendar view
-
-The _Calendar_ view opens by default if start and finish times for time entries have been enabled in [System Administration](../../../system-admin-guide/time-and-costs). You can adjust the zoom level using the dropdown menu, with options for **Day**, **Work week**, **Week**, or **Month**. The current day is highlighted.
-
-Existing time entries appear on the corresponding days they were logged. Entry colors reflect the type of work package associated with the logged time.
-
-At the top section of each day in the calendar, there is a dedicated area that allows you to log time without specifying a start or finish time. This is useful for quick entries or for logging effort that isn't tied to a specific time range.
-
-You can log time by selecting a time range anywhere on the calendar or by using the **+ Log time** button.
-
-You can drag and drop time entries to reposition them within the same day or move them to a different day. To adjust the duration of an entry, drag the top or bottom edge of the time entry up or down.
-
-![Example of logging time in OpenProject My time tracking module](openproject-my-time-tracking-page.gif)
-
-To edit a time entry, click it in the calendar, make your changes, and save. You can also delete it from the same menu.
-
-At the bottom of each day a sum of hours per day is displayed. If week or month is selected, a respective total is also shown in the bottom right corner. 
-
-![Sums of hours displayed at the bottom of the Calendar tab under My time tracking module in OpenProject](openproject_user_guide_my_time_tracking_module_calendar_tab_total_sums.png)
-
-If you are currently tracking time with a timer for a specific work package, you will also see the ongoing time tracking timer for the respective work package. The work package in question also has a different background color for easier differentiation. 
-
-![Active time tracking for a work package displayed on my time tracking page in OpenProject](openproject_user_guide_my_time_tracking_module_active_time_tracking_icon.png)
-
-### List view
-
-The _List_ view opens by default if start and finish times for time entries are **disabled** in [System Administration](../../../system-admin-guide/time-and-costs). Just like in the _Calendar_ view, you can select the zoom level using the dropdown menu — options include **Day**, **Work week**, **Week**, or **Month**.
-
-In this view, time entries are grouped by day. Each day displays the total number of entries and their combined duration on the right side of the header line.
-
-- When the **Day** zoom is selected, the view is expanded by default.
-
-- When **Week** or **Work week** zoom is selected, past and future days are collapsed by default. However, the current day is expanded.
-
-- When **Month** zoom is selected, past days or weeks are collapsed by default. However, the current week is expanded, along with all future weeks of that month.
-
+# Мой учет времени
+## Обзор
+Модуль _Мой учет времени_ предлагает четкий обзор ваших личных записей времени. Вы можете быстро регистрировать время прямо с этой страницы. Чтобы получить доступ, выберите **Мой учет времени** в меню слева.
+В качестве альтернативы нажмите значок сетки в левом верхнем углу и выберите _Мой учет времени_ в открывающемся наложенном меню.
+![Обзор страницы Мой учет времени в OpenProject](openproject_user_guide_my_time_tracking_module_overview.png)
+### Фильтры страницы Мой учет времени
+1. На странице _Мой учет времени_ вы найдете следующие элементы интерфейса:
+   1. Кнопка **Режим дзен** — переключает вид без отвлекающих факторов.
+   2. **Селектор вкладок** — переключение между видами _Календарь_ и _Список_.
+   3. **Выпадающее меню уровня масштаба** — выберите масштаб времени для вида. Доступны следующие опции:
+      - День
+      - Рабочая неделя
+      - Неделя
+      - Месяц
+   4. **Отображаемый диапазон дат** — показывает текущий видимый период времени.
+   5. **Стрелки навигации** — переход к предыдущему или следующему периоду времени.
+   6. Кнопка **Сегодня** — переход непосредственно к текущему дню.
+   7. Кнопка **+ Зарегистрировать время** — добавить новую запись времени.
+![Фильтры модуля Мой учет времени объяснены](openproject_user_guide_my_time_tracking_module_filters_explained.png)
+### Вид Календарь
+Вид _Календарь_ открывается по умолчанию, если время начала и окончания для записей времени было включено в [Системном администрировании](../../../system-admin-guide/time-and-costs). Вы можете настроить уровень масштаба с помощью выпадающего меню с опциями **День**, **Рабочая неделя**, **Неделя** или **Месяц**. Текущий день выделен.
+Существующие записи времени появляются в соответствующие дни, когда они были зарегистрированы. Цвета записей отражают тип рабочего пакета, связанного с зарегистрированным временем.
+В верхней части каждого дня в календаре есть выделенная область, которая позволяет регистрировать время без указания времени начала или окончания. Это полезно для быстрых записей или для регистрации усилий, не привязанных к конкретному временному диапазону.
+Вы можете регистрировать время, выбирая временной диапазон в любом месте календаря или используя кнопку **+ Зарегистрировать время**.
+Вы можете перетаскивать записи времени для их перемещения в пределах того же дня или перемещения на другой день. Чтобы настроить продолжительность записи, перетащите верхний или нижний край записи времени вверх или вниз.
+![Пример регистрации времени в модуле Мой учет времени OpenProject](openproject-my-time-tracking-page.gif)
+Чтобы отредактировать запись времени, нажмите на нее в календаре, внесите изменения и сохраните. Вы также можете удалить ее из того же меню.
+В нижней части каждого дня отображается сумма часов за день. Если выбрана неделя или месяц, соответствующая сумма также отображается в правом нижнем углу.
+![Суммы часов, отображаемые в нижней части вкладки Календарь под модулем Мой учет времени в OpenProject](openproject_user_guide_my_time_tracking_module_calendar_tab_total_sums.png)
+Если вы в настоящее время отслеживаете время с помощью таймера для конкретного рабочего пакета, вы также увидите текущий таймер учета времени для соответствующего рабочего пакета. Соответствующий рабочий пакет также имеет другой цвет фона для более легкого различия.
+![Активный учет времени для рабочего пакета, отображаемый на странице мой учет времени в OpenProject](openproject_user_guide_my_time_tracking_module_active_time_tracking_icon.png)
+### Вид Список
+Вид _Список_ открывается по умолчанию, если время начала и окончания для записей времени **отключено** в [Системном администрировании](../../../system-admin-guide/time-and-costs). Так же, как и в виде _Календарь_, вы можете выбрать уровень масштаба с помощью выпадающего меню — опции включают **День**, **Рабочая неделя**, **Неделя** или **Месяц**.
+В этом виде записи времени группируются по дням. Каждый день отображает общее количество записей и их совокупную продолжительность на правой стороне строки заголовка.
+- Когда выбран уровень масштаба **День**, вид развернут по умолчанию.
+- Когда выбран уровень масштаба **Неделя** или **Рабочая неделя**, прошедшие и будущие дни свернуты по умолчанию. Однако текущий день развернут.
+- Когда выбран уровень масштаба **Месяц**, прошедшие дни или недели свернуты по умолчанию. Однако текущая неделя развернута, вместе со всеми будущими неделями этого месяца.
 > [!TIP]
-> If monthly level is chosen in the list view mode, time entries are aggregated by  week and not by day. This is especially useful to get an overview of your tracked hours for each week. 
-
-Expanded days display time entries in a table format with the following columns:
-
-- **Time**
-- **Hours**
-- **Subject** (with a clickable link to the work package)
-- **Project**
-- **Activity**
-- **Comment**
-- **+** (last column, used to log time for that specific day)
-
-To log time in _List_ view, you can either:
-
-- Click the **+ Log Time** button to add a time entry for any date outside the currently displayed range.
-- Use the **+** icon in the table to log time directly for a specific day.
-
-![List view under My time tracking module in OpenProject](openproject_user_guide_my_time_tracking_module_list_view_overview.png)
-
-To edit or delete a time entry in the _List_ view, click the **More** (three dots) icon at the end of the entry’s row in the table, then select the **Edit** (pencil) or **Delete** icon respectively.
-
-![Icon to edit or delete a time entry under List tab of the My time tracking module in OpenProject](openproject_user_guide_my_time_tracking_module_list_view_edit_icon.png)
-
-## Log time in My time tracking module
-
-To log time on the _My time tracking_ page, click the **+ Log time** button. A modal window will appear with the following fields:
-
-- **Date** – Select the day for the time entry.
-
-- **Start time** and **Finish time** – When both are entered, the **Hours** field is calculated automatically.
-
+> Если выбран месячный уровень в режиме вида списка, записи времени агрегируются по неделям, а не по дням. Это особенно полезно для получения обзора ваших зарегистрированных часов за каждую неделю.
+Развернутые дни отображают записи времени в формате таблицы со следующими столбцами:
+- **Время**
+- **Часы**
+- **Тема** (с кликабельной ссылкой на рабочий пакет)
+- **Проект**
+- **Активность**
+- **Комментарий**
+- **+** (последний столбец, используется для регистрации времени в этот конкретный день)
+Чтобы зарегистрировать время в виде _Список_, вы можете либо:
+- Нажать кнопку **+ Зарегистрировать время**, чтобы добавить запись времени для любой даты вне текущего отображаемого диапазона.
+- Использовать значок **+** в таблице, чтобы зарегистрировать время непосредственно для конкретного дня.
+![Вид Список под модулем Мой учет времени в OpenProject](openproject_user_guide_my_time_tracking_module_list_view_overview.png)
+Чтобы отредактировать или удалить запись времени в виде _Список_, нажмите значок **Еще** (три точки) в конце строки записи в таблице, затем выберите значок **Редактировать** (карандаш) или **Удалить** соответственно.
+![Значок для редактирования или удаления записи времени под вкладкой Список модуля Мой учет времени в OpenProject](openproject_user_guide_my_time_tracking_module_list_view_edit_icon.png)
+## Регистрация времени в модуле Мой учет времени
+Чтобы зарегистрировать время на странице _Мой учет времени_, нажмите кнопку **+ Зарегистрировать время**. Появится модальное окно со следующими полями:
+- **Дата** – Выберите день для записи времени.
+- **Время начала** и **Время окончания** – Когда оба введены, поле **Часы** рассчитывается автоматически.
 > [!TIP]
-> These fields are only visible if the **Allow exact times tracking** option is enabled by an administrator.
-> If the **Require exact times** option is also enabled, these fields become mandatory in order to save the time entry.
-
-- **Hours** – Enter the number of hours you want to log for a specific work package. 
-
+> Эти поля видны только если опция **Разрешить точный учет времени** включена администратором.
+> Если опция **Требовать точное время** также включена, эти поля становятся обязательными для сохранения записи времени.
+- **Часы** – Введите количество часов, которое вы хотите зарегистрировать для конкретного рабочего пакета.
 > [!TIP]
-> Duration can be entered both in hours and minutes. For example for logging 1,5 hours, you can enter:
+> Продолжительность можно вводить как в часах, так и в минутах. Например, для регистрации 1,5 часов, вы можете ввести:
 >
 > - 1.5h
 > - 90m
 > - 90min
 > - 1:30
-
-- **Work package** – Type to search for a work package or select from the list of recently used ones. You can find the correct work package by using a work package name, ID, type and status.
-
-- **Activity** – Choose an activity that is active for the project the selected work package belongs to.
-
-- **Comment** – Add any relevant notes or details for the time entry.
-
-Don't forget to click the **Log** button to save your time entry.
-
-![Modal to log time from My time tracking module in OpenProject](openproject_user_guide_my_time_tracking_module_logging_modal.png)
+- **Рабочий пакет** – Введите для поиска рабочего пакета или выберите из списка недавно использованных. Вы можете найти правильный рабочий пакет, используя название рабочего пакета, ID, тип и статус.
+- **Активность** – Выберите активность, которая активна для проекта, к которому принадлежит выбранный рабочий пакет.
+- **Комментарий** – Добавьте любые соответствующие заметки или детали для записи времени.
+Не забудьте нажать кнопку **Зарегистрировать**, чтобы сохранить вашу запись времени.
+![Модальное окно для регистрации времени из модуля Мой учет времени в OpenProject](openproject_user_guide_my_time_tracking_module_logging_modal.png)

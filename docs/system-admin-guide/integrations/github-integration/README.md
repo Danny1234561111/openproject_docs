@@ -1,176 +1,177 @@
 ---
 sidebar_navigation:
-  title: GitHub integration - Documentation
+  title: Интеграция с GitHub - Документация
   priority: 900
-description: Integrate the GitHub pull request workflow into OpenProject.
-keywords: github integration
+description: Интегрируйте рабочий процесс pull request GitHub в OpenProject.
+keywords: интеграция с github
 ---
-# GitHub integration
+# Интеграция с GitHub
 
-OpenProject offers an integration with GitHub pull requests (PRs) to link software development closely to planning and specification. You can create pull requests in GitHub and link them directly to OpenProject work packages.
+OpenProject предлагает интеграцию с pull request (PR) GitHub, чтобы тесно связать разработку программного обеспечения с планированием и спецификацией. Вы можете создавать pull request в GitHub и связывать их непосредственно с рабочими пакетами OpenProject.
 
-## Overview
+## Обзор
 
-OpenProject work packages will directly display information from GitHub in a separate tab.
+Рабочие пакеты OpenProject будут напрямую отображать информацию из GitHub на отдельной вкладке.
 
-![GitHub tab in an OpenProject work package](openproject-system-guide-github-integation-github-tab-in-wp.png)
+![Вкладка GitHub в рабочем пакете OpenProject](openproject-system-guide-github-integation-github-tab-in-wp.png)
 
-The GitHub tab shows all PRs linked to a work package with their corresponding statuses (e.g. 'Open' or 'Merged') as well as the state (e.g. 'success' or 'queued') of the GitHub actions configured to run for a PR. PRs and work packages are in an n:m relationship, so a work package can be linked to multiple PRs and a PR can be linked to multiple work packages.
+Вкладка GitHub показывает все PR, связанные с рабочим пакетом, с их соответствующими статусами (например, «Открыт» или «Слит»), а также состояние (например, «успех» или «в очереди») действий GitHub, настроенных для запуска для PR. PR и рабочие пакеты находятся в отношении n:m, поэтому рабочий пакет может быть связан с несколькими PR, а PR может быть связан с несколькими рабочими пакетами.
 
-Additionally, in your OpenProject work package, the GitHub integration supports you in creating a branch straight from the work package and the corresponding pull request.
+Кроме того, в вашем рабочем пакете OpenProject интеграция с GitHub помогает создать ветку прямо из рабочего пакета и соответствующий pull request.
 
-![Git snippets dropdown menu under GitHub tab in OpenProject work package](openproject-system-guide-github-integation-github-git-snippets.png)
+![Выпадающее меню Git snippets под вкладкой GitHub в рабочем пакете OpenProject](openproject-system-guide-github-integation-github-git-snippets.png)
 
-Pull request activities will also appear in the Activity tab when the pull request is:
+Действия pull request также появятся на вкладке «Активность», когда pull request:
 
-- first referenced (usually when opened)
-- marked ready for review
-- merged
-- closed
+- впервые упоминается (обычно при открытии)
+- помечен как готовый к проверке
+- слит
+- закрыт
 
-![Github comments on Activity tab of an OpenProject work package](openproject-system-guide-github-integation-github-activity-tab.png)
+![Комментарии GitHub на вкладке «Активность» рабочего пакета OpenProject](openproject-system-guide-github-integation-github-activity-tab.png)
 
-## Configuration
+## Конфигурация
 
-To enable the integration, you must configure both OpenProject and GitHub.
+Чтобы включить интеграцию, необходимо настроить как OpenProject, так и GitHub.
 
 ### OpenProject
 
-First, create a user in OpenProject to make the comments. Add this user to each project with a role that grants permission to view and comment on work packages. 
+Сначала создайте пользователя в OpenProject для создания комментариев. Добавьте этого пользователя в каждый проект с ролью, которая предоставляет разрешение на просмотр и комментирование рабочих пакетов.
 
-First you will need to create a user in OpenProject that has the permission to make comments. We recommend creating a dedicated role and assigning this role to the user. This role only requires two permissions, _View work packages_ and _Add notes_, which you will find in the Work packages and Gantt charts section under [Roles and Permissions](../../users-permissions/roles-permissions/).
+Сначала вам нужно создать пользователя в OpenProject, у которого есть разрешение на создание комментариев. Мы рекомендуем создать специальную роль и назначить эту роль пользователю. Для этой роли требуется только два разрешения, _Просмотр рабочих пакетов_ и _Добавление заметок_, которые вы найдете в разделе «Рабочие пакеты и диаграммы Ганта» в разделе [Роли и разрешения](../../users-permissions/roles-permissions/).
 
-![GitHub role with necessary permissions in OpenProject administration](openproject-system-guide-github-integation-github-new-role.png)
+![Роль GitHub с необходимыми разрешениями в администрировании OpenProject](openproject-system-guide-github-integation-github-new-role.png)
 
-![GitHub user added as member to project with respective role](openproject-system-guide-github-integation-github-new-user.png)
+![Пользователь GitHub добавлен как участник проекта с соответствующей ролью](openproject-system-guide-github-integation-github-new-user.png)
 
-Once the user is created you need to generate an OpenProject API token for this user (you will need it on the GitHub side). For this you have to:
+После создания пользователя вам нужно сгенерировать API-токен OpenProject для этого пользователя (он понадобится на стороне GitHub). Для этого вам нужно:
 
-1. Login as the newly created user
-2. Go to [Account settings](../../../user-guide/account-settings/) (click on the Avatar in the top right corner and select _Account settings_)
-3. Go to [_Access Tokens_](../../../user-guide/account-settings/access-tokens)
-4. Click on **+ API token**
-
-> [!IMPORTANT]
-> Make sure you copy the generated key and securely save it, as you will not be able to retrieve it later.
-
-You can then configure the necessary webhook in GitHub. 
-
-### Configure GitHub integration settings
-
-Go to **Administration → Integrations → GitHub** and configure the GitHub integration settings.
-
-You can optionally define which OpenProject user is used to authenticate incoming webhook requests. When configured, only requests authenticated with that user’s API token are accepted. This user is also used for automated deploy-status comments on work packages. If no user is selected, OpenProject falls back to the system user.
-
-You can also define a webhook secret shared between GitHub and OpenProject. When a secret is configured, OpenProject validates the `X-Hub-Signature-256` header for every incoming webhook request and rejects requests with invalid signatures.
+1. Войдите как только что созданный пользователь
+2. Перейдите в [Настройки аккаунта](../../../user-guide/account-settings/) (нажмите на Аватар в правом верхнем углу и выберите _Настройки аккаунта_)
+3. Перейдите в [_Токены доступа_](../../../user-guide/account-settings/access-tokens)
+4. Нажмите **+ API токен**
 
 > [!IMPORTANT]
-> If no webhook secret is configured, webhook requests are accepted without signature verification. This may allow unauthorized actors to forge events. We strongly recommend configuring a webhook secret.
+> Убедитесь, что вы скопировали сгенерированный ключ и безопасно сохранили его, так как вы не сможете получить его позже.
 
-Click **Save**.
+Затем вы можете настроить необходимый вебхук в GitHub.
 
-![Administration settings to specify webhook secret for GitHub integration in OpenProject](openproject-system-guide-github-webhook-secret.png)
+### Настройка параметров интеграции с GitHub
 
-Finally you will need to activate the GitHub module under [Project settings](../../../user-guide/projects/project-settings/modules/) so that all information pulling through from GitHub will be shown in the work packages.
+Перейдите в **Администрирование → Интеграции → GitHub** и настройте параметры интеграции с GitHub.
 
-![GitHub module is activated under Project settings -> Modules in OpenProject project](openproject-system-guide-github-integation-github-module.png)
+Вы можете дополнительно определить, какой пользователь OpenProject используется для аутентификации входящих запросов вебхука. При настройке принимаются только запросы, аутентифицированные с помощью API-токена этого пользователя. Этот пользователь также используется для автоматических комментариев о статусе развертывания в рабочих пакетах. Если пользователь не выбран, OpenProject возвращается к системному пользователю.
 
-To see the 'GitHub' tab, users need the **Show GitHub content** permission. Ensure this is granted to all roles that require access
+Вы также можете определить секрет вебхука, общий между GitHub и OpenProject. Когда секрет настроен, OpenProject проверяет заголовок `X-Hub-Signature-256` для каждого входящего запроса вебхука и отклоняет запросы с недействительными подписями.
+
+> [!IMPORTANT]
+> Если секрет вебхука не настроен, запросы вебхука принимаются без проверки подписи. Это может позволить неавторизованным лицам подделывать события. Мы настоятельно рекомендуем настроить секрет вебхука.
+
+Нажмите **Сохранить**.
+
+![Настройки администрирования для указания секрета вебхука для интеграции с GitHub в OpenProject](openproject-system-guide-github-webhook-secret.png)
+
+Наконец, вам нужно активировать модуль GitHub в [Настройках проекта](../../../user-guide/projects/project-settings/modules/), чтобы вся информация, поступающая из GitHub, отображалась в рабочих пакетах.
+
+![Модуль GitHub активирован в Настройках проекта -> Модули в проекте OpenProject](openproject-system-guide-github-integation-github-module.png)
+
+Чтобы видеть вкладку «GitHub», пользователям нужно разрешение **Показывать содержимое GitHub**. Убедитесь, что оно предоставлено всем ролям, которым требуется доступ.
 
 ### GitHub
 
-In GitHub you have to set up a webhook in each repository to be integrated with OpenProject.
+В GitHub вам нужно настроить вебхук в каждом репозитории, который будет интегрирован с OpenProject.
 
-![Create the webhook in GitHub](openproject-system-guide-github-integation-github-webhook.png)
+![Создайте вебхук в GitHub](openproject-system-guide-github-integation-github-webhook.png)
 
-Only two settings need to be configured in the webhook.
-The **Content Type** has to be `application/json`.
-The **Payload URL** must point to your OpenProject server's GitHub webhook endpoint (`/webhooks/github`).
+В вебхуке нужно настроить только два параметра.
+
+**Тип содержимого** должен быть `application/json`.
+
+**URL полезной нагрузки** должен указывать на конечную точку вебхука GitHub вашего сервера OpenProject `/webhooks/github`).
 
 > [!NOTE]
-> For the events that should be triggered by the webhook, please select "Send me everything".
-
+> Для событий, которые должны запускаться вебхуком, пожалуйста, выберите "Отправлять все".
 > [!IMPORTANT]
-> OpenProject only supports the following GitHub events:
+> OpenProject поддерживает только следующие события GitHub:
 >
 > - check_run
 > - issue_comment
 > - ping
 > - pull_request
-> If the GitHub webhook sends an event that OpenProject does not support, a 404 error is returned by OpenProject.
+> Если вебхук GitHub отправляет событие, которое не поддерживается OpenProject, OpenProject возвращает ошибку 404.
 
-You will need the API key you copied earlier in OpenProject. Append it to the _Payload URL_ as a simple GET parameter named `key`. In the end the URL should look something like this:
+Вам понадобится API-ключ, который вы скопировали ранее в OpenProject. Добавьте его к _URL полезной нагрузки_ как простой GET-параметр с именем `key`. В итоге URL должен выглядеть примерно так:
 
 `https://myopenproject.com/webhooks/github?key=42`
 
-_Earlier version may have used the `api_key` parameter. In OpenProject 10.4, it is `key`._
+_В более ранних версиях мог использоваться параметр `api_key`. В OpenProject 10.4 это `key`._
 
-Now the integration is set up on both sides and you can use it.
+Теперь интеграция настроена с обеих сторон, и вы можете ее использовать.
 
-## Using GitHub integration
+## Использование интеграции с GitHub
 
-### Using a Git Desktop Client
+### Использование Git Desktop Client
 
-As pull requests are based on branches, a new branch needs to be created first. For that, open the GitHub tab in your OpenProject work package detail view. Click on 'Git snippets' to extend the menu. First, copy the branch name by clicking the corresponding button.
+Поскольку pull request основаны на ветках, сначала нужно создать новую ветку. Для этого откройте вкладку GitHub в детальном представлении вашего рабочего пакета OpenProject. Нажмите на 'Git snippets', чтобы развернуть меню. Сначала скопируйте имя ветки, нажав соответствующую кнопку.
 
-![Copy branch name Git snippet from OpenProject Github tab Git snippets menu](openproject-system-guide-github-integation-github-tab-branch-name-snippet.png)
+![Скопируйте имя ветки Git snippet из меню Git snippets вкладки GitHub OpenProject](openproject-system-guide-github-integation-github-tab-branch-name-snippet.png)
 
-Then, open your GitHub desktop client. There, you create your branch with the name you copied from your OpenProject work package. That way, all the branches will follow a common pattern and as the OpenProject ID is included in the branch name, it will be easy to see the connection between a PR and a work package when taking a look at a list of PRs on GitHub.
+Затем откройте ваш GitHub desktop client. Там создайте вашу ветку с именем, которое вы скопировали из вашего рабочего пакета OpenProject. Таким образом, все ветки будут следовать общему шаблону, и, поскольку ID OpenProject включен в имя ветки, будет легко увидеть связь между PR и рабочим пакетом при просмотре списка PR на GitHub.
 
-![Enter new branch git snippet to your git desktop client](openproject-system-guide-github-desktop-create-branch.png)
+![Введите новый branch git snippet в ваш git desktop client](openproject-system-guide-github-desktop-create-branch.png)
 
-Once you click the _Create branch_ button, you can directly publish that branch in the next step.
+После того как вы нажмете кнопку _Create branch_, вы можете сразу опубликовать эту ветку на следующем шаге.
 
-![Publish branch with GitHub Desktop client](openproject-system-guide-github-desktop-publish-branch.png)
+![Опубликуйте ветку с помощью GitHub Desktop client](openproject-system-guide-github-desktop-publish-branch.png)
 
-With the branch opened, you can start the actual development work using whatever tool you prefer, to alter your codebase.
+С открытой веткой вы можете начать фактическую работу по разработке, используя любой предпочитаемый инструмент для изменения вашей кодовой базы.
 
-![GitHub changes](openproject-system-guide-github-integation-github-changes.png)
+![Изменения GitHub](openproject-system-guide-github-integation-github-changes.png)
 
-Once your changes are complete, create a commit. To do that, copy the suggested _Commit message_ from the _Git snippets_ dropdown menu. It is based on the title and the URL of the work package.
+После завершения изменений создайте коммит. Для этого скопируйте предложенное _Сообщение коммита_ из выпадающего меню _Git snippets_. Оно основано на заголовке и URL рабочего пакета.
 
-![Commit message in the Git snippets dropdown menu under Github dropdown menu in OpenProject work package](openproject-system-guide-github-integation-github-tab-in-wp-commit-message.png)
+![Сообщение коммита в выпадающем меню Git snippets под меню GitHub в рабочем пакете OpenProject](openproject-system-guide-github-integation-github-tab-in-wp-commit-message.png)
 
-A URL pointing to a work package within a pull request description or a comment will lead to the two entities becoming linked. Using the value in the 'Commit message' input thus helps you to establish that link. The link needs to be in the PR and not in a commit but GitHub will use the first commit message as the proposed branch description (as long as there is only one commit).
+URL, указывающий на рабочий пакет в описании pull request или комментарии, приведет к связыванию двух сущностей. Использование значения во входных данных «Сообщение коммита» таким образом помогает установить эту связь. Ссылка должна быть в PR, а не в коммите, но GitHub будет использовать первое сообщение коммита как предложенное описание ветки (при условии, что есть только один коммит).
 
-![Commit message in Github Desktop client](openproject-system-guide-github-integation-commit-message-in-desktop-client.png)
+![Сообщение коммита в Github Desktop client](openproject-system-guide-github-integation-commit-message-in-desktop-client.png)
 
-You can now create your pull request by clicking the _Commit_ button. Title and comment with the link to the respective OpenProject work package will be prefilled, at least if there is only one commit to the branch. Because of this one commit limitation and if the policy is to create a branch as early as possible, there is a third option in the 'Git snippets' menu ('Create branch with empty commit') that will open a branch and add an empty commit to it in one command. Using this option, one can first create the branch quickly and have it linked to the work package right from the beginning. Commits can of course be added to the branch (and PR) after that.
+Теперь вы можете создать ваш pull request, нажав кнопку _Commit_. Заголовок и комментарий со ссылкой на соответствующий рабочий пакет OpenProject будут предварительно заполнены, по крайней мере, если есть только один коммит в ветке. Из-за этого ограничения в один коммит и если политика заключается в создании ветки как можно раньше, есть третий вариант в меню 'Git snippets' ('Создать ветку с пустым коммитом'), который откроет ветку и добавит пустой коммит в нее одной командой. Используя этот вариант, можно сначала быстро создать ветку и связать ее с рабочим пакетом с самого начала. Коммиты, конечно, могут быть добавлены в ветку (и PR) после этого.
 
-The branch description can be amended before a PR is created giving the opportunity to further describe the changes. To help with that, it is also possible to copy parts of the work package description since the description can be displayed in the markdown format. Links to additional work packages can also be included in the PR description.
+Описание ветки может быть изменено перед созданием PR, что дает возможность дополнительно описать изменения. Чтобы помочь в этом, также можно скопировать части описания рабочего пакета, поскольку описание может отображаться в формате markdown. Ссылки на дополнительные рабочие пакеты также могут быть включены в описание PR.
 
-Instead of inserting a full link to the work package, you can reference it by adding 'OP#87' (where 87 is the work package ID) to the pull request description.
+Вместо вставки полной ссылки на рабочий пакет вы можете ссылаться на него, добавив 'OP#87' (где 87 - ID рабочего пакета) в описание pull request.
 
-![Create pull request in the GitHub web interface](openproject-system-guide-github-integation-create-pr.png)
+![Создайте pull request в веб-интерфейсе GitHub](openproject-system-guide-github-integation-create-pr.png)
 
-Click on **Create pull request** and your pull request will be opened. You can then assign it for a review or further modify your PR by adding a new commit. Once the PR is finalized, you can merge it by clicking the respective button.
+Нажмите **Create pull request**, и ваш pull request будет открыт. Затем вы можете назначить его на проверку или дополнительно изменить ваш PR, добавив новый коммит. После завершения PR вы можете слить его, нажав соответствующую кнопку.
 
-![Merge an opened GitHub pull request](openproject-system-guide-github-integation-merge-pr.png)
+![Слияние открытого pull request GitHub](openproject-system-guide-github-integation-merge-pr.png)
 
-In OpenProject you will see the changes of the PR status under Activity tab. Under GitHub tab you will also see the status change of all the configured GitHub Actions.
+В OpenProject вы увидите изменения статуса PR на вкладке «Активность». На вкладке «GitHub» вы также увидите изменение статуса всех настроенных GitHub Actions.
 
-![PR changes displayed under OpenProject work package Activity tab](openproject-system-guide-github-integation-github-pr-merged.png)
+![Изменения PR отображаются на вкладке «Активность» рабочего пакета OpenProject](openproject-system-guide-github-integation-github-pr-merged.png)
 
-### Using the Command Line Interface
+### Использование командной строки
 
-If you prefer to work with Git via the Command Line Interface (CLI), you can follow a similar process to create and manage pull requests, by following same steps as you would if using a Git Desktop Client. 
+Если вы предпочитаете работать с Git через командную строку (CLI), вы можете следовать аналогичному процессу для создания и управления pull request, следуя тем же шагам, как если бы вы использовали Git Desktop Client.
 
-You can copy the branch name from the OpenProject work package as described in the Git snippets section above. Then, create and switch to a new branch in your local repository. Modify the necessary files in your repository. Once you are satisfied with the changes, stage and commit them, using the suggested commit message from OpenProject.
+Вы можете скопировать имя ветки из рабочего пакета OpenProject, как описано в разделе Git snippets выше. Затем создайте и переключитесь на новую ветку в вашем локальном репозитории. Измените необходимые файлы в вашем репозитории. После того как вы удовлетворены изменениями, проиндексируйте и закоммитьте их, используя предложенное сообщение коммита из OpenProject.
 
-![Git snippet to create a new branch in GitHub entered into command line interface](openproject-system-guide-github-integration-branch-git-snippet-cli.png)
+![Git snippet для создания новой ветки в GitHub, введенный в командную строку](openproject-system-guide-github-integration-branch-git-snippet-cli.png)
 
-When using a CLI you can also use the **Create branch with empty commit** Git snippet. 
+При использовании CLI вы также можете использовать Git snippet **Создать ветку с пустым коммитом**.
 
-![Git snippet to create a branch with empty commit under GitHub tab in a work package in OpenProject](openproject-system-guide-github-integration-git_snippet_empty_commit.png)
+![Git snippet для создания ветки с пустым коммитом под вкладкой GitHub в рабочем пакете в OpenProject](openproject-system-guide-github-integration-git_snippet_empty_commit.png)
 
-The advantage of using this snippet is that there is no need to first create a branch and then copy a separate Git snippet for the commit. A new branch will be created from your current branch along with an empty commit, which when pushed to GitHub will link back to the work package. 
+Преимущество использования этого сниппета в том, что не нужно сначала создавать ветку, а затем копировать отдельный Git snippet для коммита. Новая ветка будет создана из вашей текущей ветки вместе с пустым коммитом, который при отправке в GitHub свяжется обратно с рабочим пакетом.
 
-![Git snippet to create a new branch with empty commit in GitHub entered into command line interface](openproject-system-guide-github-integration-branch-and-commit-git-snippet-cli.png)
+![Git snippet для создания новой ветки с пустым коммитом в GitHub, введенный в командную строку](openproject-system-guide-github-integration-branch-and-commit-git-snippet-cli.png)
 
-Continue your work as you normally would, push the branch to GitHub and create a pull request.
+Продолжайте свою работу как обычно, отправьте ветку в GitHub и создайте pull request.
 
-![New GitHub pull request created by git snippet entered into CLI](openproject-system-guide-github-new_pull_request_in_github.png)
+![Новый pull request GitHub, созданный git snippet, введенным в CLI](openproject-system-guide-github-new_pull_request_in_github.png)
 
-Changes to the pull request will be tracked under GitHub tab of OpenProject work package, from which git snippets were copied. 
+Изменения в pull request будут отслеживаться на вкладке GitHub рабочего пакета OpenProject, из которого были скопированы git snippets.
 
-![Pull request changes displayed in an OpenProject work package](openproject-system-guide-github-cli-snippet-work-package.png)
+![Изменения pull request отображаются в рабочем пакете OpenProject](openproject-system-guide-github-cli-snippet-work-package.png)

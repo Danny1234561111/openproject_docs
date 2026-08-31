@@ -1,147 +1,144 @@
 ---
 sidebar_navigation:
-  title: Forums
+  title: Форумы
   priority: 820
-description: Create and manage a forum in OpenProject
-keywords: forum, forums
+description: Создавайте и управляйте форумом в OpenProject
+keywords: форум, форумы
 ---
+# Форумы
 
-# Forums
-
-In the forum in OpenProject you can discuss topics in a project with the team: post questions, comment on it and document answers.
+В форуме OpenProject вы можете обсуждать темы в проекте с командой: задавать вопросы, комментировать их и документировать ответы.
 
 <div class="glossary">
-
-**Forum** is defined as a module used to display forums and forum entries. The module has to be activated in the project settings and a forum has to be created in the Forums tab in the project settings to be displayed in the side navigation.
-
+**Форум** определяется как модуль, используемый для отображения форумов и записей форума. Модуль должен быть активирован в настройках проекта, и форум должен быть создан на вкладке «Форумы» в настройках проекта, чтобы отображаться в боковой навигации.
 </div>
 
-| Topic                                                    | Content                                                                      |
+| Тема                                                    | Содержание                                                                      |
 |----------------------------------------------------------|------------------------------------------------------------------------------|
-| [Open a forum](#open-a-forum)                            | How to open an existing forum.                                               |
-| [Create a new message](#create-a-new-message-in-a-forum) | How to create a new message in a forum.                                      |
-| [Reply to a message](#reply-to-a-forum-message)          | How to add a reply to an existing forum message.                             |
-| [Watch a forum](#watch-a-forum)                          | How to keep informed about changes in a forum, e.g. new messages or replies. |
-| [Edit a forum message](#edit-a-forum-message)            | How to edit a message in a forum.                                            |
-| [Delete a forum message](#delete-a-forum-message)        | How to delete a message within a forum.                                      |
-| [Create a new forum](#create-a-new-forum)                | How to create a new forum.                                                   |
-| [Manage forums](#manage-forums)                          | How to sort, edit or delete a forum.                                         |
+| [Открыть форум](#открыть-форум)                            | Как открыть существующий форум.                                               |
+| [Создать новое сообщение](#создать-новое-сообщение-в-форуме) | Как создать новое сообщение в форуме.                                      |
+| [Ответить на сообщение](#ответить-на-сообщение-форума)          | Как добавить ответ на существующее сообщение форума.                             |
+| [Наблюдать за форумом](#наблюдать-за-форумом)                          | Как быть в курсе изменений в форуме, например, новых сообщений или ответов. |
+| [Редактировать сообщение форума](#редактировать-сообщение-форума)            | Как редактировать сообщение в форуме.                                            |
+| [Удалить сообщение форума](#удалить-сообщение-форума)        | Как удалить сообщение в форуме.                                      |
+| [Создать новый форум](#создать-новый-форум)                | Как создать новый форум.                                                   |
+| [Управлять форумами](#управлять-форумами)                          | Как сортировать, редактировать или удалить форум.                                         |
 
-## Open a forum
+## Открыть форум
 
-To work in the forum in OpenProject, select the menu item **Forums** in the project navigation.
+Для работы в форуме OpenProject выберите пункт меню **Форумы** в навигации проекта.
 
-![Forums module in OpenProject](openproject_user_guide_forums_module.png)
+![Модуль «Форумы» в OpenProject](openproject_user_guide_forums_module.png)
 
-You will get a list of all existing forums within a project as well as a short description for it, the number of topics, messages as well as the last message within one forum.
+Вы получите список всех существующих форумов в рамках проекта, а также краткое описание для каждого, количество тем, сообщений, а также последнее сообщение в каждом форуме.
 
-Click on the Forum title to open an existing forum.
+Нажмите на заголовок форума, чтобы открыть существующий форум.
 
-## Create a new forum
+## Создать новый форум
 
-To create a new forum in your project, navigate to the **Forums** module in the left side menu and click the **+ Forum** button.
+Чтобы создать новый форум в вашем проекте, перейдите в модуль **Форумы** в меню слева и нажмите кнопку **+ Форум**.
 
-![A button to create a new forum in OpenProject](openproject_user_guide_forums_module_new_forum.png)
+![Кнопка для создания нового форума в OpenProject](openproject_user_guide_forums_module_new_forum.png)
 
-Enter a name and description for the new forum. Press the **Create** button so save the new forum.
+Введите имя и описание для нового форума. Нажмите кнопку **Создать**, чтобы сохранить новый форум.
 
-![Create new forum in OpenProject](openproject_user_guide_forums_new_forum_create_form.png)
+![Создание нового форума в OpenProject](openproject_user_guide_forums_new_forum_create_form.png)
 
-## Manage forums
+## Управлять форумами
 
-If you want to change the order of the forums in your project, want to edit a forum, or delete a forum, go to the Forums overview list in your project.
+Если вы хотите изменить порядок форумов в вашем проекте, отредактировать форум или удалить форум, перейдите в общий список форумов в вашем проекте.
 
-1. Click the **arrows (up or down) to change the order** of the forums and sort them differently in the forum list in your project.
-2. Click the **edit icon to change the name or description** of your forum.
-3. Click the delete icon to **delete a forum** from your project.
+1. Нажмите **стрелки (вверх или вниз), чтобы изменить порядок** форумов и отсортировать их по-другому в списке форумов вашего проекта.
+2. Нажмите **значок редактирования, чтобы изменить имя или описание** вашего форума.
+3. Нажмите значок удаления, чтобы **удалить форум** из вашего проекта.
 
-![Manage forums in OpenProject](openproject_user_guide_forums_manage.png)
+![Управление форумами в OpenProject](openproject_user_guide_forums_manage.png)
 
-## Create a new message in a forum
+## Создать новое сообщение в форуме
 
-To **add a new message** within an existing forum, click the green **+ Message** button on the top right of the selected forum.
+Чтобы **добавить новое сообщение** в существующий форум, нажмите зеленую кнопку **+ Сообщение** в правом верхнем углу выбранного форума.
 
-![Add a forum message in OpenProject ](openproject_user_guide_forums_single_forum.png)
+![Добавление сообщения форума в OpenProject](openproject_user_guide_forums_single_forum.png)
 
-Enter the **subject of the message**.
+Введите **тему сообщения**.
 
-You can choose whether the message should be **Sticky**. A sticky message always appears on top of the selected forum.
+Вы можете выбрать, должно ли сообщение быть **Закрепленным**. Закрепленное сообщение всегда появляется вверху выбранного форума.
 
-Select if a message should be **Locked**. Then it can no longer be edited or commented by the project team.
+Выберите, должно ли сообщение быть **Заблокированным**. Тогда оно больше не может быть отредактировано или прокомментировано командой проекта.
 
-Enter a description which will then appears next to the message title in the forum. You can add a file if needed.
+Введите описание, которое затем появится рядом с заголовком сообщения в форуме. Вы можете добавить файл, если это необходимо.
 
-Click the **Create** button to create the new message for this forum.
+Нажмите кнопку **Создать**, чтобы создать новое сообщение для этого форума.
 
-![New forum message forum in OpenProject](openproject_user_guide_forums_new_message.png)
+![Новое сообщение форума в OpenProject](openproject_user_guide_forums_new_message.png)
 
-The **new forum message has been created**.
+**Новое сообщение форума было создано**.
 
-![New forum message in OpenProject](openproject_user_guide_forums_new_message_created.png)
+![Новое сообщение форума в OpenProject](openproject_user_guide_forums_new_message_created.png)
 
 > [!TIP]
-> Changes you made are saved locally. If you navigated away from page or  could not save your changes due to a technical difficulty, you can  access latest changes via the editor toolbar.
+> Внесенные вами изменения сохраняются локально. Если вы перешли с этой страницы или не смогли сохранить изменения из-за технических проблем, вы можете получить доступ к последним изменениям через панель инструментов редактора.
 
-![Locally saved draft in OpenProject forum message](openproject_user_guide_forums_draft_saved_locally.png)
+![Локально сохраненный черновик в сообщении форума OpenProject](openproject_user_guide_forums_draft_saved_locally.png)
 
-## Reply to a forum message
+## Ответить на сообщение форума
 
-To add a **reply to an existing message** in a forum, click on the Subject in order to open the message.
+Чтобы добавить **ответ на существующее сообщение** в форуме, нажмите на Тему, чтобы открыть сообщение.
 
-Underneath the forum message you want to reply to, you will directly see subject and message fields. Enter your **Message content** what you want to add as a reply to the existing message. You can choose to also **add a file** if needed.
+Под сообщением форума, на которое вы хотите ответить, вы сразу увидите поля Тема и Сообщение. Введите **Содержание сообщения**, что вы хотите добавить в качестве ответа на существующее сообщение. Вы также можете выбрать **добавить файл**, если это необходимо.
 
-Click the **Submit** button in order to save your reply message.
+Нажмите кнопку **Отправить**, чтобы сохранить ваше ответное сообщение.
 
-![Reply to a forum message](openproject_user_guide_forums_reply_form.png)
+![Ответ на сообщение форума](openproject_user_guide_forums_reply_form.png)
 
-The reply has been added under the existing forum message.
+Ответ был добавлен под существующим сообщением форума.
 
-![reply to existing forum message](openproject_user_guide_forums_reply_saved.png)
+![ответ на существующее сообщение форума](openproject_user_guide_forums_reply_saved.png)
 
-## Watch a forum
+## Наблюдать за форумом
 
-To keep informed about changes in a forum, e.g. new messages or new replies, you can add yourself as a **Watcher** of a forum.
+Чтобы быть в курсе изменений в форуме, например, новых сообщений или новых ответов, вы можете добавить себя в качестве **Наблюдателя** форума.
 
-[Open an existing forum](#open-a-forum) from the list.
+[Откройте существующий форум](#открыть-форум) из списка.
 
-You will get a list of all messages within this forum.
+Вы получите список всех сообщений в этом форуме.
 
-Click the **Watch** icon in the top right corner of the forum.
+Нажмите значок **Наблюдать** в правом верхнем углу форума.
 
-You will then be notified via e-mail according to your [e-mail notifications](../../user-guide/notifications/notification-settings) about new messages and replies in a forum.
+Затем вы будете уведомлены по электронной почте в соответствии с вашими [email-уведомлениями](../../user-guide/notifications/notification-settings) о новых сообщениях и ответах в форуме.
 
-![Watch a forum in OpenProject](openproject_user_guide_forums_watch.png)
+![Наблюдение за форумом в OpenProject](openproject_user_guide_forums_watch.png)
 
-The icon will then change to Unwatch.
+Значок затем изменится на «Перестать наблюдать».
 
-### Watch a message
+### Наблюдать за сообщением
 
-If you watch a forum you will automatically watch all messages within this forum. Alternatively, you can also **watch only certain messages** within a forum where you want to be informed about changes.
+Если вы наблюдаете за форумом, вы автоматически будете наблюдать за всеми сообщениями в этом форуме. В качестве альтернативы вы также можете **наблюдать только за определенными сообщениями** в форуме, о которых хотите быть проинформированы об изменениях.
 
-This way, you select the message first by clicking on the subject, and then click the Watch button on the top right corner in the message details.
+Таким образом, вы сначала выбираете сообщение, нажав на тему, а затем нажимаете кнопку «Наблюдать» в правом верхнем углу в деталях сообщения.
 
-![Watch a forum message in OpenProject](openproject_user_guide_forums_watch_message.png)
+![Наблюдение за сообщением форума в OpenProject](openproject_user_guide_forums_watch_message.png)
 
-## Unwatch a forum
+## Перестать наблюдать за форумом
 
-To unwatch a forum in order to not be informed via e-mail about new messages and replies in a forum, click the **Unwatch button** on the top right of the forum.
+Чтобы перестать наблюдать за форумом, чтобы не получать уведомления по электронной почте о новых сообщениях и ответах в форуме, нажмите кнопку **Перестать наблюдать** в правом верхнем углу форума.
 
-![Unwatch a forum in OpenProject](openproject_user_guide_forums_unwatch.png)
+![Прекратить наблюдение за форумом в OpenProject](openproject_user_guide_forums_unwatch.png)
 
-### Unwatch a message
+### Перестать наблюдать за сообщением
 
-The same applies to **unwatch a message**. Just select the message first which you do not want to watch any longer and click the **Unwatch** button.
+То же самое относится к **прекращению наблюдения за сообщением**. Просто выберите сначала сообщение, за которым вы больше не хотите наблюдать, и нажмите кнопку **Перестать наблюдать**.
 
-## Edit a forum message
+## Редактировать сообщение форума
 
-To **edit a message in a forum** select the message from the forum and in the message details click the **Edit** button in the top right corner of the message.
+Чтобы **отредактировать сообщение в форуме**, выберите сообщение из форума и в деталях сообщения нажмите кнопку **Редактировать** в правом верхнем углу сообщения.
 
-![Edit a forum message in OpenProject](openproject_user_guide_forums_edit_message_button.png)
+![Редактирование сообщения форума в OpenProject](openproject_user_guide_forums_edit_message_button.png)
 
-The message details will then be opened. You can make your changes  and click the **Save** button.
+Затем откроются детали сообщения. Вы можете внести свои изменения и нажать кнопку **Сохранить**.
 
-## Delete a forum message
+## Удалить сообщение форума
 
-To **delete a message in a forum**, select the message which you want to delete and press the **Delete** button in the top right corner of the message details.
+Чтобы **удалить сообщение в форуме**, выберите сообщение, которое вы хотите удалить, и нажмите кнопку **Удалить** в правом верхнем углу деталей сообщения.
 
-![Delete a forum message in OpenProject](openproject_user_guide_forums_delete_message.png)
+![Удаление сообщения форума в OpenProject](openproject_user_guide_forums_delete_message.png)

@@ -1,105 +1,83 @@
 ---
 sidebar_navigation:
-  title: Project home page
-  priority: 700
-description: Learn how to configure a project overview page
-keywords: project overview page, project home page, project home, project overview, project dashboard, project life cycle, life cycle, lifecycle, project lifecycle, favorite, favourite, archive, project attribute
+  title: Управление проектами
+  priority: 945
+description: Управляйте проектами в OpenProject
+keywords: управление проектами
 ---
+# Управление проектами
 
-# Project home page
+В OpenProject вы можете создавать проекты для сотрудничества с членами вашей команды, отслеживания задач, документирования и обмена информацией с заинтересованными сторонами, организации работы. Проект — это способ структурировать и организовывать вашу работу в OpenProject.
 
-The **Project home page** is a dashboard with important information about your respective project(s). This page displays all relevant information for your team, such as members, news, project description, work package reports, or project status. Information on the project overview is presented using [project attributes](./project-attributes/) and [widgets](./project-widgets/).  
+Ваши проекты могут быть доступны публично или внутри компании. OpenProject не ограничивает количество проектов, ни в Community edition, ни в Enterprise cloud, ни в Enterprise on-premises edition.
 
-| Topic                                                        | Content                                                      |
+| Тема                                                        | Содержание                                                      |
 | ------------------------------------------------------------ | ------------------------------------------------------------ |
-| [What is the project home page?](#what-is-the-project-home-page) | What can I do on the project home page?                      |
-| [Project life cycle](project-life-cycle)                     | What is the project life cycle?                              |
-| [Project attributes](project-attributes)                     | What are project attributes and how can I use them?          |
-| [Mark project as a favorite](#mark-a-project-as-favorite)    | How can I mark a project as favorite?                        |
-| [Archive a project](#archive-a-project)                      | How can I archive a project from the project home page?      |
-| [Project widgets](project-widgets)                           | What are widgets, and how can I add them to my project home page? |
+| [Выбрать проект](../../getting-started/projects/#открыть-существующий-проект) | Откройте проект, над которым вы хотите работать.                    |
+| [Создать новый проект](../../getting-started/projects/#создать-новый-проект) | Узнайте, как создать новый проект в OpenProject.         |
+| [Создать подпроект](./project-settings/project-information/#создать-подпроект) | Создайте подпроект существующего проекта.                  |
+| [Структура проекта](#структура-проекта)                      | Узнайте, как настроить структуру проекта.                  |
+| [Настройки проекта](./project-settings/)                      | Настройте дополнительные параметры для ваших проектов, такие как описание, структура иерархии проекта или установка его как публичного. |
+| [Списки проектов](./project-lists/)                            | Получите обзор всех ваших проектов и настройте представления проектов. |
+| [Изменить иерархию проекта](./project-settings/project-information/#изменить-иерархию-проекта) | Вы можете изменить иерархию, выбрав родительский проект («подпроект»). |
+| [Установить проект как публичный](./project-settings/project-information/#сделать-проект-публичным) | Сделайте проект доступным (по крайней мере) для всех пользователей в вашем экземпляре. |
+| [Создать шаблон проекта](./project-templates/#создать-шаблон-проекта) | Настройте проект и установите его как шаблон для копирования для будущих проектов. |
+| [Использовать шаблон проекта](./project-templates/#использовать-шаблон-проекта) | Создайте новый проект на основе существующего шаблонного проекта.  |
+| [Дублировать проект](./project-settings/project-information/#дублировать-проект) | Дублировать существующий проект.                       |
+| [Архивировать проект](./project-settings/project-information/#архивировать-проект) | Узнайте, как архивировать завершенные проекты.                  |
+| [Удалить проект](./project-settings/project-information/#удалить-проект) | Как удалить проект.                                     |
 
-## What is the project home page?
+![Видео](https://openproject-docs.s3.eu-central-1.amazonaws.com/videos/OpenProject-Projects-Introduction.mp4)
 
-The project home page is a centralized overview page that displays all essential information for a selected project. Its purpose is to serve as a single source of truth for the entire project team, providing quick access to key data and project progress.
+## Структура проекта
 
-You can access the project overview by navigating to **Project home** in the project menu on the left.
+Проекты образуют структуру в OpenProject. У вас могут быть родительские проекты и подпроекты. Проект может представлять организационную единицу компании, например, для разделения задач:
 
-![Project overview page for a specific project in OpenProject](openproject_user_guide_project_new_home_page.png)
+- Компания (Родительский проект)
+  - Маркетинг (Подпроект)
+  - Продажи
+  - HR
+  - IT
+  - ...
 
+Проекты также могут быть для объединяющих команд, работающих над одной темой:
 
+- Запуск нового продукта
+  - Дизайн
+  - Разработка
+  - ...
 
-On the project overview page you will see the following sections: 
+Или проект может использоваться для разделения продуктов или клиентов.
 
-1. [**Overview** tab](#project-overview) is pre-configured set of [project widgets](project-widgets) to provide a concise summary of the project’s status. 
-2. [**Dashboard** tab](#project-dashboard) provides access to all available widgets and allows full customization of layout and content according to user preferences. 
-3. [Project life cycle](project-life-cycle)
-4. [Project attributes](project-attributes)
+- Продукт A
+  - Клиент A
+  - Клиент B
+  - Клиент C
 
-Here you can also [mark a project as favorite](#mark-a-project-as-favorite) or [archive](#archive-a-project) it. 
-
-## Project overview
-
-![Pre-set project widgets on the overview tab of the project home page](openproject_user_guide_project_home_new_overview_tab.png)
-
-The **Overview** tab is a pre-configured to provide a concise summary of the project’s status. Its layout is fixed and cannot be modified. It includes the following widgets: 
-
-- [Description](./project-widgets/#description-widget)
-
-- [Status](./project-widgets/#status-widget) 
-
-- [Project timeline](./project-widgets/#project-timeline-widget)
-
-  > [!TIP]
-  >
-  > If you do not see the project timeline widget, make sure phases and gates are enabled in your project.
-
-- [Subitems](./project-widgets/#subitems-widget) 
-
-- [Meetings](project-widgets/#meetings-widget)
-  
-  > [!TIP]
-  > If you do not see the meeting widgets displayed, make sure the Meetings module is activated for the project. 
-  
-- [Members](./project-widgets/#members-widget) 
-
-- [News](project-widgets/#news-widget) 
-
-- [Budgets](project-widgets/#budgets-widgets)
-  > [!TIP]
-  > If you do not see the budget widgets, make sure you have the required permissions, that the Budgets or Time and costs module is activated for the project, and that a budget already exists.
-
-- Optional: [Project attributes](project-attributes). 
-  > [!TIP]
-  > Project attributes are usually displayed under the **project life cycle** section on the right, but a project attribute section can also be placed centrally under the pre-defined widgets. This placement can be changed under system administration.  
-
-Learn more about [project widgets](project-widgets).
-
-## Project dashboard
-
-The **Dashboard** tab of the home page provides access to all available widgets and allows full customization of layout and content according to user preferences. Learn more about [project widgets](project-widgets).
-
-![Project widgets on the Dashboard tab of the project home page](openproject_user_guide_project_home_dashboard_tab.png)
-
-> [!TIP]
->
-> You can add same widgets to the project dashboard, as are also displayed on the project overview part of project home page. 
-
-## Mark a project as favorite
-
-You can mark the project as a _Favorite_ by clicking the **Favorite** (star) icon in the upper right corner. The icon color will change to yellow and the project will be marked as favorite both on the project home page and in the projects list. Read more about [project lists](../project-lists/). 
-
-![Mark a project as favorite in OpenProject](openproject_user_guide_project_home_page_mark_favorite.png)
-
-To remove a project from favorites click the **Favorite** icon again. 
-
-## Archive a project
-
-You can archive a project directly from the project home page. To do that click the **More** (three dots) icon and select _Archive project_.
-
-![Archive a project on the project overview page in OpenProject](openproject_user_guide_project_home_page_archive_project.png)
+![Пример иерархии проекта, показанный в выпадающем меню «Проекты» в OpenProject](openproject_user_guide_projects_project_structure_example.png)
 
 > [!NOTE]
-> This option is always available to instance and project administrators. It can also be activated for specific roles by enabling the _archive_project_ permission for that role via the [Roles and permissions page](../../../system-admin-guide/users-permissions/roles-permissions/) in the administrator settings.
+> Вы должны быть [участником](../members/#добавить-участников) проекта, чтобы просматривать и работать в нем.
 
-You can also archive a project under [project settings](../project-settings/project-information/#archive-a-project) or in a [projects list](../project-lists/). 
+## Выбрать проект
+
+Узнайте [как открыть существующий проект](../../getting-started/projects/#открыть-существующий-проект) в OpenProject в нашем руководстве _Начало работы_.
+
+## Создать новый проект
+
+Узнайте, как [создать новый проект](../../getting-started/projects/#создать-новый-проект) в OpenProject в нашем руководстве _Начало работы_.
+
+## Создать подпроект
+
+Узнайте, как [создать подпроект](./project-settings/) в OpenProject в нашем руководстве _Настройки проекта_.
+
+## Настройки проекта
+
+Вы можете указать дополнительные расширенные настройки для вашего проекта. Перейдите к настройкам вашего проекта, [выбрав проект](../../getting-started/projects/#открыть-существующий-проект), и нажмите -> _Настройки проекта_ -> _Информация_. Здесь вы можете:
+
+- Определить, должен ли проект иметь родителя, выбрав **Подпроект**. Таким образом, вы можете [изменить иерархию проекта](./project-settings/project-information/#изменить-иерархию-проекта).
+- Ввести подробное описание для вашего проекта.
+- Установить **Идентификатор** проекта по умолчанию.
+- Установить проект как **Публичный**. Это означает, что к нему можно получить доступ без входа в OpenProject.
+
+Прочитайте полное руководство по [настройкам проекта в OpenProject](./project-settings/).

@@ -1,78 +1,74 @@
 ---
 sidebar_navigation:
-  title: Security
+  title: Безопасность
   priority: 500
-description: Learn how to change your password and manage two-factor authentication.
-keywords: my account, account settings,security, password, 2fa, two factor, two-factor authentication, backup
+description: Узнайте, как изменить пароль и управлять двухфакторной аутентификацией.
+keywords: мой аккаунт, настройки аккаунта, безопасность, пароль, 2fa, двухфакторная аутентификация, резервные коды
 ---
+# Безопасность
 
-# Security
+Чтобы сбросить пароль, добавить двухфакторную аутентификацию и сгенерировать резервные коды, перейдите в **Настройки аккаунта** и выберите **Безопасность** в меню.
 
-To reset your password, add a two-factor authentication and generate backup codes, navigate to  **Account settings** and choose **Security** in the menu.
+## Изменить пароль
 
-## Change password
+Введите текущий пароль.
+Введите новый пароль и убедитесь, что все требования к паролю соблюдены.
+Подтвердите его еще раз.
+Нажмите кнопку **Изменить пароль**, чтобы подтвердить изменения пароля.
 
-Enter your current password.
-
-Enter your new password and ensure all password requirements are met.
-
-Confirm it a second time.
-
-Press the **Change password** button in order to confirm the password changes.
-
-![Change password under security section in user account settings](openproject_account_settings_change_password.png)
+![Изменение пароля в разделе безопасности настроек аккаунта пользователя](openproject_account_settings_change_password.png)
 
 > [!NOTE]
-> You cannot reset your Google password in OpenProject. If you authenticate with a Google/Gmail account, please go to your Google account administration in order to change your password.
+> Вы не можете сбросить пароль Google в OpenProject. Если вы аутентифицируетесь с помощью учетной записи Google/Gmail, перейдите в административную панель вашей учетной записи Google, чтобы изменить пароль.
 
-## Two-factor authentication devices
+## Устройства двухфакторной аутентификации
 
-In order to activate the two-factor authentication for your OpenProject installation, click the  **+2FA device** button.  If you have not added any device yet, this list will be empty.
+Чтобы активировать двухфакторную аутентификацию для вашей установки OpenProject, нажмите кнопку **+2FA устройство**. Если вы еще не добавили ни одного устройства, этот список будет пустым.
 
-![Two-factor authentication under security section in OpenProject account settings](openproject_account_settings_two_factor_authentication.png)
+![Двухфакторная аутентификация в разделе безопасности настроек аккаунта OpenProject](openproject_account_settings_two_factor_authentication.png)
 
-If you have already registered one or multiple 2FA devices, you will see the list of all activated 2FA devices here. You can change, which of them you prefer to have set as a default option.
+Если вы уже зарегистрировали одно или несколько устройств 2FA, вы увидите здесь список всех активированных устройств 2FA. Вы можете изменить, какое из них вы предпочитаете установить в качестве варианта по умолчанию.
 
-![List of two-factor authenticated devices](openproject_account_settings_two_factor_authentication_devices_overview.png)
+![Список устройств с двухфакторной аутентификацией](openproject_account_settings_two_factor_authentication_devices_overview.png)
 
-In order to register a new device for two-factor authentication, click the **+ 2FA device** button and select one of the options. The options you see will depend on what your system administrator has [activated for your instance](../../../system-admin-guide/authentication/two-factor-authentication/):
+Чтобы зарегистрировать новое устройство для двухфакторной аутентификации, нажмите кнопку **+ 2FA устройство** и выберите один из вариантов. Варианты, которые вы увидите, будут зависеть от того, что ваш системный администратор [активировал для вашего экземпляра](../../../system-admin-guide/authentication/two-factor-authentication/):
 
-- Mobile phone
-- App-based authenticator
+- Мобильный телефон
+- Приложение-аутентификатор
 - WebAuthn
 
-![Authentication options under security section in OpenProject account settings](openproject_account_settings_two_factor_authentication_options.png)
+![Варианты аутентификации в разделе безопасности настроек аккаунта OpenProject](openproject_account_settings_two_factor_authentication_options.png)
 
-You can remove or approve 2FA applications by confirming your password. Note that this applies only to internally authenticated users.
+Вы можете удалить или подтвердить приложения 2FA, подтвердив свой пароль. Обратите внимание, что это применяется только к внутренне аутентифицированным пользователям.
 
-### Use your mobile phone
+### Использовать мобильный телефон
 
-You can use your mobile phone as a 2FA device. The field _Identifier_ will be pre-filled out, you will need to add your phone number, choose a preferred delivery channel and click the green **Continue** button.
+Вы можете использовать свой мобильный телефон в качестве устройства 2FA. Поле _Идентификатор_ будет предварительно заполнено, вам нужно будет добавить номер телефона, выбрать предпочтительный канал доставки и нажать зеленую кнопку **Продолжить**.
 
-![Add a new mobile phone as a 2FA device in OpenProject](openproject_account_settings_two_factor_authentication_mobile.png)
+![Добавление нового мобильного телефона в качестве устройства 2FA в OpenProject](openproject_account_settings_two_factor_authentication_mobile.png)
 
-### Use your app-based authenticator
+### Использовать приложение-аутентификатор
 
-Register an application authenticator for use with OpenProject using the time-based one-time password authentication standard. Common examples are Google Authenticator or Authy. 
+Зарегистрируйте приложение-аутентификатор для использования с OpenProject, используя стандарт аутентификации по одноразовому паролю на основе времени. Распространенными примерами являются Google Authenticator или Authy.
 
-Open your app and follow the instructions to add a new application. The easiest way is to scan the QR code. Otherwise, you can register the application manually by entering the displayed details.
+Откройте приложение и следуйте инструкциям, чтобы добавить новое приложение. Самый простой способ — отсканировать QR-код. В противном случае вы можете зарегистрировать приложение вручную, введя отображаемые данные.
 
-Click the green **Continue** button to finish the registration.
+Нажмите зеленую кнопку **Продолжить**, чтобы завершить регистрацию.
 
 ![openproject_my_account_authenticator_app](openproject_account_settings_authenticator_app.png)
 
-### Use the WebAuthn authentication
+### Использовать аутентификацию WebAuthn
 
-Use Web Authentication to register a FIDO2 device (like a YubiKey) or  the secure enclave of your mobile device as a second factor. After you have chosen a name, you can click the green **Continue**  button.
+Используйте Web Authentication для регистрации устройства FIDO2 (например, YubiKey) или безопасного анклава вашего мобильного устройства в качестве второго фактора. После выбора имени вы можете нажать зеленую кнопку **Продолжить**.
 
-![OpenProject WebAuth authentication](openproject_account_settings_authenticator_webauth.png)
+![Аутентификация WebAuth в OpenProject](openproject_account_settings_authenticator_webauth.png)
 
-Your browser will prompt you to present your WebAuthn device (depending on your operational system and your browser, your options may vary). When you have  done so, you are done registering the device.
+Ваш браузер предложит вам предъявить ваше устройство WebAuthn (в зависимости от вашей операционной системы и браузера ваши варианты могут различаться). Когда вы это сделаете, регистрация устройства завершена.
 
-## Backup codes
+## Резервные коды
 
-If you are unable to access your two-factor devices, you can use a backup code to regain access to your account. Click the **Generate backup codes** button to generate a new set of backup codes.
+Если у вас нет доступа к вашим устройствам двухфакторной аутентификации, вы можете использовать резервный код для восстановления доступа к своей учетной записи. Нажмите кнопку **Сгенерировать резервные коды**, чтобы создать новый набор резервных кодов.
 
-If you have created backup codes before, they will be invalidated and will no longer work.
+Если вы создавали резервные коды ранее, они будут аннулированы и больше не будут работать.
 
-![Generate backup codes under security section in OpenProject account settings](openproject_account_settings_backup_codes.png)
+![Генерация резервных кодов в разделе безопасности настроек аккаунта OpenProject](openproject_account_settings_backup_codes.png)

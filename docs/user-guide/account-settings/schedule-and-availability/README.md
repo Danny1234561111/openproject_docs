@@ -1,160 +1,151 @@
 ---
 sidebar_navigation:
-  title: Schedule and availability
+  title: Расписание и доступность
   priority: 800
-description: Learn how to configure your work schedule, availability, and time off in OpenProject.
-keywords: schedule, availability, working hours, work schedule, working time, calendar, capacity, resources, time off
+description: Узнайте, как настроить свой рабочий график, доступность и отпуск в OpenProject.
+keywords: расписание, доступность, рабочие часы, рабочий график, рабочее время, календарь, мощность, ресурсы, отпуск
 ---
+# Расписание и доступность
 
-# Schedule and availability
+Страница **Расписание и доступность** позволяет определить свой рабочий график, планировать будущие изменения расписания и управлять своим отпуском.
 
-The **Schedule and availability** page allows you to define your working schedule, plan future schedule changes, and manage your time off.
+Чтобы получить доступ к настройкам расписания, перейдите в **Настройки аккаунта** → **Расписание и доступность**.
 
-To access your schedule settings, navigate to **Account settings** → **Schedule and availability**.
 > [!NOTE]
-> Depending on your organization's configuration and your permissions, you may only be able to view your schedule and availability. If your working schedule is managed externally or you do not have permission to edit it, the editing options described on this page are not available.
-The page consists of two tabs:
+> В зависимости от конфигурации вашей организации и ваших разрешений вы можете только просматривать свое расписание и доступность. Если ваш рабочий график управляется извне или у вас нет разрешения на его редактирование, параметры редактирования, описанные на этой странице, недоступны.
 
-- **Work schedule**
-- **Availability calendar**
+Страница состоит из двух вкладок:
+- **Рабочий график**
+- **Календарь доступности**
 
-## Work schedule
+## Рабочий график
 
-On the **Work schedule** tab, you can manage your current working schedule, plan future schedule changes, and review your schedule history.
+На вкладке **Рабочий график** вы можете управлять своим текущим рабочим графиком, планировать будущие изменения расписания и просматривать историю расписания.
 
-This page is divided into three sections:
+Эта страница разделена на три раздела:
+- Текущее расписание
+- Будущие расписания
+- История расписания
 
-- Current schedule
-- Future schedules
-- Schedule history
+### Текущее расписание
 
-### Current schedule
+Раздел **Текущее расписание** суммирует ваш активный рабочий график в четырех карточках:
+- **Рабочие дни** – Настроенные вами рабочие дни.
+- **Рабочие часы** – Количество часов, которые вы работаете в день.
+- **Коэффициент доступности** – Процент вашего рабочего времени, посвященный проектной работе.
+- **Эффективные рабочие часы** – Ваши доступные проектные часы после применения коэффициента доступности.
 
-The **Current schedule** section summarizes your active working schedule in four cards:
+Чтобы отредактировать текущее расписание, нажмите значок **Редактировать**.
 
-- **Work days** – Your configured working days.
-- **Work hours** – The number of hours you work per day.
-- **Availability factor** – The percentage of your working time dedicated to project work.
-- **Effective work hours** – Your available project hours after applying the availability factor.
+![Значок редактирования текущего рабочего графика](openproject_user_guide_account_schedule_availability_edit_icon.png)
 
-To edit your current schedule, click the **Edit** icon.
+Откроется диалоговое окно **Редактировать текущий рабочий график**.
 
-![Edit icon for the current work schedule](openproject_user_guide_account_schedule_availability_edit_icon.png)
+Настройте следующие параметры:
+- **Дни и часы** – Выберите дни недели, которые считаются рабочими днями.
+- **Режим часов** – Выберите, как определяются ваши рабочие часы:
+  - **Одинаковое количество часов в день** – Применить одинаковое количество рабочих часов к каждому рабочему дню.
+  - **Индивидуальные часы в день** – Определить разные рабочие часы для каждого рабочего дня.
+- **Коэффициент доступности** – Представляет процент вашего рабочего времени, доступного для проектной работы. Это учитывает встречи, электронную почту, административные задачи и другие непроектные активности.
 
-The **Edit current work schedule** dialog opens.
+Общее количество еженедельных рабочих часов рассчитывается автоматически.
 
-Configure the following settings:
+Введите желаемый процент в поле **Коэффициент доступности**.
 
-- **Days and hours** – Select the days of the week that are considered working days.
-- **Hours mode** – Choose how your working hours are defined:
-  - **Same hours per day** – Apply the same number of working hours to every working day.
-  - **Individual hours per day** – Define different working hours for each working day.
-- **Availability factor** – Represents the percentage of your working time that is available for project work. This accounts for meetings, emails, administrative tasks, and other non-project activities.
+Значение **Общее доступное рабочее время** обновляется автоматически на основе ваших рабочих часов и коэффициента доступности.
 
-The total weekly working hours are calculated automatically.
+![Диалоговое окно редактирования текущего рабочего графика](openproject_user_guide_account_schedule_availability_edit_form.png)
 
-Enter the desired percentage in the **Availability factor** field.
+Нажмите **Сохранить**, чтобы применить изменения, или **Отмена**, чтобы отменить их.
 
-The **Total available work hours** value is updated automatically based on your working hours and availability factor.
+### Будущие расписания
 
-![Edit current work schedule dialog](openproject_user_guide_account_schedule_availability_edit_form.png)
-
-Click **Save** to apply your changes or **Cancel** to discard them.
-
-### Future schedules
-
-The **Future schedules** section allows you to plan changes to your working schedule in advance.
+Раздел **Будущие расписания** позволяет заранее планировать изменения вашего рабочего графика.
 
 > [!TIP]
-> Plan your working schedule changes ahead of time. Once the date arrives, your working schedule will be updated automatically.
+> Планируйте изменения рабочего графика заранее. Как только наступит дата, ваш рабочий график будет обновлен автоматически.
 
-The table displays the following information:
+В таблице отображается следующая информация:
+- Дата начала
+- Рабочие дни
+- Рабочие часы
+- Коэффициент доступности
+- Эффективные рабочие часы
 
-- Start date
-- Work days
-- Work hours
-- Availability factor
-- Effective work hours
+Чтобы создать будущее расписание:
+- Нажмите **+ Добавить будущее расписание**, когда еще не создано ни одного будущего расписания.
+- После того как существует хотя бы одно будущее расписание, нажмите значок **+** в заголовке таблицы.
 
-To create a future schedule:
+![Пустая таблица "Будущие расписания" с выделенными кнопкой "Добавить будущее расписание" и значком "Добавить"](openproject_user_guide_account_schedule_availability_future_schedules_add_button.png)
 
-- Click **+ Add future schedule** when no future schedules have been created yet.
-- Once at least one future schedule exists, click the **+** icon in the table header.
+Откроется диалоговое окно **Запланировать будущий рабочий график**.
 
-![Empty Future schedules table with the Add future schedule button and Add icon highlighted](openproject_user_guide_account_schedule_availability_future_schedules_add_button.png)
+Выберите **Дату начала**, с которой новый рабочий график должен вступить в силу.
 
-The **Plan a future work schedule** dialog opens.
+Затем настройте свои рабочие дни, рабочие часы и коэффициент доступности так же, как и для текущего расписания.
 
-Select a **Start date** from which the new work schedule should take effect.
+![Диалоговое окно "Запланировать будущий рабочий график"](openproject_user_guide_account_schedule_availability_future_schedules_plan_future_schedule_form.png)
 
-Then configure your working days, working hours, and availability factor in the same way as for your current schedule.
+Нажмите **Создать**, чтобы запланировать изменение, или **Отмена**, чтобы закрыть диалоговое окно без сохранения.
 
-![Plan a future work schedule dialog](openproject_user_guide_account_schedule_availability_future_schedules_plan_future_schedule_form.png)
+После сохранения будущее расписание появляется в таблице.
 
-Click **Create** to schedule the change or **Cancel** to close the dialog without saving. 
+![Таблица "Будущие расписания" с запланированным расписанием](openproject_user_guide_account_schedule_availability_future_schedules_plan_future_schedules_table.png)
 
-Once saved, the future schedule appears in the table.
+Нажмите меню **Еще** (**⋯**) в конце строки и выберите **Редактировать** или **Удалить**, чтобы изменить или удалить запланированное расписание.
 
-![Future schedules table with a planned schedule](openproject_user_guide_account_schedule_availability_future_schedules_plan_future_schedules_table.png)
+![Меню "Еще" с опциями "Редактировать" и "Удалить" для будущего расписания](openproject_user_guide_account_schedule_availability_future_schedules_plan_future_schedules_table_edit_delete.png)
 
-Click the **More** (**⋯**) menu at the end of a row and select **Edit** or **Delete** to modify or remove a planned schedule.
+### История расписания
 
-![More menu showing the Edit and Delete options for a future schedule](openproject_user_guide_account_schedule_availability_future_schedules_plan_future_schedules_table_edit_delete.png)
+Раздел **История расписания** предоставляет запись всех предыдущих рабочих графиков.
 
-### Schedule history
+Таблица включает:
+- Дата начала
+- Рабочие дни
+- Рабочие часы
+- Коэффициент доступности
+- Эффективные рабочие часы
 
-The **Schedule history** section provides a record of all previous working schedules.
+Каждая запись представляет собой предыдущий график, который был активен.
 
-The table includes:
+![Таблица "История расписания" с предыдущими рабочими графиками](openproject_user_guide_account_schedule_availability_future_schedules_schedule_history.png)
 
-- Start date
-- Work days
-- Work hours
-- Availability factor
-- Effective work hours
+Нажмите меню **Еще** (**⋯**) в конце строки и выберите **Редактировать** или **Удалить**.
 
-Each entry represents a previous schedule that was active.
+## Календарь доступности
 
-![Schedule history table showing previous work schedules](openproject_user_guide_account_schedule_availability_future_schedules_schedule_history.png)
+**Календарь доступности** предоставляет годовой обзор ваших нерабочих дней, включая ваш личный отпуск и общеорганизационные нерабочие дни, такие как государственные праздники.
 
-Click the **More** (**⋯**) menu at the end of a row and select **Edit** or **Delete**.
+Над календарем вы можете:
+- Просмотреть выбранный год.
+- Перейти к предыдущему или следующему году с помощью кнопок со стрелками.
+- Нажать **Сегодня**, чтобы вернуться к текущему году.
+- Нажать **+ Отпуск**, чтобы добавить личный отпуск.
 
-## Availability calendar
+С правой стороны календаря две сводные панели отображают ваши годовые итоги:
+- **Отпуск** – Общее количество дней личного отпуска за выбранный год.
+- **Сводка** – Обзор:
+  - Личные нерабочие дни
+  - Глобальные нерабочие дни
+  - Всего дней отдыха
 
-The **Availability calendar** provides a yearly overview of your non-working days, including your personal time off and company-wide non-working days, such as public holidays.
+![Календарь доступности с годовым отпуском и сводными панелями](openproject_user_guide_account_schedule_availability_calendar.png)
 
-Above the calendar, you can:
+### Добавить отпуск
 
-- View the selected year.
-- Navigate to the previous or next year using the arrow buttons.
-- Click **Today** to return to the current year.
-- Click **+ Time off** to add personal time off.
+Чтобы добавить личный отпуск, нажмите **+ Отпуск**. Вы также можете щелкнуть на любой день в календаре, чтобы создать новую запись.
 
-On the right side of the calendar, two summary panels display your yearly totals:
+В открывшейся форме укажите следующую информацию:
+- **Дата начала**
+- **Дата окончания**
 
-- **Time off** – The total number of personal time off days for the selected year.
-- **Summary** – An overview of:
-  - Personal non-working days
-  - Global non-working days
-  - Total days off
+Количество затронутых рабочих дней рассчитывается автоматически.
 
-![Availability calendar showing yearly time off and summary panels](openproject_user_guide_account_schedule_availability_calendar.png)
+Нажмите **Подтвердить**, чтобы добавить отпуск, или **Отмена**, чтобы закрыть диалоговое окно без сохранения.
 
-### Add time off
+![Диалоговое окно "Отпуск" для добавления личного отпуска](openproject_user_guide_account_schedule_availability_calendar_add_time_off_form.png)
 
-To add personal time off, click **+ Time off**. You can also click on any day in the calendar to create a new entry.
+После сохранения запись об отпуске появляется в календаре, а сводные панели обновляются автоматически.
 
-In the form that opens, specify the following information:
-
-- **Start date**
-- **Finish date**
-
-The number of affected working days is calculated automatically.
-
-Click **Confirm** to add the time off or **Cancel** to close the dialog without saving.
-
-![Time off dialog for adding personal time off](openproject_user_guide_account_schedule_availability_calendar_add_time_off_form.png)
-
-After saving, the time off entry appears in the calendar and the summary panels are updated automatically.
-
-To modify or remove an existing time off entry, click it in the calendar and edit or delete it as needed.
+Чтобы изменить или удалить существующую запись об отпуске, щелкните ее в календаре и отредактируйте или удалите по мере необходимости.

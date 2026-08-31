@@ -1,66 +1,71 @@
 ---
 sidebar_navigation:
-  title: Backlogs FAQ
-  priority: 001
-description: Frequently asked questions regarding the backlogs module
-keywords: backlogs FAQ, backlogs, backlog, task board, taskboard, version, sprint, scrum
+  title: Интерфейс
+  priority: 600
+description: Узнайте, как настроить пользовательский интерфейс в OpenProject.
+keywords: мой аккаунт, настройки аккаунта, изменить язык
 ---
+# Интерфейс
 
-# Frequently asked questions (FAQ) for Backlog and sprints
+В разделе **Интерфейс** настроек проекта вы можете настроить цветовой режим, активировать предупреждения и настроить параметры бэклога. Настройки здесь сгруппированы в два раздела: _Внешний вид и ощущения_ и _Предупреждения_.
+
+## Внешний вид и ощущения
+
+В разделе **Внешний вид и ощущения** в **Интерфейсе** ваших настроек профиля (доступен через меню слева) вы можете выбрать предпочитаемый цветовой режим отображения и настроить порядок, в котором комментарии появляются в **Списке активностей** для рабочих пакетов.
+
+Вы также можете **отключить сочетания клавиш**. Это полезно, если вы полагаетесь на программу чтения с экрана или хотите избежать случайного запуска действий.
+
+Нажмите **Обновить внешний вид и ощущения**, чтобы сохранить изменения.
+
+!["Внешний вид и ощущения" в настройках интерфейса в настройках аккаунта OpenProject](openproject_account_settings_interface_look_and_feel.png)
+
+### Выберите режим высокой контрастности
+
+В раскрывающемся меню **Цветовой режим** вы можете выбрать цветовой режим. Настройка по умолчанию — **Светлый режим**. Вы можете увеличить контрастность, активировав настройку **Увеличить контрастность**, что значительно увеличит контрастность и переопределит цветовую тему экземпляра OpenProject для вас.
+
+Этот режим рекомендуется для пользователей с нарушениями зрения.
+
+![Светлый режим с увеличенной контрастностью выбран в настройках аккаунта OpenProject](openproject_account_settings_settings_light_high_contrast_mode.png)
+
+### Выберите темный режим
+
+В раскрывающемся меню **Цветовой режим** вы можете выбрать цветовой режим. Настройка по умолчанию — **Светлый режим**. Вы также можете выбрать **Темный** режим и активировать настройку **Увеличить контрастность** для режима **Темный с высокой контрастностью**.
 
 > [!NOTE]
-> With the release of OpenProject 17.3, the **Backlogs** module has undergone significant changes, including the introduction of redesigned sprint handling and updated functionality. As a result, this FAQ page has been revised to reflect the current behavior and concepts.
->
-> Please note that further improvements are implemented in OpenProject 17.4 and beyond. We will continue to update this page to keep it aligned with the latest product changes.
+> Пользовательские цвета и темы поддерживаются только в светлом режиме, и изменение цветовых режимов может переопределить большую часть или всю пользовательскую конфигурацию. Только некоторые цвета (акцентный и цвет основной кнопки) сохраняются, но адаптируются для соответствующего контраста в определенных режимах, таких как темный режим.
 
-## If I previously had sprints defined using versions, how does the change from sprint to version affect migration and existing data?
+![Темный режим в настройках аккаунта OpenProject](openproject_account_settings_dark_mode.png)
 
-Before the OpenProject 17.3 release, the backlog module allowed defining versions that could be used in the left or right columns of the backlog module. There wasn't a designated column for the sprint, but rather the user could decide whether the version should be displayed in the left or right column.
+### Выберите автоматический цветовой режим
 
-All the versions that have been defined to appear in either the left or right columns are now migrated into a sprint. All the work packages associated with the version will also appear on the sprint.
+В раскрывающемся меню Цветовой режим теперь также можно выбрать **Автоматический вариант, который будет соответствовать цветовому режиму вашей операционной системы**.
 
-## Can I define if sprints should be on the left or right-hand side?
+![Автоматический цветовой режим в настройках аккаунта OpenProject](openproject_account_settings_automatic_os_mode.png)
 
-We have chosen a view which is the same in all projects to maintain consistency. Each project you visit now shows backlog on the left-hand side and the sprints on the right-hand side. Usually the life-cycle of a work package starts in the backlog and then the work package moves to the sprint. This is why we decided to place the backlog as the first column and sprints as the second one. 
+Если выбран этот вариант, OpenProject автоматически будет соответствовать светлой или темной теме вашей операционной системы, включая настройки контрастности системы. Вы также увидите дополнительные настройки для принудительного включения высокой контрастности при выборе светлого или темного режима — это гарантирует, что OpenProject всегда увеличивает контрастность в автоматическом режиме, независимо от настроек контрастности системы.
 
-## What if the sprint field is not visible in the work package?
+Если ваша операционная система настроена на режим высокой контрастности, OpenProject также автоматически переключится на соответствующий режим высокой контрастности (светлый или темный).
 
-First, you have to make sure the backlog module is active within a project.
+> [!NOTE]
+> Это предпочтение, специфичное для пользователя, и влияет только на ваш собственный аккаунт.
 
-- An admin needs to add the field to existing work package forms. 
-- Once added, the sprint field becomes visible on the work package details page and can be edited there as well.
+### Изменить порядок отображения комментариев
 
-## Where are my backlog buckets and sprints now?
+Вы можете выбрать порядок комментариев (например, комментариев для рабочего пакета, которые появляются на вкладке "Активность"). Вы можете выбрать **новейшие внизу** или **новейшие сверху** для отображения комментариев.
 
-All buckets have been migrated as sprints, which are now visible on the right-hand side. Starting with version 17.4, there are backlog buckets on the left-hand side, allowing you to sort and organize your backlog in a better way.
+Если вы выбираете "новейшие сверху", последний комментарий будет появляться сверху в Списке активностей.
 
-## How is the backlog generated?
+### Отключить сочетания клавиш
 
-Your backlog automatically shows all work packages from your project which are not closed and can be worked on. It is possible to exclude certain work package types from the automated backlog. This can be defined under [project backlog settings](../../projects/project-settings/backlogs-settings).
+Если вы используете программу чтения с экрана или хотите избежать случайного запуска действия с помощью сочетания клавиш, вы можете отключить стандартные [сочетания клавиш](../../keyboard-shortcuts-access-keys/), выбрав соответствующую опцию.
 
-## How is the backlog sorted?
+## Предупреждения
 
-The backlog can be sorted manually:
+В разделе **Предупреждения** вы можете активировать **предупреждение, если вы покидаете рабочий пакет с несохраненными изменениями**.
 
-- When you open your backlog, the oldest items appear at the top. 
-- The work packages are sorted by creation date.
-- When you add a new work package to the project, it is automatically placed at the bottom of the backlog. 
+Кроме того, вы можете активировать **автоматическое скрытие уведомлений об успехе** от системы. Это (только) означает, что зеленые всплывающие уведомления об успехе будут автоматически удаляться через пять секунд.
 
-## How are sprint containers sorted?
+> [!TIP]
+> Даже если включено автоматическое скрытие, баннеры остаются видимыми, пока вы наводите на них курсор или перемещаете указатель мыши над ними. Это дает вам больше времени, чтобы прочитать сообщение, прежде чем оно исчезнет.
 
-- Sprint containers with start/completion dates are sorted by date showing the latest one on the top. 
-- Sprint containers without dates are sorted in an alphanumeric way.
-
-## My task board is gone, where can I get another board?
-
-You can use the automated sprint boards, which show the entire sprint scope.
-
-- Define sprint dates and start your sprint. You will be automatically forwarded to your board.
-- For an active sprint you will find a shortcut to the board in the sprint menu. 
-- Click the menu of an active sprint and select the option "Sprint board".
-
-Additionally, if you would like to see the parent/child relationships, please use the parent-child boards.
-
-## Where is my Burndown chart?
-
-Nothing has changed with the Burndown chart. It is synced with the sprint object and can be accessed from the menu of an active sprint.
+![Раздел "Предупреждения" в настройках интерфейса в настройках аккаунта OpenProject](openproject_account_settings_interface_alerts.png)

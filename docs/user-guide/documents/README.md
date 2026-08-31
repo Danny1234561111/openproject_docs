@@ -1,172 +1,165 @@
 ---
 sidebar_navigation:
-  title: Documents
+  title: Документы
   priority: 770
-description: Create documents and attach files in OpenProject.
-keywords: documents
+description: Создавайте документы и прикрепляйте файлы в OpenProject.
+keywords: документы
 ---
+# Документы
 
-# Documents
-
-The Documents module allows you to write or upload documents directly to the project.
+Модуль «Документы» позволяет писать или загружать документы непосредственно в проект.
 
 > [!NOTE]
-> Use the Documents module to create, write, or upload documents directly in your projects. If you need to manage files stored externally, please take a look at the [file storages integrations](../file-management).
+> Используйте модуль «Документы» для создания, написания или загрузки документов непосредственно в ваших проектах. Если вам нужно управлять файлами, хранящимися внешне, пожалуйста, ознакомьтесь с [интеграциями файловых хранилищ](../file-management).
 
 > [!IMPORTANT]
 >
-> With 17.0 release, real-time documents collaboration was introduced. It is automatically available for the following installation types: 
+> С выпуском версии 17.0 была представлена совместная работа над документами в реальном времени. Она автоматически доступна для следующих типов установки:
 >
-> - Containerized installations
-> - Cloud-hosted installations
+> - Контейнерные установки
+> - Установки, размещенные в облаке
 >
-> **Packaged installations (DEB/RPM) require additional manual setup**. Please refer to the [system administration guide for more details](../../system-admin-guide/documents/#real-time-collaboration-in-documents). 
+> **Пакетные установки (DEB/RPM) требуют дополнительной ручной настройки**. Пожалуйста, обратитесь к [руководству системного администратора для получения более подробной информации](../../system-admin-guide/documents/#совместная-работа-в-реальном-времени-в-документах).
 
-## Document index
+## Индекс документов
 
-To use the Documents module, make sure it is enabled in the Project settings of your project (Project settings → Modules). 
+Чтобы использовать модуль «Документы», убедитесь, что он включен в настройках проекта вашего проекта (Настройки проекта → Модули).
 
-Once it is enabled, you can navigate to the _Documents_ module in the sidebar of your project to get to the Documents index that lists all available documents:
+После его включения вы можете перейти к модулю _Документы_ на боковой панели вашего проекта, чтобы попасть в индекс документов, который перечисляет все доступные документы:
 
-![Documents index lists of all available documents in an OpenProject project](openproject_user_guide_real_documents_overview.png)
+![Индекс документов со списком всех доступных документов в проекте OpenProject](openproject_user_guide_real_documents_overview.png)
 
-The Documents index page lets you:
+Страница индекса документов позволяет вам:
 
-1. View all documents
-
-2. Filter by document type
+1. Просматривать все документы
+2. Фильтровать по типу документа
 
 > [!TIP]
-> If no document types were specified by you yet, default document types are seeded. They include: _Note, Idea, Proposal, Specification, Report and Documentation_.
+> Если типы документов еще не были указаны вами, используются типы документов по умолчанию. Они включают: _Заметка, Идея, Предложение, Спецификация, Отчет и Документация_.
 
-3. Quick-filter the list of documents based on the document title
+3. Быстро фильтровать список документов на основе заголовка документа
+4. Добавить новый документ
+5. Просматривать список всех доступных документов, включая их тип и дату последнего редактирования. Документы, созданные до выпуска версии 17.0, будут отмечены меткой _Устаревший_.
 
-4. Add a new document
+   ![Пример документа, отмеченного меткой "Устаревший" в модуле _Документы_ OpenProject](openproject-documents-legacy.png)
 
-5. View a list of all available documents, including their type and the date they were last edited. Documents created prior to 17.0 release will be marked by _Legacy_ label. 
+Документ в OpenProject может быть:
 
-   ![An example of a document marked by a legacy label in OpenProject _Documents_ module](openproject-documents-legacy.png)
+- текстом, написанным непосредственно в редакторе документа
+- файлом, загруженным и прикрепленным к документу
+- как файлом, загруженным и прикрепленным к документу, так и текстовой заметкой, которая его описывает
 
-A document in OpenProject can be:
+## Просмотр документа
 
-- a text written directly in the editor of a document
-- a file uploaded and attached to a document
-- both a file uploaded and attached to a document, with a text note that describes it
+Чтобы просмотреть документ, просто нажмите на имя документа в индексе. Затем вы увидите документ:
 
-## View a document 
+![Просмотр документа с вложением в OpenProject](openproject_user_guide_documents_module_detailed_view.png)
 
-To view a document, simply click on the name of a document in the index. You will then see the document:
+Документ имеет:
 
-![Viewing a document with an attachment in OpenProject](openproject_user_guide_documents_module_detailed_view.png)
+1. Заголовок, категорию, количество активных редакторов и дату последнего сохранения
+2. Меню _Еще_ с опциями редактирования, копирования ссылки и удаления документа
+3. Сам текст документа
+4. Вложения
 
-A document has:
+## Добавить новый документ в проект
 
-1. A title, a category, number of active editors and last saved date
-2. _More_ menu with with options to edit, copy link and delete a document
-3. The document text itself
-4. Attachments
+Чтобы создать новый документ, нажмите кнопку _+ Документ_.
 
-## Add a new document to the project 
+![Создание нового документа в модуле «Документы» OpenProject](openproject_user_guide_documents_create_new.png)
 
-To create a new document, click on the _+ Document_ button. 
+В появившейся форме выберите категорию документа, дайте ему заголовок и необязательное описание. Вы также можете дополнительно прикрепить файл к документу.
 
-![Create a new document in OpenProject Documents module](openproject_user_guide_documents_create_new.png)
+Обратите внимание, что эти категории документов создаются администратором вашего экземпляра.
 
-In the form that appears, select the document category, give it a title and an optional description. You can optionally also attach a file to the document.
-
-Please note that that these document categories are created by the administrator of your instance.
-
-The uploaded documents are visible to all project members who have the necessary permissions.
+Загруженные документы видны всем участникам проекта, у которых есть необходимые разрешения.
 
 > [!NOTE]
-> There is no versioning of documents. An edit of any field or the contents of the document is visible to all members.
+> Версионирование документов отсутствует. Редактирование любого поля или содержимого документа видно всем участникам.
 
-## Edit a project document 
+## Редактирование документа проекта
 
-You can edit a document anytime. 
+Вы можете редактировать документ в любое время.
 
-To edit a document title, click on the _More (three dots)_ menu and select _Edit title_. 
+Чтобы отредактировать заголовок документа, нажмите меню _Еще (три точки)_ и выберите _Редактировать заголовок_.
 
-![Edit a document title in OpenProject Documents module](openproject_user_guide_documents_edit_title.png)
+![Редактирование заголовка документа в модуле «Документы» OpenProject](openproject_user_guide_documents_edit_title.png)
 
-To edit the document itself simply click anywhere in the document and you can directly start editing. Simply start entering text or use **/** to add headings, blocks, media elements, emojis and link to work packages. 
+Чтобы отредактировать сам документ, просто щелкните в любом месте документа, и вы можете сразу начать редактирование. Просто начните вводить текст или используйте **/** для добавления заголовков, блоков, медиа-элементов, эмодзи и ссылок на рабочие пакеты.
 
-![Edit a document in OpenProject Documents module](openproject_user_guide_documents_module_add_heading.png)
+![Редактирование документа в модуле «Документы» OpenProject](openproject_user_guide_documents_module_add_heading.png)
 
-### Collaborative editing
+### Совместное редактирование
 
-Multiple project members can edit a document at the same time. If they do, you will see what changes are made by which user in real time.
+Несколько участников проекта могут редактировать документ одновременно. Если они это делают, вы увидите, какие изменения вносятся каким пользователем в реальном времени.
 
-Take a look at this example for an illustration. 
+Посмотрите этот пример для иллюстрации.
 
-![An example of real-time document editing in OpenProject Documents module](openproject_user_guide_real_time_collaboration_example.gif)
+![Пример совместного редактирования документа в реальном времени в модуле «Документы» OpenProject](openproject_user_guide_real_time_collaboration_example.gif)
 
-### Link work packages to documents
+### Связывание рабочих пакетов с документами
 
-You can link existing work packages to a document in three ways:
+Вы можете связывать существующие рабочие пакеты с документом тремя способами:
 
-1. **Using the slash menu**
+1. **Использование меню слэша**
+Начните редактировать документ, введите **/** чтобы открыть меню слэша, затем выберите **Ссылка на существующий рабочий пакет** из списка доступных опций.
 
-Start editing a document, type **/** to open the slash menu, then select **Link to existing work package** from the list of available options.
+![Связывание документа с существующим рабочим пакетом в OpenProject](openproject_user_guide_documents_module_add_work_package.png)
 
-![Link a document to an existing work package in OpenProject](openproject_user_guide_documents_module_add_work_package.png)
+Введите ID рабочего пакета или тему, и он будет автоматически связан, как показано ниже:
 
-Enter the work package ID or subject and it will automatically be linked, as shown below:
-
-![Document linked to an existing work package in OpenProject](openproject_user_guide_documents_module_add_linked_work_package.png)
+![Документ, связанный с существующим рабочим пакетом в OpenProject](openproject_user_guide_documents_module_add_linked_work_package.png)
 
 > [!NOTE]
-> The work package is displayed as a full-width card only when it is linked using a slash command on an empty line.
+> Рабочий пакет отображается как карточка на всю ширину только тогда, когда он связан с помощью команды слэша на пустой строке.
 
-2. **Using inline work package links**
+2. **Использование встроенных ссылок на рабочие пакеты**
+Вы также можете связывать рабочие пакеты непосредственно внутри строки текста или абзаца. Введите **#**, **##** или **###**, затем ID рабочего пакета или часть темы. Совпадающие рабочие пакеты будут предложены автоматически.
 
-You can also link work packages directly within a line of text or a paragraph. Type **#**, **##**, or **###**, followed by a work package ID or part of the subject. Matching work packages will be suggested automatically.
+![Пример связывания рабочего пакета внутри строки в модуле документов OpenProject](openproject_user_guide_documents_link_wp_inline.png)
 
-![Example of linking a work package inline in OpenProject documents module](openproject_user_guide_documents_link_wp_inline.png)
+Объем отображаемой информации о рабочем пакете зависит от используемого формата отображения:
 
-The amount of work package information shown depends on the display format used:
+- **#** отображает идентификатор рабочего пакета.
+- **##** отображает тип рабочего пакета, идентификатор и тему.
+- **###** отображает статус, тип, идентификатор и тему рабочего пакета.
 
-- **#** displays the work package identifier.
-- **##** displays the work package type, identifier, and subject.
-- **###** displays the work package status, type, identifier, and subject.
+![Рабочий пакет, связанный три раза внутри строки в модуле документов OpenProject, показывающий разное количество информации в зависимости от количества используемых хэштегов](openproject_user_guide_documents_link_wp_inline_examples.png)
 
-![Work package linked three times inline in OpenProject documents module, showing different amounts of information depending on how many hashtags are used](openproject_user_guide_documents_link_wp_inline_examples.png) 
+Встроенные ссылки на рабочие пакеты ведут себя как обычные ссылки и могут быть размещены естественным образом внутри абзаца, без добавления разрыва строки. В качестве альтернативы рабочие пакеты могут отображаться как отдельные карточки в стиле блоков.
 
-Inline work package links behave like regular links and can be placed naturally within a paragraph, without adding a line break. Alternatively, work packages can be displayed as separate block-style cards.
+Нажмите на заголовок рабочего пакета, чтобы открыть его в новой вкладке браузера. Чтобы изменить стиль отображения связанного рабочего пакета, нажмите на ID рабочего пакета слева, чтобы открыть контекстное меню. Вы можете выбрать один из доступных вариантов отображения: **Крошечный**, **Компактный**, **Обычный** или **Компактная карточка**.
 
-Click the work package title to open it in a new browser tab. To change the display style of the linked work package, click the work package ID on the left to open the context menu. You can choose one of the available display options: **Tiny**, **Compact**, **Regular**, or **Compact card**.
-
-![Context menu to change display options for a linked work package in OpenProject Documents module](openproject_user_guide_documents_link_wp_inline_menu.png)
+![Контекстное меню для изменения вариантов отображения связанного рабочего пакета в модуле «Документы» OpenProject](openproject_user_guide_documents_link_wp_inline_menu.png)
 
 > [!TIP]
-> If you are working with tiny work package links, you can hover over the linked work package identifier to see a preview with additional details, such as type, status and subject. For the mobile screens use a long tap instead.
+> Если вы работаете с крошечными ссылками на рабочие пакеты, вы можете навести курсор на связанный идентификатор рабочего пакета, чтобы увидеть предварительный просмотр с дополнительными деталями, такими как тип, статус и тема. Для мобильных экранов используйте вместо этого долгое нажатие.
 
-3. **Pasting a work package URL**
+3. **Вставка URL рабочего пакета**
+Скопируйте URL рабочего пакета и вставьте его непосредственно в документ. Вы можете использовать либо URL браузера, либо **Копировать ссылку в буфер обмена**:
 
-Copy a work package URL ad paste directly into a document. You can use either the browser URL or **Copy link to clipboard**:
+- Откройте рабочий пакет, нажмите меню _Еще (три точки)_
+- Выберите **Копировать ссылку в буфер обмена**, затем вставьте ссылку в ваш документ.
 
-- Open a work package, click the **More (three dots)** menu 
-- Select **Copy link to clipboard**, then paste the link into your document.
-
-![Pasting a work package link into a document in OpenProject](openproject_user_guide_documents_wp_url.png)
+![Вставка ссылки на рабочий пакет в документ в OpenProject](openproject_user_guide_documents_wp_url.png)
 
 > [!NOTE]
-> The way you paste the link determines how it is displayed. If you paste into an empty paragraph, the work package is linked as a card. If its pasted into an existing paragraph, the work package is linked as a regular size ( same as when using ###).
+> Способ вставки ссылки определяет, как она отображается. Если вы вставляете в пустой абзац, рабочий пакет связывается как карточка. Если он вставлен в существующий абзац, рабочий пакет связывается как обычного размера (так же, как при использовании ###).
 
-## Delete a project document
+## Удаление документа проекта
 
-You can easily delete a document in OpenProject. 
+Вы можете легко удалить документ в OpenProject.
 
-To delete a document, click on the _More (three dots)_ menu and select _Delete_. 
+Чтобы удалить документ, нажмите меню _Еще (три точки)_ и выберите _Удалить_.
 
-![Delete a document in OpenProject Documents module](openproject_user_guide_documents_delete.png)
+![Удаление документа в модуле «Документы» OpenProject](openproject_user_guide_documents_delete.png)
 
-## Frequently asked questions (FAQ)
+## Часто задаваемые вопросы (FAQ)
 
-### Why can't I edit documents in real-time?
+### Почему я не могу редактировать документы в реальном времени?
 
-Real-time document collaboration is available in OpenProject starting with version 17.0, but whether you can use it depends on how your OpenProject instance is set up. In cloud-hosted and containerized setups, real-time editing is enabled by default. For packaged installations (DEB/RPM), additional configuration is necessary. Please contact your OpenProject administrator and/or refer to the [system administration guide for more details](../../system-admin-guide/documents/#real-time-collaboration-in-documents). 
+Совместная работа над документами в реальном времени доступна в OpenProject, начиная с версии 17.0, но возможность ее использования зависит от того, как настроен ваш экземпляр OpenProject. В облачных и контейнерных установках совместное редактирование включено по умолчанию. Для пакетных установок (DEB/RPM) необходима дополнительная конфигурация. Пожалуйста, свяжитесь с вашим администратором OpenProject и/или обратитесь к [руководству системного администратора для получения более подробной информации](../../system-admin-guide/documents/#совместная-работа-в-реальном-времени-в-документах).
 
-### Is there a size limit for uploading documents to the OpenProject Enterprise cloud edition?
+### Существует ли ограничение на размер загружаемых документов в OpenProject Enterprise cloud edition?
 
-There is no limit in OpenProject in terms of the number of files that you can upload and work with in OpenProject. There is only a restriction in terms of the maximum file size: A file can have a size up to 256 MB.
+В OpenProject нет ограничений по количеству файлов, которые вы можете загружать и с которыми работать в OpenProject. Существует только ограничение по максимальному размеру файла: файл может иметь размер до 256 МБ.

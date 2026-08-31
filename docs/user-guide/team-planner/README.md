@@ -1,158 +1,153 @@
 ---
 sidebar_navigation:
-  title: Team planner
+  title: Планировщик команды
   priority: 863
-description: Using the team planner module in OpenProject.
-keywords: team planner, teamplanner, team planer, teamplaner, team-planer, team-planner, capacity, resources, planning, calendar, resource management, assign, team view
+description: Использование модуля планировщика команды в OpenProject.
+keywords: планировщик команды, teamplanner, план команды, teamplaner, team-planer, team-planner, мощность, ресурсы, планирование, календарь, управление ресурсами, назначить, представление команды
 ---
+# Планировщик команды
 
-# Team planner
+Модуль «Планировщик команды» помогает вам получить полный обзор того, над чем работает каждый член вашей команды. Вы можете использовать его для отслеживания текущего прогресса рабочих пакетов, над которыми работает ваша команда, планирования новых задач, их переноса или даже переназначения другим членам команды.
 
-The team planner module helps you get a complete overview of what each member of your team is working on. You can use it to track the current progress of work packages your team is working on, schedule new tasks, reschedule them or even reassign them to different members.
+![Пример планировщика команды, показывающий восьминедельный вид рабочих пакетов, назначенных членам команды](openproject_user_guide_teamplanner_overview.png)
 
-![Example team planner showing an eight-week view of work packages assigned to team members](openproject_user_guide_teamplanner_overview.png)
-
-Essentially, the team planner is a calendar view with an assignee column on the left side. Each work package assigned to a team member will appear as a card that spans a certain duration (start date to finish date). These cards can be moved, stretched, shortened or removed to organize the planning of your team.
+По сути, планировщик команды — это представление календаря со столбцом исполнителя слева. Каждый рабочий пакет, назначенный члену команды, будет отображаться в виде карточки, которая охватывает определенную продолжительность (дата начала до даты окончания). Эти карточки можно перемещать, растягивать, сокращать или удалять для организации планирования вашей команды.
 
 [feature: team_planner_view ]
 
-To use this module, you must have the work packages module enabled.
+Чтобы использовать этот модуль, у вас должен быть включен модуль «Рабочие пакеты».
 
-| Topic                                                                        | Content                                                              |
+| Тема                                                                        | Содержание                                                              |
 |------------------------------------------------------------------------------|:---------------------------------------------------------------------|
-| [Module overview](#module-overview)                                          | See a list of all existing team planners or create a new one         |
-| [Team planner basics](#team-planner-basics)                                  | Understanding the basics of how a team planner is organized          |
-| [Adding team members and work packages](#add-team-members-and-work-packages) | Add team members and schedule, reschedule and reassign work packages |
-| [Work package detail view](#work-package-details-view)                       | View or edit a specific work package                                 |
-| [Removing a work package](#remove-a-work-package)                            | Removing (unscheduling) visible work packages                        |
+| [Обзор модуля](#обзор-модуля)                                          | Посмотрите список всех существующих планировщиков команды или создайте новый         |
+| [Основы планировщика команды](#основы-планировщика-команды)                                  | Понимание основ организации планировщика команды          |
+| [Добавление членов команды и рабочих пакетов](#добавить-членов-команды-и-рабочие-пакеты) | Добавляйте членов команды и планируйте, переносите и переназначайте рабочие пакеты |
+| [Детальное представление рабочего пакета](#детальное-представление-рабочего-пакета)                       | Просмотр или редактирование конкретного рабочего пакета                                 |
+| [Удаление рабочего пакета](#удалить-рабочий-пакет)                            | Удаление (отмена планирования) видимых рабочих пакетов                        |
 
-![Video](https://openproject-docs.s3.eu-central-1.amazonaws.com/videos/OpenProject-Team-Planner.mp4)
+![Видео](https://openproject-docs.s3.eu-central-1.amazonaws.com/videos/OpenProject-Team-Planner.mp4)
 
-## Module overview
+## Обзор модуля
 
-Clicking on the **Team planners** entry on the left sidebar takes you to the team planner module with a list of all existing team planners:
+Нажатие на пункт **Планировщики команды** на левой боковой панели перенаправит вас в модуль планировщика команды со списком всех существующих планировщиков команды:
 
-![List of team planners created in a project in OpenProject](openproject_user_guide_teamplanner_overview_explained.png)
+![Список планировщиков команды, созданных в проекте в OpenProject](openproject_user_guide_teamplanner_overview_explained.png)
 
-- You can create a new team planner using either the **+ Team planner** button in the top right near your avatar or at the bottom of the left menu bar.
-- Click on an existing (saved) team planner to open it.
-- Team planners marked as _favorite_ under visibility settings appear under the **Favorite** heading in the menu bar.
-- Team planners with _public_ visibility settings appear under the **Public** heading in the menu bar.
-- New team planners by default appear under the **Private** heading in the left menu bar. These are visible only to you.
-
-> [!TIP]
-> Both _public_ and _private_ team planners can be added as **favorited** planners.
-
-## Team planner basics
-
-![A screenshot of an example team planner with different functions highlighted](openproject_user_guide_teamplanner_detailed_view_explained.png)
-
-A team planner has a number of features numbered 1 to 8 in the above screenshot:
-
-1. Click on the name of your team planner (_Marketing Team_ in the example above) to edit it. Unless it's a new team planner, this change has to be confirmed by pressing the floppy disk icon that appears next to the name after you change it.
-
-2. Use the **+ Add existing** button to add an existing work package  to the team planner. You do this by searching for work package and dragging its card to an assignee, at a certain time. This will then update the _assignee_, _start date_ and _finish date_ attributes of that work package.
-
-3. Add a new team member to the assignee column by Clicking on the **+ Assignee** button.
-
-4. By default, the team planner will only show assigned work packages belonging to the current project. 
+- Вы можете создать новый планировщик команды, используя либо кнопку **+ Планировщик команды** в правом верхнем углу рядом с вашим аватаром, либо в нижней части левой панели меню.
+- Нажмите на существующий (сохраненный) планировщик команды, чтобы открыть его.
+- Планировщики команды, отмеченные как _избранные_ в настройках видимости, появляются под заголовком **Избранные** в панели меню.
+- Планировщики команды с настройками видимости _публичные_ появляются под заголовком **Публичные** в панели меню.
+- Новые планировщики команды по умолчанию появляются под заголовком **Приватные** в левой панели меню. Они видны только вам.
 
 > [!TIP]
-> It is possible to also add assigned work packages belonging to other projects. You can make these work packages from other projects visible by using **Include projects** feature and selecting additional projects to be included in this view.
+> Как _публичные_, так и _приватные_ планировщики команды могут быть добавлены как **избранные** планировщики.
 
-5. Use the **Filter** feature (same as in the [work packages](../work-packages/work-package-table-configuration/#filter-work-packages) module) to display only work packages that meet certain filter criteria. You could, for example, filter such that only work packages of certain types, certain status or certain custom field values are visible.
+## Основы планировщика команды
 
-6. The **Fullscreen** button lets you view the team planner in fullscreen mode.
+![Снимок экрана примера планировщика команды с выделенными различными функциями](openproject_user_guide_teamplanner_detailed_view_explained.png)
 
-7. The  **\[⋮\]** (more) button gives you additional options, such as saving, renaming and saving a copy (saving as), or deleting the team planner. This is also where you can modify the visibility options.
+Планировщик команды имеет ряд функций, пронумерованных от 1 до 8 на приведенном выше снимке экрана:
 
-8. By default the team planner only shows the [work week](../../system-admin-guide/calendars-and-dates/#working-days-and-hours) (week excluding the weekend and non-working days). Use the drop down to toggle between work week, 1-week, 2-week, 4-week or 8-week views. With the arrows you can navigate the weeks back and forth. The Today button brings you to the current week.
-
-> [!TIP]
-> The team planner will highlight non-working days in the calendar with a darker background color. By default, a work package cannot be dragged or resized such that it begins or ends on these days unless the "Working days only" switch is turned off for that work package. To learn how to do this, refer to the documentation on [Working days and duration](../work-packages/set-change-dates/#working-days-and-duration).
-
-## Add team members and work packages
-
-### Add team members
-
-When you create a new team planner, it will be empty, like so:
-
-![An example of a newly-created empty team planner in OpenProject](openproject_user_guide_teamplanner_new_unnamed.png)
-
-The first step in setting up your team planning calendar is to add team members. To do so, click on the **+ Assignee** button then search for the team member you would like to add from the the dropdown list. This will add a new row to the calendar view for that team member.
-
-Repeat this step until all relevant team members are added, rename _Unnamed team planner_ and then save it using the floppy disk icon in the top header as shown below:
-
-![Adding team members to a team planner in OpenProject](openproject_user_guide_teamplanner_add_assignee.png)
-
-If you need to remove a member from this list, hover over their name and click on the **X button** that appears next to their name. (This action simply removes the row and does not affect the user's status in the project).
-
-For more save options, click on the menu **(...)**. Other options such as Rename view, Delete, and Visibility settings become enabled after you save your new team planner.
-
-![More options to save in the menu](openproject_user_guide_teamplanner_save_options.png)
-
-### Add and edit work packages
-
-Next, you can add existing work packages to your planner. You can do this by either creating a new work package or by adding existing work packages.
-
-#### Create a new work package
-
-You can create a new work package for a particular member of your team by clicking on a cell in that team member's assignee row.
+1. Нажмите на имя вашего планировщика команды (_Маркетинг команда_ в примере выше), чтобы отредактировать его. Если это не новый планировщик команды, это изменение должно быть подтверждено нажатием значка дискеты, который появляется рядом с именем после его изменения.
+2. Используйте кнопку **+ Добавить существующий**, чтобы добавить существующий рабочий пакет в планировщик команды. Вы делаете это, выполняя поиск рабочего пакета и перетаскивая его карточку на исполнителя, в определенное время. Это затем обновит атрибуты _исполнитель_, _дата начала_ и _дата окончания_ этого рабочего пакета.
+3. Добавьте нового члена команды в столбец исполнителей, нажав на кнопку **+ Исполнитель**.
+4. По умолчанию планировщик команды будет показывать только назначенные рабочие пакеты, принадлежащие текущему проекту.
 
 > [!TIP]
-> You can also click and drag across a date range to create a work package that spans those dates. The first square will be the start date and the last one the finish date.
+> Также можно добавить назначенные рабочие пакеты, принадлежащие другим проектам. Вы можете сделать эти рабочие пакеты из других проектов видимыми, используя функцию **Включить проекты** и выбрав дополнительные проекты для включения в это представление.
 
-A **new work package dialog** will open. The assignee, start and finish dates will already be set based on where you clicked to create the work package. You can add any additional details, such as subject, work package type, a description and add attachments. Scrolling further down on the split screen also gives you access to other attributes such as cost and time and custom fields that might exist.
+5. Используйте функцию **Фильтр** (так же, как в модуле [рабочие пакеты](../work-packages/work-package-table-configuration/#фильтровать-рабочие-пакеты)), чтобы отображать только рабочие пакеты, которые соответствуют определенным критериям фильтрации. Вы можете, например, отфильтровать так, чтобы были видны только рабочие пакеты определенных типов, определенного статуса или определенных значений пользовательских полей.
+6. Кнопка **Полноэкранный режим** позволяет просматривать планировщик команды в полноэкранном режиме.
+7. Кнопка **\[⋮\]** (еще) дает вам дополнительные опции, такие как сохранение, переименование и сохранение копии (сохранить как) или удаление планировщика команды. Здесь же вы можете изменить параметры видимости.
+8. По умолчанию планировщик команды показывает только [рабочую неделю](../../system-admin-guide/calendars-and-dates/#рабочие-дни-и-часы) (неделя, исключая выходные и нерабочие дни). Используйте раскрывающийся список для переключения между представлениями рабочей недели, 1-недели, 2-недель, 4-недель или 8-недель. С помощью стрелок вы можете перемещаться по неделям вперед и назад. Кнопка Сегодня возвращает вас к текущей неделе.
 
-![New work package in split screen view](openproject_user_guide_teamplanner_new_wp.png)
+> [!TIP]
+> Планировщик команды будет выделять нерабочие дни в календаре более темным цветом фона. По умолчанию рабочий пакет нельзя перетаскивать или изменять размер так, чтобы он начинался или заканчивался в эти дни, если переключатель «Только рабочие дни» не выключен для этого рабочего пакета. Чтобы узнать, как это сделать, обратитесь к документации по [Рабочим дням и продолжительности](../work-packages/set-change-dates/#рабочие-дни-и-продолжительность).
 
-#### Add an existing work package
+## Добавить членов команды и рабочие пакеты
 
-If you would like to take an existing work package and assign it to your team member for a certain start date, the team planner makes it easy to do so.
+### Добавить членов команды
 
-Start by pressing the **+ Add existing** button below the name of the team planner and search for the work package you would like to add. Once you find it, drag and drop the work package card to the calendar, depending to whom you would like to assign it, and to which start date. The finish date will automatically be derived based on the duration of the work package.
+Когда вы создаете новый планировщик команды, он будет пустым, например:
+
+![Пример вновь созданного пустого планировщика команды в OpenProject](openproject_user_guide_teamplanner_new_unnamed.png)
+
+Первый шаг в настройке вашего календаря планирования команды — добавление членов команды. Для этого нажмите кнопку **+ Исполнитель**, затем выполните поиск члена команды, которого вы хотите добавить, из выпадающего списка. Это добавит новую строку в представление календаря для этого члена команды.
+
+Повторите этот шаг, пока не будут добавлены все соответствующие члены команды, переименуйте _Безымянный планировщик команды_ и затем сохраните его, используя значок дискеты в верхнем заголовке, как показано ниже:
+
+![Добавление членов команды в планировщик команды в OpenProject](openproject_user_guide_teamplanner_add_assignee.png)
+
+Если вам нужно удалить члена из этого списка, наведите курсор на его имя и нажмите кнопку **X**, которая появится рядом с его именем. (Это действие просто удаляет строку и не влияет на статус пользователя в проекте).
+
+Для получения дополнительных опций сохранения нажмите на меню **(...)**. Другие опции, такие как «Переименовать представление», «Удалить» и «Настройки видимости», становятся доступными после сохранения вашего нового планировщика команды.
+
+![Дополнительные опции сохранения в меню](openproject_user_guide_teamplanner_save_options.png)
+
+### Добавить и редактировать рабочие пакеты
+
+Затем вы можете добавить существующие рабочие пакеты в ваш планировщик. Вы можете сделать это, либо создав новый рабочий пакет, либо добавив существующие рабочие пакеты.
+
+#### Создать новый рабочий пакет
+
+Вы можете создать новый рабочий пакет для конкретного члена вашей команды, щелкнув на ячейке в строке исполнителя этого члена команды.
+
+> [!TIP]
+> Вы также можете щелкнуть и перетащить через диапазон дат, чтобы создать рабочий пакет, который охватывает эти даты. Первый квадрат будет датой начала, а последний — датой окончания.
+
+Откроется **диалоговое окно нового рабочего пакета**. Исполнитель, даты начала и окончания уже будут установлены на основе того, где вы щелкнули, чтобы создать рабочий пакет. Вы можете добавить любые дополнительные детали, такие как тема, тип рабочего пакета, описание и добавить вложения. Прокрутка дальше вниз на разделенном экране также дает вам доступ к другим атрибутам, таким как стоимость и время, и пользовательским полям, которые могут существовать.
+
+![Новый рабочий пакет в представлении разделенного экрана](openproject_user_guide_teamplanner_new_wp.png)
+
+#### Добавить существующий рабочий пакет
+
+Если вы хотите взять существующий рабочий пакет и назначить его вашему члену команды на определенную дату начала, планировщик команды упрощает это.
+
+Начните с нажатия кнопки **+ Добавить существующий** под именем планировщика команды и выполните поиск рабочего пакета, который вы хотите добавить. Как только вы найдете его, перетащите карточку рабочего пакета в календарь, в зависимости от того, кому вы хотите его назначить, и на какую дату начала. Дата окончания будет автоматически определена на основе продолжительности рабочего пакета.
 
 > [!NOTE]
-> Scheduling tasks by adding existing work packages is easier in the one or two week view, especially if you have work packages that can span a weekend.
+> Планирование задач путем добавления существующих рабочих пакетов проще в представлении одной или двух недель, особенно если у вас есть рабочие пакеты, которые могут охватывать выходные.
 
-![Search for existing work packages to add to the team planner](openproject_user_guide_teamplanner_add_existing_task.png)
+![Поиск существующих рабочих пакетов для добавления в планировщик команды](openproject_user_guide_teamplanner_add_existing_task.png)
 
-Sometimes, it is not possible to assign an existing work package to a particular team member for a variety of reasons: they might not be a member of the project the selected work package belongs to, might not have the necessary permissions, or you yourself might not have the necessary permissions to edit the dates or the assignee for that work package. In this case, a small error message will indicate that the operation was not successful.
+Иногда невозможно назначить существующий рабочий пакет конкретному члену команды по разным причинам: он может не быть участником проекта, к которому принадлежит выбранный рабочий пакет, может не иметь необходимых разрешений, или вы сами можете не иметь необходимых разрешений для редактирования дат или исполнителя для этого рабочего пакета. В этом случае небольшое сообщение об ошибке укажет, что операция не была успешной.
 
-#### Move and resize a work package
+#### Переместить и изменить размер рабочего пакета
 
-![Hover on a work package to see drag handles](openproject_user_guide_teamplanner_task_drag_handles.png)
+![Наведите курсор на рабочий пакет, чтобы увидеть маркеры перетаскивания](openproject_user_guide_teamplanner_task_drag_handles.png)
 
-The team planner allows you to quickly re-schedule and re-assign work packages cards:
+Планировщик команды позволяет вам быстро перепланировать и переназначить карточки рабочих пакетов:
 
-- To re-assign work packages, **click and drag a card** from one team member's row to another.
-- To change the start date only, hover over the work package and **click and drag the _drag handles_ on the left edge** (1) of the work package card to shorten or lengthen the total duration.
-- To change finish date only, hover over the work package and **click and drag the _drag handles_ on the right edge** (2) of the work package card to shorten or lengthen the total duration.
-- To maintain duration but to move the work package forwards or backwards in time, **simply click and drag the work package horizontally**.
+- Чтобы переназначить рабочие пакеты, **щелкните и перетащите карточку** из строки одного члена команды в строку другого.
+- Чтобы изменить только дату начала, наведите курсор на рабочий пакет и **щелкните и перетащите _маркеры перетаскивания_ на левом краю** (1) карточки рабочего пакета, чтобы сократить или увеличить общую продолжительность.
+- Чтобы изменить только дату окончания, наведите курсор на рабочий пакет и **щелкните и перетащите _маркеры перетаскивания_ на правом краю** (2) карточки рабочего пакета, чтобы сократить или увеличить общую продолжительность.
+- Чтобы сохранить продолжительность, но переместить рабочий пакет вперед или назад во времени, **просто щелкните и перетащите рабочий пакет горизонтально**.
 
 > [!NOTE]
-> Work packages can also expand and retract in width depending on how many non-working days are spanned (for example, a 3-day task starting on Thursday and ending on Monday will spread across 5 calendar days;  dragging that same work package so that it starts on a Tuesday and ends on a Thursday means that it will spread across 3 calendar days. In both cases, the duration remains 3 days.
+> Рабочие пакеты также могут расширяться и сокращаться по ширине в зависимости от того, сколько нерабочих дней они охватывают (например, задача на 3 дня, начинающаяся в четверг и заканчивающаяся в понедельник, распространяется на 5 календарных дней; перетаскивание того же рабочего пакета так, чтобы он начинался во вторник и заканчивался в четверг, означает, что он распространится на 3 календарных дня. В обоих случаях продолжительность остается 3 дня).
 
-Sometimes, it is not possible to modify the dates or the assignee of work packages for a variety of reasons. It could be, for example, because you might not have the necessary permissions to make that change or because existing relations make it impossible. In such cases, an error message will appear on the top of the screen to let you know that the change was not possible.
+Иногда невозможно изменить даты или исполнителя рабочих пакетов по разным причинам. Это может быть, например, потому что у вас может не быть необходимых разрешений для внесения этого изменения или потому что существующие отношения делают это невозможным. В таких случаях в верхней части экрана появится сообщение об ошибке, чтобы вы знали, что изменение было невозможно.
 
-## Work package details view
+## Детальное представление рабочего пакета
 
-When you want to understand what a team member is working on, or want to re-schedule work packages, it can be important to get the full context of each work package. Team planners make this possible by giving you easy access to work package details.
+Когда вы хотите понять, над чем работает член команды, или хотите перепланировать рабочие пакеты, может быть важно получить полный контекст каждого рабочего пакета. Планировщики команды делают это возможным, предоставляя вам легкий доступ к деталям рабочего пакета.
 
-To open the work package details in split screen, hover on a work package card and click on the **i icon** (information):
+Чтобы открыть детали рабочего пакета в разделенном экране, наведите курсор на карточку рабочего пакета и нажмите на **значок i** (информация):
 
-![Click on the i icon in a work package card to open details in split screen view](openproject_user_guide_teamplanner_task_info_icon.png)
+![Нажмите на значок i в карточке рабочего пакета, чтобы открыть детали в представлении разделенного экрана](openproject_user_guide_teamplanner_task_info_icon.png)
 
-This will open the work package details in split screen view, where you can view and edit all work package attributes, consult recent activity, view linked files and link new or attach ones and view and create work package relations.
+Это откроет детали рабочего пакета в представлении разделенного экрана, где вы можете просматривать и редактировать все атрибуты рабочего пакета, консультироваться с последней активностью, просматривать связанные файлы и связывать новые или прикреплять существующие, а также просматривать и создавать отношения рабочих пакетов.
 
-![An example of the work package detail view in split screen](openproject_user_guide_teamplanner_task_splitscreen.png)
+![Пример детального представления рабочего пакета в разделенном экране](openproject_user_guide_teamplanner_task_splitscreen.png)
 
-## Remove a work package
+## Удалить рабочий пакет
 
-Since the team planner is simply a view that displays work packages for certain assignees over a certain period of time, removing a work package simply means not making it visible in the current view. This can be achieved in a number of ways:
+Поскольку планировщик команды — это просто представление, которое отображает рабочие пакеты для определенных исполнителей в течение определенного периода времени, удаление рабочего пакета просто означает не делать его видимым в текущем представлении. Это может быть достигнуто несколькими способами:
 
-1. Adding a filter that will exclude that work package (for example, filtering for type _Task_ will remove work packages of other types from that view).
-2. Removing the start and finish dates or changing them such that they do not fall in the time period displayed in the team planner.
-3. Removing the assignee or changing the assignee to someone who has not been added to this particular team planner.
+1. Добавление фильтра, который исключит этот рабочий пакет (например, фильтрация по типу _Задача_ удалит рабочие пакеты других типов из этого представления).
+2. Удаление дат начала и окончания или их изменение таким образом, чтобы они не попадали в период времени, отображаемый в планировщике команды.
+3. Удаление исполнителя или изменение исполнителя на кого-то, кто не был добавлен в этот конкретный планировщик команды.
 
-Alternatively, the team planner offers an easy way to remove a work package by right clicking on it. This opens up a list of further actions, from which you can select **Delete.**![The remove drop zone appears when dragging a work package card](openproject_user_guide_teamplanner_delete_task.png)
+В качестве альтернативы, планировщик команды предлагает простой способ удалить рабочий пакет, щелкнув правой кнопкой мыши на нем. Это открывает список дальнейших действий, из которых вы можете выбрать **Удалить**.
+
+![Зона удаления появляется при перетаскивании карточки рабочего пакета](openproject_user_guide_teamplanner_delete_task.png)

@@ -1,261 +1,260 @@
 ---
 sidebar_navigation:
-  title: Gantt charts
+  title: Диаграммы Ганта
   priority: 865
-description: Create project timelines with Gantt charts in OpenProject
-keywords: gantt chart, timeline, project plan
+description: Создавайте временные рамки проектов с помощью диаграмм Ганта в OpenProject
+keywords: диаграмма ганта, временная шкала, план проекта
 ---
-
-# Gantt charts
+# Диаграммы Ганта
 
 <div class="glossary">
-
-The **Gantt charts** module in OpenProject displays the work packages in a timeline. You can collaboratively create and manage your project plan, have your project timelines available to all team members, and share up-to-date information with stakeholders. You can add start and finish dates and adapt them via drag and drop directly in the Gantt chart. Also, you can add dependencies, predecessors, or followers within the Gantt chart.
-
+Модуль **Диаграммы Ганта** в OpenProject отображает рабочие пакеты на временной шкале. Вы можете совместно создавать и управлять планом проекта, иметь временные рамки вашего проекта доступными для всех членов команды и делиться актуальной информацией с заинтересованными сторонами. Вы можете добавлять даты начала и окончания и адаптировать их с помощью перетаскивания непосредственно в диаграмме Ганта. Также вы можете добавлять зависимости, предшественников или последователей в диаграмме Ганта.
 </div>
 
-| Topic                                                                                                           | Content                                                                   |
+| Тема                                                                                                           | Содержание                                                                   |
 |-----------------------------------------------------------------------------------------------------------------|---------------------------------------------------------------------------|
-| [Activate the Gantt chart](#activate-the-gantt-chart)                                                           | How to activate the Gantt chart in OpenProject.                           |
-| [Create a new element](#create-a-new-element-in-the-gantt-chart)                                                | How to add a new item to the Gantt chart.                                 |
-| [Relations in the Gantt chart](#relations-in-the-gantt-chart)                                                   | Create and display dependencies in the Gantt chart.                       |
-| [Understanding the colors and lines in the Gantt chart](#understanding-the-colors-and-lines-in-the-gantt-chart) | What do the clamps, lines and symbols in the Gantt chart mean?            |
-| [Gantt chart configuration](#gantt-chart-configuration)                                                         | How to configure the view of your Gantt chart, e.g. add labels.           |
-| [Gantt chart views](#gantt-chart-views)                                                                         | How to zoom in and out and activate the Zen mode.                         |
-| [Multi project views](#multi-project-views)                                                                     | Create project overarching timelines.                                     |
-| [Aggregation by project](#aggregation-by-project)                                                               | How to display an aggregated view of all milestones of multiple projects. |
+| [Активировать диаграмму Ганта](#активировать-диаграмму-ганта)                                                           | Как активировать диаграмму Ганта в OpenProject.                           |
+| [Создать новый элемент](#создать-новый-элемент-в-диаграмме-ганта)                                                | Как добавить новый элемент в диаграмму Ганта.                                 |
+| [Отношения в диаграмме Ганта](#отношения-в-диаграмме-ганта)                                                   | Создавайте и отображайте зависимости в диаграмме Ганта.                       |
+| [Понимание цветов и линий в диаграмме Ганта](#понимание-цветов-и-линий-в-диаграмме-ганта) | Что означают зажимы, линии и символы в диаграмме Ганта?            |
+| [Конфигурация диаграммы Ганта](#конфигурация-диаграммы-ганта)                                                         | Как настроить вид вашей диаграммы Ганта, например, добавить метки.           |
+| [Представления диаграммы Ганта](#представления-диаграммы-ганта)                                                                         | Как увеличивать и уменьшать масштаб и активировать режим дзен.                         |
+| [Мультипроектные представления](#мультипроектные-представления)                                                                     | Создавайте общие временные рамки проектов.                                     |
+| [Агрегация по проекту](#агрегация-по-проекту)                                                               | Как отображать агрегированное представление всех вех нескольких проектов. |
 
 <video src="https://openproject-docs.s3.eu-central-1.amazonaws.com/videos/OpenProject-Project-Plan-and-Timelines-Gantt-charts.mp4"></video>
 
-## Activate the Gantt chart
+## Активировать диаграмму Ганта
 
-A Gantt chart view can be activated either for a specific project or on the project overarching level if you need to view the timeline for multiple projects.
+Представление диаграммы Ганта может быть активировано либо для конкретного проекта, либо на уровне, охватывающем проект, если вам нужно просмотреть временную шкалу для нескольких проектов.
 
-For a specific project, select the **Gantt charts** module from the project module menu on the left side.
+Для конкретного проекта выберите модуль **Диаграммы Ганта** из меню модулей проекта слева.
 
-![activate-gantt](openproject-user-guide-select-gantt-charts.png)
+![активировать-ганта](openproject-user-guide-select-gantt-charts.png)
 
-To view multiple projects in a single timeline, select **Gantt charts** from the **Global Modules** menu.
+Чтобы просмотреть несколько проектов в одной временной шкале, выберите **Диаграммы Ганта** из меню **Глобальные модули**.
 
-![Select Gantt charts from the global modules menu in OpenProject](openproject-user-guide-select-gantt-charts-global.png)
+![Выбор диаграмм Ганта из меню глобальных модулей в OpenProject](openproject-user-guide-select-gantt-charts-global.png)
 
-Alternatively, you can also use the **Include projects** filter.
+В качестве альтернативы вы также можете использовать фильтр **Включить проекты**.
 
-## Gantt chart views
+## Представления диаграммы Ганта
 
-Once you open the Gantt charts module, the default view will show all open work packages. You can search for a specific Gantt chart using the search bar on the left. You can adjust the view using the filters or select one of the following view options:
+Как только вы откроете модуль «Диаграммы Ганта», представление по умолчанию покажет все открытые рабочие пакеты. Вы можете искать конкретную диаграмму Ганта с помощью строки поиска слева. Вы можете настроить представление с помощью фильтров или выбрать одно из следующих вариантов представления:
 
-![View options in OpenProject Gantt charts](openproject-user-guide-gantt-charts-views.png)
+![Варианты представления в диаграммах Ганта OpenProject](openproject-user-guide-gantt-charts-views.png)
 
-**Favorite**: lists all saved Gantt chart views that are marked as favorite
+**Избранное**: перечисляет все сохраненные представления диаграмм Ганта, отмеченные как избранные
 
-**Default**: lists pre-defined Gantt chart views and includes the following:
+**По умолчанию**: перечисляет предопределенные представления диаграмм Ганта и включает следующее:
 
-- **All open**: shows all work packages with the status open
-- **Milestones**: shows all work packages with the work package type Milestones (or other types that are set to be recognized as milestones)
+- **Все открытые**: показывает все рабочие пакеты со статусом «открыт»
+- **Вехи**: показывает все рабочие пакеты с типом рабочего пакета «Вехи» (или другими типами, установленными как распознаваемые как вехи)
 
-**Public**: lists all Gantt chart views set to be public
+**Публичные**: перечисляет все представления диаграмм Ганта, установленные как публичные
 
-**Private**: lists all your personal saved Gantt chart views
+**Приватные**: перечисляет все ваши личные сохраненные представления диаграмм Ганта
 
-## Quick context menu in Gantt chart view
+## Быстрое контекстное меню в представлении диаграммы Ганта
 
-Once you have selected the Gantt chart view, you can use the quick context menu. To do that, right-click on any of the work packages.
+После того как вы выбрали представление диаграммы Ганта, вы можете использовать быстрое контекстное меню. Для этого щелкните правой кнопкой мыши на любом из рабочих пакетов.
 
 > [!TIP]
-> If you use the [work packages view](../work-packages/edit-work-package#update-a-work-package-in-a-work-package-table-view) in the **Work packages** module, the options in the quick context menu will differ slightly from the ones in the Gantt chart view.
+> Если вы используете [представление рабочих пакетов](../work-packages/edit-work-package#обновление-рабочего-пакета-в-представлении-таблицы-рабочих-пакетов) в модуле **Рабочие пакеты**, варианты в быстром контекстном меню будут немного отличаться от тех, что в представлении диаграммы Ганта.
 
-![Quick context menu in OpenProject Gantt chart work packages view](gantt-context-menu.png)
+![Быстрое контекстное меню в представлении рабочих пакетов диаграммы Ганта OpenProject](gantt-context-menu.png)
 
-You can use any of the following options.
+Вы можете использовать любой из следующих вариантов.
 
-- **Open details view** - opens the details view of a work package on the right side of the screen.
-- **Open fullscreen view** - opens the detailed view of a work package across the entire screen.
-- **Copy link to clipboard** - copies a short link to the selected work package to your clipboard.
-- **Change project** - allows moving the selected work package to a different project.
-- **Delete** - deletes a work package. You will need to confirm the deletion.
-- **Indent hierarchy** - creates a child-parent relationship with the work package directly above. The work package you selected becomes the child work package. The work package directly above becomes the parent work package.
-- **Add predecessor** - adds a predecessor (it will prompt you to select a work package in Gantt view).
-- **Add successor** - adds a successor (it will prompt you to select a work package in Gantt view).
-- **Show relations** - opens the details view of a work package and displays the **Relations** tab.
-- **Create new child** - opens a new work package on the right side of the screen. This new work package already has a child relationship to the work package you selected. **This option will not be available if the work package type is a milestone**.
+- **Открыть подробное представление** - открывает подробное представление рабочего пакета в правой части экрана.
+- **Открыть полноэкранное представление** - открывает подробное представление рабочего пакета на весь экран.
+- **Копировать ссылку в буфер обмена** - копирует короткую ссылку на выбранный рабочий пакет в буфер обмена.
+- **Изменить проект** - позволяет переместить выбранный рабочий пакет в другой проект.
+- **Удалить** - удаляет рабочий пакет. Вам нужно будет подтвердить удаление.
+- **Отступ иерархии** - создает отношение родитель-потомок с рабочим пакетом непосредственно выше. Рабочий пакет, который вы выбрали, становится дочерним рабочим пакетом. Рабочий пакет непосредственно выше становится родительским рабочим пакетом.
+- **Добавить предшественника** - добавляет предшественника (это предложит вам выбрать рабочий пакет в представлении Ганта).
+- **Добавить последователя** - добавляет последователя (это предложит вам выбрать рабочий пакет в представлении Ганта).
+- **Показать отношения** - открывает подробное представление рабочего пакета и отображает вкладку **Отношения**.
+- **Создать нового потомка** - открывает новый рабочий пакет в правой части экрана. Этот новый рабочий пакет уже имеет отношение потомка к выбранному вами рабочему пакету. **Эта опция будет недоступна, если тип рабочего пакета является вехой**.
 
-## Create a new element in the Gantt chart
+## Создать новый элемент в диаграмме Ганта
 
-To add a work package (e.g. phase, milestone or task) to a Gantt chart, click the **+ Create new work package** link at the bottom of the work package table view.
+Чтобы добавить рабочий пакет (например, фазу, веху или задачу) в диаграмму Ганта, нажмите ссылку **+ Создать новый рабочий пакет** в нижней части представления таблицы рабочих пакетов.
 
-You can add a subject and make changes to type, status or more fields.
+Вы можете добавить тему и внести изменения в тип, статус или другие поля.
 
-In the **Gantt chart**, you can schedule the work package with drag and drop and change the duration.
+В **Диаграмме Ганта** вы можете запланировать рабочий пакет с помощью перетаскивания и изменить продолжительность.
 
-To **change the order of an item** in the Gantt chart, click the **drag and drop** icon (6 dots) on the left-hand side of the work package row. Drag the item to the new position. The blue horizontal line indicates the new position to drop the element.
+Чтобы **изменить порядок элемента** в диаграмме Ганта, нажмите значок **перетаскивания** (6 точек) на левой стороне строки рабочего пакета. Перетащите элемент на новую позицию. Синяя горизонтальная линия указывает новую позицию для размещения элемента.
 
-![create-new-element-gantt-chart](create-new-element-gantt-chart.gif)
+![создать-новый-элемент-диаграмма-ганта](create-new-element-gantt-chart.gif)
 
-### How to change the duration of an element in the Gantt chart
+### Как изменить продолжительность элемента в диаграмме Ганта
 
-To change the duration of a work package in the Gantt chart view, hover over the work package in the Gantt chart and use the little arrows on its ends to adjust the start date or finish date. This will shorten or prolong its duration. To move a work package on the timeline, just click on it and drag and drop it to the desired point in time. This will change its start and finish date.
+Чтобы изменить продолжительность рабочего пакета в представлении диаграммы Ганта, наведите курсор на рабочий пакет в диаграмме Ганта и используйте маленькие стрелки на его концах, чтобы отрегулировать дату начала или дату окончания. Это сократит или продлит его продолжительность. Чтобы переместить рабочий пакет на временной шкале, просто щелкните на нем и перетащите его в нужную точку времени. Это изменит его дату начала и окончания.
 
 > [!NOTE]
-> The Gantt chart will highlight non-working days with a darker background color when you are zoomed in to a level that shows individual days. By default, a work package cannot be dragged or resized such that it begins or ends on these days unless the "Working days only" switch is turned off for that work package. To learn how to do this, refer to the documentation on [Working days and duration](../work-packages/set-change-dates/#working-days-and-duration).
+> Диаграмма Ганта будет выделять нерабочие дни более темным цветом фона, когда вы увеличиваете масштаб до уровня, показывающего отдельные дни. По умолчанию рабочий пакет нельзя перетаскивать или изменять размер так, чтобы он начинался или заканчивался в эти дни, если переключатель «Только рабочие дни» не выключен для этого рабочего пакета. Чтобы узнать, как это сделать, обратитесь к документации по [Рабочим дням и продолжительности](../work-packages/set-change-dates/#рабочие-дни-и-продолжительность).
 >
-> Work packages can also expand and retract in width depending on how many non-working days are spanned (for example, a 3-day task starting on Thursday and ending on Monday will spread across 5 calendar days; dragging that same work package so that it starts on a Tuesday and ends on a Thursday means that it will spread across 3 calendar days. In both cases, the duration remains 3 days).
+> Рабочие пакеты также могут расширяться и сокращаться по ширине в зависимости от того, сколько нерабочих дней они охватывают (например, задача на 3 дня, начинающаяся в четверг и заканчивающаяся в понедельник, распространяется на 5 календарных дней; перетаскивание того же рабочего пакета так, чтобы он начинался во вторник и заканчивался в четверг, означает, что он распространится на 3 календарных дня. В обоих случаях продолжительность остается 3 дня).
 
-## Relations in the Gantt chart
+## Отношения в диаграмме Ганта
 
-You can track dependencies of work packages (e.g. phases, milestones, tasks) in the Gantt chart. This way, you can get an easy overview of what needs to be done in which order, e.g. what tasks need to be completed to achieve a milestone.
+Вы можете отслеживать зависимости рабочих пакетов (например, фаз, вех, задач) в диаграмме Ганта. Таким образом, вы можете легко получить обзор того, что нужно сделать в каком порядке, например, какие задачи необходимо завершить для достижения вехи.
 
-To add a dependency, right-click on an element in the Gantt chart, which will open a quick context menu.
+Чтобы добавить зависимость, щелкните правой кнопкой мыши на элементе в диаграмме Ганта, что откроет быстрое контекстное меню.
 
-In the menu, choose **Add predecessor** or **Add successor**.
+В меню выберите **Добавить предшественника** или **Добавить последователя**.
 
-Select the item to which you want to create a dependency. The precede and follow relation is marked with a small blue line in the Gantt chart.
+Выберите элемент, для которого вы хотите создать зависимость. Отношение предшествования и следования отмечено маленькой синей линией в диаграмме Ганта.
 
-The quickest way to remove a relation is to select **Show relations** from the quick context menu and remove the relation in the work package details view.
+Самый быстрый способ удалить отношение - выбрать **Показать отношения** из быстрого контекстного меню и удалить отношение в подробном представлении рабочего пакета.
 
-![dependencies-gantt-chart](gantt-chart.gif)
+![зависимости-диаграмма-ганта](gantt-chart.gif)
 
-When work packages have a precedes/follows relationship:
+Когда рабочие пакеты имеют отношение предшествования/следования:
 
-- A follower cannot be moved to start earlier than the finish date of its predecessor.
-- Moving a predecessor past the start date of the follower will automatically push the follower into the future (such that it starts the next working day).
-- If there is a gap between the predecessor and the follower, either one can be moved forward or backward without affecting the other as long as the dates do not overlap.
+- Последователь не может быть перемещен на начало ранее даты окончания его предшественника.
+- Перемещение предшественника за дату начала последователя автоматически отодвинет последователя в будущее (так, чтобы он начался на следующий рабочий день).
+- Если есть разрыв между предшественником и последователем, любой из них может быть перемещен вперед или назад без влияния на другой, пока даты не перекрываются.
 
-Scheduling modes can also affect work package relations. Read about [automatic and manual scheduling](scheduling) to find out more.
+Режимы планирования также могут влиять на отношения рабочих пакетов. Прочитайте о [автоматическом и ручном планировании](scheduling), чтобы узнать больше.
 
 > [!NOTE]
-> Relations other than predecessor/follower and parent/child (such as related to, blocked by, includes, duplicates) are not displayed in the Gantt chart. To find out more, read our guide on [work package relations](../work-packages/work-package-relations-hierarchies).
+> Отношения, отличные от предшественник/последователь и родитель/потомок (такие как связано с, блокируется, включает, дублирует), не отображаются в диаграмме Ганта. Чтобы узнать больше, прочитайте наше руководство по [отношениям рабочих пакетов](../work-packages/work-package-relations-hierarchies).
 
-## Understanding the colors and lines in the Gantt chart
+## Понимание цветов и линий в диаграмме Ганта
 
-- A **blue line** connects two work packages; they are predecessor and follower.
-- The **vertical red dotted line** indicates today's date.
-- A **black clamp** indicates the duration from the start date of a work package's earliest starting child until the finish date of a work package's latest ending child.
-- A **red clamp** indicates the same as the black clamp, with an important difference: The clamp turns red if the dates derived from the children are before or after the manually scheduled dates (of this parent work package).
-  The clamps are black in case the derived dates are within the set dates (of this parent).
-- A **diamond symbol** stands for a milestone.
-- A **bar** stands for work packages like phases and tasks.
+- **Синяя линия** соединяет два рабочих пакета; они являются предшественником и последователем.
+- **Вертикальная красная пунктирная линия** указывает на сегодняшнюю дату.
+- **Черный зажим** указывает продолжительность от даты начала самого раннего начинающегося потомка рабочего пакета до даты окончания самого позднего заканчивающегося потомка рабочего пакета.
+- **Красный зажим** указывает то же самое, что и черный зажим, с важным отличием: зажим становится красным, если даты, полученные от потомков, находятся до или после дат, запланированных вручную (этого родительского рабочего пакета).
+  Зажимы черные, если полученные даты находятся в пределах установленных дат (этого родительского).
+- **Символ ромба** обозначает веху.
+- **Полоса** обозначает рабочие пакеты, такие как фазы и задачи.
 
-## Gantt chart configuration
+## Конфигурация диаграммы Ганта
 
-To open the Gantt chart configuration, please open the **settings** icon with the three dots on the upper right of the work package module.
-Choose **Configure view ...** and select the tab **Gantt chart**.
+Чтобы открыть конфигурацию диаграммы Ганта, откройте значок **настройки** с тремя точками в правом верхнем углу модуля рабочих пакетов.
 
-Here you can **adapt the Zoom level**, or choose Auto zoom which will select a Zoom level that best fits your browser size to have optimal results on a page.
+Выберите **Настроить представление ...** и выберите вкладку **Диаграмма Ганта**.
 
-Also, you have **Label Configuration** for your Gantt chart. You can add up to three additional labels within the chart: On the left, on the right and on the far right. Just select which additional information you would need to have in the Gantt chart. This can be especially relevant if you want to print your Gantt chart.
+Здесь вы можете **адаптировать уровень масштабирования** или выбрать Автоматическое масштабирование, которое выберет уровень масштабирования, который лучше всего подходит для размера вашего браузера, чтобы получить оптимальные результаты на странице.
 
-Click the **Apply** button to save your changes.
+Также у вас есть **Конфигурация меток** для вашей диаграммы Ганта. Вы можете добавить до трех дополнительных меток внутри диаграммы: слева, справа и далеко справа. Просто выберите, какую дополнительную информацию вам нужно иметь в диаграмме Ганта. Это может быть особенно актуально, если вы хотите распечатать вашу диаграмму Ганта.
 
-![configure-gantt-chart](openproject-user-guide-configure-gantt-chart.gif)
+Нажмите кнопку **Применить**, чтобы сохранить ваши изменения.
 
-### How to export data from a Gantt diagram
+![настроить-диаграмму-ганта](openproject-user-guide-configure-gantt-chart.gif)
 
-To export the data from your Gantt chart, there are several possibilities:
+### Как экспортировать данные из диаграммы Ганта
 
-- [Export via the work package view](../work-packages/edit-work-package/#export-work-packages)
-- [Print (e.g., to PDF)](#how-to-print-a-gantt-chart)
-- [Synchronize data from OpenProject to Excel](../../system-admin-guide/integrations/excel-synchronization/) ←→ MS Project
+Чтобы экспортировать данные из вашей диаграммы Ганта, есть несколько возможностей:
 
-### How to print a Gantt chart
+- [Экспорт через представление рабочих пакетов](../work-packages/edit-work-package/#экспорт-рабочих-пакетов)
+- [Печать (например, в PDF)](#как-распечатать-диаграмму-ганта)
+- [Синхронизация данных из OpenProject в Excel](../../system-admin-guide/integrations/excel-synchronization/) ←→ MS Project
 
-The Gantt chart can be printed via the browser's printing function. It is optimized for Chrome.
+### Как распечатать диаграмму Ганта
 
-First, make sure to **add the labels** you will need in the Gantt chart, e.g. Start date, Finish date, Subject, in the [Gantt chart configuration](#gantt-chart-configuration).
+Диаграмму Ганта можно распечатать через функцию печати браузера. Она оптимизирована для Chrome.
 
-Choose the **Auto zoom** by clicking on the Auto zoom button on top of the Gantt chart.
+Сначала убедитесь, что **добавили метки**, которые вам понадобятся в диаграмме Ганта, например, Дата начала, Дата окончания, Тема, в [конфигурации диаграммы Ганта](#конфигурация-диаграммы-ганта).
 
-Optimize the screen by dragging the Gantt chart to the far left so that only the Gantt chart is seen.
+Выберите **Автоматическое масштабирование**, нажав кнопку Автоматическое масштабирование в верхней части диаграммы Ганта.
 
-Then, **press CTRL + P** to print the Gantt chart view.
+Оптимизируйте экран, перетащив диаграмму Ганта влево, чтобы была видна только диаграмма Ганта.
 
-Make sure you select **Landscape** as a print layout.
+Затем **нажмите CTRL + P**, чтобы распечатать представление диаграммы Ганта.
 
-In the settings, enable the **Background graphics** for printing.
+Убедитесь, что вы выбрали **Альбомную** ориентацию для печати.
 
-Press the **Print** button.
+В настройках включите **Фоновую графику** для печати.
 
-![How to print a Gantt chart in OpenProject](openproject-user-guide-print-gantt-chart.gif)
+Нажмите кнопку **Печать**.
 
-For other browsers, please simply follow the browser's printing instruction to optimize results.
+![Как распечатать диаграмму Ганта в OpenProject](openproject-user-guide-print-gantt-chart.gif)
 
-To synchronize your work package data between OpenProject and Excel (two-way synchronization), please have a look at [this instruction](../../system-admin-guide/integrations/excel-synchronization/).
+Для других браузеров, пожалуйста, просто следуйте инструкциям по печати браузера для оптимизации результатов.
 
-### Gantt chart PDF Export (Enterprise add-on)
+Чтобы синхронизировать ваши данные рабочих пакетов между OpenProject и Excel (двусторонняя синхронизация), пожалуйста, ознакомьтесь с [этой инструкцией](../../system-admin-guide/integrations/excel-synchronization/).
+
+### Экспорт диаграммы Ганта в PDF (дополнение Enterprise)
 
 [feature: gantt_pdf_export ]
 
-To export a Gantt chart in a PDF format, click the **More** (three dots) icon in the top right corner and select _Export_.
+Чтобы экспортировать диаграмму Ганта в формате PDF, нажмите значок **Еще** (три точки) в правом верхнем углу и выберите _Экспорт_.
 
-![Export Gantt chart option in OptionProject](openproject-user-guide-gantt-charts-export.png)
+![Опция экспорта диаграммы Ганта в OpenProject](openproject-user-guide-gantt-charts-export.png)
 
-Then select the **PDF Gantt** option under PDF export type. Configure the parameters of the PDF export, such as zoom level for the dates, column width and paper size. Then click the green **Export** button.
+Затем выберите вариант **PDF Ганта** в типе экспорта PDF. Настройте параметры экспорта PDF, такие как уровень масштабирования для дат, ширина столбцов и размер бумаги. Затем нажмите зеленую кнопку **Экспорт**.
 
-![Gantt chart export options in OpenProject](openproject-user-guide-export-gantt-chart.png)
+![Параметры экспорта диаграммы Ганта в OpenProject](openproject-user-guide-export-gantt-chart.png)
 
-Configure the parameters of the PDF export, such as zoom level for the dates, column width and paper size. Then click the green **Export** button.
+Настройте параметры экспорта PDF, такие как уровень масштабирования для дат, ширина столбцов и размер бумаги. Затем нажмите зеленую кнопку **Экспорт**.
 
-You can then save the Gantt chart in PDF form to share with your project stakeholders or print it directly.
-
-> [!TIP]
-> You can also export Gantt charts in PDF format from the [work packages module](../work-packages/exporting/gantt-chart-pdf/).
-
-## Gantt chart views
-
-### Zoom in the Gantt chart
-
-To zoom in and zoom out in the Gantt chart view, click on the button with the **+** and **- icon** on top of the chart.
-
-![Zooming into a Gantt chart in OpenProject](openproject-user-guide-gantt-charts-zoom.png)
-
-### Auto zoom
-
-Select the **auto zoom button** on top of the Gantt chart to have the best view of your Gantt chart.
-
-Please note that the **auto zoom button** may not be selectable if it has been pre-selected in the [Gantt charts configuration](#gantt-chart-configuration).
-
-![auto-zoom-Gantt](openproject-user-guide-gantt-charts-auto-zoom.png)
-
-### Zen mode
-
-The zen mode gives you more space to focus on the tasks at hand. It's almost like activating the full screen view in your browser. To exit, press the _Esc_ key or click on the **zen mode** symbol again.
-
-![zen-mode-Gantt-chart](openproject-user-guide-gantt-charts-zen-mode.png)
-
-## Multi project views
-
-With the Gantt charts in OpenProject, you can create project overarching timelines.
-
-Create multi-project timelines and display all activities, phases and milestones within your project and sub-projects. Also, you can create project overarching timelines by filtering and including respective projects in one joint plan.
-
-To include sub-projects: within the parent project, click on the Filter button and select the subproject(s) you want to have included in your project plan. You can also choose an [aggregation by project](#aggregation-by-project).
-
-Use the filter and grouping options as for the [work packages table configuration](../work-packages/work-package-table-configuration/) to customize your timeline. Do not forget to [save your timeline](../work-packages/work-package-table-configuration/#save-work-package-views).
-
-![OpenProject-overarching-project-planning](OpenProject-overarching-project-planning.png)
-
-If you want to adjust your work package table and filter, sort or order your work packages to have a better overview in your Gantt chart, please refer to the section [work package table configuration](../work-packages/work-package-table-configuration/).
-
-## Aggregation by project
-
-You can get a **quick overview of multiple projects** in the Gantt chart. To accomplish this, navigate to the Gantt charts module of a project or the [project overarching Gantt charts module](../projects/project-lists/#project-overarching-reports).
-
-**Group the work packages** by project by using the [work packages table configuration](../work-packages/work-package-table-configuration/#flat-list-hierarchy-mode-and-group-by) (accessible in the upper right corner) or by clicking on the small triangle next to "Project" in the table header.
-
-![group-by-project](image-20201211020614221.png)
-
-Use the minus next to the project's name or the **collapse button** in the upper right corner to collapse some or all projects.
-
-![collapse-button](openproject-user-guide-gantt-charts-collapse-all.png)
-
-This will give you an **aggregated view of the projects' work packages**. You can further adjust this view by using the Filter functionality, for example, display work package type Bugs.
-
-![Filtering project aggregated projects Gantt chart view in OpenProject](openproject-user-guide-gantt-charts-filters.png)
+Затем вы можете сохранить диаграмму Ганта в формате PDF, чтобы поделиться с заинтересованными сторонами вашего проекта, или распечатать ее напрямую.
 
 > [!TIP]
-> If you want the work packages to be displayed when the projects are folded, it is necessary to set the selected work package type to be recognized as a milestone under [work package type settings](../../system-admin-guide/manage-work-packages/work-package-types/). Otherwise, you will need to unfold the projects to view all of the work packages.
+> Вы также можете экспортировать диаграммы Ганта в формате PDF из [модуля рабочих пакетов](../work-packages/exporting/gantt-chart-pdf/).
 
-Apart from the set filters, the list of displayed projects depends on your [permissions](../../system-admin-guide/users-permissions/roles-permissions/). You can only see private projects that you are a member of and public projects.
-In some cases (many work packages per project), you will have to increase the objects per page in the bottom right corner to display multiple projects. Change the available options in the [system settings](../../system-admin-guide/system-settings/general-settings/) if necessary.
+## Представления диаграммы Ганта
+
+### Увеличение масштаба в диаграмме Ганта
+
+Чтобы увеличить и уменьшить масштаб в представлении диаграммы Ганта, нажмите на кнопку со **значками +** и **-** в верхней части диаграммы.
+
+![Увеличение масштаба диаграммы Ганта в OpenProject](openproject-user-guide-gantt-charts-zoom.png)
+
+### Автоматическое масштабирование
+
+Выберите **кнопку автоматического масштабирования** в верхней части диаграммы Ганта, чтобы получить наилучший вид вашей диаграммы Ганта.
+
+Обратите внимание, что **кнопка автоматического масштабирования** может быть недоступна для выбора, если она была предварительно выбрана в [конфигурации диаграмм Ганта](#конфигурация-диаграммы-ганта).
+
+![автоматическое-масштабирование-Ганта](openproject-user-guide-gantt-charts-auto-zoom.png)
+
+### Режим дзен
+
+Режим дзен дает вам больше пространства для концентрации на текущих задачах. Это почти как активация полноэкранного режима в вашем браузере. Чтобы выйти, нажмите клавишу _Esc_ или снова нажмите на символ **режима дзен**.
+
+![режим-дзен-диаграмма-ганта](openproject-user-guide-gantt-charts-zen-mode.png)
+
+## Мультипроектные представления
+
+С помощью диаграмм Ганта в OpenProject вы можете создавать общие временные рамки проектов.
+
+Создавайте мультипроектные временные шкалы и отображайте все активности, фазы и вехи в вашем проекте и подпроектах. Также вы можете создавать общие временные рамки проектов, фильтруя и включая соответствующие проекты в один совместный план.
+
+Чтобы включить подпроекты: в родительском проекте нажмите кнопку Фильтр и выберите подпроект(ы), которые вы хотите включить в ваш план проекта. Вы также можете выбрать [агрегацию по проекту](#агрегация-по-проекту).
+
+Используйте опции фильтрации и группировки, как для [конфигурации таблицы рабочих пакетов](../work-packages/work-package-table-configuration/), чтобы настроить вашу временную шкалу. Не забудьте [сохранить вашу временную шкалу](../work-packages/work-package-table-configuration/#сохранить-представления-рабочих-пакетов).
+
+![OpenProject-общее-планирование-проекта](OpenProject-overarching-project-planning.png)
+
+Если вы хотите настроить вашу таблицу рабочих пакетов и фильтровать, сортировать или упорядочивать ваши рабочие пакеты, чтобы получить лучший обзор в вашей диаграмме Ганта, пожалуйста, обратитесь к разделу [конфигурация таблицы рабочих пакетов](../work-packages/work-package-table-configuration/).
+
+## Агрегация по проекту
+
+Вы можете получить **быстрый обзор нескольких проектов** в диаграмме Ганта. Для этого перейдите в модуль «Диаграммы Ганта» проекта или [общий модуль диаграмм Ганта](../projects/project-lists/#общие-отчеты-по-проектам).
+
+**Сгруппируйте рабочие пакеты** по проекту, используя [конфигурацию таблицы рабочих пакетов](../work-packages/work-package-table-configuration/#плоский-список-режим-иерархии-и-группировка-по) (доступна в правом верхнем углу) или нажав на маленький треугольник рядом с «Проект» в заголовке таблицы.
+
+![группировка-по-проекту](image-20201211020614221.png)
+
+Используйте минус рядом с именем проекта или **кнопку свернуть** в правом верхнем углу, чтобы свернуть некоторые или все проекты.
+
+![кнопка-свернуть](openproject-user-guide-gantt-charts-collapse-all.png)
+
+Это даст вам **агрегированное представление рабочих пакетов проектов**. Вы можете дополнительно настроить это представление, используя функциональность фильтра, например, отображать рабочие пакеты типа «Ошибки».
+
+![Фильтрация агрегированных проектов в представлении диаграммы Ганта в OpenProject](openproject-user-guide-gantt-charts-filters.png)
+
+> [!TIP]
+> Если вы хотите, чтобы рабочие пакеты отображались, когда проекты свернуты, необходимо установить, чтобы выбранный тип рабочего пакета распознавался как веха в [настройках типов рабочих пакетов](../../system-admin-guide/manage-work-packages/work-package-types/). В противном случае вам нужно будет развернуть проекты, чтобы просмотреть все рабочие пакеты.
+
+Помимо установленных фильтров, список отображаемых проектов зависит от ваших [разрешений](../../system-admin-guide/users-permissions/roles-permissions/). Вы можете видеть только приватные проекты, участником которых вы являетесь, и публичные проекты.
+
+В некоторых случаях (много рабочих пакетов на проект) вам придется увеличить количество объектов на странице в правом нижнем углу, чтобы отобразить несколько проектов. Измените доступные варианты в [системных настройках](../../system-admin-guide/system-settings/general-settings/) при необходимости.
 
 ![image-20201211131803961](image-20201211131803961.png)

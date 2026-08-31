@@ -1,134 +1,79 @@
 ---
 sidebar_navigation:
-  title: OneDrive integration
+  title: Интеграция с OneDrive
   priority: 800
-description: Using the OneDrive integration to link/unlink files and folders to work packages, viewing and downloading files
-keywords: integration, apps, OneDrive, SharePoint, user
+description: Использование интеграции с OneDrive для связывания/отвязывания файлов и папок с рабочими пакетами, просмотр и скачивание файлов
+keywords: интеграция, приложения, OneDrive, SharePoint, пользователь
 ---
-
-# OneDrive integration (Enterprise add-on)
-
-You can use **OneDrive** as an integrated file storage in OpenProject.
-
+# Интеграция с OneDrive (дополнение Enterprise)
+Вы можете использовать **OneDrive** в качестве интегрированного файлового хранилища в OpenProject.
 [feature: one_drive_sharepoint_file_storage ]
-
 > [!NOTE]
-> This feature includes using both OneDrive and SharePoint integrations.
-
-This integration makes it possible for you to:
-
-- Link files and folders stored in OneDrive with work packages in OpenProject
-- View, open and download files and folders linked to a work package via the **Files** tab
-
+> Эта функция включает использование как интеграций OneDrive, так и SharePoint.
+Эта интеграция позволяет вам:
+- Связывать файлы и папки, хранящиеся в OneDrive, с рабочими пакетами в OpenProject
+- Просматривать, открывать и скачивать файлы и папки, связанные с рабочим пакетом, через вкладку **Файлы**
 > [!IMPORTANT]
-> To be able to use OneDrive as a file storage in your project, the administrator of your instance should first have completed the [OneDrive integration setup](../../../system-admin-guide/integrations/one-drive). Then a project administrator can activate the integrated storage in the [File storages](../../projects/project-settings/files/) for a project.
-
-| Topic                                                        | Description                                                  |
-| ------------------------------------------------------------ | :----------------------------------------------------------- |
-| [Connect OpenProject to OneDrive](#connect-your-openproject-and-onedrive-accounts) | How to connect your OpenProject project and OneDrive |
-| [Link files and folders to work packages](#link-files-and-folders-to-work-packages) | How to link your files and folders to work packages in OpenProject |
-| [Upload files from OpenProject](#upload-files-from-openproject) | How to upload files to OneDrive from OpenProject  |
-| [Download, open folders and remove links](#download-open-folders-and-remove-links) | How to download and open files and folders and remove links  |
-| [Permissions and access control](#permissions-and-access-control) | Permissions and access control in OneDrive file storage |
-| [Possible errors and troubleshooting](#possible-errors-and-troubleshooting) | Common errors in OneDrive integration and how to troubleshoot them |
-
-## Connect your OpenProject and OneDrive accounts
-
-To begin using this integration, you will need to first connect your OpenProject and Microsoft accounts. To do this, open any work package in a project where a OneDrive file storage has been added and enabled by an administrator and follow these steps:
-
-1. Select any work package. Go to the **Files tab** and, within the correct file storage section, click on **Storage login** button.
-
-   ![Login to OneDrive file storage from an OpenProject work package](openproject_onedrive_login_to_storage.png)
-
-2. You will see a Microsoft login prompt asking you to log in. Enter your credentials and log in.
-3. Once you have logged in, you will automatically return to the work package in OpenProject and see that you can now start uploading and linking files.
-
-   ![OneDrive storage is available in an OpenProject work package](openproject_onedrive_available.png)
-
-## Link files and folders to work packages
-
-In addition to listing files directly attached to a work package, the **Files** tab shows the OneDrive files that are linked to the current work package. Hovering on any linked file with your mouse will give you options to open or download the file, show the containing folder in OneDrive or remove the link.
-
-To link a OneDrive file to the current work package, you can either:
-
-- select a local file, which will be uploaded to OneDrive storage and linked to this work package
-- select an existing file in OneDrive to link to
-
-![Link existing files to OneDrive from an OpenProject work package](openproject_onedrive_link_existing_files_link.png)
-
+> Чтобы иметь возможность использовать OneDrive в качестве файлового хранилища в вашем проекте, администратор вашего экземпляра должен сначала завершить [настройку интеграции OneDrive](../../../system-admin-guide/integrations/one-drive). Затем администратор проекта может активировать интегрированное хранилище в [Файловые хранилища](../../projects/project-settings/files/) для проекта.
+| Тема | Описание |
+|------|----------|
+| [Подключить OpenProject к OneDrive](#подключить-ваши-аккаунты-openproject-и-onedrive) | Как подключить ваш проект OpenProject и OneDrive |
+| [Связывать файлы и папки с рабочими пакетами](#связывать-файлы-и-папки-с-рабочими-пакетами) | Как связать ваши файлы и папки с рабочими пакетами в OpenProject |
+| [Загружать файлы из OpenProject](#загружать-файлы-из-openproject) | Как загружать файлы в OneDrive из OpenProject |
+| [Скачивать, открывать папки и удалять связи](#скачивать-открывать-папки-и-удалять-связи) | Как скачивать и открывать файлы и папки и удалять связи |
+| [Разрешения и контроль доступа](#разрешения-и-контроль-доступа) | Разрешения и контроль доступа в файловом хранилище OneDrive |
+| [Возможные ошибки и устранение неполадок](#возможные-ошибки-и-устранение-неполадок) | Распространенные ошибки в интеграции OneDrive и как их устранять |
+## Подключить ваши аккаунты OpenProject и OneDrive
+Чтобы начать использовать эту интеграцию, вам сначала нужно подключить ваши аккаунты OpenProject и Microsoft. Для этого откройте любой рабочий пакет в проекте, где файловое хранилище OneDrive было добавлено и включено администратором, и выполните следующие шаги:
+1. Выберите любой рабочий пакет. Перейдите на **вкладку Файлы** и в соответствующем разделе файлового хранилища нажмите кнопку **Вход в хранилище**.
+   ![Вход в файловое хранилище OneDrive из рабочего пакета OpenProject](openproject_onedrive_login_to_storage.png)
+2. Вы увидите запрос на вход Microsoft, предлагающий вам войти. Введите ваши учетные данные и войдите.
+3. После входа вы автоматически вернетесь в рабочий пакет в OpenProject и увидите, что теперь можете начинать загружать и связывать файлы.
+   ![Хранилище OneDrive доступно в рабочем пакете OpenProject](openproject_onedrive_available.png)
+## Связывать файлы и папки с рабочими пакетами
+В дополнение к перечислению файлов, непосредственно прикрепленных к рабочему пакету, вкладка **Файлы** показывает файлы OneDrive, которые связаны с текущим рабочим пакетом. При наведении курсора на любой связанный файл вы получите опции для открытия или скачивания файла, показа содержащей папки в OneDrive или удаления связи.
+Чтобы связать файл OneDrive с текущим рабочим пакетом, вы можете либо:
+- выбрать локальный файл, который будет загружен в хранилище OneDrive и связан с этим рабочим пакетом
+- выбрать существующий файл в OneDrive для связывания
+![Связать существующие файлы с OneDrive из рабочего пакета OpenProject](openproject_onedrive_link_existing_files_link.png)
 > [!NOTE]
-> The default location that opens in the file picker is the file root of the configured OneDrive drive.
-
-![Select a OneDrive file or folder to link to an OpenProject work package](openproject_onedrive_link_files.png)
-
-Select any folder or file (or multiple ones) you want to link , then click the _Link_ button.
-
-![Select files to link to an OpenProject work package from a OneDrive file storage](openproject_user_guide_onedrive_storage_select_multiple_files_to_link.png)
-
-## Upload files from OpenProject
-
-If the file you want to link has not yet been uploaded to OneDrive, you can do so by clicking on the **Upload files** link.
-
-![Upload file link in an OpenProject work package](openproject_onedrive_upload_file_link.png)
-
-You will then be prompted to select a file (or multiple files) on your computer that you want to upload to OneDrive.
-
-![Choosing a file to upload to OneDrive in an OpenProject work package](openproject_onedrive_select_file.png)
-
-Alternatively, you can also simply drag a file or folder from your computer to the drag zone that will appear under the name of your OneDrive file storage.
-
-Once you have selected or dropped the files you would like to upload, you will need to select the location on OneDrive to which they should be stored.
-
+> Местоположение по умолчанию, которое открывается в средстве выбора файлов, является корневым каталогом файлов настроенного диска OneDrive.
+![Выбрать файл или папку OneDrive для связывания с рабочим пакетом OpenProject](openproject_onedrive_link_files.png)
+Выберите любую папку или файл (или несколько), которые вы хотите связать, затем нажмите кнопку _Связать_.
+![Выбрать файлы для связывания с рабочим пакетом OpenProject из файлового хранилища OneDrive](openproject_user_guide_onedrive_storage_select_multiple_files_to_link.png)
+## Загружать файлы из OpenProject
+Если файл, который вы хотите связать, еще не загружен в OneDrive, вы можете сделать это, нажав на ссылку **Загрузить файлы**.
+![Ссылка загрузить файл в рабочем пакете OpenProject](openproject_onedrive_upload_file_link.png)
+Затем вам будет предложено выбрать файл (или несколько файлов) на вашем компьютере, которые вы хотите загрузить в OneDrive.
+![Выбор файла для загрузки в OneDrive в рабочем пакете OpenProject](openproject_onedrive_select_file.png)
+В качестве альтернативы, вы также можете просто перетащить файл или папку с вашего компьютера в зону перетаскивания, которая появится под названием вашего файлового хранилища OneDrive.
+После того как вы выбрали или перетащили файлы, которые хотите загрузить, вам нужно выбрать местоположение в OneDrive, в которое они должны быть сохранены.
 > [!NOTE]
-> The default location that opens in the file picker is the file root of the configured OneDrive drive.
-
-![Selection a OneDrive location to upload a file from OpenProject](openproject_onedrive_select_location.png)
-
-You can click on folders you see to navigate to them. Helpful breadcrumbs show you where you are in the folder hierarchy.
-
-To navigate one level up or to go back to the root, simply click on the relevant parent in the breadcrumbs.
-
+> Местоположение по умолчанию, которое открывается в средстве выбора файлов, является корневым каталогом файлов настроенного диска OneDrive.
+![Выбор местоположения OneDrive для загрузки файла из OpenProject](openproject_onedrive_select_location.png)
+Вы можете нажимать на папки, которые видите, для навигации по ним. Полезные хлебные крошки показывают вам, где вы находитесь в иерархии папок.
+Чтобы перейти на один уровень вверх или вернуться к корню, просто нажмите на соответствующего родителя в хлебных крошках.
 > [!TIP]
-> If you have navigated particularly deep (over 4 levels), intermediate levels might be collapsed to save space, but you’ll always be able to navigate back to the immediate parent or the root to go backwards.
-
-You can also directly create a new folder within your OneDrive folder structure at this point by using the **New folder** button.
-
-To save the files you uploaded to the currently open folder, click on the **Choose location** button.
-
-The selected file is uploaded to your OneDrive instance and linked to the current work package. It appears under the name of the file storage.
-
-![File successfully uploaded to OneDrive storage](openproject_onedrive_file_uploaded.png)
-
-If a file has been deleted on the OneDrive file storage it will still be displayed under the **Files** tab. However it will not be selectable. If you hover over a deleted file you will see the message indicating that the file could not be found.
-
-![A file has been deleted from the OneDrive file storage](oneproject_onedrive_deleted_file.png)
-
-## Download, open folders and remove links
-
-If you wish to unlink any linked file or folder, hover it in the list of linked files and click on the **Unlink** icon.
-
-![Unlink a linked OneDrive file from an OpenProject work package](openproject_onedrive_download_file.png)
-
-Respectively in order to download a file, click on the **Download icon** in the context menu of the file link in the list of the linked files.
-
-If you click the **Folder icon**, the OneDrive folder containing this file will open in a separate tab.
-
-## Permissions and access control
-
-When a file or folder from OneDrive is linked to a work package, an OpenProject user who has access to that work package will be able to:
-
-- See the name of the linked file or folder
-- See when it was last modified (or created, if it has not yet been modified)
-- See who last modified it (or who created it, if it has not yet been modified)
-
-However, all available actions depend on permissions the OpenProject user (or more precisely, the OneDrive account tied to that user) has in OneDrive. In other words, a user who does not have the permission to access the file in OneDrive will also _not_ be able to open, download, or modify the file in OpenProject.
-
-Please note, that with automatically managed project folders these permissions are set by OpenProject based on user permissions in OpenProject.
-
-## Possible errors and troubleshooting 
-
-### No permission to see this file
-
-If you are unable to see the details of a file or are unable to open some of the files linked to a work package, it could be related to your OneDrive account not having the necessary permissions. In such a case, you will be able to see the name of file, time of last modification and the name of the modifier but you will not be able to perform any further actions. To open or access these files, please contact your OneDrive administrator or the creator of the file so that they can grant you the necessary permissions.
-
-![Error message based on missing permissions to see a file in OpenProject](openproject_onedrive_no_permission_to_view.png)
+> Если вы углубились особенно глубоко (более 4 уровней), промежуточные уровни могут быть свернуты для экономии места, но вы всегда сможете вернуться к непосредственному родителю или корню, чтобы двигаться назад.
+Вы также можете непосредственно создать новую папку в структуре папок вашего OneDrive на этом этапе, используя кнопку **Новая папка**.
+Чтобы сохранить загруженные файлы в текущую открытую папку, нажмите на кнопку **Выбрать местоположение**.
+Выбранный файл загружается в ваш экземпляр OneDrive и связывается с текущим рабочим пакетом. Он появляется под названием файлового хранилища.
+![Файл успешно загружен в хранилище OneDrive](openproject_onedrive_file_uploaded.png)
+Если файл был удален в файловом хранилище OneDrive, он все еще будет отображаться под вкладкой **Файлы**. Однако он не будет доступен для выбора. Если вы наведете курсор на удаленный файл, вы увидите сообщение, указывающее, что файл не найден.
+![Файл был удален из файлового хранилища OneDrive](oneproject_onedrive_deleted_file.png)
+## Скачивать, открывать папки и удалять связи
+Если вы хотите отвязать любой связанный файл или папку, наведите на него в списке связанных файлов и нажмите на значок **Отвязать**.
+![Отвязать связанный файл OneDrive от рабочего пакета OpenProject](openproject_onedrive_download_file.png)
+Соответственно, чтобы скачать файл, нажмите на **Значок скачивания** в контекстном меню ссылки на файл в списке связанных файлов.
+Если вы нажмете **Значок папки**, папка OneDrive, содержащая этот файл, откроется в отдельной вкладке.
+## Разрешения и контроль доступа
+Когда файл или папка из OneDrive связаны с рабочим пакетом, пользователь OpenProject, имеющий доступ к этому рабочему пакету, сможет:
+- Видеть название связанного файла или папки
+- Видеть, когда он был последний раз изменен (или создан, если еще не изменен)
+- Видеть, кто последний раз его изменил (или кто создал, если еще не изменен)
+Однако все доступные действия зависят от разрешений, которые пользователь OpenProject (или, точнее, аккаунт OneDrive, привязанный к этому пользователю) имеет в OneDrive. Другими словами, пользователь, у которого нет разрешения на доступ к файлу в OneDrive, также _не_ сможет открыть, скачать или изменить файл в OpenProject.
+Пожалуйста, обратите внимание, что с автоматически управляемыми папками проектов эти разрешения устанавливаются OpenProject на основе разрешений пользователя в OpenProject.
+## Возможные ошибки и устранение неполадок
+### Нет разрешения на просмотр этого файла
+Если вы не можете видеть детали файла или не можете открыть некоторые из файлов, связанных с рабочим пакетом, это может быть связано с тем, что ваш аккаунт OneDrive не имеет необходимых разрешений. В таком случае вы сможете увидеть название файла, время последнего изменения и имя того, кто изменил, но вы не сможете выполнить какие-либо дальнейшие действия. Чтобы открыть или получить доступ к этим файлам, пожалуйста, свяжитесь с вашим администратором OneDrive или создателем файла, чтобы они могли предоставить вам необходимые разрешения.
+![Сообщение об ошибке из-за отсутствия разрешений на просмотр файла в OpenProject](openproject_onedrive_no_permission_to_view.png)

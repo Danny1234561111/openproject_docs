@@ -1,50 +1,30 @@
 ---
 sidebar_navigation:
-  title: Account settings
+  title: Настройки аккаунта
   priority: 900
-description: Learn how to configure user attributes and avatar in OpenProject.
-keywords: my account, account settings, avatar
+description: Узнайте, как настроить атрибуты пользователя и аватар в OpenProject.
+keywords: мой аккаунт, настройки аккаунта, аватар
 ---
-
-
-# Account
-
-## Set an avatar
-
-To change your profile picture in OpenProject, navigate to **Account settings** and select **Account** from the left-hand menu.
-
-If your OpenProject administrator has enabled Gravatar, OpenProject can display your Gravatar if you have registered one with the same email address at [gravatar.com](https://documentation.openproject-edge.com/external_redirect?url=https%3A%2F%2Fgravatar.com%2F). If no Gravatar image is available, Gravatar displays its configured default avatar.
-
-To use a different profile picture, click your current avatar to upload a custom image. A custom avatar overrides your Gravatar.
-
+# Аккаунт
+## Установить аватар
+Чтобы изменить изображение профиля в OpenProject, перейдите в **Настройки аккаунта** и выберите **Аккаунт** в меню слева.
+Если ваш администратор OpenProject включил Gravatar, OpenProject может отображать ваш Gravatar, если вы зарегистрировали его с тем же адресом электронной почты на [gravatar.com](https://documentation.openproject-edge.com/external_redirect?url=https%3A%2F%2Fgravatar.com%2F). Если изображение Gravatar недоступно, Gravatar отображает настроенный аватар по умолчанию.
+Чтобы использовать другое изображение профиля, нажмите на ваш текущий аватар, чтобы загрузить пользовательское изображение. Пользовательский аватар переопределяет ваш Gravatar.
 > [!TIP]
-> For the best results, use an image that is 128 × 128 pixels. Larger images will be cropped automatically.
-
-![Avatar settings under OpenProject user account settings](openproject_account_settings_avatar.png)
-
-## User attributes
-
-To change your email address or your name, navigate to **Account** on the left side menu of **Account settings** page and scroll to **User attributes** section.
-
-Here you can **update** or delete your profile. If you're changing the email address of your account, you will be requested to confirm your account password before you can continue. 
-
-> [!NOTE] 
-> This applies only to internal accounts where OpenProject can verify the password.
-
+> Для лучших результатов используйте изображение размером 128 × 128 пикселей. Большие изображения будут автоматически обрезаны.
+![Настройки аватара в настройках аккаунта пользователя OpenProject](openproject_account_settings_avatar.png)
+## Атрибуты пользователя
+Чтобы изменить ваш адрес электронной почты или имя, перейдите в **Аккаунт** в меню слева на странице **Настройки аккаунта** и прокрутите до раздела **Атрибуты пользователя**.
+Здесь вы можете **обновить** или удалить ваш профиль. Если вы меняете адрес электронной почты вашего аккаунта, вам будет предложено подтвердить пароль вашего аккаунта, прежде чем вы сможете продолжить.
+> [!NOTE]
+> Это применяется только к внутренним аккаунтам, где OpenProject может проверить пароль.
 > [!TIP]
-> Please note that 'Hide my email' checkbox was removed from account settings with OpenProject 15.0.  The function was replaced by [the new Standard global role](../../../system-admin-guide/users-permissions/roles-permissions/#standard), which regulates this permission on an instance level. 
-
-![Profile settings in OpenProject](openproject_account_settings_profile.png)
-
-## Delete account
-
-You can delete your own account in **Account settings**.
-
-To delete your account, navigate to _Account settings_ -> _Account_ and click the **Delete** button in the top right corner.  You will be asked to confirm that you understand that this deletion is permanent. 
-
-![Confirmation dialog to delete account under OpenProject account settings](openproject_account_settings_delete_account.png)
-
+> Обратите внимание, что флажок 'Скрыть мою электронную почту' был удален из настроек аккаунта в OpenProject 15.0. Функция была заменена [новой глобальной ролью «Стандартная»](../../../system-admin-guide/users-permissions/roles-permissions/#стандартная), которая регулирует это разрешение на уровне экземпляра.
+![Настройки профиля в OpenProject](openproject_account_settings_profile.png)
+## Удалить аккаунт
+Вы можете удалить свой собственный аккаунт в **Настройках аккаунта**.
+Чтобы удалить ваш аккаунт, перейдите в _Настройки аккаунта_ -> _Аккаунт_ и нажмите кнопку **Удалить** в правом верхнем углу. Вам будет предложено подтвердить, что вы понимаете, что это удаление является постоянным.
+![Диалоговое окно подтверждения для удаления аккаунта в настройках аккаунта OpenProject](openproject_account_settings_delete_account.png)
 > [!WARNING]
-> Deleting a user account is permanent and cannot be reversed.
-
-If you cannot see the entry **Delete** button under your **Account settings**, make sure the option "Users allowed to delete their account" is [activated in the administration](../../../system-admin-guide/users-permissions/settings/#user-deletion).
+> Удаление учетной записи пользователя является постоянным и не может быть отменено.
+Если вы не видите кнопку **Удалить** в ваших **Настройках аккаунта**, убедитесь, что опция «Пользователям разрешено удалять свою учетную запись» [активирована в администрировании](../../../system-admin-guide/users-permissions/settings/#удаление-пользователей).

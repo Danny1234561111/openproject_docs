@@ -1,3 +1,4 @@
+---
 sidebar_navigation:
   title: Токены доступа
   priority: 400

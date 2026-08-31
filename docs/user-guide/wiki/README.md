@@ -1,83 +1,43 @@
 ---
 sidebar_navigation:
-  title: Wiki
-  priority: 800
-description: Create and manage a wiki in OpenProject.
-keywords: wiki, documentation
+  title: Рабочие пакеты
+  priority: 870
+description: Узнайте о рабочих пакетах в OpenProject
+keywords: рабочие пакеты, тикеты
 ---
-
-# Wiki
-
-OpenProject offers two different ways to work with project documentation:
-
-- **Project wiki** – the built-in OpenProject wiki described on this page.
-- **External wiki providers** – integrations with external documentation platforms, including **XWiki**.
-
-This page explains how to use the **OpenProject wiki**.
-
-If you want to connect an external documentation platform such as XWiki to your projects, see the documentation on **[external wiki providers setup](../../system-admin-guide/wikis/wiki-providers)**.
+# Рабочие пакеты
 
 <div class="glossary">
-
-**Wiki** is the built-in OpenProject module for collaboratively creating and editing project documentation. It uses GitHub-flavored CommonMark (GFM) and must be enabled in the project settings before it can be used.
-
-For organizations that prefer to manage documentation outside of OpenProject, external wiki providers such as XWiki can be connected through an integration.
+**Рабочие пакеты** — это элементы в проекте (такие как задачи, функции, риски, пользовательские истории, ошибки, запросы на изменение). Рабочий пакет содержит важную информацию и может быть назначен участникам проекта для выполнения.
 </div>
 
+Рабочие пакеты имеют **тип**, **ID**, **тему** и могут иметь различные дополнительные атрибуты, такие как **статус**, **исполнитель**, **приоритет**, **срок выполнения**.
 
-| Topic | Content |
-| ------ | ------- |
-| [Create and edit wiki pages](create-edit-wiki/) | Create, edit, organize, and manage wiki pages. |
-| [Wiki navigation](wiki-navigation/) | Navigate and organize wiki pages within a project. |
-| [Wiki FAQ](wiki-faq/) | Frequently asked questions about the wiki. |
+<div class="glossary">
+**ID рабочего пакета** — это уникальный идентификатор, присваиваемый вновь созданному рабочему пакету. По умолчанию OpenProject использует числовую последовательность в масштабе экземпляра (например, `#12345`). Администраторы могут, как альтернативу, включить идентификаторы на основе проекта, которые объединяют идентификатор проекта с последовательным номером (например, `PROJ-123`).
+Идентификаторы рабочих пакетов не могут редактироваться вручную и остаются связанными с рабочим пакетом на протяжении всего его жизненного цикла.
+</div>
 
-## Enable project wiki
+<div class="glossary">
+**Типы** — это различные элементы, которые может представлять рабочий пакет, такие как задача, функция, ошибка, фаза, веха. Типы рабочих пакетов могут быть настроены в системном администрировании.
+</div>
 
-The project wiki can be enabled for each project individually.
+Рабочие пакеты могут отображаться в временной шкале проектов, например, как веха или фаза. Чтобы использовать рабочие пакеты, модуль рабочих пакетов должен быть активирован в настройках проекта.
 
-To use the internal wiki, it must first be [enabled on your OpenProject instance](../../system-admin-guide/wikis/wiki-providers) and then **enabled for the project** under the [project settings](../projects/project-settings/project-wiki).
+## Обзор
 
-## Editing wiki pages
+| Тема                                                        | Содержание                                                      |
+| ------------------------------------------------------------ | :----------------------------------------------------------- |
+| [Представления рабочих пакетов](work-package-views)                    | В чем разница между представлениями рабочих пакетов: табличное представление, представление разделенного экрана, детальное представление? |
+| [Создать рабочий пакет](create-work-package)                 | Как создать новый рабочий пакет в OpenProject.             |
+| [Установить и изменить даты и продолжительность](set-change-dates)        | Как установить и изменить дату начала, дату окончания и продолжительность рабочего пакета. |
+| [Сравнение с базовой версией](baseline-comparison)                   | Как отслеживать изменения рабочих пакетов с течением времени.                 |
+| [Поделиться рабочими пакетами с внешними пользователями (дополнение Enterprise)](share-work-packages) | Как поделиться рабочим пакетом с пользователями или группами вне вашего проекта. |
+| [Редактировать рабочий пакет](edit-work-package)                       | Как редактировать рабочий пакет в OpenProject.                   |
+| [Автоматические темы для рабочего пакета (дополнение Enterprise)](automatic-subjects) | Как использовать автоматически сгенерированные темы рабочих пакетов в OpenProject. |
+| [Дублировать, переместить, удалить](duplicate-move-delete)             | Как копировать, перемещать, удалять рабочий пакет.                    |
+| [Конфигурация таблицы рабочих пакетов](work-package-table-configuration) | Как настроить таблицу рабочих пакетов (столбцы, фильтры, группировка и т.д.). |
+| [Экспорт рабочих пакетов](exporting)                            | Как экспортировать рабочие пакеты для других инструментов, таких как Microsoft Excel. |
+| [Отношения и иерархии рабочих пакетов](work-package-relations-hierarchies) | Как создавать отношения и иерархии рабочих пакетов.        |
 
-Wiki pages use the OpenProject **WYSIWYG editor**, powered by [CKEditor 5](https://ckeditor.com/ckeditor-5/). The editor supports GitHub-flavored CommonMark (GFM), allowing you to create rich documentation with formatting, images, tables, links, and macros.
-
-Most editing features are available throughout OpenProject. For detailed information about:
-
-- text formatting
-- images
-- tables
-- links
-- macros
-- keyboard shortcuts
-- supported editor features
-
-see the **[WYSIWYG editor](../wysiwyg)** guide.
-
-## Wiki-specific features
-
-The wiki includes additional features that are only available when editing wiki pages.
-
-### Wiki-specific elements
-
-Click **+ Insert** in the toolbar to access the following wiki-specific macros:
-
-- **List of sub-pages** – inserts a hierarchical list of all child pages. This macro is only available when editing wiki pages.
-- **Existing wiki page** – inserts a link to an existing wiki page.
-- **New wiki page** – creates and inserts a link to a new wiki page.
-
-The **Existing wiki page** and **New wiki page** macros are also available in other rich text editors in OpenProject, including meeting descriptions and outcomes, comments, and custom fields of type **Text**.
-
-![Wiki specific macros in a CKeditor on a wiki page in OpenProject](openproject_user_guide_wiki_macros.png)
-
-> [!TIP]
-> For more information about using macros, see our [How to use macros](https://www.openproject.org/blog/how-to-use-macros/) blog article.
-
-### Wiki page links
-
-You can also create links to wiki pages using the following syntax:
-
-```wiki
-[[Wiki page]]
-[[Wiki page|Link text]]
-[[Project identifier:Wiki page]]
-```
+<video src="https://openproject-docs.s3.eu-central-1.amazonaws.com/videos/OpenProject-Work-Packages.mp4"></video>

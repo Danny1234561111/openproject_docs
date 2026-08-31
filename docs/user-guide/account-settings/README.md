@@ -1,33 +1,25 @@
 ---
 sidebar_navigation:
-  title: Account settings
+  title: Настройки аккаунта
   priority: 999
-description: Learn how to configure account settings.
-keywords: my account, account settings, change language
+description: Узнайте, как настроить параметры аккаунта.
+keywords: мой аккаунт, настройки аккаунта, изменить язык
 ---
-
-# Account settings
-
-Change your personal settings under Account settings (earlier called My account). Here you can adapt, e.g. the language, edit notifications, or add an avatar. Moreover you can manage access tokens and sessions.
-
-| Topic                                                      | Content                                                      |
+# Настройки аккаунта
+Измените ваши личные настройки в разделе «Настройки аккаунта» (ранее назывался «Мой аккаунт»). Здесь вы можете адаптировать, например, язык, редактировать уведомления или добавить аватар. Кроме того, вы можете управлять токенами доступа и сеансами.
+| Тема                                                      | Содержание                                                      |
 | ---------------------------------------------------------- | ------------------------------------------------------------ |
-| [Open account settings](#open-account-settings)            | How to open your personal settings in OpenProject            |
-| [Edit your user information](account)                      | How to change the name, email address in OpenProject         |
-| [See schedule and availability](schedule-and-availability) | How to see and manage your schedule and availability in OpenProject |
-| [Language and region](language-and-region)                 | How to change the language and the time zone in OpenProject  |
-| [Security](security)                                       | How to change your password and set up two factor authentication in OpenProject |
-| [Access tokens](access-tokens)                             | How to set up access tokens in OpenProject                   |
-| [Session management](session-management)                   | How to manage your OpenProject sessions                      |
-| [Notification and email](notification-and-email)           | How to change in-app notifications and email reminders in OpenProject |
-| [Set an Avatar](account#set-an-avatar)                     | How to set an avatar in OpenProject and change the profile picture |
-| [Delete account](account#delete-account)                   | How to delete my own account                                 |
-
-## Open account settings
-
-To open your personal settings in OpenProject, click on your user icon in the top right corner in the header of the application.
-
-Choose **Account settings**.
-
-![Account settings in OpenProject](openproject_select_account_settings.png)
-
+| [Открыть настройки аккаунта](#открыть-настройки-аккаунта)            | Как открыть ваши личные настройки в OpenProject            |
+| [Редактировать информацию о пользователе](account)                      | Как изменить имя, адрес электронной почты в OpenProject         |
+| [Посмотреть расписание и доступность](schedule-and-availability) | Как просматривать и управлять вашим расписанием и доступностью в OpenProject |
+| [Язык и регион](language-and-region)                 | Как изменить язык и часовой пояс в OpenProject  |
+| [Безопасность](security)                                       | Как изменить ваш пароль и настроить двухфакторную аутентификацию в OpenProject |
+| [Токены доступа](access-tokens)                             | Как настроить токены доступа в OpenProject                   |
+| [Управление сеансами](session-management)                   | Как управлять вашими сеансами OpenProject                      |
+| [Уведомления и электронная почта](notification-and-email)           | Как изменить внутрисистемные уведомления и напоминания по электронной почте в OpenProject |
+| [Установить аватар](account#установить-аватар)                     | Как установить аватар в OpenProject и изменить изображение профиля |
+| [Удалить аккаунт](account#удалить-аккаунт)                   | Как удалить мой собственный аккаунт                                 |
+## Открыть настройки аккаунта
+Чтобы открыть ваши личные настройки в OpenProject, нажмите на значок вашего пользователя в правом верхнем углу в заголовке приложения.
+Выберите **Настройки аккаунта**.
+![Настройки аккаунта в OpenProject](openproject_select_account_settings.png)

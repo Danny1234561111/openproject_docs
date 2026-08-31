@@ -1,122 +1,120 @@
 ---
 sidebar_navigation:
-  title: Calendar
+  title: Календарь
   priority: 840
-description: How to create, use and subscribe to a calendar in OpenProject.
-keywords: calendar, ical, month, week, view
+description: Как создать, использовать и подписаться на календарь в OpenProject.
+keywords: календарь, ical, месяц, неделя, представление
 ---
+# Календарь
 
+Модуль "Календарь" дает вам обзор рабочих пакетов, запланированных в определенном месяце или неделе. Это упрощает отслеживание и выполнение нескольких параллельных задач и дает представление о том, как проект будет развиваться (или развивался) с течением времени.
 
-# Calendar
+Сначала необходимо включить модуль "Календарь" в [настройках проекта](../projects/project-settings/modules), чтобы использовать его.
 
-The Calendar module gives you an overview of work packages scheduled in a particular month or week. This makes it easier to track and follow multiple parallel tasks and get a sense of how a project will evolve (or has evolved) over time.
-
-You must first enable the Calendar module in your [project settings](../projects/project-settings/modules) to use it.
-
-| Topic                                               | Content                                                      |
+| Тема                                               | Содержание                                                      |
 | --------------------------------------------------- | ------------------------------------------------------------ |
-| [Create a new calendar](#create-a-new-calendar)     | How to create a new calendar and manage visibility settings. |
-| [Use the calendar](#use-the-calendar)               | How to view, modify, create and filter work packages in the calendar. |
-| [Subscribe to a calendar](#subscribe-to-a-calendar) | How to subscribe to and access a calendar from an external client. |
+| [Создать новый календарь](#создать-новый-календарь)     | Как создать новый календарь и управлять настройками видимости. |
+| [Использовать календарь](#использовать-календарь)               | Как просматривать, изменять, создавать и фильтровать рабочие пакеты в календаре. |
+| [Подписаться на календарь](#подписаться-на-календарь) | Как подписаться на календарь и получить к нему доступ из внешнего клиента. |
 
-## Create a new calendar
+## Создать новый календарь
 
-Once enabled, clicking on the **Calendars** entry on the left sidebar takes you to the Calendar module with a list of all existing calendars. Initially, it will be empty.
+После включения, нажатие на пункт **Календари** на левой боковой панели перенаправит вас в модуль "Календарь" со списком всех существующих календарей. Изначально он будет пустым.
 
-![Calendar overview](openproject_user_guide_calendar_overview.png)
+![Обзор календаря](openproject_user_guide_calendar_overview.png)
 
-- You can create a new calendar by clicking on either the **+ Calendar** button at the top right corner near your avatar or at the bottom of the sidebar on the left.
-- Click on an existing (saved) calendar to view it.
-- You can change the visibility settings of any calendar by clicking on **\[⋮\] more** -> **Visibility settings.**
-  - Any calendar that has the **Favorited** option checked will be displayed under the **Favorite** heading in the sidebar to the left.
-  - Any calendar that has the **Public** option checked will be visible to all members of the current project and listed under the **Public** heading in the sidebar to the left.
-  - Any calendar that has the **Public** option unchecked will be considered **private** and displayed under the **Private** heading in the menu bar to the left.
+- Вы можете создать новый календарь, нажав на кнопку **+ Календарь** в правом верхнем углу рядом с вашим аватаром или в нижней части боковой панели слева.
+- Нажмите на существующий (сохраненный) календарь, чтобы просмотреть его.
+- Вы можете изменить настройки видимости любого календаря, нажав **\[⋮\] еще** -> **Настройки видимости**.
+  - Любой календарь, у которого отмечена опция **Избранное**, будет отображаться под заголовком **Избранное** на боковой панели слева.
+  - Любой календарь, у которого отмечена опция **Публичный**, будет виден всем участникам текущего проекта и будет указан под заголовком **Публичный** на боковой панели слева.
+  - Любой календарь, у которого опция **Публичный** не отмечена, будет считаться **приватным** и отображаться под заголовком **Приватный** в меню слева.
 
-## Use the calendar
+## Использовать календарь
 
-### View work packages
+### Просмотр рабочих пакетов
 
-![Calendar module month view](openproject_user_guide_calendar_month.png)
+![Представление месяца в модуле "Календарь"](openproject_user_guide_calendar_month.png)
 
-When you open a new calendar, all work packages within the current project are displayed as horizontal strips that span all dates between the start and finish dates (inclusive). The color represents the [work package type](../../system-admin-guide/manage-work-packages/work-package-types). The subject or title displayed on the strip (insomuch as the length allows).
+Когда вы открываете новый календарь, все рабочие пакеты в текущем проекте отображаются в виде горизонтальных полос, которые охватывают все даты между датами начала и окончания (включительно). Цвет представляет [тип рабочего пакета](../../system-admin-guide/manage-work-packages/work-package-types). Тема или заголовок отображается на полосе (насколько позволяет длина).
 
-The current month is automatically selected.
+Текущий месяц выбирается автоматически.
 
-![Calendar time controls](openproject_user_guide_calendar_time_controls.png)
+![Элементы управления временем календаря](openproject_user_guide_calendar_time_controls.png)
 
-- You can use the previews/next arrow controls **(←, →)** in the top left corner to move forwards or backwards in time.
-- The **today** button brings you back to the current date.
-- You can use the **month/week** toggle on the top right corner to switch between either a month view or a week view.
+- Вы можете использовать элементы управления стрелками вперед/назад **(←, →)** в левом верхнем углу, чтобы перемещаться вперед или назад во времени.
+- Кнопка **сегодня** возвращает вас к текущей дате.
+- Вы можете использовать переключатель **месяц/неделя** в правом верхнем углу, чтобы переключаться между представлением месяца или недели.
 
-If multiple work packages are scheduled on the same day, they are displayed in a vertical stack. 
+Если несколько рабочих пакетов запланированы на один и тот же день, они отображаются в вертикальном стеке.
 
-Click on a work package strip to view the work package in split screen mode. The drag handle between the calendar and work package panel can be used to adjust their widths. 
+Нажмите на полосу рабочего пакета, чтобы просмотреть рабочий пакет в режиме разделенного экрана. Маркер перетаскивания между календарем и панелью рабочего пакета можно использовать для регулировки их ширины.
 
-![Work package details in split screen view](openproject_user_guide_calendar_splitscreen.png)
+![Детали рабочего пакета в режиме разделенного экрана](openproject_user_guide_calendar_splitscreen.png)
 
-### Create work packages
+### Создание рабочих пакетов
 
-You can create new work packages directly on the calendar. To do so, either click on a single date or click and drag across a date range. A new work package form will open in a split screen with the selected date(s) pre-filled.
+Вы можете создавать новые рабочие пакеты непосредственно в календаре. Для этого щелкните на одну дату или щелкните и перетащите через диапазон дат. Форма нового рабочего пакета откроется в разделенном экране с предварительно заполненными выбранными датами.
 
-![Create new work package in calendar](openproject_user_guide_calendar_create_wp.png)
+![Создание нового рабочего пакета в календаре](openproject_user_guide_calendar_create_wp.png)
 
-### Modify work packages
+### Изменение рабочих пакетов
 
-You can make basic date modifications simply by manipulating the work package strips:
+Вы можете вносить основные изменения дат, просто манипулируя полосами рабочих пакетов:
 
-- Change the start date by grabbing the drag handle on the left edge of the strip and extending or shortening it.
-- Change the finish date by grabbing the drag handle on the right edge of the strip and extending or shortening it.
-- Drag an entire strip to move the work package forwards or backwards in time whilst preserving duration.
+- Измените дату начала, захватив маркер перетаскивания на левом краю полосы и расширив или укоротив его.
+- Измените дату окончания, захватив маркер перетаскивания на правом краю полосы и расширив или укоротив его.
+- Перетащите всю полосу, чтобы переместить рабочий пакет вперед или назад во времени, сохраняя продолжительность.
 
-![Use drag handles to change start and finish dates](openproject_user_guide_calendar_modify_dates.png)
+![Используйте маркеры перетаскивания для изменения дат начала и окончания](openproject_user_guide_calendar_modify_dates.png)
 
 > [!NOTE]
-> The calendar will highlight non-working days with a darker background color. By default, a work package cannot be dragged or resized such that it begins or ends on these days unless the “Working days only” switch is turned off for that work package. To learn how to do this, refer to the documentation on [Working days and duration](../work-packages/set-change-dates/#working-days-and-duration).
+> Календарь будет выделять нерабочие дни более темным цветом фона. По умолчанию рабочий пакет нельзя перетаскивать или изменять размер так, чтобы он начинался или заканчивался в эти дни, если переключатель «Только рабочие дни» не выключен для этого рабочего пакета. Чтобы узнать, как это сделать, обратитесь к документации по [Рабочим дням и продолжительности](../work-packages/set-change-dates/#рабочие-дни-и-продолжительность).
 >
-> Work packages can also expand and retract in width depending on how many non-working days are spanned. For example, a 3-day task starting on Thursday and ending on Monday will spread across 5 calendar days. Dragging that same work package so that it starts on a Tuesday and ends on a Thursday means that it will spread across 3 calendar days. In both cases, the duration remains 3 days.
+> Рабочие пакеты также могут расширяться и сокращаться по ширине в зависимости от того, сколько нерабочих дней они охватывают. Например, задача на 3 дня, начинающаяся в четверг и заканчивающаяся в понедельник, распространяется на 5 календарных дней. Перетаскивание того же рабочего пакета так, чтобы он начинался во вторник и заканчивался в четверг, означает, что он распространится на 3 календарных дня. В обоих случаях продолжительность остается 3 дня.
 
-### Filters
+### Фильтры
 
-You can filter the work packages displayed in a calendar by adding any number of [filters](../work-packages/work-package-table-configuration/#filter-work-packages "Learn more about work package filters"), e.g. _Author_, _Due Date_, _Priority_, _Assignee_, etc. This allows you to create a custom calendar showing only relevant work packages, either for yourself (as a private calendar) or for your team (as a public calendar visible to all project members).
+Вы можете фильтровать рабочие пакеты, отображаемые в календаре, добавляя любое количество [фильтров](../work-packages/work-package-table-configuration/#фильтровать-рабочие-пакеты "Узнайте больше о фильтрах рабочих пакетов"), например, _Автор_, _Срок выполнения_, _Приоритет_, _Исполнитель_ и т.д. Это позволяет создавать пользовательский календарь, показывающий только соответствующие рабочие пакеты, либо для себя (как приватный календарь), либо для вашей команды (как публичный календарь, видимый всем участникам проекта).
 
-Click the **Filter** button on the top right above the calendar to open the filter details.  To add another filter criteria, select the drop down next to **+ Add filter** and choose a filter criteria. The number of different filter criteria is displayed on the filter button.
+Нажмите кнопку **Фильтр** в правом верхнем углу над календарем, чтобы открыть детали фильтра. Чтобы добавить другой критерий фильтрации, выберите раскрывающийся список рядом с **+ Добавить фильтр** и выберите критерий фильтрации. Количество различных критериев фильтрации отображается на кнопке фильтра.
 
-![Calendar filters in openproject user guide](openproject_user_guide_calendar_filters.png)
-
-> [!NOTE]
-> OpenProject also offers a module called **Team planner** that allows you to view modules in a calendar by assignee. [Learn more about Team planner](../team-planner "Documentation about Team planner").
-
-### Include other projects
-
-Much like with work package tables, it is possible to display work packages from other projects. Use the **Include projects** dialog, where you can select/unselect from a list of projects and sub-projects. To automatically include all sub-projects for each project you chose to select, check the **Include all sub-projects** box at the bottom of the dialog.
-
-### Embed a calendar in the project overview
-
-You can also display the calendar on the dashboard in the [project overview](../projects/project-home/project-widgets/#calendar-widget).
-
-### Zen mode
-
-You can display the calendar in full screen mode by hiding the navigation bar  and sidebar to work free of distractions. Click the **Activate zen mode** button on the top of the calendar. Press the escape key (**Esc**) to exist Zen mode.
-
-## Subscribe to a calendar
-
-OpenProject allows you to subscribe to and access any of your calendars using an external client that supports the iCalendar format (such as Thunderbird, Open-Xchange, Apple Calendar or Google Calendar).
-
-This makes it possible for you to keep an eye on your project schedule from any compatible device (including mobile devices) without having to connect to your OpenProject instance and always remain up to date with relevant work packages.
+![Фильтры календаря в руководстве пользователя openproject](openproject_user_guide_calendar_filters.png)
 
 > [!NOTE]
-> You can only subscribe to saved calendars. If you are creating a new calendar, please save it before you are able to create a calendar subscription.
+> OpenProject также предлагает модуль под названием **Планировщик команды**, который позволяет просматривать модули в календаре по исполнителю. [Узнайте больше о Планировщике команды](../team-planner "Документация о Планировщике команды").
 
-![Subscribe to calendar in the More menu](openproject_user_guide_calendar_menu_subscribe.png)
+### Включить другие проекты
 
-To subscribe to a calendar:
+Как и в таблицах рабочих пакетов, можно отображать рабочие пакеты из других проектов. Используйте диалоговое окно **Включить проекты**, где вы можете выбирать/отменять выбор из списка проектов и подпроектов. Чтобы автоматически включать все подпроекты для каждого выбранного вами проекта, установите флажок **Включить все подпроекты** в нижней части диалогового окна.
 
-1. Click on the **\[⋮\] more button** on the toolbar and select **Subscribe to calendar**.
-2. In the modal that appears, give this calendar a unique name (you can only use it once). We recommend naming it based on where you will be subscribing to this calendar from ("personal phone" or "work tablet" for example).  
-3. Click on **Copy URL**. This creates the a [calendar token](../../user-guide/account-settings/access-tokens) and copies the calendar URL to your clipboard.
-4. Paste this URL in your desired calendar client to subscribe.
+### Встроить календарь в обзор проекта
 
-![Subscribe to calendar modal](openproject_user_guide_calendar_subscribe.png)
+Вы также можете отображать календарь на панели инструментов в [обзоре проекта](../projects/project-home/project-widgets/#виджет-календаря).
+
+### Режим дзен
+
+Вы можете отображать календарь в полноэкранном режиме, скрывая панель навигации и боковую панель, чтобы работать без отвлекающих факторов. Нажмите кнопку **Активировать режим дзен** в верхней части календаря. Нажмите клавишу выхода (**Esc**), чтобы выйти из режима дзен.
+
+## Подписаться на календарь
+
+OpenProject позволяет вам подписываться на любой из ваших календарей и получать к нему доступ с помощью внешнего клиента, поддерживающего формат iCalendar (такого как Thunderbird, Open-Xchange, Apple Calendar или Google Calendar).
+
+Это позволяет вам следить за расписанием проекта с любого совместимого устройства (включая мобильные устройства), не подключаясь к вашему экземпляру OpenProject, и всегда оставаться в курсе соответствующих рабочих пакетов.
+
+> [!NOTE]
+> Вы можете подписаться только на сохраненные календари. Если вы создаете новый календарь, пожалуйста, сохраните его, прежде чем сможете создать подписку на календарь.
+
+![Подписаться на календарь в меню "Еще"](openproject_user_guide_calendar_menu_subscribe.png)
+
+Чтобы подписаться на календарь:
+
+1. Нажмите кнопку **\[⋮\] еще** на панели инструментов и выберите **Подписаться на календарь**.
+2. В появившемся модальном окне дайте этому календарю уникальное имя (вы можете использовать его только один раз). Мы рекомендуем называть его на основе того, откуда вы будете подписываться на этот календарь ("личный телефон" или "рабочий планшет", например).
+3. Нажмите **Копировать URL**. Это создает [токен календаря](../../user-guide/account-settings/access-tokens) и копирует URL календаря в буфер обмена.
+4. Вставьте этот URL в желаемый календарный клиент, чтобы подписаться.
+
+![Модальное окно "Подписаться на календарь"](openproject_user_guide_calendar_subscribe.png)
 
 > [!IMPORTANT]
-> Please don't share this URL with other users. Anyone with this link will be able to view work package details without an account or password. 
+> Пожалуйста, не делитесь этим URL с другими пользователями. Любой, у кого есть эта ссылка, сможет просматривать детали рабочих пакетов без учетной записи или пароля.

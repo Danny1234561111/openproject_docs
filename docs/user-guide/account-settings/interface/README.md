@@ -1,70 +1,71 @@
 ---
 sidebar_navigation:
-  title: Interface
+  title: Интерфейс
   priority: 600
-description: Learn how to configure user interface in OpenProject.
-keywords: my account, account settings, change language
+description: Узнайте, как настроить пользовательский интерфейс в OpenProject.
+keywords: мой аккаунт, настройки аккаунта, изменить язык
 ---
+# Интерфейс
 
-# Interface
+В разделе **Интерфейс** настроек проекта вы можете настроить цветовой режим, активировать предупреждения и настроить параметры бэклога. Настройки здесь сгруппированы в два раздела: _Внешний вид и ощущения_ и _Предупреждения_.
 
-Under the **Interface** section of project settings you can adjust the color mode, activate alerts and adjust backlog settings. Settings here are grouped into two sections: _Look and feel_ and _Alerts_.
+## Внешний вид и ощущения
 
-## Look and feel
+В разделе **Внешний вид и ощущения** в **Интерфейсе** ваших настроек профиля (доступен через меню слева) вы можете выбрать предпочитаемый цветовой режим отображения и настроить порядок, в котором комментарии появляются в **Списке активностей** для рабочих пакетов.
 
-In the **Look and feel** section under **Interface** in your profile settings (accessible via the left-hand menu), you can select your preferred display color mode and adjust the order in which comments appear in the **Activity list** for work packages.
+Вы также можете **отключить сочетания клавиш**. Это полезно, если вы полагаетесь на программу чтения с экрана или хотите избежать случайного запуска действий.
 
-You can also **disable keyboard shortcuts** . This is useful if you rely on a screen reader or want to avoid triggering actions by accident.
+Нажмите **Обновить внешний вид и ощущения**, чтобы сохранить изменения.
 
-Click **Update look and feel** to save your changes.
+!["Внешний вид и ощущения" в настройках интерфейса в настройках аккаунта OpenProject](openproject_account_settings_interface_look_and_feel.png)
 
-!["Look and feel" section under Interface settings in OpenProject account settings](openproject_account_settings_interface_look_and_feel.png)
+### Выберите режим высокой контрастности
 
-### Select the high contrast color mode
+В раскрывающемся меню **Цветовой режим** вы можете выбрать цветовой режим. Настройка по умолчанию — **Светлый режим**. Вы можете увеличить контрастность, активировав настройку **Увеличить контрастность**, что значительно увеличит контрастность и переопределит цветовую тему экземпляра OpenProject для вас.
 
-In the dropdown menu **Color mode** you can pick the color mode. The default setting is the **Light mode**. You can increase the contrast by activating the **Increase contrast** setting, which will significantly increase the contrast and override the color theme of the OpenProject instance for you.
+Этот режим рекомендуется для пользователей с нарушениями зрения.
 
-This mode is recommended for users with visuals impairment.
+![Светлый режим с увеличенной контрастностью выбран в настройках аккаунта OpenProject](openproject_account_settings_settings_light_high_contrast_mode.png)
 
-![Light mode with increased contrast selected in OpenProject account settings](openproject_account_settings_settings_light_high_contrast_mode.png)
+### Выберите темный режим
 
-### Select the dark mode
-
-In the dropdown menu **Color mode** you can pick the color mode. The default setting is **Light mode**. You can also alternatively select **Dark** mode and activate the **Increase contrast** setting for the **Dark high contrast** mode.
-
-> [!NOTE]
-> Custom colors and themes are only supported in Light mode and changing color modes may override most or all custom configuration. Only some colors (accent and primary button color) are kept but adapted for appropriate contrast in certain modes like dark mode.
-
-![Dark mode in OpenProject account settings](openproject_account_settings_dark_mode.png)
-
-### Select automatic color mode
-
-In the dropdown menu Color mode, you can now also select the **Automatic option, which will match the color mode of your operating system**. 
-
-![Automatic color mode in OpenProject account settings](openproject_account_settings_automatic_os_mode.png)
-
-If this option is selected, OpenProject will automatically match your operating system’s light or dark theme, including the system's contrast settings. You will also see additional settings to force high-contrast when Light or Dark mode is selected — this would ensure that OpenProject always increases contrast in automatic mode, regardless of the system contrast settings.
-
-If your operating system is set to high contrast mode, OpenProject will also automatically switch to the corresponding high contrast mode (light or dark).
+В раскрывающемся меню **Цветовой режим** вы можете выбрать цветовой режим. Настройка по умолчанию — **Светлый режим**. Вы также можете выбрать **Темный** режим и активировать настройку **Увеличить контрастность** для режима **Темный с высокой контрастностью**.
 
 > [!NOTE]
-> This is a user-specific preference and only affects your own account.
+> Пользовательские цвета и темы поддерживаются только в светлом режиме, и изменение цветовых режимов может переопределить большую часть или всю пользовательскую конфигурацию. Только некоторые цвета (акцентный и цвет основной кнопки) сохраняются, но адаптируются для соответствующего контраста в определенных режимах, таких как темный режим.
 
-### Change the order to display comments
+![Темный режим в настройках аккаунта OpenProject](openproject_account_settings_dark_mode.png)
 
-You can select the order of the comments (for example of the comments for a work package which appear in the Activity tab). You can select the **newest at the bottom** or **newest on top** to display the comments.
+### Выберите автоматический цветовой режим
 
-If you choose newest on top, the latest comment will appear on top in the Activity list.
+В раскрывающемся меню Цветовой режим теперь также можно выбрать **Автоматический вариант, который будет соответствовать цветовому режиму вашей операционной системы**.
 
-### Disable keyboard shortcuts
+![Автоматический цветовой режим в настройках аккаунта OpenProject](openproject_account_settings_automatic_os_mode.png)
 
-If you use a screen reader or want to avoid accidentally triggering an action with a  shortcut, you can choose to disable default [keyboard shortcuts](../../keyboard-shortcuts-access-keys/) by selecting the respective option.
+Если выбран этот вариант, OpenProject автоматически будет соответствовать светлой или темной теме вашей операционной системы, включая настройки контрастности системы. Вы также увидите дополнительные настройки для принудительного включения высокой контрастности при выборе светлого или темного режима — это гарантирует, что OpenProject всегда увеличивает контрастность в автоматическом режиме, независимо от настроек контрастности системы.
 
-## Alerts
+Если ваша операционная система настроена на режим высокой контрастности, OpenProject также автоматически переключится на соответствующий режим высокой контрастности (светлый или темный).
 
-Under **Alerts** section you can activate a **warning if you are leaving a work package with unsaved changes**.
+> [!NOTE]
+> Это предпочтение, специфичное для пользователя, и влияет только на ваш собственный аккаунт.
 
-Additionally, you can activate to **auto-hide success notifications** from the system. This (only) means that the green pop-up success notifications will be removed automatically after five seconds.
+### Изменить порядок отображения комментариев
+
+Вы можете выбрать порядок комментариев (например, комментариев для рабочего пакета, которые появляются на вкладке "Активность"). Вы можете выбрать **новейшие внизу** или **новейшие сверху** для отображения комментариев.
+
+Если вы выбираете "новейшие сверху", последний комментарий будет появляться сверху в Списке активностей.
+
+### Отключить сочетания клавиш
+
+Если вы используете программу чтения с экрана или хотите избежать случайного запуска действия с помощью сочетания клавиш, вы можете отключить стандартные [сочетания клавиш](../../keyboard-shortcuts-access-keys/), выбрав соответствующую опцию.
+
+## Предупреждения
+
+В разделе **Предупреждения** вы можете активировать **предупреждение, если вы покидаете рабочий пакет с несохраненными изменениями**.
+
+Кроме того, вы можете активировать **автоматическое скрытие уведомлений об успехе** от системы. Это (только) означает, что зеленые всплывающие уведомления об успехе будут автоматически удаляться через пять секунд.
+
 > [!TIP]
-> Even if auto-hide is enabled, banners remain visible while you hover over them or move your mouse pointer over them. This gives you more time to read the message before it disappears.
-![Alerts section under interface settings in OpenProject account settings](openproject_account_settings_interface_alerts.png)
+> Даже если включено автоматическое скрытие, баннеры остаются видимыми, пока вы наводите на них курсор или перемещаете указатель мыши над ними. Это дает вам больше времени, чтобы прочитать сообщение, прежде чем оно исчезнет.
+
+![Раздел "Предупреждения" в настройках интерфейса в настройках аккаунта OpenProject](openproject_account_settings_interface_alerts.png)

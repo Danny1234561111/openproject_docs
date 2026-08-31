@@ -1,84 +1,84 @@
 ---
 sidebar_navigation:
-  title: News
+  title: Новости
   priority: 830
-description: Communicate project news to your team members
-keywords: news
+description: Сообщайте новости проекта членам вашей команды
+keywords: новости
 ---
+# Новости проекта
 
-# Project News
-
-On the news page, you can see the latest news in a project in reverse chronological order. News communicate general topics to all team members.
+На странице новостей вы можете видеть последние новости в проекте в обратном хронологическом порядке. Новости сообщают общие темы всем членам команды.
 
 <div class="glossary">
-
-**News** are defined as a module that allows the publication and use of news entries.
-
+**Новости** определяются как модуль, который позволяет публиковать и использовать записи новостей.
 </div>
 
-They can be displayed on the main project overview page.
+Их можно отображать на главной странице обзора проекта.
 
-| Feature                                     | Documentation for                                 |
+| Функция                                     | Документация для                                 |
 |---------------------------------------------|---------------------------------------------------|
-| [Comment on news](#comment-on-news)         | How to comment news in a project.                 |
-| [Watch news](#watch-a-news-entry)           | How to add yourself as a watcher to a news entry. |
-| [Edit a news entry](#edit-a-news-entry)     | How to edit an existing news entry.               |
-| [Add a news entry](#add-a-news-entry)       | How to create a new news entry.                   |
-| [Delete a news entry](#delete-a-news-entry) | How to delete a news entry.                       |
+| [Комментировать новости](#комментировать-новости)         | Как комментировать новости в проекте.                 |
+| [Наблюдать за новостью](#наблюдать-за-записью-новости)           | Как добавить себя в качестве наблюдателя за записью новости. |
+| [Редактировать запись новости](#редактировать-запись-новости)     | Как редактировать существующую запись новости.               |
+| [Добавить запись новости](#добавить-запись-новости)       | Как создать новую запись новости.                   |
+| [Удалить запись новости](#удалить-запись-новости) | Как удалить запись новости.                       |
 
-## Comment on news
+## Комментировать новости
 
-In the News module in the project menu on the left, you will see all news from a project. Click the Subject to read to details and comment on news.
+В модуле «Новости» в меню проекта слева вы увидите все новости из проекта. Нажмите на «Тему», чтобы прочитать детали и прокомментировать новость.
 
-![news](1567425159667.png)
+![новости](1567425159667.png)
 
-In the news details, click the **Add a comment** link to comment on the news. Type in your comment and click the blue **Add** button. Your comment, along with all other comments, is then displayed below the news entry description, newest first.
+В деталях новости нажмите ссылку **Добавить комментарий**, чтобы прокомментировать новость. Введите ваш комментарий и нажмите синюю кнопку **Добавить**. Ваш комментарий, вместе со всеми другими комментариями, затем отображается под описанием записи новости, сначала самые новые.
 
- ![comment-news](comment-news.png)
+![комментировать-новость](comment-news.png)
 
-## Watch a news entry
+## Наблюдать за записью новости
 
-You can also decide to watch a news entry. As a watcher, you will receive an e-mail notification if a news entry is changed or if a comment has been added to a news article. To become a watcher, click the **Watch** button in the top right corner of a news entry’s details view. If you want to stop watching a news entry, simply click on Unwatch.
+Вы также можете решить наблюдать за записью новости. Как наблюдатель, вы будете получать уведомление по электронной почте, если запись новости изменена или если комментарий добавлен к новостной статье. Чтобы стать наблюдателем, нажмите кнопку **Наблюдать** в правом верхнем углу детального представления записи новости. Если вы хотите перестать наблюдать за записью новости, просто нажмите «Перестать наблюдать».
 
-![watch-news](watch-news-1567426049501.png)
+![наблюдать-новость](watch-news-1567426049501.png)
 
-## Edit a news entry
+## Редактировать запись новости
 
-You can also always go back and make changes to an existing news entry. To do so, select the respective news from the overview page by clicking on its subject. In the detail view of the entry, click the **Edit** button in the top right corner.
+Вы также всегда можете вернуться и внести изменения в существующую запись новости. Для этого выберите соответствующую новость на странице обзора, нажав на ее тему. В детальном представлении записи нажмите кнопку **Редактировать** в правом верхнем углу.
 
-![edit-news](edit-news.png)A form appears allowing you to make adjustments to title, summary and description. The original entry is displayed at the bottom of the page. Make your changes and click on the blue **Save** button to finish.
+![редактировать-новость](edit-news.png)
 
-## Add a news entry
+Появится форма, позволяющая вам внести корректировки в заголовок, краткое содержание и описание. Исходная запись отображается в нижней части страницы. Внесите ваши изменения и нажмите синюю кнопку **Сохранить**, чтобы завершить.
 
-To add a new news entry, click on **Add news** in the toolbar in the upper right side.
+## Добавить запись новости
 
-![add-news](add-news.png)
+Чтобы добавить новую запись новости, нажмите **Добавить новость** на панели инструментов в правой верхней части.
 
- A new window will open, allowing you to enter title, summary and description. The title and summary will be displayed in the project overview or on the main OpenProject landing page in the News section.
-You can further edit the content of your news  by using the provided basic formatting options from the text editor. Also, you are able to enter Macros, e.g. Work package tables, or Work package create buttons.
+![добавить-новость](add-news.png)
 
-To finish and publish the entry, click on **Create**.
+Откроется новое окно, позволяющее вам ввести заголовок, краткое содержание и описание. Заголовок и краткое содержание будут отображаться в обзоре проекта или на главной странице приветствия OpenProject в разделе «Новости».
 
-![create-news](1567426608737.png)
+Вы можете дополнительно редактировать содержание вашей новости, используя предоставленные основные параметры форматирования из текстового редактора. Также вы можете вводить макросы, например, таблицы рабочих пакетов или кнопки создания рабочих пакетов.
 
-## Delete a news entry
+Чтобы завершить и опубликовать запись, нажмите **Создать**.
 
-To delete a news entry, click on the **Delete** button in the top right corner of the respective entry’s detail view.
+![создать-новость](1567426608737.png)
 
-![delete-news](delete-news.png)
+## Удалить запись новости
 
-## Latest news section on the OpenProject landing page
+Чтобы удалить запись новости, нажмите кнопку **Удалить** в правом верхнем углу детального представления соответствующей записи.
 
-On the OpenProject landing page of the application, you have a latest news section. Here, all latest news from all your projects will be summarized.
+![удалить-новость](delete-news.png)
 
-Clicking on the title of a news will bring you to the news details in the corresponding project.
+## Раздел последних новостей на главной странице OpenProject
 
-![news-widget-landing-page](news-widget-landing-page.png)
+На главной странице приветствия приложения OpenProject у вас есть раздел последних новостей. Здесь будут обобщены все последние новости из всех ваших проектов.
 
-## Latest news section on the project home page
+Нажатие на заголовок новости приведет вас к деталям новости в соответствующем проекте.
 
-You can also include your latest news from a project on the Project home page.
+![виджет-новостей-главная-страница](news-widget-landing-page.png)
 
-Find out how to [configure your project home](../projects/project-home/project-widgets/#news-widget) page.
+## Раздел последних новостей на домашней странице проекта
 
-![latest-news-project-overview](latest-news-project-overview.png)
+Вы также можете включить ваши последние новости из проекта на домашней странице проекта.
+
+Узнайте, как [настроить вашу домашнюю страницу проекта](../projects/project-home/project-widgets/#виджет-новостей).
+
+![последние-новости-обзор-проекта](latest-news-project-overview.png)

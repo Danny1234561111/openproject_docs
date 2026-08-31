@@ -1,117 +1,103 @@
 ---
 sidebar_navigation:
-  title: Meetings
+  title: Встречи
   priority: 760
-description: Manage meetings with agenda and meeting minutes in OpenProject.
-keywords: meetings, meeting, meeting series, recurring meetings, meetings agenda
+description: Управляйте встречами с повесткой дня и протоколами собраний в OpenProject.
+keywords: встречи, встреча, серии встреч, повторяющиеся встречи, повестка дня встреч
 ---
+# Управление встречами
 
-# Meeting management
-
-Meetings in OpenProject allow you to manage and document your project meetings, prepare a meeting agenda together with your team, and share minutes with attendees - all in one central place.
+Встречи в OpenProject позволяют вам управлять и документировать ваши проектные собрания, совместно готовить повестку дня с вашей командой и делиться протоколами с участниками — всё в одном центральном месте.
 
 <div class="glossary">
-
-**Meetings** is defined as a module that allows the organization of meetings.
-**Note:** In order to be able to use the meetings plugin, the **Meetings module needs to be activated** in the [Project Settings](../projects/project-settings/modules/).
-
+**Встречи** определяются как модуль, который позволяет организовать встречи.
+**Примечание:** Чтобы иметь возможность использовать плагин встреч, **модуль «Встречи» должен быть активирован** в [Настройках проекта](../projects/project-settings/modules/).
 </div>
 
-| Topic                                               | Content                                                   |
+| Тема                                               | Содержание                                                   |
 | --------------------------------------------------- | --------------------------------------------------------- |
-| [Meetings in OpenProject](#meetings-in-openproject) | How to open meetings in OpenProject.                      |
-| [One-time meetings](one-time-meetings/)             | How to create and edit single meetings in OpenProject.    |
-| [Recurring meetings](recurring-meetings/)           | How to create and edit recurring meetings in OpenProject. |
-| [Meetings FAQs](meetings-faq)                       | Frequently asked questions about meetings in OpenProject. |
+| [Встречи в OpenProject](#встречи-в-openproject) | Как открывать встречи в OpenProject.                      |
+| [Разовые встречи](one-time-meetings/)             | Как создавать и редактировать разовые встречи в OpenProject.    |
+| [Повторяющиеся встречи](recurring-meetings/)           | Как создавать и редактировать повторяющиеся встречи в OpenProject. |
+| [Часто задаваемые вопросы о встречах](meetings-faq)                       | Часто задаваемые вопросы о встречах в OpenProject. |
 
-## Meetings in OpenProject
+## Встречи в OpenProject
 
-Meetings in OpenProject help teams organize discussions, track meeting agendas, and document decisions efficiently. There are two types of meetings: **one-time meetings** and **recurring meetings**. [One-time meetings](one-time-meetings/) are standalone events scheduled for a specific date and time. [Recurring meetings](recurring-meetings/) introduce a structured way to define a series of related meetings, ensuring consistency and reducing manual setup.
+Встречи в OpenProject помогают командам организовать обсуждения, отслеживать повестку дня собраний и эффективно документировать решения. Существует два типа встреч: **разовые встречи** и **повторяющиеся встречи**. [Разовые встречи](one-time-meetings/) — это отдельные события, запланированные на конкретную дату и время. [Повторяющиеся встречи](recurring-meetings/) представляют структурированный способ определения серии связанных встреч, обеспечивая согласованность и сокращая ручную настройку.
 
-### Meetings overview
+### Обзор встреч
 
-By selecting **Meetings** in the project menu on the left, you get an overview of all the meetings you have been invited to within a specific project sorted by date. By clicking on a meeting name you can view further details of the meeting.
+Выбрав **Встречи** в меню проекта слева, вы получите обзор всех встреч, на которые вас пригласили в рамках конкретного проекта, отсортированных по дате. Нажав на название встречи, вы можете просмотреть дополнительные детали встречи.
 
-To get an overview of the meetings across multiple projects, you can select **Meetings** in the [global modules menu](../../user-guide/home/global-modules/).
+Чтобы получить обзор встреч в нескольких проектах, вы можете выбрать **Встречи** в [меню глобальных модулей](../../user-guide/home/global-modules/).
 
-![Select meetings module from openproject global modules ](openproject_userguide_meetings_module_select.png)
+![Выбор модуля встреч из глобальных модулей openproject](openproject_userguide_meetings_module_select.png)
 
-Meetings will be grouped based on the meeting start time into the following groups:
+Встречи будут сгруппированы на основе времени начала встречи в следующие группы:
 
-- **Today** lists open meetings scheduled for the same day
+- **Сегодня** перечисляет открытые встречи, запланированные на тот же день
+- **Завтра** перечисляет открытые встречи, запланированные на следующий день
+- **Позже на этой неделе** перечисляет все открытые встречи, запланированные между двумя днями с сегодняшнего дня до конца недели
+- **На следующей неделе и позже** перечисляет все открытые встречи, запланированные на следующей неделе и позже
 
-- **Tomorrow** lists open meetings scheduled for the day after
+![Обзор встреч в глобальных модулях openproject](openproject_userguide_meetings_overview.png)
 
-- **Later this week** lists all open meetings scheduled between two days from now till the end of the week 
+### Фильтры встреч
 
-- **Next week and later** lists all open meetings scheduled the next week and later
+Меню слева позволит вам фильтровать встречи на основе следующего:
 
-![Meetings overview in openproject global modules](openproject_userguide_meetings_overview.png)
+- **Мои встречи** перечисляет все встречи, в которых вы участвуете
+- **Повторяющиеся встречи** перечисляет все повторяющиеся встречи, видимые вам
+- **Все встречи** перечисляет все встречи, видимые вам
+- **Серии встреч** перечисляет вхождения встреч, которые являются частью повторяющихся встреч
+- **Приглашения** перечисляет все встречи, на которые вы приглашены
+- **Посетил(а)** перечисляет все встречи, в которых вы были отмечены как присутствовавший(ая)
+- **Создано мной** перечисляет все встречи, созданные вами
 
-### Meetings filters
+Кнопки рядом с _Фильтры_ позволят вам фильтровать предстоящие или прошедшие встречи.
 
-The menu on the left will allow you to filter meetings based on following:
+![Боковое меню модуля встреч в OpenProject](openproject_userguide_meetings_side_menu.png)
 
-- **My meetings** lists all meetings you participate in
-- **Recurring meetings** lists all recurring meetings visible to you
-- **All meetings** lists all meetings visible to you
-- **Meeting series** lists meeting occurrences that are part of recurring meetings
-- **Invitations** lists all meetings you are invited to
-- **Attended** lists all meetings in which you were marked as having attended
-- **Created by me** lists all meetings created by you
+Вы также можете использовать фильтры встреч для уточнения списка встреч на основе следующих критериев:
 
-The buttons next to _Filters_ will allow you to filter for upcoming or past meetings.
+- **Посетивший пользователь** — показывает встречи, которые посетил конкретный пользователь
+- **Автор** — показывает встречи, которые создал конкретный пользователь
+- **Приглашенный пользователь** — показывает встречи, на которые был приглашен конкретный пользователь
+- **Часть серии встреч** — показывает встречи, которые являются частью конкретной серии встреч
+- **Проект** — показывает встречи для конкретного проекта (это будет отображаться только в представлении глобального модуля, т.е. не в рамках конкретного проекта)
 
-![Meetings module side menu in OpenProject](openproject_userguide_meetings_side_menu.png)
+  ![Фильтрация списка динамических встреч в OpenProject](openproject_userguide_meetings_filters.png)
 
-You can also use the meetings filters to refine the list of meetings based on the following criteria: 
+### Подписаться на встречи
 
-- **Attended user** - shows meetings that a specific user attended
+Вы можете подписаться на все ваши встречи OpenProject во внешнем календарном приложении (например, Outlook, Apple Calendar или Open-Xchange). Это предоставляет единый календарь только для чтения, который автоматически остается актуальным, без зависимости от отдельных приглашений по электронной почте в формате .ics.
 
-- **Author** - shows meetings that a specific user created
+В дополнение к просмотру встреч, подписка на встречи позволяет вам **отвечать на приглашения на встречи прямо из вашего календаря**. Ваш ответ (Принято, Предварительно или Отклонено) синхронизируется обратно в OpenProject и отображается как ваш статус участия во встрече.
 
-- **Invited user** - shows meetings that a specific user was invited to
+#### Создать подписку
 
-- **Part of a meeting series** - shows meetings that are part of specific meeting series
+Вы можете подписаться на встречи OpenProject либо в модуле _Встречи_, либо на [странице настроек аккаунта](../account-settings/access-tokens/#календарь-ical).
 
-- **Project** - shows meetings for a specific project (this will only be displayed in the global module view, i.e. not within a specific project)
+На странице обзора встреч (глобальной или относящейся к проекту) нажмите значок **Еще (три точки)** и выберите **Подписаться на календарь**.
 
-  ![Filter the list of dynamic meetings in OpenProject](openproject_userguide_meetings_filters.png)
+![Кнопка для подписки на календарь встреч на странице обзора встреч OpenProject](openproject_userguide_meetings_subscribe_button.png)
 
-### Subscribe to meetings
+Вам будет предложено создать токен подписки iCal:
 
-You can subscribe to all your OpenProject meetings in an external calendar application (such as Outlook, Apple Calendar, or Open-Xchange). This provides a single, read-only calendar that stays up to date automatically, without relying on individual .ics email invites.
+1. Назовите токен и нажмите **Создать подписку**.
+![Новая форма подписки на календарь открыта в OpenProject](openproject_userguide_meetings_subscribtion_form_name.png)
+2. Скопируйте сгенерированный URL подписки на встречи iCal. Этот URL показывается только один раз и позволяет любому, у кого он есть, просматривать ваши встречи.
+![URL подписки на встречи iCal, показанный при подписке на календарь встреч в OpenProject](openproject_userguide_meetings_subscription_token.png)
+3. Добавьте этот URL в ваш внешний календарь, чтобы подписаться на ваши встречи OpenProject.
 
-In addition to viewing meetings, subscribing to meetings allows you to **respond to meeting invitations directly from your calendar**. Your response (Accepted, Tentative, or Declined) is synchronized back to OpenProject and shown as your participation status in the meeting.
-
-#### Create a subscription
-
-You can subscribe to OpenProject meetings either within the _Meetings_ module, or from your [Account settings page](../account-settings/access-tokens/#icalendar). 
-
-On the meetings overview page (either global or project specific) click the **More (three dots)** icon and select **Subscribe to calendar**. 
-
-![Button to subscribe to meetings calendar on OpenProject meetings overview page](openproject_userguide_meetings_subscribe_button.png)
-
-You will be guided through creating an iCal subscription token:
-
-1. Name the token and click **Create subscription**.
-
-![New calendar subscription form opened in OpenProject](openproject_userguide_meetings_subscribtion_form_name.png)
-
-2. Copy the generated iCal meeting subscription URL. This URL is shown only once and allows anyone with it to view your meetings.
-
-![iCal meeting subscription URL shown when subscribing to a meetings calendar in OpenProject](openproject_userguide_meetings_subscription_token.png)
-
-3. Add this URL to your external calendar to subscribe to your OpenProject meetings.
-
-Once subscribed, meeting dates and updates are synchronized automatically. If you respond to a meeting invitation in your calendar, your participation status is updated in OpenProject and visible to meeting organizers and other participants.
+После подписки даты встреч и обновления синхронизируются автоматически. Если вы ответите на приглашение на встречу в вашем календаре, ваш статус участия обновляется в OpenProject и виден организаторам встречи и другим участникам.
 
 > [!NOTE]
-> If you respond to a meeting invitation in your calendar before the meeting is fully created or visible in OpenProject, your response will still be applied once the meeting becomes available, as long as the calendar subscription remains active.
+> Если вы ответите на приглашение на встречу в вашем календаре до того, как встреча будет полностью создана или видна в OpenProject, ваш ответ все равно будет применен, как только встреча станет доступной, при условии, что подписка на календарь остается активной.
 
-If you are only interested in a specific meeting, you can [download that specific meeting as an iCal event](./one-time-meetings/#download-a-meeting-as-an-icalendar-event) instead. 
+Если вас интересует только конкретная встреча, вы можете [скачать эту конкретную встречу как событие iCal](./one-time-meetings/#скачать-встречу-как-событие-календаря-ical) вместо этого.
 
 > [!TIP]
-> If you are interested in how the Meetings module is used by the OpenProject team, please take a look at [this blog article](https://www.openproject.org/blog/meeting-management-example/) and this [use case](../../use-cases/meeting-management/).
+> Если вас интересует, как команда OpenProject использует модуль «Встречи», пожалуйста, ознакомьтесь с [этой статьей в блоге](https://www.openproject.org/blog/meeting-management-example/) и этим [примером использования](../../use-cases/meeting-management/).
 >
-> Find out more about OpenProject as [open source meeting management software](https://www.openproject.org/collaboration-software-features/meeting-management/).
+> Узнайте больше об OpenProject как [программном обеспечении для управления встречами с открытым исходным кодом](https://www.openproject.org/collaboration-software-features/meeting-management/).

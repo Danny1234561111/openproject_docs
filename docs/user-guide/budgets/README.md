@@ -1,140 +1,84 @@
 ---
 sidebar_navigation:
-  title: Budgets
+  title: Бюджеты
   priority: 780
-description: Find out how to create and manage budgets for a project in OpenProject.
-keywords: budgets, project budget, costs
+description: Узнайте, как создавать и управлять бюджетами для проекта в OpenProject.
+keywords: бюджеты, бюджет проекта, затраты
 ---
-
-# Budgets
-
-You can create and manage a **project budget** in OpenProject to keep track of your available and spent costs in a project.
-
-You can add planned **unit costs** as well as **labor costs** for the project.
-
-Then, you will assign work packages to a budgets. If you log time or costs to this work package the costs will booked to this budget and show the percentage spent for a project budget.
-
-| Topic                                                                   | Content                                                                  |
+# Бюджеты
+Вы можете создавать и управлять **бюджетом проекта** в OpenProject, чтобы отслеживать доступные и понесенные затраты в проекте.
+Вы можете добавлять плановые **единичные затраты**, а также **трудовые затраты** для проекта.
+Затем вы будете назначать рабочие пакеты бюджетам. Если вы регистрируете время или затраты на этот рабочий пакет, затраты будут отнесены к этому бюджету и покажут процент потраченного для бюджета проекта.
+| Тема                                                                   | Содержание                                                                  |
 |-------------------------------------------------------------------------|--------------------------------------------------------------------------|
-| [Create a project budget](#create-a-project-budget)                     | How to set up a project budget in OpenProject.                           |
-| [Add planned unit costs](#add-planned-unit-costs)                       | How to add planned unit costs to a budget.                               |
-| [Add planned labor costs](#add-planned-labor-costs)                     | How to add planned labor costs to a budget.                              |
-| [Assign a work package to a budget](#assign-a-work-package-to-a-budget) | How to assign a work package to book time and costs to a project budget. |
-| [View details and update budget](#view-details-and-update-budget)       | How to display the details, update, copy or delete a project budget.     |
-| [Frequently asked questions (FAQ)](#frequently-asked-questions-faq)     | What are frequent questions regarding budgets?                           |
-
-## Create a project budget
-
+| [Создать бюджет проекта](#создать-бюджет-проекта)                     | Как настроить бюджет проекта в OpenProject.                           |
+| [Добавить плановые единичные затраты](#добавить-плановые-единичные-затраты)                       | Как добавить плановые единичные затраты в бюджет.                               |
+| [Добавить плановые трудовые затраты](#добавить-плановые-трудовые-затраты)                     | Как добавить плановые трудовые затраты в бюджет.                              |
+| [Назначить рабочий пакет бюджету](#назначить-рабочий-пакет-бюджету) | Как назначить рабочий пакет для учета времени и затрат в бюджет проекта. |
+| [Просмотреть детали и обновить бюджет](#просмотреть-детали-и-обновить-бюджет)       | Как отобразить детали, обновить, скопировать или удалить бюджет проекта.     |
+| [Часто задаваемые вопросы (FAQ)](#часто-задаваемые-вопросы-faq)     | Какие частые вопросы возникают относительно бюджетов?                           |
+## Создать бюджет проекта
 > [!TIP]
-> In order to create a budget in your project, the **Budgets module** needs to be activated under [project settings](../projects/).
-
-To create your first budget in OpenProject, navigate to _Budgets_ module and click the green **+ Budget** button in the top right corner.
-
-![A button to create a new budget in OpenProject Budgets module](openproject_user_guide_budgets_create_budget_button.png)
-
-In the form that opens, you can define the details of your project budget, including planned unit costs and planned labor costs.
-
-1. **Subject** – Enter a clear subject for your budget so it can be identified easily.
-
-2. **Description** – Add a detailed description with additional information such as the budget owner, status, or any other notes.
-
-3. **Attachments** – Upload supporting files by dragging and dropping them into the upload field, or by clicking the field to select files from your computer.
-
-4. **Fixed date** – Specify a fixed date. This date is used to calculate planned costs based on either:
-
-   - the [configured hourly rate](../time-and-costs/cost-tracking) in the users profile, or
-   - the [cost types](../../system-admin-guide) set by administrator.
-
-   Since rates can be configured for different date ranges, the fixed date ensures the correct costs are calculated for the budget.
-
-5. **Base amount** - Enter a lump-sum amount to allocate funds without planning materials or labor costs in detail. This is useful for high-level budgets where you simply assign an overall sum instead of tracking specific items.
-
-![Add new budget details in OpenProject](openproject_user_guide_budgets_new_budget_details.png)
-
-### Add planned unit costs
-
-You can add planned unit costs to a budget in your project. These [unit costs first need to be configured in the system's administration](../../system-admin-guide/time-and-costs/#create-and-manage-cost-types).
-
-Enter the number of **units** of the cost type to add to your project budgets.
-
-Choose the **cost type** you would like to plan for your budget from the drop-down list.
-The **unit name** will be set automatically according to the configuration of the cost types in your system administration.
-
-Add a **comment** to specify the unit costs.
-
-The **planned costs** for this cost type will be calculated automatically based on the configuration of the cost per unit for this cost type. The cost rate will be taken from the fixed date you have configured for your budget.
-You can click the **edit icon** (small pen) if you want to manually overwrite the calculated costs for this cost type.
-
-Click the **delete** icon if you want to drop the planned unit costs.
-
-The **+ icon** will add a new unit cost type for this budget.
-
-![Specify planned unit costs for a new budget in OpenProject](openproject_user_guide_budgets_new_budget_planned_unit_costs.png)
-
-### Add planned labor costs
-
-You can also add planned labor costs to a budget.
-
-Set the **hours** that will be planned for a user on this budget.
-
-Add a **user** from the drop-down list.
-
-You can include a **comment** for your planned labor costs if needed.
-
-The total amount of planned costs will be calculated based on the entered hours and the [hourly rate configured](../time-and-costs/time-tracking/#define-hourly-rate-for-labor-costs) for this user in the user profile.
-You can manually overwrite the calculated planned labor costs by clicking the edit icon (pen) next to the calculated amount.
-The costs will be calculated based on the hourly rate taken from the fixed date for your budget.
-
-With the **delete** icon you can remove the planned labor costs from the budget.
-
-Add more planned labor costs for different users to your budget with the **+ icon**.
-
-Save and submit your changes by pressing the **Create** button.
-
-![Specify planned unit costs for a new budget in OpenProject](openproject_user_guide_budgets_new_budget_planned_labor_costs.png)
-
-## Assign a work package to a budget
-
-To add a work package to a project budget to book time and costs to a budget, navigate to the respective work package detailed view.
-
-In the Costs section, select the **budget** which you want to assign this work package to. You will see a [list of budgets configured](#create-a-project-budget) in your project in the drop-down list.
-
-Now, all [time and costs booked to this work package](../time-and-costs) will be booked against the corresponding budget.
-
-![Assign a work package to a budget in OpenProject](openproject_user_guide_budgets_assign_work_package.png)
-
-## View details and update budget
-
-You can view the details of a budget and make changes to your budget by selecting it from the list of budgets.
-
-![A list of all existing project budgets for a specific project in OpenProject](openproject_user_guide_budgets_overview.png)
-
-Click on the subject to open the details view of the budget.
-
-You will get and overview of planned as well as spent costs and the available costs for your variable rate budget. Also, the total progress of the budget (ratio spent) is displayed. Furthermore the fixed rate is shown from which the costs for labor and unit costs are being calculated.
-
-In the top right corner you can update, copy or delete a budget by clicking the respective button: 
-
-- **Update** the budget and make changes to e.g. planned unit costs or planned labor costs.
-- **Copy** the budget to use it to create a new budget based on the configurations for this budget.
-- **Delete** the budget.
-
-The detailed budget view will show the following:
-
-- all **planned unit costs**.
-- work packages assigned to this budget that have **actual unit costs** booked.
-- **planned labor costs** are displayed for this budget.
-- **actual labor costs** list all work packages that are [assigned to this budget](#assign-a-work-package-to-a-budget) and have logged time on it.
-
-![A detailed view of a project budget in OpenProject](openproject_user_guide_budgets_detailed_budget_view.png)
-
+> Чтобы создать бюджет в вашем проекте, модуль **Бюджеты** должен быть активирован в [настройках проекта](../projects/).
+Чтобы создать ваш первый бюджет в OpenProject, перейдите в модуль _Бюджеты_ и нажмите зеленую кнопку **+ Бюджет** в правом верхнем углу.
+![Кнопка для создания нового бюджета в модуле «Бюджеты» OpenProject](openproject_user_guide_budgets_create_budget_button.png)
+В открывшейся форме вы можете определить детали вашего бюджета проекта, включая плановые единичные затраты и плановые трудовые затраты.
+1. **Тема** – Введите четкую тему для вашего бюджета, чтобы его можно было легко идентифицировать.
+2. **Описание** – Добавьте подробное описание с дополнительной информацией, такой как владелец бюджета, статус или любые другие заметки.
+3. **Вложения** – Загрузите вспомогательные файлы, перетащив их в поле загрузки или нажав на поле, чтобы выбрать файлы с вашего компьютера.
+4. **Фиксированная дата** – Укажите фиксированную дату. Эта дата используется для расчета плановых затрат на основе:
+   - [настроенной почасовой ставки](../time-and-costs/cost-tracking) в профиле пользователя, или
+   - [типов затрат](../../system-admin-guide), установленных администратором.
+   Поскольку ставки могут быть настроены для разных диапазонов дат, фиксированная дата гарантирует правильный расчет затрат для бюджета.
+5. **Базовая сумма** - Введите единовременную сумму для выделения средств без детального планирования материалов или трудовых затрат. Это полезно для бюджетов высокого уровня, где вы просто назначаете общую сумму вместо отслеживания конкретных позиций.
+![Добавить новые детали бюджета в OpenProject](openproject_user_guide_budgets_new_budget_details.png)
+### Добавить плановые единичные затраты
+Вы можете добавлять плановые единичные затраты в бюджет вашего проекта. Эти [единичные затраты сначала должны быть настроены в администрировании системы](../../system-admin-guide/time-and-costs/#создать-и-управлять-типами-затрат).
+Введите количество **единиц** типа затрат для добавления в ваши бюджеты проекта.
+Выберите **тип затрат**, который вы хотите запланировать для вашего бюджета, из выпадающего списка.
+**Название единицы** будет установлено автоматически в соответствии с конфигурацией типов затрат в вашем системном администрировании.
+Добавьте **комментарий**, чтобы уточнить единичные затраты.
+**Плановые затраты** для этого типа затрат будут рассчитаны автоматически на основе конфигурации стоимости за единицу для этого типа затрат. Ставка затрат будет взята из фиксированной даты, которую вы настроили для вашего бюджета.
+Вы можете нажать на значок **редактирования** (маленькая ручка), если хотите вручную перезаписать рассчитанные затраты для этого типа затрат.
+Нажмите значок **удаления**, если хотите удалить плановые единичные затраты.
+Значок **+** добавит новый тип единичных затрат для этого бюджета.
+![Указать плановые единичные затраты для нового бюджета в OpenProject](openproject_user_guide_budgets_new_budget_planned_unit_costs.png)
+### Добавить плановые трудовые затраты
+Вы также можете добавлять плановые трудовые затраты в бюджет.
+Установите **часы**, которые будут запланированы для пользователя в этом бюджете.
+Добавьте **пользователя** из выпадающего списка.
+Вы можете включить **комментарий** для ваших плановых трудовых затрат, если нужно.
+Общая сумма плановых затрат будет рассчитана на основе введенных часов и [настроенной почасовой ставки](../time-and-costs/time-tracking/#определить-почасовую-ставку-для-трудовых-затрат) для этого пользователя в профиле пользователя.
+Вы можете вручную перезаписать рассчитанные плановые трудовые затраты, нажав на значок редактирования (ручка) рядом с рассчитанной суммой.
+Затраты будут рассчитаны на основе почасовой ставки, взятой из фиксированной даты для вашего бюджета.
+С помощью значка **удаления** вы можете удалить плановые трудовые затраты из бюджета.
+Добавьте больше плановых трудовых затрат для разных пользователей в ваш бюджет с помощью значка **+**.
+Сохраните и отправьте ваши изменения, нажав кнопку **Создать**.
+![Указать плановые трудовые затраты для нового бюджета в OpenProject](openproject_user_guide_budgets_new_budget_planned_labor_costs.png)
+## Назначить рабочий пакет бюджету
+Чтобы добавить рабочий пакет в бюджет проекта для учета времени и затрат в бюджете, перейдите в детальный вид соответствующего рабочего пакета.
+В разделе «Затраты» выберите **бюджет**, которому вы хотите назначить этот рабочий пакет. Вы увидите [список бюджетов, настроенных](#создать-бюджет-проекта) в вашем проекте, в выпадающем списке.
+Теперь все [время и затраты, учтенные для этого рабочего пакета](../time-and-costs), будут отнесены к соответствующему бюджету.
+![Назначить рабочий пакет бюджету в OpenProject](openproject_user_guide_budgets_assign_work_package.png)
+## Просмотреть детали и обновить бюджет
+Вы можете просмотреть детали бюджета и внести изменения в ваш бюджет, выбрав его из списка бюджетов.
+![Список всех существующих бюджетов проекта для конкретного проекта в OpenProject](openproject_user_guide_budgets_overview.png)
+Нажмите на тему, чтобы открыть детальный вид бюджета.
+Вы получите обзор плановых, а также понесенных затрат и доступных затрат для вашего бюджета с переменной ставкой. Также отображается общий прогресс бюджета (соотношение потраченного). Кроме того, показана фиксированная ставка, на основе которой рассчитываются затраты на трудовые и единичные затраты.
+В правом верхнем углу вы можете обновить, скопировать или удалить бюджет, нажав соответствующую кнопку:
+- **Обновить** бюджет и внести изменения, например, в плановые единичные затраты или плановые трудовые затраты.
+- **Скопировать** бюджет, чтобы использовать его для создания нового бюджета на основе конфигураций этого бюджета.
+- **Удалить** бюджет.
+Детальный вид бюджета покажет следующее:
+- все **плановые единичные затраты**.
+- рабочие пакеты, назначенные этому бюджету, для которых учтены **фактические единичные затраты**.
+- **плановые трудовые затраты** отображаются для этого бюджета.
+- **фактические трудовые затраты** перечисляют все рабочие пакеты, которые [назначены этому бюджету](#назначить-рабочий-пакет-бюджету) и имеют зарегистрированное время.
+![Детальный вид бюджета проекта в OpenProject](openproject_user_guide_budgets_detailed_budget_view.png)
 > [!NOTE]
-> The costs are calculated based on the [configuration for cost types](../../system-admin-guide) and the [configured hourly rate](../time-and-costs/time-tracking/#define-hourly-rate-for-labor-costs) in the user profile.
-
-## Frequently asked questions (FAQ)
-
-### How do I prepare a budget in OpenProject?
-
-Budgets are currently limited to a single project. They cannot be shared across multiple projects.
-This means that you would have to set up a separate budget for the different main and sub projects.
-You can however use cost reports to analyze the time (and cost) spent across multiple projects. For details, you can take a look at our [time and cost reports user guide](../time-and-costs/reporting/).
+> Затраты рассчитываются на основе [конфигурации типов затрат](../../system-admin-guide) и [настроенной почасовой ставки](../time-and-costs/time-tracking/#определить-почасовую-ставку-для-трудовых-затрат) в профиле пользователя.
+## Часто задаваемые вопросы (FAQ)
+### Как подготовить бюджет в OpenProject?
+Бюджеты в настоящее время ограничены одним проектом. Они не могут использоваться совместно в нескольких проектах.
+Это означает, что вам придется настроить отдельный бюджет для разных основных и подпроектов.
+Однако вы можете использовать отчеты по затратам для анализа времени (и затрат), потраченных в нескольких проектах. Для деталей вы можете посмотреть наше [руководство пользователя по отчетам времени и затрат](../time-and-costs/reporting/).

@@ -1,143 +1,137 @@
 ---
 sidebar_navigation:
-  title: Baseline comparison
+  title: Сравнение с базовой версией
   priority: 965
-description: How to track changes in work packages over time.
-keywords: baseline comparison, work package changes
+description: Как отслеживать изменения в рабочих пакетах с течением времени.
+keywords: сравнение с базовой версией, изменения рабочих пакетов
 ---
+# Сравнение с базовой версией
 
-# Baseline comparison
-
-Baseline is a powerful feature that allows you to view changes to work package tables within a given period. This can be a saved view or a new filter query. Project managers can use baseline to get a quick overview of what has changed over time, making it easier to report on project progress and status.
+Baseline - это мощная функция, которая позволяет просматривать изменения в таблицах рабочих пакетов в течение заданного периода. Это может быть сохраненное представление или новый фильтрующий запрос. Менеджеры проектов могут использовать Baseline для быстрого обзора того, что изменилось с течением времени, что упрощает отчетность о прогрессе и статусе проекта.
 
 [feature: baseline_comparison ]
 
-![Work package table list with Baseline enabled](13-0_Baseline_overview.png)
+![Таблица рабочих пакетов с включенным Baseline](13-0_Baseline_overview.png)
 
-## Enable Baseline
+## Включить Baseline
 
-Baseline comparison can be enabled on any work package table view:
+Сравнение с базовой версией можно включить в любом представлении таблицы рабочих пакетов:
 
-1. Click on the **Baseline** button in the main toolbar.
+1. Нажмите кнопку **Baseline** на главной панели инструментов.
+2. Выберите точку сравнения, выбрав один из предустановленных вариантов или введя конкретные даты и время.
+3. Нажмите **Применить**, чтобы включить Baseline.
 
-2. Pick a comparison point by choosing one of the preset options or inputting specific dates and times.
+![Нажатие на значок Baseline отображает выпадающее меню, позволяющее выбрать точку сравнения](13-0_Baseline_dropmodal.png)
 
-3. Click on **Apply** to enable Baseline.
+## Показать изменения со вчерашнего дня (Community edition)
 
-![Clicking on the Baseline icon displays a dropdown that lets you pick a comparison point](13-0_Baseline_dropmodal.png)
+В бесплатной Community edition вы всегда сможете сравнивать изменения в рабочих пакетах со вчерашнего дня.
 
-## Show changes since yesterday (Community edition)
+![Сравнение изменений в рабочих пакетах со вчерашнего дня](13-0_Baseline_community_edition.png)
 
-In the free of charge Community edition you will always be able to compare changes to work packages since yesterday.
+## Показать изменения для предустановленного периода, конкретной даты или пользовательского диапазона дат (Enterprise edition)
 
-![Compare changes in work packages since yesterday](13-0_Baseline_community_edition.png)
+### Предустановленные периоды
 
-## Show changes for a preset period, a specific date or custom date range (Enterprise edition)
+Baseline предлагает следующие предустановленные временные диапазоны:
 
-### Preset periods
+- _Вчера_: Сравнить рабочие пакеты с предыдущим днем (также доступно в Community edition).
+- _Последний рабочий день_: Сравнить рабочие пакеты с последним рабочим днем.
+- _Последняя неделя_: Сравнить рабочие пакеты с семью рабочими днями назад.
+- _Последний месяц_: Сравнить рабочие пакеты с тридцатью рабочими днями назад.
 
-Baseline offers these preset time ranges:
-
-- _Yesterday_: Compare work packages to the previous day (also available in Community edition).
-
-- _Last working day_: Compare work packages to the most recent working day.
-
-- _Last week_: Compare work packages to seven working days ago.
-
-- _Last month_: Compare work packages to thirty working days ago.
-
-By default, Baseline will compare to 8 AM local time of the relevant day. You can change this to any other time of your choosing.
+По умолчанию Baseline будет сравнивать с 8:00 по местному времени соответствующего дня. Вы можете изменить это на любое другое время по вашему выбору.
 
 > [!NOTE]
-> These are relative comparison points, which means that _Yesterday_ will always refer to the day before the current day, and not a specific date. You can use these to set up "running" baselines that show you all changes within the past day or week.
+> Это относительные точки сравнения, что означает, что _Вчера_ всегда будет относиться к дню перед текущим днем, а не к конкретной дате. Вы можете использовать их для настройки "текущих" базовых версий, которые показывают все изменения за последний день или неделю.
 
-### A specific date
+### Конкретная дата
 
-![You can compare the present state to a specific date in the past](13-0_Baseline_specificDate.png)
+![Вы можете сравнить текущее состояние с конкретной датой в прошлом](13-0_Baseline_specificDate.png)
 
-If you want to compare between now and a specific date in the past, you can select "a specific date" in the dropdown and select a particular date. With this option, the comparison will always be between the current state and that specific date in the past.
-
-> [!NOTE]
-> You can use this to "freeze" the baseline comparison point so that the view always shows changes in comparison to that specific date, regardless of when you access it.
-
-### Between two specific dates
-
-![You can see changes between two dates](13-0_Baseline_dateRange.png)
-
-OpenProject also allows you to compare between two specific dates in the past. To select a custom date range, choose "between two specific dates" in the dropdown and select two dates in the date picker below.
+Если вы хотите сравнить между текущим состоянием и конкретной датой в прошлом, вы можете выбрать "конкретную дату" в выпадающем списке и выбрать определенную дату. При этом сравнение всегда будет проводиться между текущим состоянием и этой конкретной датой в прошлом.
 
 > [!NOTE]
-> This will create a fixed baseline view that will remain the same regardless of when you accesses it, since both points are fixed in the past.
+> Вы можете использовать это для "замораживания" точки сравнения базовой версии, чтобы представление всегда показывало изменения по сравнению с этой конкретной датой, независимо от того, когда вы к нему обращаетесь.
 
-## Understanding the comparison results
+### Между двумя конкретными датами
 
-After selecting the comparison point, OpenProject presents the comparison results in table view using three icons to indicate the type of change for each work package.
+![Вы можете видеть изменения между двумя датами](13-0_Baseline_dateRange.png)
 
-![Baseline enabled showing changes to the work package table](13-0_Baseline_table.png)
-
-When Baseline is enabled, you will see a legend at the top of the page which shows:
-
-![A legend is visible on top of the table when Baseline is enabled](13-0_Baseline_legend.png)
-
-- The comparison point or comparison period
-- The number of work packages that now meet the filter criteria (and were thus added to view)
-- The number of work packages that no longer meet the filter criteria (and were thus removed from view)
-- The number of work packages that maintained but were modified
-
-### Change icons
-
-#### Now meets filter criteria
-
-![Icon](13-0_Baseline_nowMeets.png)
-
-Work packages that meet the filter criteria now but did not in the past are marked with an "Added" icon. These work packages were added to the current query after the selected comparison point, either because they were newly created since then or certain attributes changed such that they meet the filter criteria.
+OpenProject также позволяет сравнивать между двумя конкретными датами в прошлом. Чтобы выбрать пользовательский диапазон дат, выберите "между двумя конкретными датами" в выпадающем списке и выберите две даты в средстве выбора даты ниже.
 
 > [!NOTE]
-> These do not necessarily represent _newly created_ work packages; simply those that are new to this particular view because they now meet the filter criteria.
+> Это создаст фиксированное представление базовой версии, которое останется неизменным независимо от того, когда вы к нему обращаетесь, поскольку обе точки зафиксированы в прошлом.
 
-#### No longer meets filter criteria
+## Понимание результатов сравнения
 
-![Icon](13-0_Baseline_noLongerMeets.png)
+После выбора точки сравнения OpenProject представляет результаты сравнения в виде таблицы, используя три значка для указания типа изменения для каждого рабочего пакета.
 
-Work packages that no longer meet the filter criteria now are marked with a "Removed" icon. These work packages were filtered out within the comparison period.
+![Baseline включен, показывая изменения в таблице рабочих пакетов](13-0_Baseline_table.png)
 
-> [!NOTE]
-> These do _not_ represent deleted work packages, which are not visible at all since no history of deleted work packages is maintained. Deleted work packages are simply ignored by Baseline.
+Когда Baseline включен, вы увидите легенду в верхней части страницы, которая показывает:
 
-#### Maintained with changes
+![Легенда видна в верхней части таблицы, когда Baseline включен](13-0_Baseline_legend.png)
 
-![Icon](13-0_Baseline_maintainedChanges.png)
+- Точку сравнения или период сравнения
+- Количество рабочих пакетов, которые теперь соответствуют критериям фильтра (и, следовательно, были добавлены в представление)
+- Количество рабочих пакетов, которые больше не соответствуют критериям фильтра (и, следовательно, были удалены из представления)
+- Количество рабочих пакетов, которые сохранились, но были изменены
 
-Work packages that meet the filter criteria now (and also did at the comparison point) but which have undergone changes in certain attributes are marked with a "Modified" icon.
+### Значки изменений
 
-#### No changes
+#### Теперь соответствует критериям фильтра
 
-When there are no changes to a work package in the comparison period, no icon is shown.
+![Значок](13-0_Baseline_nowMeets.png)
 
-### Old values
-
-When changes in the comparison period concern attributes that are visible as columns in the work package table, Baseline will show both old and current values. If the attribute you are interested in is not visible, you will need to [add it as a column](../work-package-table-configuration).
-
-![Old values are visible in the work package table view](13-0_Baseline_oldNewValues.png)
-
-Each attribute that has changed will have a grey background, with the old value crossed out visible on the top left corner of the cell, above the new value.
-
-This allows you to have a complete view of what has changed in the comparison period.
+Рабочие пакеты, которые теперь соответствуют критериям фильтра, но не соответствовали им в прошлом, помечаются значком "Добавлено". Эти рабочие пакеты были добавлены в текущий запрос после выбранной точки сравнения, либо потому что они были созданы с тех пор, либо потому что определенные атрибуты изменились таким образом, что они теперь соответствуют критериям фильтра.
 
 > [!NOTE]
-> Some attributes like _Spent time_ and _Progress_ are not tracked by Baseline and do not show the old values in the work package table. If any of the columns in your work package table are not tracked, a small warning icon in the column header will indicate this.
+> Это не обязательно представляют _новосозданные_ рабочие пакеты; просто те, которые являются новыми для этого конкретного представления, потому что теперь соответствуют критериям фильтра.
 
-![Unsupported columns have a warning icon next to them](13_0_Baseline_unsupportedColumn.png)
+#### Больше не соответствует критериям фильтра
 
-## Relation to active filters
+![Значок](13-0_Baseline_noLongerMeets.png)
 
-Baseline always compares work packages between the two comparison points in relation to the current active filters. Changing the filters can change the results of the comparison.
-
-It is not possible to compare between two different filter queries.
+Рабочие пакеты, которые больше не соответствуют критериям фильтра, помечаются значком "Удалено". Эти рабочие пакеты были отфильтрованы в течение периода сравнения.
 
 > [!NOTE]
-> Some filter attributes are not tracked by Baseline and changes to them will not be taken into consideration. These include _Watcher_, _Attachment content_, _Attachment file name_ and _Comment_. These attributes are marked with a small warning icon next to them in the filter panel.
+> Это _не_ представляют удаленные рабочие пакеты, которые вообще не видны, поскольку история удаленных рабочих пакетов не сохраняется. Удаленные рабочие пакеты просто игнорируются Baseline.
 
-![An icon and a message warning that certain filter criteria are not taken into account by Baseline](13-0_Baseline_activeFilters.png)
+#### Сохранены с изменениями
 
-If you are interested in Baseline, please also take a look at this [blog article](https://www.openproject.org/blog/view-changes-on-project-baseline/).
+![Значок](13-0_Baseline_maintainedChanges.png)
+
+Рабочие пакеты, которые теперь соответствуют критериям фильтра (и также соответствовали в точке сравнения), но которые претерпели изменения в определенных атрибутах, помечаются значком "Изменено".
+
+#### Без изменений
+
+Когда в рабочем пакете нет изменений в период сравнения, значок не отображается.
+
+### Старые значения
+
+Когда изменения в период сравнения касаются атрибутов, которые видны в виде столбцов в таблице рабочих пакетов, Baseline покажет как старые, так и текущие значения. Если интересующий вас атрибут не виден, вам нужно будет [добавить его как столбец](../work-package-table-configuration).
+
+![Старые значения видны в представлении таблицы рабочих пакетов](13-0_Baseline_oldNewValues.png)
+
+Каждый атрибут, который изменился, будет иметь серый фон, со старым значением, перечеркнутым и видимым в верхнем левом углу ячейки, над новым значением.
+
+Это позволяет вам иметь полное представление о том, что изменилось в период сравнения.
+
+> [!NOTE]
+> Некоторые атрибуты, такие как _Затраченное время_ и _Прогресс_, не отслеживаются Baseline и не показывают старые значения в таблице рабочих пакетов. Если любой из столбцов в вашей таблице рабочих пакетов не отслеживается, маленький значок предупреждения в заголовке столбца будет указывать на это.
+
+![Неподдерживаемые столбцы имеют значок предупреждения рядом с ними](13_0_Baseline_unsupportedColumn.png)
+
+## Отношение к активным фильтрам
+
+Baseline всегда сравнивает рабочие пакеты между двумя точками сравнения относительно текущих активных фильтров. Изменение фильтров может изменить результаты сравнения.
+
+Невозможно сравнить между двумя разными фильтрующими запросами.
+
+> [!NOTE]
+> Некоторые атрибуты фильтра не отслеживаются Baseline, и изменения в них не будут приниматься во внимание. К ним относятся _Наблюдатель_, _Содержание вложения_, _Имя файла вложения_ и _Комментарий_. Эти атрибуты помечены маленьким значком предупреждения рядом с ними на панели фильтров.
+
+![Значок и сообщение предупреждают, что определенные критерии фильтра не учитываются Baseline](13-0_Baseline_activeFilters.png)
+
+Если вас интересует Baseline, пожалуйста, также ознакомьтесь с этой [статьей в блоге](https://www.openproject.org/blog/view-changes-on-project-baseline/).

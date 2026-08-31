@@ -1,22 +1,15 @@
 ---
 sidebar_navigation:
-  title: Session management
+  title: Управление сессиями
   priority: 300
-description: Learn how to manage your sessions in OpenProject.
-keywords: my account, account settings, sessions
+description: Узнайте, как управлять вашими сессиями в OpenProject.
+keywords: мой аккаунт, настройки аккаунта, сессии
 ---
-
-# Session management
-
-To view and manage your OpenProject sessions navigate to **Account settings** and choose **Sessions management** from the menu.
-
-![Sessions management in OpenProject account settings](openproject_account_settings_sessions_management.png)
-
-Here you can view and manage all of your active and remembered sessions in one place. Each row shows the browser, device, expiration date and last connection timestamp. For your current session the “Last connection” column displays **“Current (this device)”**.
-
-You can revoke a session at any time by clicking the **×** icon at the end of the row. Hover over the icon to see the **“Revoke”** tooltip. When you click, a confirmation message appears.
-
-Sessions expire automatically according to your instance’s authentication settings. Remembered sessions show their expiration in relative time (for example “in 5 days”).
-
+# Управление сессиями
+Чтобы просматривать и управлять вашими сессиями OpenProject, перейдите в **Настройки аккаунта** и выберите **Управление сессиями** из меню.
+![Управление сессиями в настройках аккаунта OpenProject](openproject_account_settings_sessions_management.png)
+Здесь вы можете просматривать и управлять всеми вашими активными и запомненными сессиями в одном месте. Каждая строка показывает браузер, устройство, дату истечения и временную метку последнего подключения. Для вашей текущей сессии столбец «Последнее подключение» отображает **«Текущее (это устройство)»**.
+Вы можете отозвать сессию в любое время, нажав на значок **×** в конце строки. Наведите курсор на значок, чтобы увидеть всплывающую подсказку **«Отозвать»**. Когда вы нажмете, появится сообщение с подтверждением.
+Сессии истекают автоматически в соответствии с настройками аутентификации вашего экземпляра. Запомненные сессии показывают их истечение в относительном времени (например, «через 5 дней»).
 > [!NOTE]
-> Closing a browser does not necessarily terminate the session. It might still be displayed in the list and will be reactivated if you open the browser. This depends on both your browser's and the OpenProject instance's settings.
+> Закрытие браузера не обязательно завершает сессию. Она все еще может отображаться в списке и будет повторно активирована, если вы откроете браузер. Это зависит как от настроек вашего браузера, так и от настроек экземпляра OpenProject.

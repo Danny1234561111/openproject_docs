@@ -1,25 +1,20 @@
 ---
 sidebar_navigation:
-  title: System settings
+  title: Системные настройки
   priority: 920
-description: System settings in OpenProject.
-keywords: system settings
+description: Системные настройки в OpenProject.
+keywords: системные настройки
 ---
-# System settings
-
-System settings allow you to configure a number of options concerning your OpenProject installation, such as host name, languages, defaults for new work package and projects and file attachments.
-
-To modify these settings, navigate to **Administration → System settings**.
-
-![System settings in OpenProject administration](openproject_system_guide_system_settings.png)
-
-## Overview
-
-| Topic                                | Content                                                      |
+# Системные настройки
+Системные настройки позволяют настроить ряд параметров, касающихся вашей установки OpenProject, такие как имя хоста, языки, значения по умолчанию для новых рабочих пакетов и проектов, а также вложения файлов.
+Чтобы изменить эти настройки, перейдите в раздел **Администрирование → Системные настройки**.
+![Системные настройки в администрировании OpenProject](openproject_system_guide_system_settings.png)
+## Обзор
+| Тема                                | Содержание                                                      |
 | ------------------------------------ | :----------------------------------------------------------- |
-| [General settings](general-settings) | Manage general OpenProject settings, including the welcome page, attachment size limits, and other global options. |
-| [Languages](languages)               | Select languages for your OpenProject installation.          |
-| [Exports](exports)                   | Configure CSV export settings and data export options in OpenProject. |
-| [External link](external-links)      | Configure how OpenProject handles external links and login requirements before users can leave the application. |
-| [Project](../projects)               | Define the default settings for new OpenProject projects.    |
-| [Repositories](repositories)         | Connect Git and SVN repositories to OpenProject for version control integration. |
+| [Общие настройки](general-settings) | Управление общими настройками OpenProject, включая стартовую страницу, ограничения размера вложений и другие глобальные параметры. |
+| [Языки](languages)               | Выбор языков для вашей установки OpenProject.          |
+| [Экспорт](exports)                   | Настройка параметров экспорта CSV и опций экспорта данных в OpenProject. |
+| [Внешние ссылки](external-links)      | Настройка обработки внешних ссылок в OpenProject и требований к входу, прежде чем пользователи смогут покинуть приложение. |
+| [Проект](../projects)               | Определение настроек по умолчанию для новых проектов OpenProject.    |
+| [Репозитории](repositories)         | Подключение репозиториев Git и SVN к OpenProject для интеграции систем контроля версий. |

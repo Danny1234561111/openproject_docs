@@ -1,97 +1,89 @@
 ---
 sidebar_navigation:
-  title: Calendar and dates
+  title: Календарь и даты
   priority: 930
-description: Configure working days, dates formats and calendar subscriptions
-keywords: working non-working days work week dates calendars ical icalendar
+description: Настройка рабочих дней, форматов дат и подписок на календари
+keywords: рабочие нерабочие дни рабочая неделя даты календари ical icalendar
 ---
-# Calendar and dates
+# Календарь и даты
+Настройка рабочих дней, форматов дат и подписок на календари.
+Перейдите в раздел _Администрирование → Календарь и даты_.
 
-Configure working days, dates formats and calendar subscriptions.
-
-Navigate to _Administration → Calendar and dates_.
-
-| Topic                                             | Content                                                      |
+| Тема                                              | Содержание                                                      |
 | ------------------------------------------------- | ------------------------------------------------------------ |
-| [Working days](#working-days-and-hours)           | Define which days of the week are considered working days for scheduling and calculation of duration. |
-| [Date format](#date-format)                       | Change time and date formats.                                |
-| [Calendar subscriptions](#calendar-subscriptions) | Allow users to subscribe to calendars.                       |
+| [Рабочие дни](#рабочие-дни-и-часы)                | Определите, какие дни недели считаются рабочими для планирования и расчета длительности. |
+| [Формат даты](#формат-даты)                       | Изменение форматов времени и даты.                           |
+| [Подписки на календари](#подписки-на-календари)   | Разрешение пользователям подписываться на календари.         |
 
-## Working days and hours
+## Рабочие дни и часы
+Администраторы могут определить, сколько часов считается днём и какие дни недели считаются рабочими на уровне экземпляра. Другими словами, эта настройка определяет, что OpenProject должен считать нормальной рабочей неделей при планировании рабочих пакетов.
 
-Administrators are able to define how many hours are considered a day and which days of the week are considered working days at an instance level. In other words, this setting defines what OpenProject should consider to be a normal work week when scheduling work packages. 
-
-To change this setting, navigate to **Working days** inside of the **Calendar and dates** settings.
+Чтобы изменить эту настройку, перейдите в раздел **Рабочие дни** внутри настроек **Календарь и даты**.
 
 > [!NOTE]
-> By default, a working day is considered to have 8 hours, the five days from Monday–Friday are considered working days, and Saturday and Sunday are considered non-working days.
+> По умолчанию рабочий день считается продолжительностью 8 часов, пять дней с понедельника по пятницу считаются рабочими днями, а суббота и воскресенье — нерабочими днями.
 
-Here the **duration format** can also be set for _Work, Remaining work and Time spent_ fields. The options include **hours only** and **days and hours**. The default setting is _hours only_.
+Здесь также можно установить **формат длительности** для полей _Работа, Оставшаяся работа и Затраченное время_. Варианты включают **только часы** и **дни и часы**. Настройка по умолчанию — _только часы_.
 
- ![The 'Working days' entry in Calendar and dates settings ](openeproject_system_admin_guide_calendars_dates.png)
+![Раздел 'Рабочие дни' в настройках Календарь и даты](openeproject_system_admin_guide_calendars_dates.png)
 
-To change this setting, unselect days that you would like to define as non-working, and select ones that you would like to consider working, and click on **Apply changes**.
+Чтобы изменить эту настройку, снимите выделение с дней, которые вы хотите определить как нерабочие, и выберите те, которые хотите считать рабочими, затем нажмите **Применить изменения**.
 
-### Specific non-working days
+### Конкретные нерабочие дни
+Вы также можете назначить конкретные даты (например, национальные или местные праздники) как нерабочие дни. Рабочие пакеты в обычном режиме планирования будут пропускать эти дни, и они не будут учитываться при расчёте длительности.
 
-You can also designate specific dates (such as national or local holidays) as non-working days. Work packages in regular scheduling mode will skip these days and they will not be included when calculating duration.
+![Ссылка 'Добавить нерабочий день'](add-non-working-day-link.png)
 
-![Add non-working day link](add-non-working-day-link.png)
+Нажмите **+ Нерабочий день**, чтобы добавить новую дату в список. В появившемся модальном окне выбора даты дайте этому новому нерабочему дню имя и выберите конкретную дату, которую хотите добавить. Нажмите **Добавить**. Этот день теперь будет нерабочим для всех пользователей экземпляра.
 
-Click on **+ Non-working day** to add a new date to the list. In the date picker modal that appears, give this new non-working day a name and select the specific date you would like to add. Click on **Add**. This day will now be a non-working day for all users of the instance.
+![Модальное окно 'Добавить нерабочий день'](add-working-day-modal.png)
 
-![Add non-working day modal](add-working-day-modal.png)
+Нажмите **Применить изменения** в конце страницы, чтобы изменения вступили в силу.
 
-Click on **Apply changes** at the end of the page for the changes to take effect.
+![Кнопка 'Применить изменения'](apply-changes-button.png)
 
-![Apply changes button](apply-changes-button.png)
+### Влияние на планирование
+Как настройка уровня экземпляра, любое изменение здесь повлияет на планирование _всех рабочих пакетов_ во _всех проектах_ в этом экземпляре. В настоящее время невозможно определить рабочие дни на уровне проекта.
 
-### Effect on scheduling
-
-As an instance-level setting, any change here will affect the scheduling of _all work packages_ in _all projects_ in that instance. It is currently not possible to define working days at a project-level.
-
-However, it _is_ possible to override this setting at the level of individual work packages via the date picker. For more information on how to schedule work packages on non-working days, refer to [Duration and Non-working days in the user guide](../../user-guide/work-packages/set-change-dates/#working-days-and-duration).
+Однако _можно_ переопределить эту настройку на уровне отдельных рабочих пакетов через средство выбора даты. Для получения дополнительной информации о том, как планировать рабочие пакеты на нерабочие дни, обратитесь к разделу [Длительность и Нерабочие дни в руководстве пользователя](../../user-guide/work-packages/set-change-dates/#working-days-and-duration).
 
 > [!IMPORTANT]
-> Changing this setting will reschedule work packages automatically to the next available working day after clicking on **Save**. For example, removing Friday as a working day by unchecking it will mean that work packages that included Friday will now end one day in the future, and ones that started or ended on Friday will now start and end on Monday.
+> Изменение этой настройки автоматически перепланирует рабочие пакеты на следующий доступный рабочий день после нажатия **Сохранить**. Например, отмена пятницы как рабочего дня путём снятия флажка означает, что рабочие пакеты, которые включали пятницу, теперь будут заканчиваться на один день позже, а те, которые начинались или заканчивались в пятницу, теперь будут начинаться и заканчиваться в понедельник.
 >
-> Depending on the number of projects and work packages in your instance, this process can take from a couple of minutes to hours.
+> В зависимости от количества проектов и рабочих пакетов в вашем экземпляре этот процесс может занять от нескольких минут до нескольких часов.
 
-Changing this setting is likely to cause changes to scheduling in unexpected ways, and generate a significant number of notifications for assignees, responsibles and watchers for work packages whose dates change as a result.
+Изменение этой настройки, скорее всего, вызовет изменения в планировании неожиданным образом и создаст значительное количество уведомлений для назначенных лиц, ответственных лиц и наблюдателей для рабочих пакетов, даты которых изменятся в результате.
 
-We only recommend changing this setting if you are absolutely sure and you are aware of the potential consequences.
+Мы рекомендуем изменять эту настройку только в том случае, если вы абсолютно уверены и осознаёте потенциальные последствия.
 
-### Effect on calendars
+### Влияние на календари
+Определённые здесь нерабочие дни выделяются другим цветом, обычно с более тёмным фоном, в [средстве выбора даты рабочего пакета](../../user-guide/work-packages/set-change-dates/#working-days-and-duration), [диаграмме Ганта](../../user-guide/gantt-chart/), модулях [Планировщика команды](../../user-guide/team-planner/) и [календаря](../../user-guide/calendar/).
 
-The non-working days defined here are colored differently, generally with a darker background color, on the [work package date picker](../../user-guide/work-packages/set-change-dates/#working-days-and-duration), [Gantt chart](../../user-guide/gantt-chart/) and the [Team planner](../../user-guide/team-planner/) and [calendar](../../user-guide/calendar/) modules.
+## Формат даты
+Администраторы могут изменять форматы времени и даты по умолчанию в OpenProject. Это влияет на то, как календари и даты рассчитываются и отображаются.
 
-## Date format
+Чтобы изменить эту настройку, перейдите в раздел **Формат даты** внутри настроек **Календарь и даты**.
 
-Administrators are able to change the default time and date formats in OpenProject. This affects how calendars and dates are calculated and displayed.
+![Формат даты в настройках администрирования OpenProject](openeproject_system_admin_guide_calendars_dates_date_format.png)
 
-To change this setting, navigate to **Date format** inside of the **Calendar and dates** settings.
-
-![Date format in OpenProject administration settings](openeproject_system_admin_guide_calendars_dates_date_format.png)
-
-1. **Date**: default is based on user's language. You can choose various formats to display dates in the system.
-2. **Time**: default is based on user's language. You can choose various formats to display time in the system.
-3. **Week starts on**: configure what date the week starts on (e.g. in the calendar view). Default is `Based on user's language`.
-   You can also choose to start a week always on Mondays, Sundays or Saturdays.
-   If you set **Week starts on**, you must also set the **First week in year contains** or you will probably get inconsistencies in week numbering in calendars and the Gantt chart.
-4. **First week in year contains**: select the day that needs to be contained in the first week of the year. This value is used together with _Week starts on_ to determine the first week of the year.
-   - For European ISO-8601 standard, set **Week starts on** to `Monday` and **First week in year contains** to `Thursday`.
-   - For US and Canada, set **Week starts on** to `Saturday` and **First week in year contains** to `Sunday`.
-   - If you leave both on `Based on user's language`, the information provided by moment.js will be used: For more information, please also see [this document from moment.js](https://momentjscom.readthedocs.io/en/latest/moment/07-customization/16-dow-doy/).
-   - For more information on the way the first week of the year is computed according to ISO standards, see [wikipedia](https://en.wikipedia.org/wiki/ISO_week_date#First_week)
-5. Do not forget to **save** your changes.
+1. **Дата**: по умолчанию основано на языке пользователя. Вы можете выбрать различные форматы для отображения дат в системе.
+2. **Время**: по умолчанию основано на языке пользователя. Вы можете выбрать различные форматы для отображения времени в системе.
+3. **Неделя начинается с**: настройте, с какого дня начинается неделя (например, в виде календаря). По умолчанию `На основе языка пользователя`.
+   Вы также можете выбрать, чтобы неделя всегда начиналась с понедельника, воскресенья или субботы.
+   Если вы установите **Неделя начинается с**, вы также должны установить **Первая неделя года содержит**, иначе, вероятно, возникнут несоответствия в нумерации недель в календарях и диаграмме Ганта.
+4. **Первая неделя года содержит**: выберите день, который должен содержаться в первой неделе года. Это значение используется вместе с _Неделя начинается с_ для определения первой недели года.
+   - Для европейского стандарта ISO-8601 установите **Неделя начинается с** в `Понедельник` и **Первая неделя года содержит** в `Четверг`.
+   - Для США и Канады установите **Неделя начинается с** в `Суббота` и **Первая неделя года содержит** в `Воскресенье`.
+   - Если оставить оба значения как `На основе языка пользователя`, будет использована информация, предоставляемая moment.js: Для получения дополнительной информации см. также [этот документ от moment.js](https://momentjscom.readthedocs.io/en/latest/moment/07-customization/16-dow-doy/).
+   - Для получения дополнительной информации о способе вычисления первой недели года в соответствии со стандартами ISO см. [википедию](https://en.wikipedia.org/wiki/ISO_week_date#First_week)
+5. Не забудьте **сохранить** свои изменения.
 
 > [!NOTE]
-> Configuration options related to aggregation time (the time interval in which different user activities are displayed as one set of actions) have been moved to the [Emails and notifications](../emails-and-notifications/) section.
+> Параметры конфигурации, связанные с временем агрегации (интервал времени, в течение которого различные действия пользователя отображаются как один набор действий), были перемещены в раздел [Электронные письма и уведомления](../emails-and-notifications/).
 
-## Calendar subscriptions
+## Подписки на календари
+Администраторы могут разрешить пользователям с необходимыми разрешениями подписываться на календари OpenProject и получать информацию о рабочих пакетах через внешний календарный клиент, используя iCalendar. Когда настройка **Включить подписки iCalendar** неактивна, никто не сможет подписаться на какой-либо календарь.
 
-Administrators can allow users with the necessary permissions to subscribe to OpenProject calendars and access work package information via an external calendar client using iCalendar. When the setting **Enable iCalendar subscriptions** is inactive nobody will be able to subscribe to any calendar.
+Чтобы изменить эту настройку, перейдите в раздел **Подписки на календари** внутри настроек **Календарь и даты**.
 
-To change this setting, navigate to **Calendar subscriptions** inside of the **Calendar and dates** settings.
-
-![Calendar subscriptions administrator settings](openeproject_system_admin_guide_calendars_dates_calendar_subscritpions.png)
+![Настройки администратора для подписок на календари](openeproject_system_admin_guide_calendars_dates_calendar_subscritpions.png)

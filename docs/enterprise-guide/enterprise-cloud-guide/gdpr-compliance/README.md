@@ -1,3 +1,4 @@
+---
 sidebar_navigation:
   title: GDPR
   priority: 600

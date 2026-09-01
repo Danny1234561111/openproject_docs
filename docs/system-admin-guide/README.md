@@ -1,45 +1,43 @@
 ---
 sidebar_navigation:
-  title: System admin guide
+  title: Руководство системного администратора
   priority: 970
-description: OpenProject system administration guide.
-keywords: system administration
+description: Руководство по системному администрированию OpenProject.
+keywords: системное администрирование
 ---
-# System admin guide
+# Руководство системного администратора
+Добро пожаловать в **Руководство по системному администрированию OpenProject**.
 
-Welcome to the OpenProject **System Administration guide**.
+Чтобы внести изменения в настройки, затрагивающие всю вашу среду OpenProject, необходимо перейти в административную панель OpenProject.
 
-In order to make changes to settings affecting your entire OpenProject environment, you need to navigate to the OpenProject administration.
+Если вы являетесь администратором в вашей среде OpenProject, вы можете получить доступ к административной панели, нажав на аватар пользователя в правом верхнем углу и выбрав **Администрирование** из выпадающего меню.
 
-If you are an administrator on your OpenProject environment, you can access the administration by clicking on your user Avatar in the upper right corner and selecting **Administration** from the dropdown menu.
-
-Click on one of the categories in order to proceed with the configuration.
+Нажмите на одну из категорий, чтобы продолжить настройку.
 
 ![openproject_system_administration_start_page](openproject_system_administration_start_page.png)
 
-## Overview
-
-| Topic                                                        | Content                                                      |
+## Обзор
+| Тема                                                        | Содержание                                                      |
 | ------------------------------------------------------------ | :----------------------------------------------------------- |
-| [Users and permissions](./users-permissions)                 | How to manage users, groups and permissions in OpenProject.  |
-| [Work packages](./manage-work-packages)                      | How to configure work packages, types, status and workflows. |
-| [Custom fields](./custom-fields)                             | Set custom fields for work packages, Spent time, projects, versions, users, groups and more. |
-| [Attribute help texts](./attribute-help-texts)               | Add help texts to explain attributes (including custom fields) in projects and work packages. |
-| [Calendars and dates](./calendars-and-dates/)                | Configure working days, date formats and calendar subscriptions. |
-| [System settings](./system-settings/)                        | Configure your system settings, e.g. a welcome text block on the landing page, languages, repositories, and more. |
-| [Emails and notifications](./emails-and-notifications/)      | Manage notifications and emails.                             |
-| [API and webhooks](./api-and-webhooks/)                      | Manage APIs and configure webhooks.                          |
-| [Authentication](./authentication)                           | Configure authentication methods in OpenProject, e.g. OAuth, OpenID, two-factor authentication, LDAP, and more. |
-| [GDPR](../enterprise-guide/enterprise-cloud-guide/gdpr-compliance/) | Review and sign a Data Processing Agreement (DPA).           |
-| [Announcement](./announcement)                               | How to create a system announcement.                         |
-| [Design](./design)                                           | Create your own design and make it compliant with your company's corporate identity, upload logo and customize colors. |
-| [Enterprise edition](../enterprise-guide/)                   | Upgrading and managing OpenProject Enterprise and other administrative topics. |
-| [Time and costs](./time-and-costs)                           | Configure your currency and create cost types in OpenProject. |
-| [Backlogs](./backlogs)                                       | Configure your backlogs settings in OpenProject, e.g. story types to be displayed in the backlogs, task types, and more. |
-| [Documents](./documents)                                     | Settings for document types and real-time collaboration in OpenProject. |
-| [Files](./files)                                             | Settings for attachments and virus scanning functionality in OpenProject. Manage external file storages. |
-| [External file storages - Nextcloud](./integrations/nextcloud/) | Set up external file storages with Nextcloud.                |
-| [External file storages - One Drive](./integrations/one-drive/) | Set up external file storages with One Drive.                |
-| [Plugins](./plugins)                                         | Manage plugins in OpenProject.                               |
-| [Information](./information/)                                | View the latest system information status.                   |
-| [Integrations](./integrations/)                              | How to integration OpenProject into other tools (eg. GitHub, Nextcloud...) |
+| [Пользователи и разрешения](./users-permissions)                 | Как управлять пользователями, группами и разрешениями в OpenProject.  |
+| [Рабочие пакеты](./manage-work-packages)                      | Как настраивать рабочие пакеты, типы, статусы и рабочие процессы. |
+| [Пользовательские поля](./custom-fields)                             | Настройка пользовательских полей для рабочих пакетов, затраченного времени, проектов, версий, пользователей, групп и многого другого. |
+| [Справка по атрибутам](./attribute-help-texts)               | Добавление справочных текстов для объяснения атрибутов (включая пользовательские поля) в проектах и рабочих пакетах. |
+| [Календари и даты](./calendars-and-dates/)                | Настройка рабочих дней, форматов дат и подписок на календари. |
+| [Системные настройки](./system-settings/)                        | Настройка системных параметров, например, приветственного текста на стартовой странице, языков, репозиториев и многого другого. |
+| [Электронная почта и уведомления](./emails-and-notifications/)      | Управление уведомлениями и электронной почтой.                             |
+| [API и вебхуки](./api-and-webhooks/)                      | Управление API и настройка вебхуков.                          |
+| [Аутентификация](./authentication)                           | Настройка методов аутентификации в OpenProject, например, OAuth, OpenID, двухфакторная аутентификация, LDAP и многое другое. |
+| [GDPR](../enterprise-guide/enterprise-cloud-guide/gdpr-compliance/) | Просмотр и подписание Соглашения об обработке данных (DPA).           |
+| [Объявления](./announcement)                               | Как создать системное объявление.                         |
+| [Дизайн](./design)                                           | Создайте собственный дизайн и сделайте его соответствующим корпоративному стилю вашей компании, загрузите логотип и настройте цвета. |
+| [Enterprise edition](../enterprise-guide/)                   | Обновление и управление OpenProject Enterprise и другие административные темы. |
+| [Время и затраты](./time-and-costs)                           | Настройте вашу валюту и создайте типы затрат в OpenProject. |
+| [Бэклоги](./backlogs)                                       | Настройте параметры бэклогов в OpenProject, например, типы историй для отображения в бэклогах, типы задач и многое другое. |
+| [Документы](./documents)                                     | Настройки типов документов и совместной работы в реальном времени в OpenProject. |
+| [Файлы](./files)                                             | Настройки вложений и функции проверки на вирусы в OpenProject. Управление внешними хранилищами файлов. |
+| [Внешние хранилища файлов - Nextcloud](./integrations/nextcloud/) | Настройка внешних хранилищ файлов с Nextcloud.                |
+| [Внешние хранилища файлов - One Drive](./integrations/one-drive/) | Настройка внешних хранилищ файлов с One Drive.                |
+| [Плагины](./plugins)                                         | Управление плагинами в OpenProject.                               |
+| [Информация](./information/)                                | Просмотр последней информации о состоянии системы.                   |
+| [Интеграции](./integrations/)                              | Как интегрировать OpenProject с другими инструментами (например, GitHub, Nextcloud...) |

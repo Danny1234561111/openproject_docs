@@ -1,99 +1,85 @@
 ---
 sidebar_navigation:
-  title: Documents
+  title: Документы
   priority: 900
-description: Documents module settings in OpenProject.
-keywords: document category, document categories, documents, collaboration, category, categories, real-time collaboration, edit document
+description: Настройки модуля документов в OpenProject.
+keywords: категория документа, категории документов, документы, совместная работа, категория, категории, совместная работа в реальном времени, редактирование документа
 ---
-# Documents module settings
-
-This page describes the available settings for the **Documents** module in the OpenProject administration.
-
-## Document types
-
+# Настройки модуля документов
+На этой странице описаны доступные настройки для модуля **Документы** в администрировании OpenProject.
+## Типы документов
 > [!NOTE]
 >
-> Prior to OpenProject 17.0 document types were called _categories_ and were configured under _Administration → Files → Categories_.
+> До OpenProject 17.0 типы документов назывались _категориями_ и настраивались в разделе _Администрирование → Файлы → Категории_.
 
-To create or edit document categories in OpenProject, navigate to _Administration → Documents_. Here, you will automatically see all existing document types:
+Чтобы создать или отредактировать категории документов в OpenProject, перейдите в _Администрирование → Документы_. Здесь вы автоматически увидите все существующие типы документов:
 
-- The column **Type** lists all existing document type names
-- The column **Documents** shows the number of documents of this specific type
+- Столбец **Тип** перечисляет все существующие названия типов документов
+- Столбец **Документы** показывает количество документов этого конкретного типа
 
-You can adjust the items within the list by using the options behind the **More (three dots)** menu on the right side. You can also rearrange the order by using the drag-and-drop handle on the left.
+Вы можете настроить элементы в списке, используя опции за меню **Еще (три точки)** справа. Вы также можете изменить порядок, используя маркер перетаскивания слева.
 
-![Document types overview in OpenProject administration](openproject_system_guide_documents_types_overview.png)
+![Обзор типов документов в администрировании OpenProject](openproject_system_guide_documents_types_overview.png)
 
-### Create new document type
+### Создание нового типа документа
+Чтобы создать новый тип документа, выберите кнопку **+ Добавить** в правом верхнем углу.
 
-To create a new document type, select the **+ Add** button in the top right corner.
+Затем вы можете назвать новый тип, активировать его. Вы можете дополнительно установить этот тип как значение **По умолчанию**.
 
-You can then name the new type, and activate it. You can optionally set this type to be the **Default** value.
 > [!NOTE]
-> Making this type default will override the previous default priority.
+> Установка этого типа по умолчанию переопределит предыдущий приоритет по умолчанию.
 
-Press the **Save** button to save your changes.
+Нажмите кнопку **Сохранить**, чтобы сохранить изменения.
 
-![Create new document type in OpenProject](openproject_system_guide_documents_types_new_form.png)
+![Создание нового типа документа в OpenProject](openproject_system_guide_documents_types_new_form.png)
 
-### Edit a document type
+### Редактирование типа документа
+Чтобы **отредактировать** существующий тип, либо нажмите на название напрямую, либо выберите опцию **Редактировать** из меню **Еще (три точки)** в правом конце строки.
 
-To **edit** an existing type, either click on the name directly or select the **Edit** option from the **More (three dots)** menu on the right end of the row.
+![Редактирование типа документа в администрировании OpenProject](openproject_system_guide_documents_types_edit.png)
 
-![Edit a document type in OpenProject administration](openproject_system_guide_documents_types_edit.png)
+### Удаление типа документа
+Чтобы удалить тип документа, откройте меню **Еще (три точки)** в правом конце строки и нажмите на значок **удаления**.
 
-### Delete a document type
+![Кнопка удаления типа документа в администрировании OpenProject](openproject_system_guide_documents_types_delete_button.png)
 
-To remove a document type, open the **More (three dots)** menu on the right end of the row and click on the **delete** icon.
+Вы увидите диалоговое окно, информирующее о последствиях.
 
-![Delete a document type in OpenProject administration](openproject_system_guide_documents_types_delete_button.png)
+- Если тип документа не используется, это не имеет значительных последствий.
+  ![Предупреждающее сообщение при удалении неиспользуемого типа документа в OpenProject](openproject_system_guide_documents_types_delete_message_type_unused.png)
+- Если тип документа используется, вам нужно будет выбрать другой тип для переназначения
+  ![Предупреждающее сообщение при удалении используемого типа документа в OpenProject, запрашивающее переназначение документов на другой тип](openproject_system_guide_documents_types_delete_message_type_used.png)
+- Если тип документа является последним существующим, вы не сможете его удалить. Всегда должен быть настроен как минимум один тип документа. В этом случае вы можете сначала создать другой тип документа.
+  ![Предупреждающее сообщение о том, что удаление последнего существующего типа документа не разрешено в OpenProject](openproject_system_guide_documents_types_delete_message_type_last.png)
 
-You will see a dialogue informing you of the consequences.
+## Совместная работа в реальном времени в документах
+Совместная работа в реальном времени для модуля **Документы** OpenProject была представлена с выпуском 17.0. Когда она включена, она позволяет нескольким пользователям одновременно редактировать один и тот же документ. Изменения синхронизируются мгновенно, и пользователи могут видеть курсоры и правки друг друга по мере их выполнения. Это улучшает совместную работу, особенно для команд, работающих над общей документацией или заметками встреч.
 
-- If a document type is unused, this has no significant consequences.
+С технической точки зрения, совместная работа в реальном времени зависит от работающего [сервера Hocuspocus](https://github.com/opf/openproject/tree/dev/extensions/op-blocknote-hocuspocus), который обрабатывает синхронизацию между пользователями. OpenProject подключается к этой службе, чтобы обеспечить беспрерывный опыт совместного редактирования в документах.
 
-  ![A warning message when deleting an unused document type in OpenProject](openproject_system_guide_documents_types_delete_message_type_unused.png)
-
-- If a document type is used, you will need to select a different type for reassigning
-
-  ![A warning message when deleting a used document type in OpenProject, asking to reassigning documents to a different type](openproject_system_guide_documents_types_delete_message_type_used.png)
-
-- If a document type is the last existing one, you will not be able to delete it. There must always be at least one document type configured. In this case you can create another document type first.
-
-  ![A warning message that deleting the last existing document type is not permitted in OpenProject](openproject_system_guide_documents_types_delete_message_type_last.png)
-
-## Real-time collaboration in documents
-
-Real-time collaboration for OpenProject’s **Documents** module was introduced with the 17.0 release. When enabled, it allows multiple users to edit the same document at the same time. Changes are synchronized instantly, and users can see each other’s cursors and edits as they occur. This improves collaboration, especially for teams working on shared documentation or meeting notes.
-
-From a technical perspective, real-time collaboration relies on a running [Hocuspocus server](https://github.com/opf/openproject/tree/dev/extensions/op-blocknote-hocuspocus), which handles synchronization between users. OpenProject connects to this service to provide a seamless collaborative editing experience within documents.
-
-![Administration settings for real-time documents collaboration in OpenProject](openproject_system_guide_documents_real_time_collaboration.png)
+![Настройки администрирования для совместной работы в документах в реальном времени в OpenProject](openproject_system_guide_documents_real_time_collaboration.png)
 
 > [!IMPORTANT]
 >
-> Real-time collaboration is available for the following installation types. However, it may require proper configuration before it is fully enabled:
+> Совместная работа в реальном времени доступна для следующих типов установки. Однако она может потребовать правильной настройки, прежде чем будет полностью включена:
 >
-> - Containerized installations
-> - Cloud-hosted installations
+> - Контейнерные установки
+> - Облачные установки
 >
-> Packaged installations (DEB/RPM) require additional manual setup. This includes installing and configuring a [Hocuspocus server](https://github.com/opf/openproject/tree/dev/extensions/op-blocknote-hocuspocus) to enable real-time collaboration.
+> Установки в пакетах (DEB/RPM) требуют дополнительной ручной настройки. Это включает установку и настройку [сервера Hocuspocus](https://github.com/opf/openproject/tree/dev/extensions/op-blocknote-hocuspocus) для включения совместной работы в реальном времени.
 
-### Enable real-time collaboration for packaged installations
-
-#### 1. Install hocuspocus
-
-The easiest way to install hocuspocus is by using the Docker container.
-You can do so by using the following steps.
-
-Create a hocuspocus directory:
+### Включение совместной работы в реальном времени для установок в пакетах
+#### 1. Установка hocuspocus
+Самый простой способ установить hocuspocus — использовать контейнер Docker.
+Вы можете сделать это, выполнив следующие шаги.
+Создайте каталог hocuspocus:
 
 ```shell
 mkdir hocuspocus
 cd hocuspocus
 ```
 
-Then you can create a `docker-compose.yml` file with the following content inside the `hocuspocus` directory:
+Затем вы можете создать файл docker-compose.yml со следующим содержимым внутри каталога hocuspocus:
 
 ```yaml
 services:
@@ -148,9 +134,9 @@ sudo  service httpd restart
 
 #### 3. Enable real-time collaboration
 
-Manually configure the server URL & secret in the _Documents_ administration settings in OpenProject.
-Here you need to provide the URL in the following format: `wss://<your_op_hostname>/hocuspocus`.
-If you are using HTTP in your instance, the protocol has to be `ws://` instead of `wss://`.
+Вручную настройте URL-адрес сервера и секретный ключ в настройках администрирования Документы в OpenProject.
+Здесь вам нужно предоставить URL-адрес в следующем формате: wss://<ваш_хостнейм_op>/hocuspocus.
+Если вы используете HTTP в вашем экземпляре, протокол должен быть ws:// вместо wss://.
 
 > [!NOTE]
 > The secret must be identical in both op-blocknote-hocuspocus and OpenProject.

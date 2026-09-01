@@ -1,52 +1,33 @@
 ---
 sidebar_navigation:
-  title: File management
+  title: Управление файлами
   priority: 640
-description: Manage files in OpenProject.
-keywords: files, attachment, Nextcloud, OneDrive, SharePoint
+description: Управление файлами в OpenProject.
+keywords: файлы, вложение, Nextcloud, OneDrive, SharePoint
 ---
-
-# File Management
-
-| Topic                                                        | Content                                                      |
+# Управление файлами
+| Тема                                                        | Содержание                                                      |
 | ------------------------------------------------------------ | ------------------------------------------------------------ |
-| [Manual upload](#manual-upload)                              | How to manually upload files to work packages in OpenProject. |
-| [Nextcloud integration](#nextcloud-integration)              | How to manage files using Nextcloud integration in OpenProject. |
-| [OneDrive integration](#onedrive-integration-enterprise-add-on) | How to manage files using OneDrive integration in OpenProject. |
-| [SharePoint integration](#sharepoint-integration-enterprise-add-on) | How to manage files using SharePoint integration in OpenProject. |
-| [File management FAQs](./file-management-faq)                | Frequently asked questions on file management in OpenProject. |
-
-There are several ways of adding or linking files to work packages in OpenProject. You can manually attach files directly to work packages or use one of the integrations with file management systems.
-
-## Manual upload
-
-For the manual upload please refer to documentation on [attaching files to work packages](../work-packages/create-work-package/#add-attachments-to-work-packages).
-
-## Nextcloud integration
-
-You can use Nextcloud as an integrated file storage in OpenProject, allowing you to link files and folders stored in Nextcloud directly with work packages in OpenProject.
-
-Please refer to [Nextcloud integration user guide](./nextcloud-integration) for further instructions on using the integration.
-
-For the initial setup please refer to the [Nextcloud integration setup guide](../../system-admin-guide/integrations/nextcloud/).
-
+| [Ручная загрузка](#ручная-загрузка)                              | Как вручную загружать файлы в рабочие пакеты в OpenProject. |
+| [Интеграция с Nextcloud](#интеграция-с-nextcloud)              | Как управлять файлами с помощью интеграции с Nextcloud в OpenProject. |
+| [Интеграция с OneDrive](#интеграция-с-onedrive-дополнение-enterprise) | Как управлять файлами с помощью интеграции с OneDrive в OpenProject. |
+| [Интеграция с SharePoint](#интеграция-с-sharepoint-дополнение-enterprise) | Как управлять файлами с помощью интеграции с SharePoint в OpenProject. |
+| [Часто задаваемые вопросы по управлению файлами](./file-management-faq)                | Часто задаваемые вопросы об управлении файлами в OpenProject. |
+Существует несколько способов добавления или связывания файлов с рабочими пакетами в OpenProject. Вы можете вручную прикреплять файлы непосредственно к рабочим пакетам или использовать одну из интеграций с системами управления файлами.
+## Ручная загрузка
+Для ручной загрузки пожалуйста обратитесь к документации по [прикреплению файлов к рабочим пакетам](../work-packages/create-work-package/#add-attachments-to-work-packages).
+## Интеграция с Nextcloud
+Вы можете использовать Nextcloud в качестве интегрированного хранилища файлов в OpenProject, что позволяет напрямую связывать файлы и папки, хранящиеся в Nextcloud, с рабочими пакетами в OpenProject.
+Пожалуйста, обратитесь к [руководству пользователя по интеграции с Nextcloud](./nextcloud-integration) для получения дальнейших инструкций по использованию интеграции.
+Для первоначальной настройки пожалуйста обратитесь к [руководству по настройке интеграции с Nextcloud](../../system-admin-guide/integrations/nextcloud/).
 [feature: one_drive_sharepoint_file_storage]
-
 > [!NOTE]
-> This feature includes using both OneDrive and SharePoint integrations.
-
-## OneDrive integration (Enterprise add-on)
-
-You can also use OneDrive integration to link OpenProject work packages directly to the files stored in your OneDrive repository.
-
-Please refer to [OneDrive integration user guide](./one-drive-integration) for further instructions on using the integration.
-
-For the initial setup please refer to the [OneDrive integration setup guide](../../system-admin-guide/integrations/one-drive/).
-
-## SharePoint integration (Enterprise add-on)
-
-You can use SharePoint integration to link OpenProject work packages directly to the files stored in your SharePoint repository.
-
-Please refer to [SharePoint integration user guide](./sharepoint-integration) for further instructions on using the integration.
-
-For the initial setup please refer to the [SharePoint integration setup guide](../../system-admin-guide/integrations/share-point/).
+> Эта функция включает использование как интеграции с OneDrive, так и с SharePoint.
+## Интеграция с OneDrive (дополнение Enterprise)
+Вы также можете использовать интеграцию с OneDrive для прямого связывания рабочих пакетов OpenProject с файлами, хранящимися в вашем репозитории OneDrive.
+Пожалуйста, обратитесь к [руководству пользователя по интеграции с OneDrive](./one-drive-integration) для получения дальнейших инструкций по использованию интеграции.
+Для первоначальной настройки пожалуйста обратитесь к [руководству по настройке интеграции с OneDrive](../../system-admin-guide/integrations/one-drive/).
+## Интеграция с SharePoint (дополнение Enterprise)
+Вы можете использовать интеграцию с SharePoint для прямого связывания рабочих пакетов OpenProject с файлами, хранящимися в вашем репозитории SharePoint.
+Пожалуйста, обратитесь к [руководству пользователя по интеграции с SharePoint](./sharepoint-integration) для получения дальнейших инструкций по использованию интеграции.
+Для первоначальной настройки пожалуйста обратитесь к [руководству по настройке интеграции с SharePoint](../../system-admin-guide/integrations/share-point/).

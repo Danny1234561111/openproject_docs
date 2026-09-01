@@ -1,130 +1,121 @@
----
 sidebar_navigation:
-  title: Design
+  title: Дизайн
   priority: 870
-description: Custom color, theme, logo and PDF.
-keywords: custom color, theme, logo, PDF
+description: Пользовательские цвета, тема, логотип и PDF.
+keywords: пользовательский цвет, тема, логотип, PDF
 ---
-# Set custom color theme and logo (Enterprise add-on)
-
+# Настройка пользовательской цветовой темы и логотипа (Enterprise дополнение)
 [feature: define_custom_style ]
+Как дополнение OpenProject Enterprise вы можете заменить логотип OpenProject по умолчанию на свой собственный логотип. Кроме того, вы можете определить свою собственную цветовую тему, которая позволяет внедрить корпоративный стиль в OpenProject.
 
-As an OpenProject Enterprise add-on you can replace the default OpenProject logo with your own logo. In addition, you can define your own color theme which allows you to implement your corporate identity in OpenProject.
+Перейдите в _Администрирование_ → _Дизайн_, чтобы настроить тему и логотип вашего OpenProject.
 
-Navigate to _Administration_ → _Design_ in order to customize your OpenProject theme and logo.
+Страница дизайна предоставляет несколько вариантов настройки вашего издания OpenProject Enterprise, сгруппированных на пяти вкладках: **Интерфейс, Брендинг, Цвета по умолчанию, Стили экспорта PDF и Шрифт экспорта PDF**.
 
-The design page provides several options to customize your OpenProject Enterprise edition, grouped in five tabs, **Interface, Branding, Default colors, PDF export styles and PDF export font**. 
-You can [choose a color theme](#choose-a-color-theme) in the first two tabs. 
+Вы можете [выбрать цветовую тему](#выбрать-цветовую-тему) на первых двух вкладках.
 
-Under **Interface** you can also choose [custom colors](#interface-colors) for elements of the interface, such as the primary button color, accent color, the background of the top navigation header and the main menu.
+В разделе **Интерфейс** вы также можете выбрать [пользовательские цвета](#цвета-интерфейса) для элементов интерфейса, таких как цвет основной кнопки, акцентный цвет, фон верхней навигационной панели и главного меню.
 
-![Design interface settings in OpenProject administration](openproject_system_guide_design_interface.png)
+![Настройки интерфейса дизайна в администрировании OpenProject](openproject_system_guide_design_interface.png)
 
-Under the **Branding** tab you can also [upload a custom desktop and/or mobile logos](#upload-a-custom-logo) to replace the default OpenProject logo, [set a custom favicon](#set-a-custom-favicon), which is shown as an icon in your browser window/tab, and [upload a custom touch icon](#set-a-custom-touch-icon), which is shown on your smartphone or tablet when you bookmark OpenProject on your home screen.
+На вкладке **Брендинг** вы также можете [загрузить пользовательские логотипы для десктопа и/или мобильных устройств](#загрузить-пользовательский-логотип) для замены логотипа OpenProject по умолчанию, [установить пользовательскую favicon](#установить-пользовательскую-favicon), которая отображается в виде значка в окне/вкладке вашего браузера, и [загрузить пользовательский touch icon](#установить-пользовательский-touch-icon), который отображается на вашем смартфоне или планшете, когда вы добавляете OpenProject в закладки на главном экране.
 
-![Branding settings in OpenProject administration](openproject_system_guide_design_branding.png)
+![Настройки брендинга в администрировании OpenProject](openproject_system_guide_design_branding.png)
 
-![More branding settings in OpenProject administration](openproject_system_guide_design_branding_additional.png)
+![Дополнительные настройки брендинга в администрировании OpenProject](openproject_system_guide_design_branding_additional.png)
 
-Under **Default colors** you can configure a set of predefined colors which you can use e.g. to [set colors for work package types](../manage-work-packages/work-package-types) or for attribute highlighting, e.g. for [status](../manage-work-packages/work-package-status).
+В разделе **Цвета по умолчанию** вы можете настроить набор предопределенных цветов, которые можно использовать, например, для [установки цветов для типов рабочих пакетов](../manage-work-packages/work-package-types) или для выделения атрибутов, например, для [статусов](../manage-work-packages/work-package-status).
 
-![Default colors settings in OpenProject administration](openproject_system_guide_design_default_colors.png)
+![Настройки цветов по умолчанию в администрировании OpenProject](openproject_system_guide_design_default_colors.png)
 
-Under **PDF export settings** you can set the preferences for e.g. [exporting work packages in a PDF format](../../user-guide/work-packages/exporting/#pdf-export), meetings, timesheets… 
+В разделе **Настройки экспорта PDF** вы можете установить предпочтения для, например, [экспорта рабочих пакетов в формате PDF](../../user-guide/work-packages/exporting/#pdf-export), встреч, табелей учета рабочего времени…
 
-![PDF export styles settings in OpenProject administration](openproject_system_guide_design_pdf_export_styles.png)
+![Настройки стилей экспорта PDF в администрировании OpenProject](openproject_system_guide_design_pdf_export_styles.png)
 
-Under **PDF export font** tab you can upload a font family to be used in all PDF exports (e.g. Work packages report, Gantt, Meetings, Timesheet).
-The font files must be in the TrueType Font (TTF) format. Maximum font file size is 40 MB.
+На вкладке **Шрифт экспорта PDF** вы можете загрузить семейство шрифтов для использования во всех экспортах PDF (например, отчеты по рабочим пакетам, диаграмма Ганта, встречи, табель учета рабочего времени).
+
+Файлы шрифтов должны быть в формате TrueType Font (TTF). Максимальный размер файла шрифта — 40 МБ.
 
 > [!TIP]
-> You can generate a demo PDF to see a preview of your settings. Click the **Generate Demo PDF** button.
+> Вы можете сгенерировать демо-PDF, чтобы увидеть предварительный просмотр ваших настроек. Нажмите кнопку **Сгенерировать демо-PDF**.
 
 > [!IMPORTANT]
-> Only the regular style of a font family is required. Italic and bold text will be formatted in regular style of the uploaded font if these font files are omitted.
+> Требуется только обычный стиль семейства шрифтов. Курсивный и жирный текст будет отформатирован в обычном стиле загруженного шрифта, если эти файлы шрифтов опущены.
 
-![PDF export settings in openproject administration](openproject_system_guide_design_pdf_export_font.png)
+![Настройки экспорта PDF в администрировании OpenProject](openproject_system_guide_design_pdf_export_font.png)
 
-![More PDF export settings in openproject administration](openproject_system_guide_design_pdf_export_font_additional.png)
+![Дополнительные настройки экспорта PDF в администрировании OpenProject](openproject_system_guide_design_pdf_export_font_additional.png)
 
-## Choose a color theme
-
-You can choose between the three default color themes for OpenProject:
+## Выбрать цветовую тему
+Вы можете выбрать одну из трех цветовых тем по умолчанию для OpenProject:
 
 - OpenProject
-- OpenProject Gray (previously called OpenProject Light)
-- OpenProject Navy Blue (previously called OpenProject Dark)
+- OpenProject Gray (ранее называлась OpenProject Light)
+- OpenProject Navy Blue (ранее называлась OpenProject Dark)
 
-Press the Save button to apply your changes. The theme will then be changed.
+Нажмите кнопку Сохранить, чтобы применить изменения. Тема будет изменена.
 
-![Change color theme in OpenProject administration settings](openproject_system_guide_design_color_theme_navy_blue.png)
+![Изменение цветовой темы в настройках администрирования OpenProject](openproject_system_guide_design_color_theme_navy_blue.png)
 
-## Upload a custom logo
+## Загрузить пользовательский логотип
+В области Администрирование → Дизайн вы можете заменить стандартный логотип OpenProject на свой собственный брендинг.
 
-In the Administration → Design area, you can replace the standard OpenProject logo with your own branding.
+### Пользовательский логотип для десктопа
+Это поле для загрузки версии вашего логотипа, которая должна отображаться на больших экранах. Загруженный логотип будет автоматически масштабироваться, чтобы соответствовать заголовку. Для лучших результатов мы рекомендуем загружать белый логотип на прозрачном изображении размером 130×47 пикселей. Вы можете добавить столько свободного пространства внутри этого изображения, сколько захотите.
 
-### Custom logo desktop
+Выберите кнопку _Обзор_ и выберите файл с вашего жесткого диска, чтобы загрузить его.
 
-This field to upload the version of your logo that should appear on larger screens. The logo you upload will automatically scale to fit the header. For best results, we recommend uploading a white logo on a transparent 130×47px image. You can add as much spacing inside that image as you like. 
+Нажмите кнопку _Загрузить_, чтобы подтвердить и загрузить ваш логотип.
 
-Select the _Browse_ button and select the file from your hard drive to upload it.
+![Загрузка пользовательского логотипа в настройках администрирования OpenProject](openproject_system_guide_design_upload_custom_logo.png)
 
-Click the _Upload_ button to confirm and upload your logo.
+![Пользовательский логотип обновлен в администрировании OpenProject](openproject_system_guide_design_custom_logo_uploaded.png)
 
-![Upload custom logo in OpenProject administration settings](openproject_system_guide_design_upload_custom_logo.png)
+### Пользовательский логотип для мобильных устройств
+Отдельный раздел Пользовательский логотип для мобильных устройств позволяет предоставить альтернативный логотип, оптимизированный для меньших экранов.
 
-![Custom logo updated in OpenProject administration](openproject_system_guide_design_custom_logo_uploaded.png)
+### Поведение отображения логотипа
+В зависимости от того, какие пользовательские логотипы загружены, OpenProject будет настраивать отображаемый логотип в соответствии со следующими принципами:
 
-### Custom logo mobile
+- Если предоставлены и десктопный, и мобильный логотипы, логотип меняется адаптивно в зависимости от размера экрана.
+- Если доступен только мобильный логотип, он будет использоваться везде.
+- Если загружен только десктопный логотип, он будет появляться на экранах десктопов, в то время как в мобильных представлениях логотип отображаться не будет.
+- Если логотип не загружен, OpenProject продолжает отображать свой логотип по умолчанию.
+- Когда используется пользовательский логотип, отдельная версия с высоким контрастом больше не применяется.
 
-A separate Custom logo mobile section allows you to provide an alternative logo optimized for smaller displays.
+## Установить пользовательскую favicon
+Чтобы установить пользовательскую favicon для отображения во вкладке вашего браузера, убедитесь, что у вас есть PNG-файл размером 32 на 32 пикселя. Выберите кнопку _Выбрать файл_ и выберите файл с вашего жесткого диска, чтобы загрузить его.
 
-### Logo display behavior
+Затем нажмите кнопку _Загрузить_, чтобы подтвердить и загрузить вашу favicon.
 
-Depending on which custom logos are uploaded, OpenProject will adjust the displayed logo according to the following principles:
+![Пользовательская favicon в настройках дизайна OpenProject](openproject_system_guide_design_custom_favicon.png)
 
-- If both desktop and mobile logos are provided, the logo switches responsively with the screen size.
-- If only a mobile logo is available, it will be used everywhere.
-- If only a desktop logo is uploaded, it will appear on desktop screens, while mobile views will not show a logo.
-- If no logo is uploaded, OpenProject continues to display its default logo.
-- When a custom logo is in use, a separate high-contrast version is no longer enforced.
+## Установить пользовательский touch icon
+Чтобы установить пользовательский touch icon, который появляется на главном экране вашего смартфона или планшета, когда вы добавляете страницу в закладки, убедитесь, что у вас есть PNG-файл размером 180 на 180 пикселей. Выберите кнопку _Выбрать файл_ и выберите файл с вашего жесткого диска, чтобы загрузить его.
 
-## Set a custom favicon
+Нажмите кнопку _Загрузить_, чтобы подтвердить и загрузить ваш пользовательский touch icon.
 
-To set a custom favicon to be shown in your browser’s tab, make sure you have a PNG file with the dimensions 32 by 32 pixels. Select the _Choose File_ button and select the file from your hard drive to upload it.
+Когда вы добавите URL вашей среды OpenProject в закладки, вы увидите, что загруженный значок используется как пользовательский touch icon.
 
-Then click the _Upload_ button to confirm and upload your favicon.
+## Добавить новый цвет
+Чтобы добавить новый цвет в цвета по умолчанию, нажмите зеленую кнопку **+ Добавить** в правом верхнем углу.
 
-![Custom favicon in OpenProject design settings](openproject_system_guide_design_custom_favicon.png)
+![Кнопка добавления нового цвета в настройках дизайна OpenProject](openproject_system_guide_design_add_color_button.png)
 
-## Set a custom touch icon
+Добавьте название для вашего нового цвета, введите шестнадцатеричный код и нажмите кнопку **Сохранить**.
 
-To set a custom touch icon that appears on your smartphone’s or tablet’s homescreen when you bookmark a page, make sure you have a PNG file with the dimensions 180 by 180 pixels. Select the _Choose File_ button and select the file from your hard drive to upload it.
+![Добавление и сохранение нового цвета в настройках дизайна OpenProject](openproject_system_guide_design_add_new_color.png)
 
-Click the _Upload_ button to confirm and upload your custom touch icon.
+## Цвета интерфейса
+Помимо загрузки логотипов и значков, вы также можете настроить цвета, используемые в вашей среде OpenProject.
 
-When you bookmark your OpenProject environment’s URL, you will see that the uploaded icon is used as a custom touch icon.
+Для этого введите шестнадцатеричное значение для любого цвета, который вы хотите изменить. Вы можете использовать такой веб-сайт, как [htmlcolorcodes.com](https://htmlcolorcodes.com/color-picker/), чтобы помочь вам найти идеальный цвет.
 
-## Set a new color
-
-To add a new color to the default colors, click the green **+ Add** button at the top right.
-
-![Add button for new color in OpenProject design settings](openproject_system_guide_design_add_color_button.png)
-
-Add a  name for your new color, enter the hexcode and click the **Save** button.
-
-![Add and save new color in OpenProject design settings](openproject_system_guide_design_add_new_color.png)
-
-## Interface colors
-
-Aside from uploading logos and icons, you can also customize the colors used within your OpenProject environment.
-
-To do this, enter the hex value for any color you would like to change. You can use a website like [htmlcolorcodes.com](https://htmlcolorcodes.com/color-picker/) to help you find the perfect color.
-You can see the selected color in the preview area next to the color hex code. Therefore, it is possible to see the selected color before saving the changes.
+Вы можете увидеть выбранный цвет в области предварительного просмотра рядом с шестнадцатеричным кодом цвета. Таким образом, можно увидеть выбранный цвет до сохранения изменений.
 
 > [!TIP]
-> If the button color you select is too light to have white text on top of it, the icon and text color will be displayed in black instead.
+> Если выбранный вами цвет кнопки слишком светлый для белого текста поверх него, цвет значка и текста будет отображаться черным.
 
-![Advanced color settings in OpenProject](openproject_system_guide_design_interface_colors.png)
+![Расширенные настройки цвета в OpenProject](openproject_system_guide_design_interface_colors.png)
 
-As soon as you press the **Save** button your changes are applied and the colors of your OpenProject environment are adjusted accordingly.
+Как только вы нажмете кнопку **Сохранить**, ваши изменения будут применены, и цвета вашей среды OpenProject будут соответствующим образом скорректированы.

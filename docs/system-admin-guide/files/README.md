@@ -1,27 +1,17 @@
 ---
 sidebar_navigation:
-  title: Files
+  title: Файлы
   priority: 830
-description: File storages in OpenProject.
-keywords: files, file storages, Nextcloud integration, OneDrive setup, OneDrive, Sharepoint, attachments
+description: Хранилища файлов в OpenProject.
+keywords: файлы, хранилища файлов, интеграция Nextcloud, настройка OneDrive, OneDrive, SharePoint, вложения
 ---
-
-# Files 
-
-Under _Administration → Files_ you can add external file storages, such as Nextcloud, OneDrive or SharePoint and manage settings
-for attachments to work packages.
-
-## External file storages
-
-Under [external file storages](./external-file-storages) you can add Nextcloud, OneDrive or SharePoint integration to OpenProject. 
-
-## Attachments
-
-Under [attachments](./attachments) you can manage settings for attachments in work packages. You will also find the [virus scanning](./attachments/virus-scanning) settings here. 
-
-## Categories
-
-Under categories you can create and manage documentation categories in OpenProject.
-
-> [!NOTE]
-> With 17.0 the _Documents_ module was enhanced with live-collaboration features, resulting in a dedicated area in system administration. From then on documentation of Categories was moved [here](../documents).
+# Файлы
+В разделе _Администрирование → Файлы_ вы можете добавлять внешние хранилища файлов, такие как Nextcloud, OneDrive или SharePoint, и управлять настройками для вложений к рабочим пакетам.
+## Внешние хранилища файлов
+В разделе [внешние хранилища файлов](./external-file-storages) вы можете добавить интеграцию с Nextcloud, OneDrive или SharePoint в OpenProject.
+## Вложения
+В разделе [вложения](./attachments) вы можете управлять настройками для вложений в рабочих пакетах. Здесь же вы найдете настройки [сканирования на вирусы](./attachments/virus-scanning).
+## Категории
+В разделе категории вы можете создавать и управлять категориями документации в OpenProject.
+> [!ПРИМЕЧАНИЕ]
+> В версии 17.0 модуль _Документы_ был расширен функциями совместной работы в реальном времени, что привело к созданию отдельной области в системном администрировании. С этого момента документация по категориям была перемещена [сюда](../documents).

@@ -1,25 +1,22 @@
 ---
 sidebar_navigation:
-  title: Users and permissions
+  title: Пользователи и разрешения
   priority: 990
-description: Manage users and permissions.
-keywords: users, permissions, roles, groups, avatars
+description: Управление пользователями и разрешениями.
+keywords: пользователи, разрешения, роли, группы, аватары
 ---
-# Users and permissions
-
-In this section of the System Administration guide you can learn how to manage users, placeholder users and permissions in OpenProject.
-
-## Overview
-
-| Topic                                      | Content                                                      |
+# Пользователи и разрешения
+В этом разделе руководства по системному администрированию вы можете узнать, как управлять пользователями, временными пользователями и разрешениями в OpenProject.
+## Обзор
+| Тема                                      | Содержание                                                      |
 | ------------------------------------------ | :----------------------------------------------------------- |
-| [Settings](settings)                       | Configure user settings, e.g. default language, time zone, and more. |
-| [Users](users)                             | Manage users: View all users, invite new users, lock users, and more. |
-| [User attributes](user-attributes)         | Create and manage user attributes.                           |
-| [Placeholder users](placeholder-users)     | Create and manage placeholder users.                         |
-| [Groups](groups)                           | View groups, create new groups, add users to groups.         |
-| [Organization](organization)               | Define your company’s structure within OpenProject.          |
-| [Roles and permissions](roles-permissions) | See / manage roles and permissions and add new roles.        |
-| [User visibility](user-visibility)         | Understand which users and groups a user can see.            |
-| [Permissions report](permissions-report)   | View and edit permissions assigned to currently existing roles. |
-| [Avatars](avatars)                         | Activate / deactivate user avatars (profile pictures).       |
+| [Настройки](settings)                       | Настройка параметров пользователя, например, язык по умолчанию, часовой пояс и другое. |
+| [Пользователи](users)                             | Управление пользователями: просмотр всех пользователей, приглашение новых пользователей, блокировка пользователей и другое. |
+| [Атрибуты пользователя](user-attributes)         | Создание и управление атрибутами пользователя.                           |
+| [Временные пользователи](placeholder-users)     | Создание и управление временными пользователями.                         |
+| [Группы](groups)                           | Просмотр групп, создание новых групп, добавление пользователей в группы.         |
+| [Организация](organization)               | Определение структуры вашей компании в OpenProject.          |
+| [Роли и разрешения](roles-permissions) | Просмотр / управление ролями и разрешениями и добавление новых ролей.        |
+| [Видимость пользователей](user-visibility)         | Понимание, каких пользователей и групп может видеть пользователь.            |
+| [Отчет по разрешениям](permissions-report)   | Просмотр и редактирование разрешений, назначенных существующим ролям. |
+| [Аватары](avatars)                         | Активация / деактивация аватаров пользователей (изображения профиля).       |

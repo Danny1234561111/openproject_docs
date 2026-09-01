@@ -1,58 +1,39 @@
 ---
 sidebar_navigation:
-  title: API and webhooks
+  title: API и вебхуки
   priority: 900
-description: Configure APIs and webhooks in OpenProject.
-keywords: api webhooks, cors, token, api token
+description: Настройка API и вебхуков в OpenProject.
+keywords: api вебхуки, cors, токен, api токен
 ---
-# API and webhooks
-
-Configure all API-related settings and add and manage webhooks to your OpenProject environment.
-
-Navigate to **Administration → API and webhooks**.
-
+# API и вебхуки
+Настройте все параметры, связанные с API, и добавляйте/управляйте вебхуками в вашей среде OpenProject.
+Перейдите в **Администрирование → API и вебхуки**.
 ## API
-
-![API settings in OpenProject administration](openproject_system_admin_guide_api.png)
-
-Here, you can manage whether users can create personal API tokens, this setting allows users to access the OpenProject APIs using an API token created from the user's "Account settings" page.
-You can set the **maximum page size** the API will respond with. It will not be possible to perform API requests that return more values on a single page.
-You can also enable **write access to read-only attributes**, which will allow administrators to write static read-only attributes during creation, such as _createdAt_ and _author_. This can be useful during data imports.
-
-### Documentation
-
-If the **docs page** is enabled you can get an interactive view of the [APIv3 documentation](https://www.openproject.org/docs/api/introduction).
-
-### Cross-Origin Resource Sharing (CORS)
-
-To enable **CORS** headers being returned by the [OpenProject APIv3](../../api/),
-enable the check box on this page. This will also enable it for dependent authentication endpoints, such as OAuth endpoints `/oauth/token` and the like.
-
-You will then have to enter the allowed values for the Origin header to which OpenProject will allow access.
-This is necessary since authenticated resources of OpenProject cannot be accessible to all origins with the `*` header value.
-
-For more information on the concepts of Cross-Origin Resource Sharing (CORS), please see:
-
-- [an overview of CORS from MDN](https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS).
-- [a tutorial on CORS by Auth0](https://auth0.com/blog/cors-tutorial-a-guide-to-cross-origin-resource-sharing/)
-
-## Webhooks
-
-You can set up webhooks for OpenProject in order to integrate OpenProject with other applications. A scenario is for example to signal the creation of a time log in OpenProject to a billing application.
-
-Press the green **+ Webhook** button to add a new webhook to OpenProject.
-
-![Webhooks in OpenProject administration](openproject_system_admin_guide_webhooks.png)
-
-You can configure the following options for webhooks:
-
-1. Choose a **name** identifying the webhook.
-2. **Payload URL** defines the endpoint, called when the webhook is triggered.
-3. Freely choose an additional **description** to further identify the intent of the respective webhook.
-4. By defining a **Signature secret** you guarantee that the sender of the payload request is actually OpenProject. The client will then check this signature secret.
-5. **Enable** if **the webhook** should be active.
-6. **Set the events** for which the webhook should be activate, i.e. webhook for updating or creating projects, work packages, work package comments, time entries and attachments.
-7. **Select for which projects the webhook should be active**. You can choose all projects or only specific projects. For example if you select the project "System admin guide", an event (ie. create a new time entry) will be fired via the webhook. This will only happen if a user logs time within the selected projects.
-8. Press the green **Create** button to save your changes (you may nee to scroll down to find it). There you can also cancel your input.
-
-![Add a new webhook in OpenProject administration](openproject_system_admin_guide_api_new_webhook.png)
+![Настройки API в администрировании OpenProject](openproject_system_admin_guide_api.png)
+Здесь вы можете управлять возможностью пользователей создавать персональные API-токены. Эта настройка позволяет пользователям получать доступ к API OpenProject с использованием API-токена, созданного на странице "Настройки учетной записи" пользователя.
+Вы можете установить **максимальный размер страницы**, с которым будет отвечать API. Невозможно будет выполнять API-запросы, возвращающие больше значений на одной странице.
+Вы также можете включить **запись в атрибуты только для чтения**, что позволит администраторам записывать статические атрибуты только для чтения во время создания, такие как _createdAt_ и _author_. Это может быть полезно при импорте данных.
+### Документация
+Если **страница документации** включена, вы можете получить интерактивное представление [документации APIv3](https://www.openproject.org/docs/api/introduction).
+### Совместное использование ресурсов между разными источниками (CORS)
+Чтобы включить возврат заголовков **CORS** [API OpenProject v3](../../api/),
+включите флажок на этой странице. Это также включит его для зависимых конечных точек аутентификации, таких как конечные точки OAuth `/oauth/token` и подобные.
+Затем вам нужно будет ввести разрешенные значения для заголовка Origin, к которым OpenProject разрешит доступ.
+Это необходимо, поскольку аутентифицированные ресурсы OpenProject не могут быть доступны всем источникам со значением заголовка `*`.
+Для получения дополнительной информации о концепциях совместного использования ресурсов между разными источниками (CORS) см.:
+- [обзор CORS от MDN](https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS).
+- [учебник по CORS от Auth0](https://auth0.com/blog/cors-tutorial-a-guide-to-cross-origin-resource-sharing/)
+## Вебхуки
+Вы можете настроить вебхуки для OpenProject, чтобы интегрировать OpenProject с другими приложениями. Сценарием может быть, например, сигнализация о создании записи времени в OpenProject для биллингового приложения.
+Нажмите зеленую кнопку **+ Вебхук**, чтобы добавить новый вебхук в OpenProject.
+![Вебхуки в администрировании OpenProject](openproject_system_admin_guide_webhooks.png)
+Вы можете настроить следующие параметры для вебхуков:
+1. Выберите **имя**, идентифицирующее вебхук.
+2. **URL полезной нагрузки** определяет конечную точку, вызываемую при срабатывании вебхука.
+3. Свободно выберите дополнительное **описание** для дальнейшей идентификации назначения соответствующего вебхука.
+4. Определив **секрет подписи**, вы гарантируете, что отправителем запроса полезной нагрузки действительно является OpenProject. Клиент затем проверит этот секрет подписи.
+5. **Включите**, если **вебхук** должен быть активен.
+6. **Установите события**, для которых вебхук должен быть активен, т.е. вебхук для обновления или создания проектов, рабочих пакетов, комментариев к рабочим пакетам, записей времени и вложений.
+7. **Выберите, для каких проектов вебхук должен быть активен**. Вы можете выбрать все проекты или только определенные проекты. Например, если вы выберете проект "Системное руководство администратора", событие (например, создание новой записи времени) будет отправлено через вебхук. Это произойдет только если пользователь регистрирует время в выбранных проектах.
+8. Нажмите зеленую кнопку **Создать**, чтобы сохранить изменения (возможно, вам нужно будет прокрутить вниз, чтобы найти ее). Там же вы можете отменить ввод.
+![Добавление нового вебхука в администрировании OpenProject](openproject_system_admin_guide_api_new_webhook.png)

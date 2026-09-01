@@ -1,18 +1,15 @@
 ---
 sidebar_navigation:
-  title: Backlogs
+  title: Бэклоги
   priority: 840
-description: Configure backlogs in OpenProject.
-keywords: configure backlogs, backlogs settings, story type, task type, burn chart, burnchart, burndown, burnup, sprint wiki, agile, scrum
+description: Настройка бэклогов в OpenProject.
+keywords: настроить бэклоги, настройки бэклогов, тип истории, тип задачи, диаграмма сгорания, burndown, burnup, вики спринта, agile, scrum
 ---
-# Backlogs configuration
-
-Backlogs settings let you tailor OpenProject’s Scrum features to match how your team plans and tracks work. Backlogs support teams in structuring, prioritizing, and refining work for upcoming sprints, helping ensure a clear and consistent approach to sprint planning and execution.
-
-## Backlog administration settings are evolving
-
+# Конфигурация бэклогов
+Настройки бэклогов позволяют адаптировать функции Scrum в OpenProject под то, как ваша команда планирует и отслеживает работу. Бэклоги помогают командам структурировать, расставлять приоритеты и совершенствовать работу для предстоящих спринтов, обеспечивая ясный и последовательный подход к планированию и выполнению спринтов.
+## Настройки администрирования бэклогов развиваются
 > [!NOTE]
 >
-> We are currently redesigning the Backlogs module. Administration settings for sprints and backlogs will be visible here in the near future.  
+> В настоящее время мы перерабатываем модуль Бэклоги. Настройки администрирования для спринтов и бэклогов скоро появятся здесь.  
 >
-> Project-level settings remain available.
+> Настройки на уровне проекта остаются доступными.

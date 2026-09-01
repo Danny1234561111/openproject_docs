@@ -1,25 +1,18 @@
 ---
 sidebar_navigation:
-  title: Announcement
+  title: Объявление
   priority: 880
-description: Announcements in OpenProject.
-keywords: announcement
+description: Объявления в OpenProject.
+keywords: объявление
 ---
-# Announcement
-
-You can configure **announcements in OpenProject** which will be displayed for a certain period of time for users when the login.
-
-1. Enter a **text** for your announcement message.
-2. **Define a date until when the announcement should be shown**.
-3. **Set the announcement to active**. Only then will the announcement be shown.
-4. **Save** your changes.
-
-![Define an announcement in OpenProject administration](openproject_system_admin_guide_announcement.png)
-
-The active announcement will be displayed until the defined date to users **on the login screen**.
-
-![An active announcement displayed on the OpenProject login screen](openproject_system_admin_guide_announcement_login_screen.png)
-
-Also, the active announcement will be displayed until the defined date to users **on the application start page**.
-
-![An active announcement displayed on the OpenProject application start page](openproject_system_admin_guide_announcement_homepage.png)
+# Объявление
+Вы можете настроить **объявления в OpenProject**, которые будут отображаться в течение определенного периода времени для пользователей при входе в систему.
+1. Введите **текст** для вашего сообщения объявления.
+2. **Определите дату, до которой должно отображаться объявление**.
+3. **Установите объявление активным**. Только тогда объявление будет показано.
+4. **Сохраните** ваши изменения.
+![Определение объявления в администрировании OpenProject](openproject_system_admin_guide_announcement.png)
+Активное объявление будет отображаться до определенной даты пользователям **на экране входа в систему**.
+![Активное объявление, отображаемое на экране входа в OpenProject](openproject_system_admin_guide_announcement_login_screen.png)
+Также активное объявление будет отображаться до определенной даты пользователям **на стартовой странице приложения**.
+![Активное объявление, отображаемое на стартовой странице приложения OpenProject](openproject_system_admin_guide_announcement_homepage.png)

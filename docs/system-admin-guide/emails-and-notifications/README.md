@@ -1,61 +1,55 @@
----
 sidebar_navigation:
-  title: Emails and notifications
+  title: Электронная почта и уведомления
   priority: 910
-description: manage notifications and emails.
-keywords: incoming and outgoing notifications emails
+description: Управление уведомлениями и электронной почтой.
+keywords: входящие и исходящие уведомления электронная почта
 ---
-# Emails and notifications
+# Электронная почта и уведомления
+Настройте **параметры электронной почты и уведомлений** в OpenProject, то есть уведомления по электронной почте и конфигурацию входящей почты.
 
-Configure **Emails and notifications settings** in OpenProject, i.e. email notifications and incoming email configuration.
+Перейдите в **Администрирование → Электронная почта и уведомления**.
 
-Navigate to **Administration → Emails and notifications**.
-
-| Topic                                                | Content                                                      |
+| Тема                                                | Содержание                                                      |
 | ---------------------------------------------------- | ------------------------------------------------------------ |
-| [Aggregation](#aggregation)                          | Configure how individual actions are aggregated into a single action. |
-| [Email notifications](#email-notifications-settings) | How to configure outgoing email notifications.               |
-| [Incoming emails](#incoming-emails-settings)         | How to configure settings for inbound emails.                |
+| [Агрегация](#агрегация)                          | Настройка того, как отдельные действия объединяются в одно действие. |
+| [Уведомления по электронной почте](#настройки-уведомлений-по-электронной-почте) | Как настроить исходящие уведомления по электронной почте.               |
+| [Входящая почта](#настройки-входящей-почты)         | Как настроить параметры для входящих писем.                |
 
-## Aggregation
+## Агрегация
+![Настройка агрегации электронной почты и уведомлений в администрировании OpenProject](openproject_system_admin_guide_email_settings_aggregation.png)
 
-![Administration setting email and notifications aggregation in OpenProject administration](openproject_system_admin_guide_email_settings_aggregation.png)
+Настройка **Действия пользователя агрегируются в течение** указывает временной интервал, в течение которого все уведомления, касающиеся действий конкретного пользователя, объединяются в одно уведомление. Отдельные действия пользователя (например, обновление рабочего пакета дважды) объединяются в одно действие, если разница во времени между ними меньше указанного промежутка времени. Они будут отображаться как одно действие в приложении. Это также задержит уведомления на тот же промежуток времени, уменьшая количество отправляемых писем.
 
-The setting **User actions aggregated within** specifies a time interval in which all notifications regarding a specific user's actions are bundled into one single notification. Individual actions of a user (e.g. updating a work package twice) are aggregated into a single action if their age difference is less than the specified time span. They will be displayed as a single action within the application. This will also delay notifications by the same amount of time reducing the number of emails being sent.
+## Настройки уведомлений по электронной почте
+![Настройка уведомлений по электронной почте в администрировании OpenProject](openproject_system_admin_guide_email_notification_settings.png)
 
-## Email notifications settings
+1. **Адрес электронной почты для отправки**. Этот адрес электронной почты будет показан как отправитель для уведомлений по электронной почте, отправляемых OpenProject (например, при изменении рабочего пакета).
+2. Активируйте **скрытых получателей копии** (bcc).
+3. Определите, должно ли письмо быть отформатировано в **простой текст** (без HTML).
+4. Определите, должны ли пользователи в письмах **обращаться по именам или полным именам**.
 
-![Setting email notifications in OpenProject administration](openproject_system_admin_guide_email_notification_settings.png)
+Частоту отправки электронных писем на рабочий пакет можно установить [здесь](../calendars-and-dates/#date-format).
 
-1. **Emission email address**. This email address will be shown as the sender for the email notifications sent by OpenProject (for example, when a work package is changed).
-2. Activate **blind carbon copy recipients** (bcc).
-3. Define if the email should be formatted in **plain text** (no HTML).
-4. Define if the users in emails should be **addressed with their first names or full names**.
+### Настройка заголовка и нижнего колонтитула электронной почты
+Настройте заголовок и нижний колонтитул уведомлений по электронной почте, которые будут отправляться для уведомлений по электронной почте от системы.
 
-The frequency of sending e-mails per work package can be set [here](../calendars-and-dates/#date-format).
+![Настройка заголовка и нижнего колонтитула уведомлений по электронной почте в администрировании](openproject_system_admin_guide_email_settings_header_footer.png)
 
-### Configure email header and email footer
+1. **Сформулируйте заголовок и/или нижний колонтитул** для уведомлений по электронной почте. Они используются для всех уведомлений по электронной почте из OpenProject (например, при создании рабочего пакета).
+2. **Выберите язык**, для которого будут применяться заголовок и нижний колонтитул электронной почты.
+3. **Отправьте тестовое письмо**. Обратите внимание: это тестовое письмо _не_ проверяет уведомления об изменениях рабочего пакета и т.д. Узнайте больше в [этом FAQ](../../installation-and-operations/installation-faq/#i-dont-receive-emails-test-email-works-fine-but-not-the-one-for-work-package-updates-what-can-i-do).
+4. Не забудьте **сохранить** ваши изменения.
 
-Configure your notification email header and footer which will be sent out for email notifications from the system.
+## Настройки входящей почты
+Чтобы настроить **Входящую почту** в OpenProject, перейдите в **Администрирование → Электронная почта и уведомления → Входящая почта**. Вы можете настроить следующее:
 
-![Administration setting email notifications header and footer](openproject_system_admin_guide_email_settings_header_footer.png)
+![Настройка входящей почты в параметрах администрирования OpenProject](openproject_system_admin_guide_email_settings_incoming_emails.png)
 
-1. **Formulate header and/or footer** for the email notifications. These are used for all the email notifications from OpenProject (e.g. when creating a work package).
-2. **Choose a language** for which the email header and footer will apply.
-3. **Send a test email**. Please note: This test email does _not_ test the notifications for work package changes etc. Find out more in [this FAQ](../../installation-and-operations/installation-faq/#i-dont-receive-emails-test-email-works-fine-but-not-the-one-for-work-package-updates-what-can-i-do).
-4. Do not forget to **save** your changes.
+1. **Определите, после скольких строк письмо должно быть обрезано**. Эта настройка позволяет сокращать письмо после введенного количества строк.
+2. Укажите **регулярное выражение** для обрезки писем.
+3. **Игнорировать вложения писем** с указанными именами в этом списке.
+4. Не забудьте **сохранить** изменения.
 
-## Incoming emails settings
+**Чтобы настроить входящую почту**, пожалуйста, посетите наше [Руководство по эксплуатации](../../installation-and-operations/configuration/incoming-emails).
 
-To configure **Incoming emails** in OpenProject, navigate to **Administration → Emails and notifications → Incoming emails**. You can adjust the following:
-
-![Adjust incoming emails in OpenProject administration settings](openproject_system_admin_guide_email_settings_incoming_emails.png)
-
-1. **Define after which lines an email should be truncated**. This setting allows shortening email after the entered lines.
-2. Specify a **regular expression** to truncate emails.
-3. **Ignore mail attachment** of the specified names in this list.
-4. Do not forget to **save** the changes.
-
-**To set up incoming email**, please visit our [Operations guide](../../installation-and-operations/configuration/incoming-emails).
-
-**To configure individual email reminders**, please visit our [User guide](../../user-guide/account-settings/notification-and-email/#email-reminders).
+**Чтобы настроить индивидуальные напоминания по электронной почте**, пожалуйста, посетите наше [Руководство пользователя](../../user-guide/account-settings/notification-and-email/#email-reminders).

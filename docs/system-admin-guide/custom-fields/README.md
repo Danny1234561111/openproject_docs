@@ -1,200 +1,189 @@
 ---
 sidebar_navigation:
-  title: Custom fields
+  title: Пользовательские поля
   priority: 960
-description: Manage custom fields in OpenProject.
-keywords: manage custom fields, custom field, custom fields
+description: Управление пользовательскими полями в OpenProject.
+keywords: управление пользовательскими полями, пользовательское поле, пользовательские поля
 ---
-# Manage custom fields
+# Управление пользовательскими полями
+Вы можете **создавать дополнительные пользовательские поля для разных разделов**, например, для рабочих пакетов, проектов, пользователей или групп в OpenProject.
 
-You can **create additional custom fields for different sections**, e.g. work packages, projects, users or groups in OpenProject.
-
-Custom fields enable to configure your OpenProject exactly to your needs, i.e. to adapt work package forms to your company specific requirements.
+Пользовательские поля позволяют настроить ваш OpenProject в точности под ваши потребности, то есть адаптировать формы рабочих пакетов под специфические требования вашей компании.
 
 <video src="https://openproject-docs.s3.eu-central-1.amazonaws.com/videos/OpenProject-Forms-and-Custom-Fields-1.mp4"></video>
 
-## Add a new custom field
+## Добавление нового пользовательского поля
+Чтобы **создать новое пользовательское поле**, перейдите в _Администрирование_ -> _Пользовательские поля_ и выберите раздел, для которого вы будете создавать новое пользовательское поле, например, для рабочих пакетов, затраченного времени, версий или групп.
 
-To **create a new custom field** navigate to _Administration_ -> _Custom fields_ and select the section for which you will create a new custom field, e.g. for work packages, spent time, versions or groups.
+Вы увидите список всех пользовательских полей, созданных на данный момент, разделенных по разделам на разных вкладках, для которых они были созданы.
 
-You will see the list of all the custom fields that have been created so far, divided by the section on the different tabs for which they were created.
+Если до сих пор ничего не было создано, нажмите на ссылку **Создать новое пользовательское поле** в соответствующем разделе, например, на вкладке для рабочих пакетов и выберите формат пользовательского поля.
 
-If none have been created so far, click on the link **Create a new custom field** in the respective section, e.g. on the tab for work packages and select the custom field format.
+![Пользовательские поля в настройках администрирования OpenProject](administration-custom-fields.png)
 
-![Custom fields in OpenProject administration settings](administration-custom-fields.png)
-
-Depending on the module for which the new custom field is being created, slightly different options may be available. The example below shows a new custom field (with the **Text** format selected) for a **Work Package**.
+В зависимости от модуля, для которого создается новое пользовательское поле, могут быть доступны несколько разные опции. В примере ниже показано новое пользовательское поле (с выбранным форматом **Текст**) для **Рабочего пакета**.
 
 > [!TIP]
-> Depending on the format of the custom field, the fields to specify vary.
+> В зависимости от формата пользовательского поля, поля для указания различаются.
 
 ![Sys-admin-create-custom-field](openproject_system_guide_new_custom_field_new.png)
 
-1. Custom field **Name**, which will appear as the attribute name on the work package form.
-2. Specify the **minimal and maximal length**. If a 0 is chosen, no restriction will be imposed on the length of the custom field.
-3. **Regular expression** specifying which values are allowed for the custom field.
-4. **Default value** will be used as a default value for the custom field.
-5. Set if the new custom field should be a **required** field.
-6. Specify if the new custom field should be **used for all projects**. This means the custom field will be active for all projects and does not need to be activated separately per project.
-7. Specify if the new custom field should be **used as a filter for work packages**. See [here](../../user-guide/work-packages/work-package-table-configuration/#filter-work-packages) how to filter work packages.
-8. Specify if the new custom field should be **searchable** via the global search.
-9. **Save** the new custom field.
+1. **Название** пользовательского поля, которое будет отображаться как имя атрибута в форме рабочего пакета.
+2. Укажите **минимальную и максимальную длину**. Если выбрано 0, на длину пользовательского поля не будет наложено ограничений.
+3. **Регулярное выражение**, указывающее, какие значения разрешены для пользовательского поля.
+4. **Значение по умолчанию** будет использоваться как значение по умолчанию для пользовательского поля.
+5. Установите, должно ли новое пользовательское поле быть **обязательным** полем.
+6. Укажите, должно ли новое пользовательское поле **использоваться для всех проектов**. Это означает, что пользовательское поле будет активно для всех проектов и не нуждается в отдельной активации для каждого проекта.
+7. Укажите, должно ли новое пользовательское поле **использоваться как фильтр для рабочих пакетов**. См. [здесь](../../user-guide/work-packages/work-package-table-configuration/#filter-work-packages), как фильтровать рабочие пакеты.
+8. Укажите, должно ли новое пользовательское поле быть **доступным для поиска** через глобальный поиск.
+9. **Сохраните** новое пользовательское поле.
 
-## Custom field formats
+## Форматы пользовательских полей
+В OpenProject существует несколько вариантов форматов для пользовательских полей. Вы можете выбрать один из следующих форматов:
 
-There are multiple format options for custom fields in OpenProject. You can select one of the following formats:
+- **Булево значение** - создает пользовательское поле для атрибута, которое может быть либо истинным, либо ложным. Представлено флажком, который можно установить или снять.
+- **Дата** - создает пользовательское поле, которое позволяет выбирать даты из календаря.
+- **Число с плавающей запятой** - создает пользовательское поле для рациональных чисел.
+- **Иерархия (Enterprise дополнение)** - создает пользовательское поле, которое позволяет выбирать один или несколько элементов из иерархической структуры списка. Структуру можно создать на вкладке _Элементы_ пользовательского поля. Подробнее см. в разделе ниже.
+- **Целое число** - создает пользовательское поле для целых чисел.
+- **Ссылка (URL)** - создает пользовательское поле для URL-адресов.
+- **Список** - создает пользовательское поле с вариантами плоского списка.
+- **Текст** - создает пользовательское поле в текстовом формате с указанными ограничениями по длине.
+- **Длинный текст** - создает пользовательское поле для случаев, когда необходимо ввести более длинный текст.
+- **Пользователь** - создает пользовательское поле, которое позволяет выбирать пользователей, которым разрешен доступ к объекту, содержащему пользовательское поле.
+- **Версия** - создает пользовательское поле, которое позволяет выбирать одну или несколько версий. Версии создаются на уровне проекта в модуле _Бэклоги_.
+- **Взвешенный список элементов (Enterprise дополнение)** - создает пользовательское поле, похожее на тип _Иерархия_, но с лежащими в основе числовыми значениями, используемыми для оценки проекта (например, [рассчитанные значения атрибутов проекта](../projects/project-attributes/)). Пожалуйста, имейте в виду, что пользовательские поля типа **взвешенные списки элементов** не могут использоваться как множественный выбор.
 
-- **Boolean** - creates a custom field for an attribute, that is either true or false. It is represented by a checkbox that can be checked or unchecked.
-- **Date** - creates a custom field, which allows selecting dates from a date picker.
-- **Float** - creates a custom field for rational numbers.
-- **Hierarchy (Enterprise add-on)** - creates a custom field, which allows selecting one or multiple items from a hierarchical list structure. The structure can be created in the _Items_ tab of the custom field. See more in the section below.
-- **Integer** - creates a custom field for integers.
-- **Link (URL)** - creates a custom field for URLs.
-- **List** - creates a custom field with flat list options. 
-- **Text** - creates a custom field in text format with the specified length restrictions.
-- **Long text** - creates a custom field for cases where longer text needs to entered.
-- **User** - creates a custom field, which allows selecting users that are allowed to access the entity containing the custom field.
-- **Version** - creates a custom field, which allows selecting one or multiple versions. Versions are created on the project level in _Backlogs_ module.
-- **Weighted item list (Enterprise add-on)** - creates a custom field similar to the _Hierarchy_ type, but with underlying numerical values used for project evaluation (e.g., [calculated values project attributes](../projects/project-attributes/)). Please keep in mind that **weighted item lists** custom fields can't be used as multi-select.  
-
-### Hierarchy custom field (Enterprise add-on)
-
+### Пользовательское поле типа "Иерархия" (Enterprise дополнение)
 [feature: custom_field_hierarchies ]
 
-Hierarchy custom fields allow organizing hierarchical structures in work packages by making use of multi-level select lists. To create a custom field of type **Hierarchy** follow the same steps as you would when [creating a standard custom field](#add-a-new-custom-field) and select **Hierarchy** format. You can then name the custom field, allow multi-select, specify if it should be a required field or used as a filter, and activate it for all projects. Click the **Save** button to proceed.
+Пользовательские поля типа "Иерархия" позволяют организовать иерархические структуры в рабочих пакетах, используя многоуровневые выпадающие списки. Чтобы создать пользовательское поле типа **Иерархия**, выполните те же шаги, что и при [создании стандартного пользовательского поля](#добавление-нового-пользовательского-поля), и выберите формат **Иерархия**. Затем вы можете назвать пользовательское поле, разрешить множественный выбор, указать, должно ли оно быть обязательным полем или использоваться как фильтр, и активировать его для всех проектов. Нажмите кнопку **Сохранить**, чтобы продолжить.
 
-![Create a new custom field of type hierarchy](openproject_system_guide_new_custom_field_new_hierarchy.png)
+![Создание нового пользовательского поля типа "иерархия"](openproject_system_guide_new_custom_field_new_hierarchy.png)
 
-You can edit the name and initial settings under the _Details_ tab at any time. 
+Вы можете в любое время редактировать название и начальные настройки на вкладке _Детали_.
 
-![Detailed view of a custom field in OpenProject administration](openproject_system_guide_new_custom_hierarchy_details_tab.png)
+![Детальный вид пользовательского поля в администрировании OpenProject](openproject_system_guide_new_custom_hierarchy_details_tab.png)
 
-Under the _Items_ tab you can specify which hierarchy items should be selectable for this specific custom field. Initially the list of items will be empty. To add items, click the **+Item** button. 
+На вкладке _Элементы_ вы можете указать, какие элементы иерархии должны быть доступны для выбора в этом конкретном пользовательском поле. Изначально список элементов будет пустым. Чтобы добавить элементы, нажмите кнопку **+Элемент**.
 
-![Items tab for a hierarchy custom field in OpenProject administration](openproject_system_guide_hierarchy_field_add_item_button.png)
+![Вкладка "Элементы" для пользовательского поля типа "иерархия" в администрировании OpenProject](openproject_system_guide_hierarchy_field_add_item_button.png)
 
-You can then specify **labels** and **short names** for each item you want to add. The short name can be used, for example, as an abbreviation or an alternative description. It is optional and will be displayed next to the item label in brackets.
+Затем вы можете указать **метки** и **короткие имена** для каждого элемента, который хотите добавить. Короткое имя можно использовать, например, как сокращение или альтернативное описание. Это необязательно и будет отображаться рядом с меткой элемента в скобках.
 
 > [!TIP]
 >
-> Short names are searchable in work package forms. This is especially useful when a custom field has many items, making it easier to find the right one quickly.
+> Короткие имена доступны для поиска в формах рабочих пакетов. Это особенно полезно, когда у пользовательского поля много элементов, что упрощает быстрый поиск нужного.
 
-![Add an item to the hierarchy custom field in OpenProject administration](openproject_system_guide_hierarchy_field_add_item_form.png)
+![Добавление элемента в пользовательское поле типа "иерархия" в администрировании OpenProject](openproject_system_guide_hierarchy_field_add_item_form.png)
 
-All items you add here will constitute one hierarchical level. Once added, all items will be displayed in the hierarchy tree on the left side for easier navigation. 
+Все элементы, которые вы добавите здесь, составят один иерархический уровень. После добавления все элементы будут отображаться в дереве иерархии слева для удобной навигации.
 
-You can add further levels to each of the items. Here you can edit the items, change the position in the list or delete the items. To do that click the icon with the three dots on the far right and select the respective option. You can also re-arrange the items by dragging and dropping.
+Вы можете добавить дополнительные уровни к каждому из элементов. Здесь вы можете редактировать элементы, изменять их положение в списке или удалять элементы. Для этого нажмите на значок с тремя точками справа и выберите соответствующий вариант. Вы также можете переставлять элементы перетаскиванием.
 
-![Edit items for hierarchy custom fields in OpenProject administration](openproject_system_guide_hierarchy_field_edit_items.png)
+![Редактирование элементов для пользовательских полей типа "иерархия" в администрировании OpenProject](openproject_system_guide_hierarchy_field_edit_items.png)
 
-You can add further hierarchical levels by clicking on the name of the item and adding the items same way you did on the first level. 
+Вы можете добавить дополнительные иерархические уровни, нажав на имя элемента и добавив элементы таким же образом, как вы делали это на первом уровне.
 
-![Add further hierarchy levels for custom fields in OpenProject](openproject_system_guide_hierarchy_field_add_further_levels.png)
+![Добавление дополнительных уровней иерархии для пользовательских полей в OpenProject](openproject_system_guide_hierarchy_field_add_further_levels.png)
 
-Once you have added sub-items, the number of nested items will appear next to the name of the parent item. In the hierarchy tree on the left, an **arrow icon** will be shown next to any item that contains sub-items. By default, these sub-menus are collapsed. Clicking the arrow icon will expand the view to show all associated sub-items.
+После добавления подэлементов количество вложенных элементов будет отображаться рядом с именем родительского элемента. В дереве иерархии слева **значок стрелки** будет показан рядом с любым элементом, содержащим подэлементы. По умолчанию эти подменю свернуты. Нажатие на значок стрелки развернет вид, чтобы показать все связанные подэлементы.
 
-![Number of sub-items for a hierarchy value in OpenProject custom fields](openproject_system_guide_custom_field_new_hierarchy_subitems.png)
+![Количество подэлементов для значения иерархии в пользовательских полях OpenProject](openproject_system_guide_custom_field_new_hierarchy_subitems.png)
 
-You can add as many sub-times and hierarchy levels as you need. You can always navigate to the level you need by clicking the respective option from the hierarchy tree on the left or in the path displayed above the items.
+Вы можете добавить столько подэлементов и уровней иерархии, сколько вам нужно. Вы всегда можете перейти на нужный уровень, нажав на соответствующий вариант в дереве иерархии слева или в пути, отображаемом над элементами.
 
-![New custom field path](openproject_system_guide_new_custom_field_path.png)
+![Путь нового пользовательского поля](openproject_system_guide_new_custom_field_path.png)
 
-Once you have specified all items for the hierarchy custom field, you need to: 
+После того как вы указали все элементы для пользовательского поля типа "Иерархия", вам необходимо:
 
-1. [Activate this custom field for projects under the _Projects_ tab](#add-a-custom-field-to-one-or-multiple-projects)
-2. [Assign a custom field to a work package type](../manage-work-packages/work-package-types/#work-package-form-configuration-enterprise-add-on) 
+1. [Активировать это пользовательское поле для проектов на вкладке _Проекты_](#добавление-пользовательского-поля-в-один-или-несколько-проектов)
+2. [Назначить пользовательское поле типу рабочего пакета](../manage-work-packages/work-package-types/#work-package-form-configuration-enterprise-add-on)
 
-### Weighted item list custom field (Enterprise add-on)
-
+### Пользовательское поле типа "Взвешенный список элементов" (Enterprise дополнение)
 [feature: weighted_item_lists ]
 
-Weighted item list custom fields work much like the **Hierarchy** type. They also allow you to create a hierarchical structure of items for selection. To create a custom field of type **Weighted item list**, follow the same steps as when [creating a standard custom field](#add-a-new-custom-field) and select **Weighted item list** format.
+Пользовательские поля типа "Взвешенный список элементов" работают во многом как тип **Иерархия**. Они также позволяют создать иерархическую структуру элементов для выбора. Чтобы создать пользовательское поле типа **Взвешенный список элементов**, выполните те же шаги, что и при [создании стандартного пользовательского поля](#добавление-нового-пользовательского-поля), и выберите формат **Взвешенный список элементов**.
 
-Creating and editing items in a weighted item list work exactly like with a hierarchy custom field. Unlike **Hierarchy**, the items of a weighted item list do not have a **Short**, but instead have a **Weight**. 
+Создание и редактирование элементов во взвешенном списке элементов работает точно так же, как и с пользовательским полем типа "Иерархия". В отличие от **Иерархии**, элементы взвешенного списка элементов не имеют **Короткого имени**, но вместо этого имеют **Вес**.
 
-![Specify weight for an item in a custom field of type "weighted item list" in OpenProject administration](openproject_system_guide_new_custom_field_weighted_item_list.png)
+![Указание веса для элемента в пользовательском поле типа "взвешенный список элементов" в администрировании OpenProject](openproject_system_guide_new_custom_field_weighted_item_list.png)
 
-This underlying numerical value is mandatory, and can be used for calculation - for example for the project attribute of type [**Calculated value**](../projects/project-attributes/). Due to this constraint, weighted item lists cannot be configured to be multi-select.
+Это лежащее в основе числовое значение является обязательным и может использоваться для расчетов - например, для атрибута проекта типа [**Рассчитанное значение**](../projects/project-attributes/). Из-за этого ограничения взвешенные списки элементов не могут быть настроены как множественный выбор.
 
-## Required custom fields
+## Обязательные пользовательские поля
+Пользовательские поля могут быть настроены как **обязательные**. Как следует из названия, **обязательные** пользовательские поля должны быть заполнены при создании ресурса, такого как рабочий пакет или проект. Без заполнения поля пользователю будет запрещено создавать ресурс.
 
-Custom fields can be configured as **required**. As the name suggests, **required** custom fields need to be filled out when a resource like a work package or a project is created. Without filling in a field, the user will be prevented from creating the resource.
-
->[!IMPORTANT]
+> [!IMPORTANT]
 >
->Custom field of type **Boolean** can **NOT** be set to be required. 
+> Пользовательское поле типа **Булево значение** НЕ может быть установлено как обязательное.
 
-The _required_ flag can also be set on existing custom fields. This might lead to a problem for resources that existed before the flag was later set to required. For example, a work package might have already been created and worked with for some time. But because the field was not required before, it might not have been filled in.
+Флаг _обязательности_ также может быть установлен для существующих пользовательских полей. Это может привести к проблеме для ресурсов, которые существовали до того, как флаг был позже установлен как обязательный. Например, рабочий пакет мог быть уже создан и использовался в течение некоторого времени. Но поскольку поле раньше не было обязательным, оно могло быть не заполнено.
 
-Once the custom field becomes 'required', the next user wanting to modify the work package _needs_ to fill in the field. There are other scenarios where this might occur, for example, when the activation of a required custom field for a project or a work package type. 
+Как только пользовательское поле становится 'обязательным', следующий пользователь, желающий изменить рабочий пакет, _должен_ заполнить поле. Существуют другие сценарии, когда это может произойти, например, при активации обязательного пользовательского поля для проекта или типа рабочего пакета.
 
-In the above scenario of a required custom field being absent on existing resources, OpenProject will try to minimize the times in which users are blocked from performing their intended action. A user might want to change the name of the project with no value filled in for a required custom field. Since the interface for changing the name does not display the custom fields, the user cannot provide a value at this point and OpenProject will not enforce the _required_ setting then.
+В вышеуказанном сценарии отсутствия обязательного пользовательского поля в существующих ресурсах OpenProject попытается минимизировать ситуации, в которых пользователи блокируются от выполнения предполагаемого действия. Пользователь может захотеть изменить название проекта без заполненного значения для обязательного пользовательского поля. Поскольку интерфейс для изменения названия не отображает пользовательские поля, пользователь не может предоставить значение в этот момент, и OpenProject не будет применять настройку _обязательности_ в этом случае.
 
-Generally speaking, OpenProject will enforce the _required_ characteristic whenever the UI displays the field but allows modifications when it does not. When creating a new resource, it will be enforced.
+Вообще говоря, OpenProject будет применять характеристику _обязательности_ всякий раз, когда интерфейс отображает поле, но разрешит изменения, когда поле не отображается. При создании нового ресурса это будет применяться.
 
 > [!NOTE]
-> Prior to version 16.6, required custom fields were always enforced, even on existing resources. This led to some actions becoming impossible or unnecessarily hard to perform, which is why the behavior was adjusted.
+> До версии 16.6 обязательные пользовательские поля всегда применялись, даже для существующих ресурсов. Это приводило к тому, что некоторые действия становились невозможными или неоправданно сложными для выполнения, поэтому поведение было скорректировано.
 
-## Create a multi-select custom field
+## Создание пользовательского поля с множественным выбором
+Для пользовательских полей рабочих пакетов типа **Список**, **Пользователь**, **Версия** и **Иерархия** вы также можете выбрать **пользовательские поля с множественным выбором**, чтобы выбрать более одного значения одновременно.
 
-For work package custom fields of type **List**, **User**, **Version** and **Hierarchy** you may also select **multi-select custom fields** to select more than one value at once.
+Чтобы создать пользовательское поле с множественным выбором, выполните те же шаги, что и при [создании стандартного пользовательского поля](#добавление-нового-пользовательского-поля). Выберите формат **Список**, **Пользователь**, **Версия** или **Иерархия** и отметьте опцию _Разрешить множественный выбор_.
 
-To create a multi-select custom field follow the same steps as you would when [creating a standard custom field](#add-a-new-custom-field). Select format **List**, **User**, **Version** or **Hierarchy** and check the option _Allow multi-select_.
+![Разрешение множественного выбора значений для пользовательского поля в OpenProject](system-admin-allow-multi-select.png)
 
-![Allow multi-select values for a custom field in OpenProject](system-admin-allow-multi-select.png)
+При использовании пользовательских полей с множественным выбором вы можете добавить столько вариантов, сколько требуется. Значок крестика рядом с вариантом удалит его из выбора. Галочка сохранит ваши изменения.
 
-When using multi-select custom fields, you can add as many options as required. The cross icon next to an option will remove it from the selection. The check mark will save your changes.
+![Пользовательское поле с множественным выбором в рабочем пакете](system-guide-custom-field-work-package.png)
 
-![Multi select custom field in a work package](system-guide-custom-field-work-package.png)
-
-## Assign a custom field to a work package type and project
-
+## Назначение пользовательского поля типу рабочего пакета и проекту
 > [!IMPORTANT]
-> Custom fields need to be activated per work package type and added to a project. Work package custom fields are only visible when two conditions are met:
+> Пользовательские поля должны быть активированы для каждого типа рабочего пакета и добавлены в проект. Пользовательские поля рабочих пакетов видны только при выполнении двух условий:
 >
-> 1. Custom field has been added to the work package type (form configuration).
-> 2. Custom field is activated for the project.
+> 1. Пользовательское поле было добавлено в тип рабочего пакета (конфигурация формы).
+> 2. Пользовательское поле активировано для проекта.
 
-### Assign a custom field to a work package type (Enterprise add-on)
+### Назначение пользовательского поля типу рабочего пакета (Enterprise дополнение)
+Вы можете [назначить пользовательское поле типу рабочего пакета](../manage-work-packages/work-package-types/#work-package-form-configuration-enterprise-add-on) (конфигурация формы) напрямую через ссылку в обзоре пользовательских полей.
 
-You can [assign a custom field to a work package type](../manage-work-packages/work-package-types/#work-package-form-configuration-enterprise-add-on) (form configuration) directly via the link in the custom field overview.
-
-![Add a custom field to a work package type](system-admin-add-field-to-wp-type.png)
+![Добавление пользовательского поля в тип рабочего пакета](system-admin-add-field-to-wp-type.png)
 
 > [!IMPORTANT]
-> Starting with OpenProject 15.0, when adding new custom fields to a type through the  form configuration, the added custom fields will not automatically be enabled in all projects that have this work package type currently enabled.
+> Начиная с OpenProject 15.0, при добавлении новых пользовательских полей в тип через конфигурацию формы добавленные пользовательские поля не будут автоматически включены во всех проектах, где этот тип рабочего пакета в настоящее время включен.
 
-### Add a custom field to one or multiple projects
-
-You can activate the custom field for specific projects under the respective [project settings](../../user-guide/projects/project-settings/work-packages/#work-package-custom-fields). 
+### Добавление пользовательского поля в один или несколько проектов
+Вы можете активировать пользовательское поле для конкретных проектов в соответствующих [настройках проекта](../../user-guide/projects/project-settings/work-packages/#work-package-custom-fields).
 
 > [!TIP]
-> This is not relevant if the setting **For all projects** has been configured for the custom field.
+> Это не актуально, если для пользовательского поля была настроена опция **Для всех проектов**.
 
-You can active a custom field for multiple projects at once by opening the custom field in question and selecting the _Projects_ tab. Click the **Add projects** button.
-![Add a custom field to multiple projects at once in OpenProject administration](openproject_system_guide_new_custom_field_add_to_projects.png)
+Вы можете активировать пользовательское поле для нескольких проектов одновременно, открыв соответствующее пользовательское поле и выбрав вкладку _Проекты_. Нажмите кнопку **Добавить проекты**.
 
-Use the search field to identify the projects and select multiple projects at once. You can also include the sub-projects by checking the respective option. Click the **Add** button to active the custom fields in all of the selected projects.
+![Добавление пользовательского поля в несколько проектов одновременно в администрировании OpenProject](openproject_system_guide_new_custom_field_add_to_projects.png)
 
-![New custom field add to project search](openproject_system_guide_new_custom_field_add_to_projects_search.png)
+Используйте поле поиска, чтобы определить проекты, и выберите несколько проектов одновременно. Вы также можете включить подпроекты, отметив соответствующую опцию. Нажмите кнопку **Добавить**, чтобы активировать пользовательские поля во всех выбранных проектах.
 
-## Edit or remove a custom field
+![Поиск при добавлении нового пользовательского поля в проект](openproject_system_guide_new_custom_field_add_to_projects_search.png)
 
-To **edit an existing custom field** select the appropriate tab and click on the custom field name.
+## Редактирование или удаление пользовательского поля
+Чтобы **отредактировать существующее пользовательское поле**, выберите соответствующую вкладку и нажмите на название пользовательского поля.
 
-To **delete** a custom field, click on the delete icon next to the respective custom field in the list.
+Чтобы **удалить** пользовательское поле, нажмите на значок удаления рядом с соответствующим пользовательским полем в списке.
 
-![Edit or delete a custom field in OpenProject administration](system-admin-edit-delete-custom-field.png)
+![Редактирование или удаление пользовательского поля в администрировании OpenProject](system-admin-edit-delete-custom-field.png)
 
-## Define custom field help text
+## Определение справочного текста для пользовательского поля
+Чтобы определить заголовок поля и справочный текст, нажмите на существующее пользовательское поле и перейдите на вкладку **Справочный текст**. Здесь вы можете определить следующее:
 
-To define field caption and help text click on an existing custom field and navigate to **Help text** tab. Here you can define the following:
-
-- **Caption** - a short text that will be displayed as a custom field caption to provide context. Please note, that the caption text is currently only displayed for project attributes. 
-- **Help text** - a longer text that will be shown when a user hovers over a question mark next to the custom field name. Here you can provide more detailed explanation. This is a required field.
-- **Attachments** - attach files or images to illustrate a custom field. 
+- **Заголовок** - короткий текст, который будет отображаться как заголовок пользовательского поля для предоставления контекста. Обратите внимание, что текст заголовка в настоящее время отображается только для атрибутов проекта.
+- **Справочный текст** - более длинный текст, который будет показан, когда пользователь наведет курсор на вопросительный знак рядом с названием пользовательского поля. Здесь вы можете предоставить более подробное объяснение. Это обязательное поле.
+- **Вложения** - прикрепите файлы или изображения для иллюстрации пользовательского поля.
 
 > [!IMPORTANT]
-> Any text and images you add here will be publicly visible to all logged in users. 
+> Любой текст и изображения, которые вы добавите здесь, будут публично видны всем вошедшим в систему пользователям.
 
-![Work package custom field detailed view, showing _Help text_ tab in OpenProject administration](open_project_system_admin_guide_custom_field_attribute_text.png)
+![Детальный вид пользовательского поля рабочего пакета, показывающий вкладку "Справочный текст" в администрировании OpenProject](open_project_system_admin_guide_custom_field_attribute_text.png)

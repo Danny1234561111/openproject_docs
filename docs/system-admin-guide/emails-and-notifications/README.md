@@ -1,3 +1,4 @@
+---
 sidebar_navigation:
   title: Электронная почта и уведомления
   priority: 910

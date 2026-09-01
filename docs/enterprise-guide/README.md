@@ -1,77 +1,70 @@
----
 sidebar_navigation:
-  title: Enterprise guide
+  title: Руководство Enterprise
   priority: 960
-description: OpenProject Enterprise guide.
-keywords: manage subscription, enterprise edition, cloud edition
+description: Руководство по OpenProject Enterprise.
+keywords: управление подпиской, издание Enterprise, облачное издание
 ---
-
-# Enterprise guide
-
-Welcome to the OpenProject **Enterprise guide**.
+# Руководство Enterprise
+Добро пожаловать в **Руководство по OpenProject Enterprise**.
 
 > [!IMPORTANT]
-> **Changes in our Enterprise plans with OpenProject 16.0.0**: With the release of 16.0, we introduced new Enterprise plans that changed how Enterprise add-ons are distributed.
-> Customers who have booked an Enterprise plan before May 21, 2025, will not be affected by the changes. You will **not** lose any features with the update.
+> **Изменения в наших планах Enterprise с OpenProject 16.0.0**: С выпуском версии 16.0 мы представили новые планы Enterprise, которые изменили способ распространения дополнений Enterprise.
+> Клиенты, которые забронировали план Enterprise до 21 мая 2025 года, не будут затронуты изменениями. Вы **не** потеряете никаких функций при обновлении.
 
-The OpenProject Enterprise editions (both cloud and on-premises) include all OpenProject Community features plus, based on the selected Enterprise plan, additional [Enterprise add-ons](https://www.openproject.org/enterprise-edition/#enterprise-add-ons), as well as professional [support](https://www.openproject.org/pricing/#support).
+Издания OpenProject Enterprise (как облачное, так и локальное) включают все функции OpenProject Community плюс, в зависимости от выбранного плана Enterprise, дополнительные [дополнения Enterprise](https://www.openproject.org/enterprise-edition/#enterprise-add-ons), а также профессиональную [поддержку](https://www.openproject.org/pricing/#support).
 
 > [!NOTE]
-> This guide only describes the management and administration of your Enterprise cloud and Enterprise on-premises subscriptions.
-> The Enterprise add-on descriptions are included in the respective parts of the OpenProject [User guide](../user-guide) and [System admin guide](../system-admin-guide).
+> Это руководство описывает только управление и администрирование ваших подписок на облачную версию Enterprise и локальную версию Enterprise.
+> Описания дополнений Enterprise включены в соответствующие части [Руководства пользователя](../user-guide) и [Руководства системного администратора](../system-admin-guide) OpenProject.
 
-## Support
+## Поддержка
+Узнайте больше о наших различных [вариантах поддержки](./support/).
 
-Find out more about our different [support options](./support/).
+## Дополнения Enterprise
 
-## Enterprise add-ons
+### Предварительный просмотр изменений планов Enterprise (действительно с 2025-05-21)
+С выпуском OpenProject 16.0.0 21 мая 2025 года мы обновим наши планы Enterprise и, соответственно, содержащиеся в них дополнения.
 
-### Preview of Enterprise plan changes (effective 2025-05-21)
+Клиенты, которые забронировали план Enterprise до 21 мая 2025 года, не будут затронуты какими-либо изменениями и сохранят существующие планы также после продления.
 
-With the release of OpenProject 16.0.0 on May 21, 2025, we will update our Enterprise plans and with it the containing add-ons.
-Customers who have booked an Enterprise plan before May 21, 2025, will not be affected by any changes and will keep the existing plans also after renewal.
-However, new add-ons that will be released with 16.0.0 and afterwards in higher Enterprise plans will not be available in these lower old plans. You can test these new add-ons of higher plans in a trial.
+Однако новые дополнения, которые будут выпущены с версией 16.0.0 и позже в планах более высокого уровня, не будут доступны в этих старых планах более низкого уровня. Вы можете протестировать эти новые дополнения планов более высокого уровня в пробной версии.
 
-The following changes to our Enterprise plans will become effective on 2025-05-21 and **apply for new customers**:
+Следующие изменения в наших планах Enterprise вступят в силу 2025-05-21 и **применяются для новых клиентов**:
 
 | Community                                                    | Basic                                                        | Professional                                                 | Premium                                                      | Corporate                                                    |
 | ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ |
-| **All [Community features](https://www.openproject.org/pricing/#features)** | **All Community features +**<br />**Basic Enterprise add-ons**:<br />- Baseline comparisons<br />- Intelligent workflows with custom action buttons<br/>- Custom fields of type hierarchy<br/>- Date alerts<br/>- Custom theme and logo<br/>- Configure work package forms<br/>- Gantt charts PDF export<br/>- Placeholder users<br/>- Read-only mode for work packages<br/>- Team planner<br/>- Meetings templates<br/>- Sprint sharing<br/>- Multiple active sprints | **All from Basic +**<br />**Professional Enterprise add-ons**:<br />- Single sign-on (OIDC & SAML)<br />-  OneDrive and SharePoint integrations<br/>- Share work packages with external users<br/>- Automatic work package subject generation <br />- Internal work package comments<br />- MCP Server<br />- Require exact time tracking | **All from Professional +**<br />**Premium Enterprise add-ons**:<br />- Portfolio management<br />- Share project lists <br />- LDAP users and group sync<br />- Project initiation request<br /> \- Customize project life cycle<br />- Resource management<br/>- Calculated values for project evaluation and scoring<br/>- Capture external links<br />- Custom fields of type weighted items | **All from Premium +**<br />**Corporate Enterprise add-ons**:<br/>- Storage single sign-on for Nextcloud<br />- Nextcloud Hub integration<br/>- openDesk integration<br/>- XWiki integration<br/>- SCIM API integration<br/>- Antivirus scanning |
+| **Все [функции Community](https://www.openproject.org/pricing/#features)** | **Все функции Community +**<br />**Основные дополнения Enterprise**:<br />- Сравнение с базовой линией<br />- Интеллектуальные рабочие процессы с пользовательскими кнопками действий<br/>- Пользовательские поля типа иерархия<br/>- Оповещения о датах<br/>- Пользовательская тема и логотип<br/>- Настройка форм рабочих пакетов<br/>- Экспорт диаграмм Ганта в PDF<br/>- Временные пользователи<br/>- Режим только для чтения для рабочих пакетов<br/>- Планировщик команды<br/>- Шаблоны встреч<br/>- Совместное использование спринтов<br/>- Несколько активных спринтов | **Все из Basic +**<br />**Профессиональные дополнения Enterprise**:<br />- Единый вход (OIDC & SAML)<br />-  Интеграции с OneDrive и SharePoint<br/>- Совместное использование рабочих пакетов с внешними пользователями<br/>- Автоматическая генерация темы рабочего пакета <br />- Внутренние комментарии к рабочим пакетам<br />- MCP Server<br />- Требовать точный учет времени | **Все из Professional +**<br />**Премиум дополнения Enterprise**:<br />- Управление портфелем проектов<br />- Совместное использование списков проектов <br />- Синхронизация пользователей и групп LDAP<br />- Запрос на инициирование проекта<br /> \- Настройка жизненного цикла проекта<br />- Управление ресурсами<br/>- Рассчитанные значения для оценки и ранжирования проектов<br/>- Захват внешних ссылок<br />- Пользовательские поля типа взвешенные элементы | **Все из Premium +**<br />**Корпоративные дополнения Enterprise**:<br/>- Единый вход в хранилище для Nextcloud<br />- Интеграция с Nextcloud Hub<br/>- Интеграция с openDesk<br/>- Интеграция с XWiki<br/>- Интеграция с API SCIM<br/>- Антивирусное сканирование |
 
-### Testing the new Enterprise add-ons
+### Тестирование новых дополнений Enterprise
+**Локальная версия Enterprise**
+Если вы в настоящее время используете план более низкого уровня для локальной версии Enterprise (например, план Basic) и хотите протестировать любые из новых выпущенных дополнений Enterprise из планов более высокого уровня (например, план Professional), пожалуйста, [свяжитесь с нашей командой продаж](https://www.openproject.org/contact/), чтобы получить новый пробный токен Enterprise.
 
-**Enterprise on-premises**
+**Облачная версия Enterprise**
+Если вы в настоящее время используете план более низкого уровня для облачной версии Enterprise и хотите протестировать любые из новых выпущенных дополнений Enterprise из плана более высокого уровня, пожалуйста, [создайте новую облачную пробную версию](https://start.openproject.com/), чтобы протестировать новые функции.
 
-If you are currently on a lower plan for the Enterprise on-premises (e.g. Basic plan) and want to test any of the new released Enterprise add-ons from the higher plans (e.g. Professional plan), please [get in touch with our Sales team](https://www.openproject.org/contact/) to get a new Enterprise trial token.
+### Обзор дополнений Enterprise
+Это видео (только на английском) предоставляет обзор дополнений OpenProject Enterprise.
 
-**Enterprise cloud**
+![Видео, иллюстрирующее дополнения OpenProject Enterprise](https://openproject-docs.s3.eu-central-1.amazonaws.com/videos/OpenProject-Enterprise-add-ons.mp4)
 
-If you are currently on a lower plan for the Enterprise cloud and want to test any of the new released Enterprise add-ons from a higher plan, please [create a new Cloud trial](https://start.openproject.com/) in order to test the new features.
+Вы можете найти подробное сравнение функций [здесь](https://www.openproject.org/pricing/#features).
 
-### Overview of Enterprise add-ons
+## Облачная версия Enterprise
 
-This video (English only) provides an overview of the OpenProject Enterprise add-ons.
-
-![Video illustrating OpenProject Enterprise add-ons](https://openproject-docs.s3.eu-central-1.amazonaws.com/videos/OpenProject-Enterprise-add-ons.mp4)
-
-You can find a detailed feature comparison [here](https://www.openproject.org/pricing/#features).
-
-## Enterprise cloud
-
-| Topic                                                        | Content                                                      |
+| Тема                                                        | Содержание                                                      |
 | ------------------------------------------------------------ | :----------------------------------------------------------- |
-| [Create free trial](./enterprise-cloud-guide/create-cloud-trial) | Learn more about how to create a free Enterprise cloud trial. |
-| [Sign in](./enterprise-cloud-guide/sign-in/)                 | Sign in to your OpenProject Enterprise cloud edition.        |
-| [Create quote](./enterprise-cloud-guide/create-quote-cloud)  | Learn how to create a quote within your Enterprise cloud instance. |
-| [Invoices and billing history](./enterprise-cloud-guide/invoices-and-billing-history) | Learn how to see your payment history and download invoices. |
-| [Manage your subscription](./enterprise-cloud-guide/manage-cloud-subscription) | Learn how to change your billing address, add or edit credit card details. |
-| [Subscribe](./enterprise-cloud-guide/book-cloud)             | Learn how to book the Enterprise cloud edition.              |
-| [Backups](./enterprise-cloud-guide/backups)                  | Learn how backups work in the OpenProject Enterprise cloud edition. |
-| [GDPR](./enterprise-cloud-guide/gdpr-compliance)             | Review and sign a Data Processing Agreement (DPA).           |
+| [Создание бесплатной пробной версии](./enterprise-cloud-guide/create-cloud-trial) | Узнайте больше о том, как создать бесплатную пробную версию облачной версии Enterprise. |
+| [Вход в систему](./enterprise-cloud-guide/sign-in/)                 | Войдите в вашу облачную версию OpenProject Enterprise.        |
+| [Создание предложения](./enterprise-cloud-guide/create-quote-cloud)  | Узнайте, как создать предложение в вашем экземпляре облачной версии Enterprise. |
+| [Счета и история платежей](./enterprise-cloud-guide/invoices-and-billing-history) | Узнайте, как просмотреть историю платежей и скачать счета. |
+| [Управление вашей подпиской](./enterprise-cloud-guide/manage-cloud-subscription) | Узнайте, как изменить ваш платежный адрес, добавить или отредактировать данные кредитной карты. |
+| [Подписка](./enterprise-cloud-guide/book-cloud)             | Узнайте, как забронировать облачную версию Enterprise.              |
+| [Резервное копирование](./enterprise-cloud-guide/backups)                  | Узнайте, как работает резервное копирование в облачной версии OpenProject Enterprise. |
+| [GDPR](./enterprise-cloud-guide/gdpr-compliance)             | Просмотрите и подпишите Соглашение об обработке данных (DPA).           |
 
-## Enterprise on-premises
+## Локальная версия Enterprise
 
-| Topic                                                        | Content                                                      |
+| Тема                                                        | Содержание                                                      |
 | ------------------------------------------------------------ | :----------------------------------------------------------- |
-| [Enterprise on-premises trial](./enterprise-on-premises-guide/enterprise-on-premises-trial/) | Learn how to test the Enterprise on-premises edition.        |
-| [Activate Enterprise on-premises](./enterprise-on-premises-guide/activate-enterprise-on-premises) | Find out how you can upgrade the Community edition to the Enterprise on-premises edition. |
+| [Пробная версия локальной версии Enterprise](./enterprise-on-premises-guide/enterprise-on-premises-trial/) | Узнайте, как протестировать локальную версию Enterprise.        |
+| [Активация локальной версии Enterprise](./enterprise-on-premises-guide/activate-enterprise-on-premises) | Узнайте, как вы можете обновить издание Community до локальной версии Enterprise. |

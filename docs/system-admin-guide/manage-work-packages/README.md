@@ -1,25 +1,22 @@
 ---
 sidebar_navigation:
-  title: Work packages
+  title: Рабочие пакеты
   priority: 980
-description: Manage work packages in OpenProject.
-keywords: manage work packages
+description: Управление рабочими пакетами в OpenProject.
+keywords: управление рабочими пакетами
 ---
-# Manage work packages
-
-Manage work packages in OpenProject.
-
-## Overview
-
-| Popular Topics                                              | Description                                                  |
+# Управление рабочими пакетами
+Управление рабочими пакетами в OpenProject.
+## Обзор
+| Популярные темы                                              | Описание                                                  |
 | ----------------------------------------------------------- | :----------------------------------------------------------- |
-| [Settings](work-package-settings)                           | Configure general work package settings and defaults, such as display options and more. |
-| [Types](work-package-types)                                 | Create and manage work package types.                        |
-| [Automatic subjects](work-package-types/automatic-subjects) | Define automatic work package subjects (Enterprise add-on).  |
-| [Status](work-package-status)                               | Create and manage work package status.                       |
-| [Versions and categories](versions-and-categories)          | Enable multiple values for work package versions.            |
-| [Priorities](work-package-priorities)                       | Create and manage work package priorities.                   |
-| [Progress tracking](work-package-progress-tracking)         | Manage work package progress reporting settings.             |
-| [Workflows](work-package-workflows)                         | Create and manage workflows for work packages in OpenProject. |
-| [Custom actions](custom-actions)                            | Create custom actions for work packages (Enterprise add-on). |
-| [FAQs](work-packages-faq)                                   | Frequently asked questions about work packages in OpenProject. |
+| [Настройки](work-package-settings)                           | Настройка общих параметров рабочих пакетов и значений по умолчанию, таких как параметры отображения и другие. |
+| [Типы](work-package-types)                                 | Создание и управление типами рабочих пакетов.                        |
+| [Автоматические темы](work-package-types/automatic-subjects) | Определение автоматических тем рабочих пакетов (дополнение Enterprise).  |
+| [Статус](work-package-status)                               | Создание и управление статусами рабочих пакетов.                       |
+| [Версии и категории](versions-and-categories)          | Включение множественных значений для версий рабочих пакетов.            |
+| [Приоритеты](work-package-priorities)                       | Создание и управление приоритетами рабочих пакетов.                   |
+| [Отслеживание прогресса](work-package-progress-tracking)         | Управление настройками отчётов о прогрессе рабочих пакетов.             |
+| [Рабочие процессы](work-package-workflows)                         | Создание и управление рабочими процессами для рабочих пакетов в OpenProject. |
+| [Пользовательские действия](custom-actions)                            | Создание пользовательских действий для рабочих пакетов (дополнение Enterprise). |
+| [Часто задаваемые вопросы](work-packages-faq)                                   | Часто задаваемые вопросы о рабочих пакетах в OpenProject. |

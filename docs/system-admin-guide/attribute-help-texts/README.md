@@ -1,81 +1,97 @@
 ---
 sidebar_navigation:
-  title: Attribute help texts
-  priority: 950
-description: Learn how to set attribute help texts in OpenProject
-keywords: attribute help texts, help texts for projects and work packages
-
+  title: Calendar and dates
+  priority: 930
+description: Configure working days, dates formats and calendar subscriptions
+keywords: working non-working days work week dates calendars ical icalendar
 ---
+# Calendar and dates
 
-# Attribute help texts
+Configure working days, dates formats and calendar subscriptions.
 
-<div class="glossary">
+Navigate to _Administration → Calendar and dates_.
 
-**Attribute help texts** provide additional information for attributes in work packages and projects. After setting them up they are displayed when users click on the question mark symbol next to custom fields in projects and work packages.
-This way you will reduce wrong entries for attributes. This is especially relevant for company specific custom fields.
+| Topic                                             | Content                                                      |
+| ------------------------------------------------- | ------------------------------------------------------------ |
+| [Working days](#working-days-and-hours)           | Define which days of the week are considered working days for scheduling and calculation of duration. |
+| [Date format](#date-format)                       | Change time and date formats.                                |
+| [Calendar subscriptions](#calendar-subscriptions) | Allow users to subscribe to calendars.                       |
 
-</div>
+## Working days and hours
 
-## Overview
+Administrators are able to define how many hours are considered a day and which days of the week are considered working days at an instance level. In other words, this setting defines what OpenProject should consider to be a normal work week when scheduling work packages. 
 
-| Topic                                                                       | Content                                                    |
-|-----------------------------------------------------------------------------|:-----------------------------------------------------------|
-| [Add Attribute help texts](#add-attribute-help-texts)                       | How to add and configure an Attribute help text.           |
-| [Edit or delete Attribute help texts](#edit-or-delete-attribute-help-texts) | How to edit and how to delete an Attribute help text.      |
-| [Work packages](#work-packages)                                             | Where will Attribute help texts for work packages be used? |
-| [Projects](#projects)                                                       | Where will Attribute help texts for projects be used?      |
-| [WYSIWYG editor](#wysiwyg-editor)                                           | Where can Attribute help texts be displayed?               |
-
-Navigate to _Administration_ -> _Attribute help texts_ to set up help texts for attributes and custom fields in work packages and projects. Here you can add, edit and delete Attribute help texts.
-
-![Attribute help texts in OpenProject administration](openproject_system_admin_guide_attribute_help_texts_overview.png)
-
-## Add Attribute help texts
-
-To add an Attribute help texts for custom fields click on the green **+ Attribute help text** button.
-
-1. **Choose the attribute** you'd like to explain from the drop-down menu. This list includes work package attributes and custom fields.
-2. Add a **caption** to provide additional context.
-3. Add **help text**. You can add in-line pictures, links or videos, too. This help text will be shown in work package or project forms for the users.
-4. Add **attachments**, e.g. excerpts from a process manual.
-5. **Save** your changes.
-
-![Add a new attribute help text in OpenProject administration](openproject_system_admin_guide_attribute_help_texts_add.png)
+To change this setting, navigate to **Working days** inside of the **Calendar and dates** settings.
 
 > [!NOTE]
-> Please be aware that the help text will be visible in all projects.
+> By default, a working day is considered to have 8 hours, the five days from Monday–Friday are considered working days, and Saturday and Sunday are considered non-working days.
 
-Once you configured the help text for an attribute, project members can see the explanation. The will see a question mark item next to the attribute.
+Here the **duration format** can also be set for _Work, Remaining work and Time spent_ fields. The options include **hours only** and **days and hours**. The default setting is _hours only_.
 
-When the users click on it, they see the description for this attribute.
+ ![The 'Working days' entry in Calendar and dates settings ](openeproject_system_admin_guide_calendars_dates.png)
 
-![Attribute help text description example](openproject_system_admin_guide_attribute_help_texts_example.png)
+To change this setting, unselect days that you would like to define as non-working, and select ones that you would like to consider working, and click on **Apply changes**.
 
-## Edit or delete Attribute help texts
+### Specific non-working days
 
-Navigate to _Administration_ -> _Work packages_ -> _Attribute help texts_ in order to edit or remove an attribute help text.
+You can also designate specific dates (such as national or local holidays) as non-working days. Work packages in regular scheduling mode will skip these days and they will not be included when calculating duration.
 
-1. Click on the **name** of the attribute to edit an existing attribute help text. Alternatively you can also edit the attribute help text when you view it in a work package.
-2. Click on the **delete icon** to delete an attribute help text.
+![Add non-working day link](add-non-working-day-link.png)
 
-![Edit or delete help attribute texts in OpenProject administration](openproject_system_admin_guide_attribute_help_texts_edit_delete.png)
+Click on **+ Non-working day** to add a new date to the list. In the date picker modal that appears, give this new non-working day a name and select the specific date you would like to add. Click on **Add**. This day will now be a non-working day for all users of the instance.
 
-## Work packages
+![Add non-working day modal](add-working-day-modal.png)
 
-The Attribute help texts for work packages will be displayed in the [details view](../../user-guide/work-packages/work-package-views/#split-screen-view) (as in the screenshot below) and in the [full screen view](../../user-guide/work-packages/work-package-views/#full-screen-view). They will help the users (e.g. the project managers) understand what kind of information to put in which fields.
+Click on **Apply changes** at the end of the page for the changes to take effect.
 
-![Example of attribute help text in a work package view in OpenProject](openproject_system_admin_guide_attribute_help_texts_example_wp.png)
+![Apply changes button](apply-changes-button.png)
 
-## Projects
+### Effect on scheduling
 
-The Attribute help texts for projects will be displayed on the [Project home page](../../user-guide/projects/project-home/) (as in the first screenshot below) and in the [Project settings](../../user-guide/projects/project-settings/project-information/) (as in the second screenshot below).
+As an instance-level setting, any change here will affect the scheduling of _all work packages_ in _all projects_ in that instance. It is currently not possible to define working days at a project-level.
 
-They will help the users (e.g. the project managers) understand what kind of information to put in which fields.
+However, it _is_ possible to override this setting at the level of individual work packages via the date picker. For more information on how to schedule work packages on non-working days, refer to [Duration and Non-working days in the user guide](../../user-guide/work-packages/set-change-dates/#working-days-and-duration).
 
-![Attribute help texts on a project overview page](openproject_system_admin_guide_attribute_help_texts_project_overview_page.png)
+> [!IMPORTANT]
+> Changing this setting will reschedule work packages automatically to the next available working day after clicking on **Save**. For example, removing Friday as a working day by unchecking it will mean that work packages that included Friday will now end one day in the future, and ones that started or ended on Friday will now start and end on Monday.
+>
+> Depending on the number of projects and work packages in your instance, this process can take from a couple of minutes to hours.
 
-![Attribute help texts project information page](openproject_system_admin_guide_attribute_help_texts_project_settings_page.png)
+Changing this setting is likely to cause changes to scheduling in unexpected ways, and generate a significant number of notifications for assignees, responsibles and watchers for work packages whose dates change as a result.
 
-## WYSIWYG editor
+We only recommend changing this setting if you are absolutely sure and you are aware of the potential consequences.
 
-The Attribute help texts can also be displayed in the WYSIWYG text editor by using a certain syntax. Find out more [here](../../user-guide/wysiwyg/#embedding-of-work-package-attributes-and-project-attributes).
+### Effect on calendars
+
+The non-working days defined here are colored differently, generally with a darker background color, on the [work package date picker](../../user-guide/work-packages/set-change-dates/#working-days-and-duration), [Gantt chart](../../user-guide/gantt-chart/) and the [Team planner](../../user-guide/team-planner/) and [calendar](../../user-guide/calendar/) modules.
+
+## Date format
+
+Administrators are able to change the default time and date formats in OpenProject. This affects how calendars and dates are calculated and displayed.
+
+To change this setting, navigate to **Date format** inside of the **Calendar and dates** settings.
+
+![Date format in OpenProject administration settings](openeproject_system_admin_guide_calendars_dates_date_format.png)
+
+1. **Date**: default is based on user's language. You can choose various formats to display dates in the system.
+2. **Time**: default is based on user's language. You can choose various formats to display time in the system.
+3. **Week starts on**: configure what date the week starts on (e.g. in the calendar view). Default is `Based on user's language`.
+   You can also choose to start a week always on Mondays, Sundays or Saturdays.
+   If you set **Week starts on**, you must also set the **First week in year contains** or you will probably get inconsistencies in week numbering in calendars and the Gantt chart.
+4. **First week in year contains**: select the day that needs to be contained in the first week of the year. This value is used together with _Week starts on_ to determine the first week of the year.
+   - For European ISO-8601 standard, set **Week starts on** to `Monday` and **First week in year contains** to `Thursday`.
+   - For US and Canada, set **Week starts on** to `Saturday` and **First week in year contains** to `Sunday`.
+   - If you leave both on `Based on user's language`, the information provided by moment.js will be used: For more information, please also see [this document from moment.js](https://momentjscom.readthedocs.io/en/latest/moment/07-customization/16-dow-doy/).
+   - For more information on the way the first week of the year is computed according to ISO standards, see [wikipedia](https://en.wikipedia.org/wiki/ISO_week_date#First_week)
+5. Do not forget to **save** your changes.
+
+> [!NOTE]
+> Configuration options related to aggregation time (the time interval in which different user activities are displayed as one set of actions) have been moved to the [Emails and notifications](../emails-and-notifications/) section.
+
+## Calendar subscriptions
+
+Administrators can allow users with the necessary permissions to subscribe to OpenProject calendars and access work package information via an external calendar client using iCalendar. When the setting **Enable iCalendar subscriptions** is inactive nobody will be able to subscribe to any calendar.
+
+To change this setting, navigate to **Calendar subscriptions** inside of the **Calendar and dates** settings.
+
+![Calendar subscriptions administrator settings](openeproject_system_admin_guide_calendars_dates_calendar_subscritpions.png)

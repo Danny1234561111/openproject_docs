@@ -1,67 +1,47 @@
 ---
 sidebar_navigation:
-  title: Authentication
-  priority: 890	
-description: Overview of authentication options in OpenProject and guidance on which solution fits which need.
-keywords: authentication, SSO, single sign-on, LDAP, SAML, OpenID Connect, OAuth, SCIM
+  title: Аутентификация
+  priority: 890
+description: Обзор вариантов аутентификации в OpenProject и руководство по выбору подходящего решения.
+keywords: authentication, аутентификация, SSO, единый вход, LDAP, SAML, OpenID Connect, OAuth, SCIM
 ---
-# Authentication
-
-OpenProject offers several ways to authenticate users and to connect OpenProject with the other systems in your IT landscape. This page gives you an overview of the available options and helps you decide which one fits your needs.
-
-To configure these settings, go to **Administration → Authentication**.
-
-
-## How authentication works in OpenProject
-
-There are two considerations for authentication between OpenProject and other systems:
-
-- **How users sign in to OpenProject.** Users can either log in with an account managed inside OpenProject, or OpenProject can delegate authentication to a central system you already operate (a directory or an SSO identity provider). This is one of the first decisions administrators should make before inviting users.
-- **How other systems connect to OpenProject.** OpenProject itself can act as an identity and authorization source for other applications such as OAuth, and can receive automated user provisioning from your identity provider through SCIM.
-
-The sections below walk through both directions and point you to the detailed configuration guides.
-
-## Which sign-in solution fits my needs?
-
-Use the following table to determine how your users should sign in. You can also combine several methods or authentication providers. For example, using SSO for employees while maintaining internal OpenProject accounts for external collaborators or emergency administrator access.
-
-| Your environment                                             | Recommended approach                                         | Edition    |
+# Аутентификация
+OpenProject предлагает несколько способов аутентификации пользователей и подключения OpenProject к другим системам в вашей IT-инфраструктуре. Эта страница дает обзор доступных вариантов и помогает определиться, какой из них подходит вашим потребностям.
+Чтобы настроить эти параметры, перейдите в **Администрирование → Аутентификация**.
+## Как работает аутентификация в OpenProject
+Существует два аспекта аутентификации между OpenProject и другими системами:
+- **Как пользователи входят в OpenProject.** Пользователи могут либо войти с помощью учетной записи, управляемой внутри OpenProject, либо OpenProject может делегировать аутентификацию централизованной системе, которую вы уже используете (каталогу или поставщику удостоверений SSO). Это одно из первых решений, которые должны принять администраторы, прежде чем приглашать пользователей.
+- **Как другие системы подключаются к OpenProject.** Сам OpenProject может выступать в качестве источника удостоверений и авторизации для других приложений, таких как OAuth, и может получать автоматическую подготовку пользователей от вашего поставщика удостоверений через SCIM.
+В следующих разделах рассматриваются оба направления и указываются подробные руководства по настройке.
+## Какое решение для входа подходит моим потребностям?
+Используйте следующую таблицу, чтобы определить, как ваши пользователи должны входить в систему. Вы также можете комбинировать несколько методов или поставщиков аутентификации. Например, использовать SSO для сотрудников, сохраняя внутренние учетные записи OpenProject для внешних сотрудников или аварийного доступа администратора.
+| Ваша среда                                             | Рекомендуемый подход                                         | Издание    |
 | ------------------------------------------------------------ | ------------------------------------------------------------ | ---------- |
-| Small or medium organization with **no central directory or identity provider** | [Internal accounts](login-registration-settings) (username and password) | Community  |
-| You run a **central directory service** such as Active Directory or OpenLDAP | [LDAP authentication](ldap-connections)                      | Community  |
-| You use an **OpenID Connect identity provider** (Microsoft Entra ID, Keycloak, Google Workspace, Okta, ...) | [OpenID Connect single sign-on](openid-providers)            | Enterprise |
-| Your identity provider is **SAML-based** (e.g. ADFS, Shibboleth) | [SAML single sign-on](saml)                                  | Enterprise |
-| You want **integrated network sign-on** on Windows/desktop clients through a local Apache setup. | [Kerberos](kerberos)                                         | Community  |
-
-Not sure which one applies to you? The [Authentication FAQ](authentication-faq) answers common questions around LDAP, SAML and SSO.
-
-## Signing users in
-
-These options determine who can access your instance and how they prove their identity.
-
-| Topic                                                        | What it does                                                 |
+| Небольшая или средняя организация **без централизованного каталога или поставщика удостоверений** | [Внутренние учетные записи](login-registration-settings) (имя пользователя и пароль) | Community  |
+| Вы используете **централизованную службу каталогов**, такую как Active Directory или OpenLDAP | [Аутентификация LDAP](ldap-connections)                      | Community  |
+| Вы используете **поставщика удостоверений OpenID Connect** (Microsoft Entra ID, Keycloak, Google Workspace, Okta, ...) | [Единый вход OpenID Connect](openid-providers)            | Enterprise |
+| Ваш поставщик удостоверений **основан на SAML** (например, ADFS, Shibboleth) | [Единый вход SAML](saml)                                  | Enterprise |
+| Вы хотите **интегрированный вход в сеть** на клиентах Windows/настольных компьютерах через локальную установку Apache. | [Kerberos](kerberos)                                         | Community  |
+Не уверены, какой вариант подходит вам? [Часто задаваемые вопросы по аутентификации](authentication-faq) отвечают на распространенные вопросы о LDAP, SAML и SSO.
+## Вход пользователей
+Эти параметры определяют, кто может получить доступ к вашему экземпляру и как они подтверждают свою личность.
+| Тема                                                        | Что делает                                                 |
 | ------------------------------------------------------------ | ------------------------------------------------------------ |
-| [Login and registration settings](login-registration-settings) | General authentication settings: self-registration, password rules, session behavior and the global SSO options. Start here for internal logins, even if they are only meant for additional administrative access. |
-| [LDAP authentication](ldap-connections)                      | Authenticate users against an existing directory (Active Directory, OpenLDAP) using their directory credentials. You can also [synchronize groups and departments](ldap-connections/ldap-group-synchronization) into OpenProject (Enterprise add-on). |
-| [OpenID Connect providers](openid-providers)                 | Set up Single Sign-On (SSO) using an OpenID Connect identity provider (Enterprise add-on). |
-| [SAML single sign-on](saml)                                  | Set up Single Sign-On (SSO) using a SAML 2.0 identity provider  (Enterprise add-on). |
-| [Kerberos](kerberos)                                         | Delegated login for users in a Kerberos network, configured through the Apache web server. OpenProject then trusts a header value set up by this server to identify logged in users. |
-
-## Securing sign-in
-
-These options add extra protection on top of your chosen sign-in method.
-
-| Topic                                                    | What it does                                                                                              |
+| [Настройки входа и регистрации](login-registration-settings) | Общие настройки аутентификации: самостоятельная регистрация, правила паролей, поведение сеансов и глобальные параметры SSO. Начните здесь для внутренних входов, даже если они предназначены только для дополнительного административного доступа. |
+| [Аутентификация LDAP](ldap-connections)                      | Аутентификация пользователей в существующем каталоге (Active Directory, OpenLDAP) с использованием их учетных данных каталога. Вы также можете [синхронизировать группы и отделы](ldap-connections/ldap-group-synchronization) в OpenProject (дополнение Enterprise). |
+| [Поставщики OpenID Connect](openid-providers)                 | Настройка единого входа (SSO) с использованием поставщика удостоверений OpenID Connect (дополнение Enterprise). |
+| [Единый вход SAML](saml)                                  | Настройка единого входа (SSO) с использованием поставщика удостоверений SAML 2.0 (дополнение Enterprise). |
+| [Kerberos](kerberos)                                         | Делегированный вход для пользователей в сети Kerberos, настроенный через веб-сервер Apache. OpenProject затем доверяет значению заголовка, установленному этим сервером, для идентификации вошедших пользователей. |
+## Защита входа в систему
+Эти параметры добавляют дополнительную защиту поверх выбранного вами метода входа.
+| Тема                                                    | Что делает                                                                                              |
 | ------------------------------------------------------- | -------------------------------------------------------------------------------------------------------- |
-| [Two-factor authentication](two-factor-authentication)  | Require a second factor (TOTP app or WebAuthn/security key) in addition to the password.                  |
-| [reCAPTCHA](recaptcha)                                  | Add a CAPTCHA challenge on login to protect against automated attacks and bots.                          |
-
-## Connecting other systems to OpenProject
-
-Use these options when OpenProject should act as an identity or authorization source for other applications, or when user accounts should be managed automatically from your identity provider.
-
-| Topic                                                        | What it does                                                 |
+| [Двухфакторная аутентификация](two-factor-authentication)  | Требовать второй фактор (приложение TOTP или WebAuthn/ключ безопасности) в дополнение к паролю.                  |
+| [reCAPTCHA](recaptcha)                                  | Добавить проверку CAPTCHA при входе для защиты от автоматических атак и ботов.                          |
+## Подключение других систем к OpenProject
+Используйте эти параметры, когда OpenProject должен выступать в качестве источника удостоверений или авторизации для других приложений, или когда учетные записи пользователей должны управляться автоматически из вашего поставщика удостоверений.
+| Тема                                                        | Что делает                                                 |
 | ------------------------------------------------------------ | ------------------------------------------------------------ |
-| [OAuth applications](oauth-applications)                     | Let external applications authenticate users against OpenProject and access the API on their behalf (OpenProject acts as OAuth server). |
-| [SCIM provisioning](scim)                                    | Automatically provision and de-provision users and groups from your identity provider (Enterprise add-on). |
-| [LDAP group synchronization](ldap-connections/ldap-group-synchronization) | Keep OpenProject group memberships in sync with your LDAP directory (Enterprise add-on). |
+| [Приложения OAuth](oauth-applications)                     | Позволяет внешним приложениям аутентифицировать пользователей в OpenProject и получать доступ к API от их имени (OpenProject выступает в качестве сервера OAuth). |
+| [Подготовка SCIM](scim)                                    | Автоматическая подготовка и отзыв пользователей и групп из вашего поставщика удостоверений (дополнение Enterprise). |
+| [Синхронизация групп LDAP](ldap-connections/ldap-group-synchronization) | Поддержание членства в группах OpenProject в синхронизации с вашим каталогом LDAP (дополнение Enterprise). |

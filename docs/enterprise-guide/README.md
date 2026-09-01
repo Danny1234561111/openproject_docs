@@ -1,3 +1,4 @@
+---
 sidebar_navigation:
   title: Руководство Enterprise
   priority: 960
